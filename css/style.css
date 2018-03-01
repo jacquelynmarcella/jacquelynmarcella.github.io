@@ -17,7 +17,7 @@
   color: var(--font-color);
   font-family: var(--body-font);
   margin: 0;
-  animation: fadein 1s;
+  animation: fadein .5s;
 }
 
 body {
