@@ -8,11 +8,6 @@
   --body-font: 'Raleway', sans-serif;
 }
 
-@keyframes fadein {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 * {
   color: var(--font-color);
   font-family: var(--body-font);
@@ -69,6 +64,7 @@ hr {
 	margin: 20px 0;
 }
 
+/* For smooth scrolling to not outline sections in blue */
 #top:focus, #featured-projects:focus, #about:focus, #contact:focus {
 	outline: 0;
 }
@@ -80,10 +76,6 @@ div.section, .portfolio-images {
 	max-width: 850px;
 	box-sizing: border-box;
 	transition: all 2s;
-}
-
-.portfolio-images {
-	margin: 0 auto;
 }
 
 .flex-grid {
@@ -112,25 +104,6 @@ nav {
   	font-weight: 900;
 }
 
-.nav-subpage {
-	background: var(--green-color);
-}
-
-.nav-subpage .nav-left a, .nav-subpage .nav-right a {
-	color: white;
-}
-
-.nav-scrolling {
-	background: var(--green-color);
-}
-
-.nav-logo {
-	font-family: var(--header-font);
-	font-size: 1.75em;
-	position: relative;
-	top: 2px;
-}
-
 .nav-left, .nav-right {
 	display: inline-block;
 	position: absolute;
@@ -147,18 +120,6 @@ nav {
 	right: 20px;
 }
 
-.nav-subpage .nav-left a, .nav-subpage .nav-right a {
-	color: white;
-}
-
-.nav-scrolling, .nav-subpage {
-	background: var(--green-color);
-}
-
-.nav-scrolling .nav-right {
-	font-size: .85em;
-}
-
 .nav-right a, .nav-left a {
 	text-transform: none;
 	margin: 0;
@@ -169,15 +130,19 @@ nav {
 	margin-left: 20px;
 }
 
-.nav-scrolling .nav-right a, .nav-scrolling .nav-right a, .nav-scrolling .nav-logo {
-	color: white;
-}
-
 .nav-right a:hover, .nav-left a:hover {
 	color: var(--green-color);
 }
 
-.nav-scrolling .nav-right a:hover, .nav-scrolling .nav-left a:hover, .nav-subpage .nav-left a:hover, .nav-subpage .nav-right a:hover {
+.nav-scrolling, .nav-subpage {
+	background: var(--green-color);
+}
+
+.nav-scrolling .nav-right {
+	font-size: .85em;
+}
+
+.nav-subpage a, .nav-scrolling a, .nav-scrolling .nav-logo, .nav-scrolling a:hover, .nav-subpage a:hover {
 	color: white;
 }
 
@@ -185,6 +150,19 @@ nav {
 	font-family: var(--header-font);
 	font-size: 1.55em;
 	letter-spacing: .75px;
+	position: relative;
+	top: 2px;
+}
+
+a.nav-resume {
+	background: rgba(0, 0, 0, .8);
+	padding: 10px 15px;
+	color: white;
+}
+
+a.nav-resume:hover {
+	background: var(--orange-color);
+	color: white;
 }
 
 .hamburger {
@@ -224,37 +202,14 @@ nav {
 	font-size: 1.5em;
 }
 
-.nav-resume {
-	background: rgba(0, 0, 0, .8);
-	padding: 10px;
-}
-
-a.nav-resume {
-	color: white;
-}
-
-a.nav-resume:hover {
-	color: white;
-}
-
-body > nav > div.nav-right > a.nav-resume.nav-desktop > svg > path {
-	color: white;
-}
-
-.nav-resume:hover {
-	background: var(--orange-color);
-	color: white;
-}
-
 
 /* Header */
 .header-background {
 	box-sizing: border-box;
+	background: var(--pink-color);
 	height: 100vh;
 	width: 100%;
-	padding: 200px 140px;
 	font-size: 2.25em;
-	background: var(--pink-color);
 	line-height: 2em;
 	transform: skewY(25.5deg);
   	transform-origin: top right;
@@ -264,6 +219,11 @@ body > nav > div.nav-right > a.nav-resume.nav-desktop > svg > path {
   	left: 0;
   	z-index: -1;
   	animation: sizein 2s;
+}
+
+@keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes sizein {
@@ -307,12 +267,8 @@ header h4 {
 }
 
 @keyframes floating {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0em, .40em);
-    }
+  0%	{ transform: translate(0, 0); }
+  100%	{ transform: translate(0em, .40em); }
 }
 
 .green-icon {
@@ -323,7 +279,6 @@ header h4 {
 	background: none;
 	animation: floating 1.5s infinite alternate ease-in;
 }
-
 
 body > header > div > a > p > svg > path {
 	color: var(--green-color);
@@ -398,22 +353,22 @@ footer a:hover > svg > path, footer a:hover > span {
 	margin: .25em auto;
 }
 
+.portfolio-item h5 {
+	display: block;
+	width: 100%;
+}
+
 .portfolio-item .portfolio-text {
 	margin: 0 auto;
 	width: 100%;
 	letter-spacing: 1px;
 }
 
-.portfolio-item h5 {
-	display: block;
-	width: 100%;
-}
-
 .portfolio-item.dream  {
   flex-grow: 3;
   min-width: 300px;
   background: url('../img/home_background.jpg') no-repeat;
-  transition: all 2s;
+
   background-size: 180%;
   background-position: 50% 50%;
 }
@@ -422,7 +377,6 @@ footer a:hover > svg > path, footer a:hover > span {
   flex-grow: 6;
   width: 100%;
   background: url('../img/hero-1.jpg') no-repeat;
-  transition: all 2s;
   background-size: 180%;
   background-position: 50% 50%;
 }
@@ -431,7 +385,6 @@ footer a:hover > svg > path, footer a:hover > span {
 	flex-grow: 2;
 	min-width: 100px;
 	background: url('../img/blackjack-background.jpg') no-repeat;
-  	transition: all 2s;
   	background-size: 180%;
   	background-position: 50% 50%;
 }
@@ -454,32 +407,6 @@ footer a:hover > svg > path, footer a:hover > span {
 	cursor: pointer;
 }
 
-/* Buttons */
-
-.button {
-	margin: 0 auto;
-	margin-right: 0;
-	align-self: center;
-}
-
-.button a {
-	text-align: center;
-	display: inline-block;
-	width: 100px;
-	font-weight: 700;
-	color: var(--green-color);
-	text-decoration: none;
-	padding: 5px;
-	border: 2px solid var(--green-color);
-	transition: all .5s;
-}
-
-.button a:hover {
-	color: white;
-	background: var(--green-color);
-	border: 2px solid var(--green-color);
-}
-
 
 /* About */
 
@@ -491,12 +418,16 @@ footer a:hover > svg > path, footer a:hover > span {
 }
 
 .about-item h5 {
-	font-weight: 700;
 	font-size: 1.2em;
 	font-family: var(--header-font);
 }
 
-.about-item.skills li {
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+li {
 	font-size: .85em;
 }
 
@@ -523,11 +454,6 @@ footer a:hover > svg > path, footer a:hover > span {
 	border-radius: 250px;
 }
 
-ul {
-	list-style: none;
-	padding-left: 0;
-}
-
 .arrow-right {
 	position: absolute;
 	z-index: -1;
@@ -548,22 +474,22 @@ div.section.portfolio {
 	margin: 0 auto;
 }
 
+div.section.portfolio h1 {
+	margin-top: 90px;
+}
+
 div.section.portfolio h5 {
 	font-size: .8em;
+}
+
+div.section.portfolio p {
+	margin: 5px auto;
+	width: 100%;
 }
 
 .portfolio-images {
 	padding: 0 20px;
 	margin: 0 auto;
-}
-
-div.section.portfolio h1 {
-	margin-top: 90px;
-}
-
-.portfolio p {
-	margin: 5px auto;
-	width: 100%;
 }
 
 .portfolio-images img {
@@ -597,10 +523,28 @@ div.section.project-nav {
 
 }
 
-.project-nav p {
-	display: inline-block;
-	border: 1px red;
+/* Buttons */
+
+.button {
+	margin: 0 auto;
+	margin-right: 0;
+	align-self: center;
 }
+
+.button a {
+	text-align: center;
+	display: inline-block;
+	width: 100px;
+	padding: 5px;
+	border: 2px solid var(--green-color);
+}
+
+.button a:hover {
+	color: white;
+	background: var(--green-color);
+	border: 2px solid var(--green-color);
+}
+
 
 /* Responsive */
 
