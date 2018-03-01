@@ -526,9 +526,7 @@ div.section.project-nav {
 /* Buttons */
 
 .button {
-	margin: 0 auto;
-	margin-right: 0;
-	align-self: center;
+	margin: 30px 0;
 }
 
 .button a {
@@ -575,14 +573,6 @@ div.section.project-nav {
 	}
 
 }
-
-@media all and (max-width: 1150px){
-
-	.button {
-		margin: 20px auto;
-	}
-}
-
 
 @media all and (max-width: 900px){
 	.flex-grid.nowrap {
@@ -706,6 +696,10 @@ div.section.project-nav {
 
 	header {
 		height: 85vh;
+	}
+
+	.button {
+		text-align: center;
 	}
 
 	.arrow-right {
