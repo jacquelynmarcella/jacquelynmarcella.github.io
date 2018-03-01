@@ -8,10 +8,16 @@
   --body-font: 'Raleway', sans-serif;
 }
 
+@keyframes fadein {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 * {
   color: var(--font-color);
   font-family: var(--body-font);
   margin: 0;
+  animation: fadein 1s;
 }
 
 body {
@@ -37,7 +43,6 @@ a:hover {
 
 h1, h2, h3 {
 	font-family: var(--header-font);
-/*	font-weight: 900;*/
 }
 
 h2 {
@@ -277,10 +282,6 @@ header {
   	font-size: 3em;
 }
 
-@keyframes fadein {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
 
 .header-content {
 	text-align: center;
