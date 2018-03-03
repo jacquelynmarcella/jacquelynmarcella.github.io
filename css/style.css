@@ -245,11 +245,16 @@ header {
 
 
 .header-content {
+	display: none;
 	text-align: center;
 	display: inline-block;
 	margin: 0 auto;
 	transition: all .5s;
-	animation: fadein 2s ease-in;
+	animation: fadein 1.5s ease-in;
+}
+
+.header-content.active{
+	display: block;
 }
 
 header h1 {

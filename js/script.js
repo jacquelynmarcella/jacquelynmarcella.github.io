@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+  $('.header-content').toggleClass("active");
+})
+
 // Navbar adjusts when you scroll
 $(window).scroll(function() {
   var height = $(window).scrollTop();
