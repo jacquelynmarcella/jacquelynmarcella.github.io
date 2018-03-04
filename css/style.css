@@ -563,7 +563,6 @@ div.section.project-nav {
 		height: 90vh;
 	}
 
-
 	.header-background {
 		transform: skewY(24.5deg);
 	}
@@ -690,6 +689,10 @@ div.section.project-nav {
 
 /* Mobile */
 @media all and (max-width: 500px){
+
+	header {
+		height: 75vh;
+	}
 
 	.header-background {
 		transform: skewY(57deg);
