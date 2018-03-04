@@ -235,7 +235,7 @@ a.nav-resume:hover {
 
 header {
 	margin-top: 64px;
-	height: 95vh;
+	height: 85vh;
 	width: 100%;
 	display: flex;
   	justify-content: center;
@@ -275,16 +275,19 @@ header h4 {
 }
 
 @keyframes floating {
-  0%	{ transform: rotate(-90deg) translate(0, 0); }
-  100%	{ transform: rotate(-90deg) translate(.40em, 0); }
+  0%	{ transform: translate(0, 0); }
+  100%	{ transform: translate(0, .40em); }
 }
 
-p.green-icon {
-	font-size: 1em;
-	padding: 20px;
+a.green-arrow {
+	margin-top: 20px;
 	display: block;
-	color: var(--green-color);
+	text-align: center;
 	animation: floating 1.5s infinite alternate;
+}
+
+.green-arrow img {
+	width: 50px;
 }
 
 /* Footer */
@@ -693,16 +696,11 @@ div.section.project-nav {
 		width: 100%;
 		padding: 50px;
 		font-size: .6em;
-/*		line-height: 1em;*/
 	}
 	
 	.header-content h4 {
 		font-size: .5em;
 		line-height: 2.25em;
-	}
-
-	header {
-		height: 85vh;
 	}
 
 	.button {
@@ -725,6 +723,10 @@ div.section.project-nav {
 
 	.portfolio-item h5 {
 		font-size: 1em;
+	}
+
+	.green-arrow img {
+		width: 40px;
 	}
 
 }
