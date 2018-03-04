@@ -558,6 +558,12 @@ div.section.project-nav {
 
 /* Large monitors */
 @media all and (min-width: 1400px){
+
+	header {
+		height: 90vh;
+	}
+
+
 	.header-background {
 		transform: skewY(24.5deg);
 	}
@@ -607,7 +613,6 @@ div.section.project-nav {
 	}
 	div.section {
 		padding: 10px;
-/*		margin: 30px auto;*/
 		width: 100%;
 	}
 
