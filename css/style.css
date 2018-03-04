@@ -275,21 +275,16 @@ header h4 {
 }
 
 @keyframes floating {
-  0%	{ transform: translate(0, 0); }
-  100%	{ transform: translate(0em, .40em); }
+  0%	{ transform: rotate(-90deg) translate(0, 0); }
+  100%	{ transform: rotate(-90deg) translate(.40em, 0); }
 }
 
-.green-icon {
+p.green-icon {
 	font-size: 1em;
-	text-align: center;
 	padding: 20px;
 	display: block;
-	background: none;
-	animation: floating 1.5s infinite alternate ease-in;
-}
-
-body > header > div > a > p > svg > path {
 	color: var(--green-color);
+	animation: floating 1.5s infinite alternate;
 }
 
 /* Footer */
