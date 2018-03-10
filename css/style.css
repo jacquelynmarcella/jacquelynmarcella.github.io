@@ -425,13 +425,17 @@ footer a:hover > svg > path, footer a:hover > span {
 }
 
 .about-item h5 {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-family: var(--header-font);
 }
 
 ul {
 	list-style: none;
 	padding-left: 0;
+}
+
+.about-item.skills ul:first-of-type {
+	margin-bottom: 15px;
 }
 
 li {
@@ -635,6 +639,7 @@ div.section.project-nav {
 	.portfolio-item.plant, .portfolio-item.dream, .portfolio-item.blackjack  {
 		font-size: .9em;
 	}
+
 	.flex-grid.nowrap.skills {
 		margin-left: 0;
 	}
@@ -644,6 +649,7 @@ div.section.project-nav {
 
 	.about-item.skills {
 		margin: 0;
+		padding-bottom: 0;
 	}
 
 }
