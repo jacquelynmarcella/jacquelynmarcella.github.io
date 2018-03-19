@@ -351,7 +351,6 @@ footer a:hover > svg > path, footer a:hover > span {
 	margin: 10px;
 	box-sizing: border-box;
 	align-items: center;
-	animation: fadein 1s ease-in;
 }
 
 .portfolio h1 {
@@ -574,20 +573,17 @@ div.section.project-nav {
 	100% { opacity: 1; transform: translateY(0);  }
 }
 
-.transition.about-item.headshot.start {
+@keyframes fadeinleft-faded {
+	0% { opacity: 0; transform: translateX(-10rem);  }
+	100% { opacity: .5; transform: translateX(0);  }
+}
+
+.transition.start.about-item.headshot {
    	animation: fadeinleft 900ms ease-out 0ms both;
 }
 
-.transition.about-item.summary.start {
+.transition.start.about-item.summary, .transition.start.portfolio-item {
    	animation: fadeinright 1s ease-out 0ms both;
-}
-
-.transition.about-item.skills.start {
-   	animation: fadeinbottom 900ms ease-out 0ms both;
-}
-
-.transition.start.portfolio-item {
-   	animation: fadeinleft 900ms ease-out 0ms both;
 }
 
 .transition.start.portfolio-item img {
@@ -595,7 +591,11 @@ div.section.project-nav {
 }
 
 .transition.start.portfolio-images {
-	animation: fadeinleft 900ms ease-out 0ms both;
+   	animation: fadeinbottom 900ms ease-out 0ms both;
+}
+
+.transition.start.arrow-right {
+	animation: fadeinleft 3s ease-out 0ms both;
 }
 
 /* Responsive */
@@ -682,8 +682,8 @@ div.section.project-nav {
 	.flex-grid.nowrap.skills {
 		margin-left: 0;
 	}
-	.arrow-right {
-		opacity: .5;
+	.transition.start.arrow-right {
+   		animation: fadeinleft-faded 1s ease-out 0ms both;
 	}
 
 	.about-item.skills {
