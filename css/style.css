@@ -351,7 +351,7 @@ footer a:hover > svg > path, footer a:hover > span {
 	margin: 10px;
 	box-sizing: border-box;
 	align-items: center;
-	animation: fadein 3s ease-in;
+	animation: fadein 1s ease-in;
 }
 
 .portfolio h1 {
@@ -558,6 +558,45 @@ div.section.project-nav {
 	border: 2px solid var(--green-color);
 }
 
+/* Scrolling animations */
+@keyframes fadeinleft {
+	0% { opacity: 0; transform: translateX(-10rem);  }
+	100% { opacity: 1; transform: translateX(0);  }
+}
+
+@keyframes fadeinright {
+	0% { opacity: 0; transform: translateX(10rem);  }
+	100% { opacity: 1; transform: translateX(0);  }
+}
+
+@keyframes fadeinbottom {
+	0% { opacity: 0; transform: translateY(5rem);  }
+	100% { opacity: 1; transform: translateY(0);  }
+}
+
+.transition.about-item.headshot.start {
+   	animation: fadeinleft 900ms ease-out 0ms both;
+}
+
+.transition.about-item.summary.start {
+   	animation: fadeinright 1s ease-out 0ms both;
+}
+
+.transition.about-item.skills.start {
+   	animation: fadeinbottom 900ms ease-out 0ms both;
+}
+
+.transition.start.portfolio-item {
+   	animation: fadeinleft 900ms ease-out 0ms both;
+}
+
+.transition.start.portfolio-item img {
+   	animation: fadein 3s;
+}
+
+.transition.start.portfolio-images {
+	animation: fadeinleft 900ms ease-out 0ms both;
+}
 
 /* Responsive */
 

@@ -2,8 +2,36 @@ $( document ).ready(function() {
   $('.header-content').toggleClass("active");
 })
 
+// Animation when item is in view
+var $animation_elements = $('.transition');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+ 
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+ 
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+        (element_top_position <= window_bottom_position)) {
+      $element.addClass('start');
+    } else {
+      $element.removeClass('start');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+
 // Navbar adjusts when you scroll
-$(window).scroll(function() {
+$window.scroll(function() {
   var height = $(window).scrollTop();
   if(height  > 300) {
     $('nav').addClass('nav-scrolling');
@@ -31,7 +59,7 @@ $(".nav-responsive a").click(function() {
   $(".hamburger").toggleClass("is-active");
 });
 
-$(window).resize(function(){
+$window.resize(function(){
     checkSize();
 });
 
@@ -57,3 +85,4 @@ function checkSize(){
         }
     }
 });
+
