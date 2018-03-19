@@ -592,6 +592,7 @@ div.section.project-nav {
 
 .transition.start.portfolio-images {
    	animation: fadeinleft 500ms ease-out 0ms both;
+   	animation-delay: 500ms;
 }
 
 .transition.start.arrow-right {
