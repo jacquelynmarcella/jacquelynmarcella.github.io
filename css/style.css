@@ -572,7 +572,7 @@ div.section.project-nav {
  	animation:         fadeinright 500ms ease-out 0ms both;
 }
 
-.transition.start.portfolio-item {
+.transition.start.portfolio-item, .transition.start.portfolio-images {
    	-webkit-animation: fadeinbottom 500ms ease-out 0ms both;
   	-moz-animation:    fadeinbottom 500ms ease-out 0ms both;
  	-o-animation:      fadeinbottom 500ms ease-out 0ms both;
@@ -587,14 +587,10 @@ div.section.project-nav {
 }
 
 .transition.start.portfolio-images {
-   	-webkit-animation: fadeinleft 500ms ease-out 0ms both;
-  	-moz-animation:    fadeinleft 500ms ease-out 0ms both;
- 	-o-animation:      fadeinleft 500ms ease-out 0ms both;
- 	animation:         fadeinleft 500ms ease-out 0ms both;
- 	-webkit-animation-delay: 500ms;
-   	-moz-animation-delay:    500ms;
-   	-o-animation-delay:      500ms;
-   	animation-delay:         500ms;
+ 	-webkit-animation-delay: 250ms;
+   	-moz-animation-delay:    250ms;
+   	-o-animation-delay:      250ms;
+   	animation-delay:         250ms;
 }
 
 .transition.start.arrow-right {
