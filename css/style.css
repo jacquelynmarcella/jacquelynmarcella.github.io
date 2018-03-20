@@ -586,13 +586,6 @@ div.section.project-nav {
  	animation:         fadein 3s;
 }
 
-.transition.start.portfolio-images {
- 	-webkit-animation-delay: 250ms;
-   	-moz-animation-delay:    250ms;
-   	-o-animation-delay:      250ms;
-   	animation-delay:         250ms;
-}
-
 .transition.start.arrow-right {
 	-webkit-animation: fadeinleft 3s ease-out 0ms both;
   	-moz-animation:    fadeinleft 3s ease-out 0ms both;
