@@ -559,17 +559,17 @@ div.section.project-nav {
 }
 
 .transition.start.about-item.headshot {
-	-webkit-animation: fadeinleft 500ms ease-out 0ms both;
-  	-moz-animation:    fadeinleft 500ms ease-out 0ms both;
- 	-o-animation:      fadeinleft 500ms ease-out 0ms both;
- 	animation:         fadeinleft 500ms ease-out 0ms both; 
+	-webkit-animation: fadeinleft 900ms ease-out 0ms both;
+  	-moz-animation:    fadeinleft 900ms ease-out 0ms both;
+ 	-o-animation:      fadeinleft 900ms ease-out 0ms both;
+ 	animation:         fadeinleft 900ms ease-out 0ms both; 
 }
 
 .transition.start.about-item.summary {
-   	-webkit-animation: fadeinright 500ms ease-out 0ms both;
-  	-moz-animation:    fadeinright 500ms ease-out 0ms both;
- 	-o-animation:      fadeinright 500ms ease-out 0ms both;
- 	animation:         fadeinright 500ms ease-out 0ms both;
+   	-webkit-animation: fadeinright 900ms ease-out 0ms both;
+  	-moz-animation:    fadeinright 900ms ease-out 0ms both;
+ 	-o-animation:      fadeinright 900ms ease-out 0ms both;
+ 	animation:         fadeinright 900ms ease-out 0ms both;
 }
 
 .transition.start.portfolio-item, .transition.start.portfolio-images {
