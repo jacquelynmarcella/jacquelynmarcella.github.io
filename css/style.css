@@ -854,6 +854,14 @@ div.section.project-nav {
 	.flex-grid.nowrap.skills {
 		margin-left: 0;
 	}
+
+	.transition.start.about-item.summary {
+	   	-webkit-animation: fadeinleft 900ms ease-out 0ms both;
+	  	-moz-animation:    fadeinleft 900ms ease-out 0ms both;
+	 	-o-animation:      fadeinleft 900ms ease-out 0ms both;
+	 	animation:         fadeinleft 900ms ease-out 0ms both;
+	}
+
 	.transition.start.arrow-right {
    		-webkit-animation: fadeinleft-faded 1s ease-out 0ms both;
   		-moz-animation:    fadeinleft-faded 1s ease-out 0ms both;
