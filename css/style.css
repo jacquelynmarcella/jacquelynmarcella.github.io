@@ -249,7 +249,7 @@ header {
   	animation:         fadein 1.5s ease-in; 
 }
 
-.header-content.active{
+.header-content.active {
 	display: block;
 }
 
@@ -367,7 +367,6 @@ footer a:hover > svg > path, footer a:hover > span {
   flex-grow: 3;
   min-width: 300px;
   background: url('../img/home_background.jpg') no-repeat;
-
   background-size: 180%;
   background-position: 50% 50%;
 }
@@ -517,6 +516,10 @@ div.section.portfolio p {
     font-size: 4em;
 }
 
+.project-arrow:hover {
+	transform: scale(1.2);
+}
+
 .project-arrow.back {
 	left: 20px;
 }
@@ -577,6 +580,10 @@ div.section.project-nav {
   	-moz-animation:    fadeinbottom 500ms ease-out 0ms both;
  	-o-animation:      fadeinbottom 500ms ease-out 0ms both;
  	animation:         fadeinbottom 500ms ease-out 0ms both;
+ 	-webkit-animation-delay: 150ms;
+ 	-moz-animation-delay:    150ms;
+ 	-o-animation-delay:      150ms;
+	animation-delay:         150ms;
 }
 
 .transition.start.portfolio-item img {
