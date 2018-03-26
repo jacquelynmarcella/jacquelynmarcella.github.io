@@ -580,10 +580,10 @@ div.section.project-nav {
   	-moz-animation:    fadeinbottom 500ms ease-out 0ms both;
  	-o-animation:      fadeinbottom 500ms ease-out 0ms both;
  	animation:         fadeinbottom 500ms ease-out 0ms both;
- 	-webkit-animation-delay: 150ms;
- 	-moz-animation-delay:    150ms;
- 	-o-animation-delay:      150ms;
-	animation-delay:         150ms;
+ 	-webkit-animation-delay: 50ms;
+ 	-moz-animation-delay:    50ms;
+ 	-o-animation-delay:      50ms;
+	animation-delay:         50ms;
 }
 
 .transition.start.portfolio-item img {
