@@ -366,33 +366,43 @@ footer a:hover > svg > path, footer a:hover > span {
 .portfolio-item.dream  {
   flex-grow: 3;
   min-width: 300px;
-  background: url('../img/home_background.jpg') no-repeat;
+  background: url('../img/dreamstate-background.jpg') no-repeat;
   background-size: 180%;
   background-position: 50% 50%;
 }
 
 .portfolio-item.plant  {
   flex-grow: 6;
+/*  min-width: 400px;*/
   width: 100%;
-  background: url('../img/hero-1.jpg') no-repeat;
+  background: url('../img/plantparenthood-background.jpg') no-repeat;
   background-size: 180%;
   background-position: 50% 50%;
 }
 
 .portfolio-item.blackjack {
-	flex-grow: 2;
+	flex-grow: 1;
 	min-width: 100px;
 	background: url('../img/blackjack-background.jpg') no-repeat;
   	background-size: 180%;
   	background-position: 50% 50%;
 }
 
+.portfolio-item.skincare  {
+  flex-grow: 3;
+  min-width: 300px;
+/*  width: 100%;*/
+  background: url('../img/skincare-background.jpg') no-repeat;
+  background-size: 130%;
+  background-position: 50% 50%;
+}
+
 .portfolio-item.plant h3 {
 	color: #E3CB43;
 }
 
-.portfolio-item.dream h3, .portfolio-item.dream h5 {
-	color: rgba(68, 73, 82, .9);
+.portfolio-item.dream h3, .portfolio-item.dream h5, .portfolio-item.skincare h3, .portfolio-item.skincare h3 {
+	color: var(--font-color);
 }
 
 .portfolio-item.blackjack h3, .portfolio-item.blackjack h5, .portfolio-item.plant h5 {
@@ -405,6 +415,15 @@ footer a:hover > svg > path, footer a:hover > span {
 	cursor: pointer;
 }
 
+.portfolio-item.skincare:hover {
+	background-size: 150%;
+}
+
+/*.portfolio-item.skincare:hover {
+	background-position: 50% 65%;
+	background-size: 140%;
+}
+*/
 
 /* About */
 
@@ -839,7 +858,7 @@ div.section.project-nav {
 	}
 
 	div.section.portfolio {
-		padding: 20px 25px;
+		padding: 20px;
 	}
 
 	.portfolio-images {
@@ -854,7 +873,7 @@ div.section.project-nav {
 }
 
 @media all and (max-width: 835px){
-	.portfolio-item.plant, .portfolio-item.dream, .portfolio-item.blackjack  {
+	.portfolio-item.plant, .portfolio-item.skincare, .portfolio-item.dream, .portfolio-item.blackjack  {
 		font-size: .9em;
 	}
 
@@ -899,7 +918,7 @@ div.section.project-nav {
 		padding: 40px 10px;
 	}
 
-	.portfolio-item.plant, .portfolio-item.dream, .portfolio-item.blackjack  {
+	.portfolio-item.plant, .portfolio-item.skincare, .portfolio-item.dream, .portfolio-item.blackjack  {
 		flex-grow: 1;
 		max-width: 100%;
 		min-width: 200px;
@@ -958,6 +977,14 @@ div.section.project-nav {
 		padding: 20px;
 	}
 
+	.portfolio-item.skincare  {
+  		background-size: 180%;
+	}
+
+	.portfolio-item.skincare:hover  {
+  		background-size: 200%;
+	}
+
 	.portfolio-item h3 {
 		font-size: 2em;
 		line-height: 1.2em;
@@ -965,7 +992,8 @@ div.section.project-nav {
 	}
 
 	.portfolio-item h5 {
-		font-size: 1em;
+		font-size: .8em;
+		margin-top: 3px;
 	}
 
 	.green-arrow img {
