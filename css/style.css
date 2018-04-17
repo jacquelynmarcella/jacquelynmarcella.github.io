@@ -910,16 +910,6 @@ div.section.project-nav {
 		padding: 40px 10px;
 	}
 
-	.portfolio-item.plant, .portfolio-item.skincare, .portfolio-item.dream, .portfolio-item.blackjack  {
-		flex-grow: 1;
-		max-width: 100%;
-		min-width: 200px;
-	}
-
-	.portfolio-item {
-		height: 200px;
-	}
-
 	.project-arrow {
 		display: none;
 	}
@@ -987,6 +977,12 @@ div.section.project-nav {
 		font-size: .8em;
 		margin-top: 3px;
 	}
+
+	.portfolio-item.plant, .portfolio-item.skincare, .portfolio-item.dream, .portfolio-item.blackjack  {
+		max-width: 100%;
+		min-width: 200px;
+	}
+
 
 	.green-arrow img {
 		width: 25px;
