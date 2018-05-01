@@ -573,17 +573,17 @@ div.section.project-nav {
 }
 
 .transition.start.about-item.headshot {
-	-webkit-animation: fadeinleft 900ms ease-out 0ms both;
-  	-moz-animation:    fadeinleft 900ms ease-out 0ms both;
- 	-o-animation:      fadeinleft 900ms ease-out 0ms both;
- 	animation:         fadeinleft 900ms ease-out 0ms both; 
+	-webkit-animation: fadeinleft 500ms ease-out 0ms both;
+  	-moz-animation:    fadeinleft 500ms ease-out 0ms both;
+ 	-o-animation:      fadeinleft 500ms ease-out 0ms both;
+ 	animation:         fadeinleft 500ms ease-out 0ms both; 
 }
 
 .transition.start.about-item.summary {
-   	-webkit-animation: fadeinright 900ms ease-out 0ms both;
-  	-moz-animation:    fadeinright 900ms ease-out 0ms both;
- 	-o-animation:      fadeinright 900ms ease-out 0ms both;
- 	animation:         fadeinright 900ms ease-out 0ms both;
+   	-webkit-animation: fadeinright 500ms ease-out 0ms both;
+  	-moz-animation:    fadeinright 500ms ease-out 0ms both;
+ 	-o-animation:      fadeinright 500ms ease-out 0ms both;
+ 	animation:         fadeinright 500ms ease-out 0ms both;
 }
 
 .transition.start.portfolio-item, .transition.start.portfolio-images {
@@ -605,10 +605,10 @@ div.section.project-nav {
 }
 
 .transition.start.arrow-right {
-	-webkit-animation: fadeinleft 3s ease-out 0ms both;
-  	-moz-animation:    fadeinleft 3s ease-out 0ms both;
- 	-o-animation:      fadeinleft 3s ease-out 0ms both;
- 	animation:         fadeinleft 3s ease-out 0ms both;
+	-webkit-animation: fadeinleft 500ms ease-out 0ms both;
+  	-moz-animation:    fadeinleft 500ms ease-out 0ms both;
+ 	-o-animation:      fadeinleft 500ms ease-out 0ms both;
+ 	animation:         fadeinleft 500ms ease-out 0ms both;
 }
 
 
@@ -679,82 +679,82 @@ div.section.project-nav {
 }
 
 @keyframes fadeinleft {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @-webkit-keyframes fadeinleft {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @-moz-keyframes fadeinleft {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @-o-keyframes fadeinleft {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @keyframes fadeinright {
-	0% { opacity: 0; transform: translateX(10rem);  }
+	0% { opacity: 0; transform: translateX(5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @-webkit-keyframes fadeinright {
-	0% { opacity: 0; transform: translateX(10rem);  }
+	0% { opacity: 0; transform: translateX(5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @-moz-keyframes fadeinright {
-	0% { opacity: 0; transform: translateX(10rem);  }
+	0% { opacity: 0; transform: translateX(5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @-o-keyframes fadeinright {
-	0% { opacity: 0; transform: translateX(10rem);  }
+	0% { opacity: 0; transform: translateX(5rem);  }
 	100% { opacity: 1; transform: translateX(0);  }
 }
 
 @keyframes fadeinbottom {
-	0% { opacity: 0; transform: translateY(10rem);  }
+	0% { opacity: 0; transform: translateY(5rem);  }
 	100% { opacity: 1; transform: translateY(0);  }
 }
 
 @-webkit-keyframes fadeinbottom {
-	0% { opacity: 0; transform: translateY(10rem);  }
+	0% { opacity: 0; transform: translateY(5rem);  }
 	100% { opacity: 1; transform: translateY(0);  }
 }
 
 @-moz-keyframes fadeinbottom {
-	0% { opacity: 0; transform: translateY(10rem);  }
+	0% { opacity: 0; transform: translateY(5rem);  }
 	100% { opacity: 1; transform: translateY(0);  }
 }
 
 @-o-keyframes fadeinbottom {
-	0% { opacity: 0; transform: translateY(10rem);  }
+	0% { opacity: 0; transform: translateY(5rem);  }
 	100% { opacity: 1; transform: translateY(0);  }
 }
 
 @keyframes fadeinleft-faded {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: .5; transform: translateX(0);  }
 }
 
 @-webkit-keyframes fadeinleft-faded {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: .5; transform: translateX(0);  }
 }
 
 @-moz-keyframes fadeinleft-faded {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: .5; transform: translateX(0);  }
 }
 
 @-o-keyframes fadeinleft-faded {
-	0% { opacity: 0; transform: translateX(-10rem);  }
+	0% { opacity: 0; transform: translateX(-5rem);  }
 	100% { opacity: .5; transform: translateX(0);  }
 }
 
@@ -874,17 +874,17 @@ div.section.project-nav {
 	}
 
 	.transition.start.about-item.summary {
-	   	-webkit-animation: fadeinleft 900ms ease-out 0ms both;
-	  	-moz-animation:    fadeinleft 900ms ease-out 0ms both;
-	 	-o-animation:      fadeinleft 900ms ease-out 0ms both;
-	 	animation:         fadeinleft 900ms ease-out 0ms both;
+	   	-webkit-animation: fadeinleft 500ms ease-out 0ms both;
+	  	-moz-animation:    fadeinleft 500ms ease-out 0ms both;
+	 	-o-animation:      fadeinleft 500ms ease-out 0ms both;
+	 	animation:         fadeinleft 500ms ease-out 0ms both;
 	}
 
 	.transition.start.arrow-right {
-   		-webkit-animation: fadeinleft-faded 1s ease-out 0ms both;
-  		-moz-animation:    fadeinleft-faded 1s ease-out 0ms both;
- 		-o-animation:      fadeinleft-faded 1s ease-out 0ms both;
-  		animation:         fadeinleft-faded 1s ease-out 0ms both; 
+   		-webkit-animation: fadeinleft-faded 500ms ease-out 0ms both;
+  		-moz-animation:    fadeinleft-faded 500ms ease-out 0ms both;
+ 		-o-animation:      fadeinleft-faded 500ms ease-out 0ms both;
+  		animation:         fadeinleft-faded 500ms ease-out 0ms both; 
 	}
 
 	.about-item.skills {
