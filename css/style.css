@@ -220,10 +220,10 @@ a.nav-resume:hover {
   	top: 0;
   	left: 0;
   	z-index: -1;
-  	-webkit-animation: sizein 2s;
-  	-moz-animation:    sizein 2s;
- 	-o-animation:      sizein 2s;
-  	animation:         sizein 2s; 
+  	-webkit-animation: sizein 1s;
+  	-moz-animation:    sizein 1s;
+ 	-o-animation:      sizein 1s;
+  	animation:         sizein 1s; 
 }
 
 header {
@@ -243,10 +243,10 @@ header {
 	display: inline-block;
 	margin: 0 auto;
 	transition: all .5s;
-	-webkit-animation: fadein 1.5s ease-in;
-  	-moz-animation:    fadein 1.5s ease-in;
- 	-o-animation:      fadein 1.5s ease-in;
-  	animation:         fadein 1.5s ease-in; 
+/*	-webkit-animation: fadein 1s ease-in;
+  	-moz-animation:    fadein 1s ease-in;
+ 	-o-animation:      fadein 1s ease-in;
+  	animation:         fadein 1s ease-in; */
 }
 
 .header-content.active {
