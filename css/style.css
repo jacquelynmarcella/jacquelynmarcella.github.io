@@ -132,16 +132,16 @@ nav {
 	margin-left: 20px;
 }
 
-.nav-right a:hover, .nav-left a:hover {
-	color: var(--green-color);
-}
-
 .nav-scrolling, .nav-subpage {
 	background: var(--green-color);
 }
 
 .nav-scrolling .nav-right {
 	font-size: .85em;
+}
+
+.nav-right a:hover, .nav-left a:hover, .nav-responsive a:hover, .nav-scrolling .nav-responsive a:hover, .nav-subpage .nav-responsive a:hover {
+	color: var(--green-color);
 }
 
 .nav-subpage a, .nav-scrolling a, .nav-scrolling .nav-logo, .nav-scrolling a:hover, .nav-subpage a:hover {
@@ -528,12 +528,12 @@ div.section.portfolio p {
 	position: fixed;
     top: 50vh;
     z-index: 98;
-    opacity: .95;
+    opacity: .8;
     font-size: 4em;
 }
 
 .project-arrow:hover {
-	transform: scale(1.2);
+	opacity: 1;
 }
 
 .project-arrow.back {
