@@ -893,13 +893,6 @@ div.section.project-nav {
 	 	-o-animation:      fadeinleft 500ms ease-out 0ms both;
 	 	animation:         fadeinleft 500ms ease-out 0ms both;
 	}
-/*
-	.transition.start.arrow-right {
-   		-webkit-animation: fadeinleft-faded 500ms ease-out 0ms both;
-  		-moz-animation:    fadeinleft-faded 500ms ease-out 0ms both;
- 		-o-animation:      fadeinleft-faded 500ms ease-out 0ms both;
-  		animation:         fadeinleft-faded 500ms ease-out 0ms both; 
-	}*/
 
 	.about-item.skills {
 		margin: 0;
@@ -910,6 +903,10 @@ div.section.project-nav {
 
 /* Mid sized */
 @media all and (max-width: 780px){
+
+	.nav-right {
+		right: 20px;
+	}
 
 	nav.is-open:not(.nav-scrolling) {
 		background: rgba(256, 256, 256, .97);

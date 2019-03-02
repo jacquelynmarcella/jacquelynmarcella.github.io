@@ -33,7 +33,7 @@ $window.trigger('scroll');
 // Navbar adjusts when you scroll up
 $window.scroll(function() {
   console.log($(window).scrollTop());
-  if (this.oldScroll > this.scrollY && $(window).scrollTop() > 60) {
+  if (this.oldScroll > this.scrollY && $(window).scrollTop() > 60 && $('html,body').filter(':not(:animated)')) {
     $('nav').addClass('nav-scrolling');
   }
   else {
