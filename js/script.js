@@ -30,15 +30,17 @@ function check_if_in_view() {
 $window.on('scroll resize', check_if_in_view);
 $window.trigger('scroll');
 
-// Navbar adjusts when you scroll
+// Navbar adjusts when you scroll up
 $window.scroll(function() {
-  var height = $(window).scrollTop();
-  if(height  > 300) {
+  console.log($(window).scrollTop());
+  if (this.oldScroll > this.scrollY && $(window).scrollTop() > 60) {
     $('nav').addClass('nav-scrolling');
   }
   else {
     $('nav').removeClass('nav-scrolling');
   }
+  this.oldScroll = this.scrollY;
+
 });
 
 // Helps make full div clickable
@@ -52,11 +54,13 @@ $(".hamburger").click(function(event){
   event.preventDefault();
   $(".nav-responsive").toggle("slide", { direction: "right" }, 500);
   $(".hamburger").toggleClass("is-active");
+  $("nav").toggleClass("is-open");
 });
 
 $(".nav-responsive a").click(function() {
   $(".nav-responsive").toggle();
   $(".hamburger").toggleClass("is-active");
+  $("nav").toggleClass("is-open");
 });
 
 $window.resize(function(){
@@ -67,6 +71,7 @@ function checkSize(){
     if ($(".hamburger").css("display") == "none" ){
         $(".nav-responsive").hide();
         $(".hamburger").removeClass("is-active");
+        $(".nav-home").removeClass("is-open");
     }
 }
 
