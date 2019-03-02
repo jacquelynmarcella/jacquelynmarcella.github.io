@@ -452,9 +452,9 @@ li {
 
 .skills.grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-columns: repeat(3, 1fr);
 	margin-left: auto;
-	max-width: calc(100% - 140px);
+	max-width: calc(100% - 333px);
 }
 
 .headshot {
@@ -475,11 +475,11 @@ li {
 	left: 0;
 	width: 0; 
 	height: 0; 
-	border-top: 250px solid transparent;
-	border-bottom: 250px solid transparent;
-  	border-left: 250px solid var(--pink-color);
-  	transition: all 2s;
-  	margin-top: -50px;
+    border-top: 350px solid transparent;
+    border-bottom: 350px solid transparent;
+    border-left: 350px solid var(--pink-color);
+    transition: all 2s;
+    margin-top: -180px;
 }
 
 /* Portfolio subpage */
@@ -802,10 +802,10 @@ div.section.project-nav {
 	}
 	
 	.arrow-right {
-		border-top: 350px solid transparent;
-		border-bottom: 350px solid transparent;
-	  	border-left: 350px solid var(--pink-color);
-	  	margin-top: -180px;
+		border-top: 450px solid transparent;
+		border-bottom: 450px solid transparent;
+	  	border-left: 450px solid var(--pink-color);
+	  	margin-top: -280px;
 	}
 
 }
@@ -899,6 +899,10 @@ div.section.project-nav {
 /* Mid sized */
 @media all and (max-width: 780px){
 
+	.skills.grid {
+		max-width: 100%;
+	}
+
 	footer p {
 		display: block;
 		text-align: left;
@@ -959,6 +963,7 @@ div.section.project-nav {
 
 	.skills.grid {
 		max-width: 100%;
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.portfolio-item .portfolio-text {
