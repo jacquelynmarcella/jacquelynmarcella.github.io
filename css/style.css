@@ -216,6 +216,7 @@ a.nav-resume:hover {
 	transform: skewY(25.5deg);
   	transform-origin: top right;
   	transition: all 1.5s;
+  	transition-delay: 250ms;
   	position: absolute;
   	top: 0;
   	left: 0;
@@ -438,26 +439,22 @@ footer a:hover > svg > path, footer a:hover > span {
 .about-item ul {
 	list-style: none;
 	padding-left: 0;
-	margin-bottom: 15px;
 }
 
-.about-item.skills ul:last-of-type {
-	margin-bottom: 0;
+.about-item.skills {
+	margin: 0;
+	padding: 20px;
 }
 
 li {
 	font-size: .85em;
 }
 
-.about-item.skills {
-	padding: 20px;
-	margin: 20px 0 40px 0;
-	min-width: 25%;
-}
-
-.flex-grid.nowrap.skills {
-	align-items: flex-start;
-	margin-left: 140px;
+.skills.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	margin-left: auto;
+	max-width: calc(100% - 140px);
 }
 
 .headshot {
@@ -958,6 +955,10 @@ div.section.project-nav {
 
 	.arrow-right {
 		visibility: hidden;
+	}
+
+	.skills.grid {
+		max-width: 100%;
 	}
 
 	.portfolio-item .portfolio-text {
