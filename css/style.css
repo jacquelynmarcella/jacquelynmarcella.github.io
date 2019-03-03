@@ -905,7 +905,7 @@ div.section.project-nav {
 @media all and (max-width: 780px){
 
 	.nav-right {
-		right: 20px;
+		right: 18px;
 	}
 
 	nav.is-open:not(.nav-scrolling) {

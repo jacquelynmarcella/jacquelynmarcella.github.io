@@ -32,9 +32,10 @@ $window.trigger('scroll');
 
 // Navbar adjusts when you scroll up
 $window.scroll(function() {
-  console.log($(window).scrollTop());
-  if (this.oldScroll > this.scrollY && $(window).scrollTop() > 60 && $('html,body').filter(':not(:animated)')) {
-    $('nav').addClass('nav-scrolling');
+  if (this.oldScroll > this.scrollY && $(window).scrollTop() > 60) {   
+    setTimeout(function(){ 
+      $('nav').addClass('nav-scrolling');
+    }, 500);
   }
   else {
     $('nav').removeClass('nav-scrolling');
@@ -85,7 +86,7 @@ function checkSize(){
            if (target.length) {
              $('html,body').animate({
                  scrollTop: target.offset().top - 65
-            }, 1000);
+            }, 300);
             return false;
         }
     }
