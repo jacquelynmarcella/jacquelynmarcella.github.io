@@ -144,12 +144,12 @@ nav {
 
 .nav-scrolling.slidedown {
 	top: 0;
-	animation: slidedown 1s;
+	animation: slidedown 500ms;
 }
 
 .nav-scrolling.slideup {
 	top: -65px;
-	animation: slideup 1s;
+	animation: slideup 500ms;
 }
 
 .nav-right a:hover, .nav-left a:hover, .nav-responsive a:hover, .nav-scrolling .nav-responsive a:hover {

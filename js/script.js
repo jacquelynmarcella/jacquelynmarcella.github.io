@@ -48,7 +48,9 @@ $window.scroll(function() {
     }, 500);
   }
   else if (this.oldScroll < this.scrollY && $('nav').hasClass('slidedown')) { 
-    $('nav').removeClass('slidedown').addClass('slideup');
+    setTimeout(function(){ 
+      $('nav').removeClass('slidedown').addClass('slideup');
+    }, 500);
   }
   this.oldScroll = this.scrollY;
 
