@@ -31,26 +31,22 @@ $window.on('scroll resize', check_if_in_view);
 $window.trigger('scroll');
 
 // Navbar adjusts when you scroll up
-$window.scroll(function() {
+$window.bind('touchmove scroll', function() {
   
   //general scrolling class
   if ($(window).scrollTop() > 100) {
     $('nav').addClass('nav-scrolling');
   }
   else {
-    $('nav').removeClass('nav-scrolling');
+    $('nav').removeClass('nav-scrolling slideup slidedown');
   }
 
   //animations to slide up and down
   if (this.oldScroll > this.scrollY) {   
-    setTimeout(function(){ 
-      $('nav').removeClass('slideup').addClass('slidedown');
-    }, 500);
+    $('nav').removeClass('slideup').addClass('slidedown');
   }
   else if (this.oldScroll < this.scrollY && $('nav').hasClass('slidedown')) { 
-    setTimeout(function(){ 
-      $('nav').removeClass('slidedown').addClass('slideup');
-    }, 500);
+    $('nav').removeClass('slidedown').addClass('slideup');
   }
   this.oldScroll = this.scrollY;
 

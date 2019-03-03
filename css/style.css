@@ -103,6 +103,7 @@ nav {
   	font-weight: 900;
   	position: absolute;
   	top: 0;
+  	transition: background 1s;
 }
 
 .nav-subpage {
@@ -168,17 +169,22 @@ nav {
 	top: 2px;
 }
 
-.nav-scrolling a.nav-resume {
-	transition: padding 0s;
+a.nav-resume {
 	border: 2px solid white;
 	padding: 10px 15px;
+}
+
+a.nav-resume:hover {
+	background: white;
+	text-decoration: none;
+}
+
+.nav-scrolling a.nav-resume {
 	color: white;
 }
 
 .nav-scrolling a.nav-resume:hover {
-	background: white;
 	color: var(--green-color);
-	text-decoration: none;
 }
 
 .hamburger {
