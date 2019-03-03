@@ -32,15 +32,23 @@ $window.trigger('scroll');
 
 // Navbar adjusts when you scroll up
 $window.scroll(function() {
-  if (this.oldScroll > this.scrollY && $(window).scrollTop() > 60) {   
-    setTimeout(function(){ 
-      $('nav').addClass('nav-scrolling');
-    }, 500);
+  
+  //general scrolling class
+  if ($(window).scrollTop() > 100) {
+    $('nav').addClass('nav-scrolling');
   }
   else {
+    $('nav').removeClass('nav-scrolling');
+  }
+
+  //animations to slide up and down
+  if (this.oldScroll > this.scrollY) {   
     setTimeout(function(){ 
-      $('nav').removeClass('nav-scrolling');
+      $('nav').removeClass('slideup').addClass('slidedown');
     }, 500);
+  }
+  else if (this.oldScroll < this.scrollY && $('nav').hasClass('slidedown')) { 
+    $('nav').removeClass('slidedown').addClass('slideup');
   }
   this.oldScroll = this.scrollY;
 

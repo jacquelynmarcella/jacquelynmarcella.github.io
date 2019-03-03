@@ -98,7 +98,6 @@ nav {
 	height: 65px;
 	width: 100%;
   	box-sizing: border-box;
-  	transition: background 1s;
   	z-index: 99;
   	font-size: 1em;
   	font-weight: 900;
@@ -140,7 +139,17 @@ nav {
 .nav-scrolling {
 	background: var(--green-color);
 	position: fixed;
-  	top: 0;	
+  	top: -66px;	
+}
+
+.nav-scrolling.slidedown {
+	top: 0;
+	animation: slidedown 1s;
+}
+
+.nav-scrolling.slideup {
+	top: -65px;
+	animation: slideup 1s;
 }
 
 .nav-right a:hover, .nav-left a:hover, .nav-responsive a:hover, .nav-scrolling .nav-responsive a:hover {
@@ -627,6 +636,16 @@ div.section.project-nav {
 
 
 /* KEYFRAMES */
+
+@keyframes slidedown {
+  0%	{ top: -66px; }
+  100%	{ top: 0px; }
+}
+
+@keyframes slideup {
+	0%		{ top: 0px; }
+	100%	{ top: -66px; }
+}
 
 @keyframes floating {
   0%	{ transform: translate(0, 0); }
