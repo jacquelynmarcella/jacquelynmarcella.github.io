@@ -38,7 +38,9 @@ $window.scroll(function() {
     }, 500);
   }
   else {
-    $('nav').removeClass('nav-scrolling');
+    setTimeout(function(){ 
+      $('nav').removeClass('nav-scrolling');
+    }, 500);
   }
   this.oldScroll = this.scrollY;
 
