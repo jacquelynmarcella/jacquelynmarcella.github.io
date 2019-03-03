@@ -644,13 +644,13 @@ div.section.project-nav {
 /* KEYFRAMES */
 
 @keyframes slidedown {
-  0%	{ top: -66px; }
-  100%	{ top: 0px; }
+  0%	{ top: -66px; opacity: 0; }
+  100%	{ top: 0px; opacity: 1; }
 }
 
 @keyframes slideup {
-	0%		{ top: 0px; }
-	100%	{ top: -66px; }
+	0%		{ top: 0px; opacity: 1; }
+	100%	{ top: -66px; opacity: 0; }
 }
 
 @keyframes floating {
@@ -961,6 +961,11 @@ div.section.project-nav {
 
 /* Mobile */
 @media all and (max-width: 500px){
+
+	nav.slidedown,
+	nav.slideup {
+		animation-delay: 250ms;
+	}
 
 	header {
 		height: 75vh;
