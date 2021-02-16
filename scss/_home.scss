@@ -1,0 +1,39 @@
+.about {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin-bottom: $md;
+    .copy {
+        flex: 2 1 55ch;
+        @media screen and (min-width: $mobile) {
+            padding-right: $lg;
+        } 
+    }
+    .headshot {
+        flex: 1 1 200px;
+        img {
+            border-radius: 100%;
+            max-width: 85px;
+            margin-bottom: $sm;
+            @media screen and (min-width: $mid) {
+                max-width: 300px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
+    grid-gap: $sm;
+    @media screen and (min-width: $mobile) {
+        grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+    }
+    h4 {
+        grid-column: 1/-1;
+        margin-bottom: 0;
+    }
+    p, h5 {
+        margin-bottom: $xxs;
+    }
+}

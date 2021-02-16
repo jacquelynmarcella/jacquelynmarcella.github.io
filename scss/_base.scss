@@ -1,0 +1,147 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  // Default is light mode
+  @include light-mode();
+  background: $light;
+  background: var(--background);
+  font-family: $raleway;
+  overflow-x: hidden;
+  height: 100%;
+  &.alternate-mode {
+    @include dark-mode();
+  }
+}
+
+* {
+  color: $dark;
+  color: var(--copy);
+}
+
+a {
+  color: $green;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    //border-bottom: 2px solid var(--link);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1px;
+  }
+}
+
+svg > * {
+  fill: var(--copy);
+}
+
+h1, h2, h3, h4 {
+  font-family: $pt_sans;
+}
+
+// h1 {
+//   font-size: 2.85rem;
+//   margin-bottom: .75rem;
+//   text-transform: uppercase;
+//   @media screen and (min-width: $mobile) {
+//     font-size: 3rem;
+//   }
+// }
+
+// h2 {
+//   font-size: 1.15rem;
+//   @media screen and (min-width: $mobile) {
+//     font-size: 1.5rem;
+//   }
+// }
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.1em;
+  @media screen and (min-width: $mobile) {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+  font-size: 1.3rem;
+  line-height: 1.1em;
+  margin-bottom: $xs;
+  color: $orange;
+  color: var(--accent);
+  @media screen and (min-width: $mobile) {
+    font-size: 1.65em;
+  }
+}
+
+nav li {
+  font-size: 1.15rem;
+  line-height: 1.1em;
+  @media screen and (min-width: $mobile) {
+    font-size: 1.15rem;
+  }
+}
+
+h5 {
+  font-weight: bold;
+}
+
+p, h5 {
+  line-height: 1.5;
+  font-size: 1rem;
+  margin-bottom: .75rem;
+  max-width: 75ch;
+}
+
+li p {
+  font-size: .85rem;
+}
+
+footer p {
+  font-size: .75rem;
+}
+
+img {
+  width: 100%;
+}
+
+hr {
+	height: 3px;
+	border: 0;
+	background: $orange;
+  background: var(--accent);
+	width: $lg;
+  margin: $sm 0 $md 0;
+}
+
+main {
+  z-index: 1;
+  position: relative;
+}
+
+section, 
+footer .footer-content {
+  padding: $lg $md;
+  z-index: 1;
+  position: relative;
+  max-width: 90ch;
+  margin: 0 auto;
+  @media screen and (min-width: $mobile) {
+    padding: $lg;
+  }
+}
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-mode();
+    &.alternate-mode {
+      @include light-mode();
+    }
+  }
+}
+
+

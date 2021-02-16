@@ -3,166 +3,169 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Front end leaning full stack developer. Based in Seattle. Experienced in Javascript, CSS/SCSS, jQuery, Drupal, and React.js." />
-	<title>Jacquelyn Marcella | Front End Developer</title>
+	<meta name="description" content="Senior front end developer. Based in Seattle. Experienced in Javascript, CSS/SCSS, jQuery, Drupal, and React.js." />
+	<title>Jacquelyn Marcella | Senior Front End Developer</title>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700|PT+Sans+Narrow:700" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=Raleway:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet"> 
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-	<link href="css/hamburgers.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/min/style.min.css">
 </head>
-<body>
-	<!-- Nav -->
-	<nav class="nav-home">
-  		<div class="nav-left">
-			<a href="#top" class="nav-logo" title="Home">JM</a>
-		</div>
-		<div class="nav-right">
-			<a href="#about" class="nav-desktop">About</a>
-			<a href="#featured-projects" class="nav-desktop">Projects</a>
-			<a href="#contact" class="nav-desktop">Contact</a>
-			<a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank" class="nav-resume nav-desktop">Resume</a>	
-			<button class="hamburger hamburger--squeeze" type="button">
-  				<span class="hamburger-box">
-    				<span class="hamburger-inner"></span>
-  				</span>
-			</button> 		
-		</div>
-		<div class="nav-responsive">
-			<a href="#about" class="nav-desktop">About</a>
-			<a href="#featured-projects" class="nav-desktop">Projects</a>
-			<a href="#contact" class="nav-desktop">Contact</a>	 
-			<a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a>
-			<a href="https://github.com/jacquelynmarcella" target="_blank" class="nav-contact"><i class="fab fa-github fa-lg"></i></a>	
-			<a href="https://www.linkedin.com/in/jmarcella/" target="_blank" class="nav-contact"><i class="fab fa-linkedin fa-lg"></i></a>
-		</div>
-	</nav>
-	<!-- Header -->
-	<div class="header-background">
+<body class="">
+
+	<div class="header-wrapper">
+		<div class="header-background top"></div>
+		<nav>
+			<ul>
+				<!-- Hamburger toggle -->
+				<button class="nav-toggle hamburger hamburger--squeeze" type="button" title="Open navigation" aria-expanded="false" aria-label="Open navigation" aria-controls="nav-overlay">
+					<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+					</span>
+					<span aria-hidden="true" class="label">Open navigation</span>
+				</button>
+				<!-- Primary nav items -->
+				<li class="nav-home"><a href="#top" title="Home"><span class="label">Home</span></a></li>
+				<ul id="#nav-menu" class="nav-nested">
+					<li><a href="#about">About</a></li>
+					<li><a href="#featured-projects">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank" class="button">Resume</a></li>	
+					<li><a href="https://github.com/jacquelynmarcella" target="_blank" class="icon" title="Github"><i class="fab fa-github fa-lg"></i><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank" class="icon" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i><span class="label">LinkedIn</span></a></li>
+					<!-- Light/dark mode toggle -->
+					<li><input type="checkbox" class="display-mode checkbox" id="display-mode" /></li>
+				</ul>
+			</ul>
+		</nav>
+		<!-- Header -->
+		<header id="top">
+			<div class="header-content">
+				<h1>Jacquelyn Marcella</h1>
+				<h2>Senior Front End Developer</h2>
+			</div>
+		</header>
+		<div class="header-background bottom"></div>
 	</div>
-	<header id="top">
-		<div class="header-content">
-			<h1 class="header-name">Jacquelyn<br>Marcella</h1><br>
-			<h4 class="header-subhead">Front end developer</h4>
-			<a href="#about" class="green-arrow"><img src="img/arrow.png"></a>
-		</div>
-	</header>
+
 	<!-- About -->
-	<div class="section" id="about">
-		<div class="flex-grid nowrap">
-			<div class="about-item headshot transition">
-				<img src="img/jacquelyn-marcella.jpg">
+	<main>
+		<section id="#about">
+			<div class="about">
+				<div class="copy">
+					<h3>I’m a senior front end developer with a deep appreciation for the design process.</h3>
+					<hr>
+					<p>With years of agency and in-house experience in a variety of roles, I understand what it takes for cross-functional teams to be successful. Currently, I'm a Senior Front End Developer at <a href="http://www.smartsheet.com" target="_blank">Smartsheet</a>.</p>
+					<p>When I’m not coding, you can find me practicing photography and tending to my growing collection of <a href="plant-parenthood.html">houseplants</a>.</p>
+				</div>
+				<div class="about-item headshot transition">
+					<img src="img/jacquelyn-marcella.jpg" alt="">
+				</div>
 			</div>
-			<div class="about-item summary transition">
-				<h2>I’m a front end developer with a deep appreciation for the design process.</h2>
-				<hr>
-				<p>With over six years of agency experience in a variety of roles, I understand what it takes for cross-functional teams to be successful. Currently, I'm a web developer at <a href="http://www.smartsheet.com" target="_blank">Smartsheet</a> supporting the demand generation team.</p>
-				<p>When I’m not coding, you can find me practicing photography and tending to my growing collection of <a href="plant-parenthood.html">houseplants</a>.</p>
-			</div>
-		</div>
-	</div>
-		<div class="arrow-right">
-		</div>
-		<!-- Skills -->
-	<div class="section" id="skills">
-		<div class="skills grid">
-			<div class="about-item skills">
-				<h5>Front End</h5>
+			<ul class="skills">
+				<h4>Skills</h4>
 				<ul>
-					<li>HTML</li>
-					<li>CSS / SCSS</li>
-					<li>JavaScript</li>
-					<li>jQuery</li>
-					<li>React.js</li>
+					<li><h5>Front End</h5></li>
+					<li><p>HTML</p></li>
+					<li><p>CSS / SCSS</p></li>
+					<li><p>JavaScript</p><li>
+					<li><p>jQuery</p><li>
+					<li><p>Gulp</p><li>
+					<li><p>React.js</p><li>
+				</ul>		
+				<ul>
+					<li><h5>CMS & Templating</h5></li>
+					<li><p>Drupal 8</p><li>
+					<li><p>Twig</p><li>
+					<li><p>PHP</p><li>
+					<li><p>EJS</p><li>
+					<li><p>PatternLab</p><li>
 				</ul>	
-			</div>
-			<div class="about-item skills">
-				<h5>CMS & Templating</h5>
 				<ul>
-					<li>Drupal 7</li>
-					<li>Twig</li>
-					<li>PHP</li>
-					<li>EJS</li>
-					<li>PatternLab</li>
+					<li><h5>Back End</h5></li>
+					<li><p>Node/Express</p><li>
+					<li><p>PostgreSQL</p><li>
+					<li><p>MongoDB</p><li>
+					<li><p>Python</p><li>		
+				</ul>
+				<ul>
+					<li><h5>SEO</h5></li>
+					<li><p>Image Optimization</p></li>
+					<li><p>Structured Data</p><li>
+					<li><p>AMP</p></li>
 				</ul>	
-			</div>
-			<div class="about-item skills">
-				<h5>Back End</h5>
 				<ul>
-					<li>Node.js</li>
-					<li>Express.js</li>
-					<li>PostgreSQL</li>
-					<li>MongoDB</li>
-					<li>Python</li>		
-				</ul>
-			</div>
-			<div class="about-item skills">
-				<h5>Version Control</h5>
+					<li><h5>Version Control</h5></li>
+					<li><p>Git</p><li>
+					<li><p>Github</p><li>
+				</ul>	
 				<ul>
-					<li>Git</li>
-					<li>Github</li>
+					<li><h5>Design Tools</h5></li>
+					<li><p>Adobe Photoshop</p><li>
+					<li><p>Adobe Lightroom</p><li>
 				</ul>
-			</div>
-			<div class="about-item skills">
-				<h5>Test & Deployment</h5>
-				<ul>
-					<li>Chai / Mocha</li>
-					<li>Heroku</li>
-				</ul>
-			</div>
-			<div class="about-item skills">
-				<h5>Design Tools</h5>
-				<ul>
-					<li>Adobe Photoshop</li>
-					<li>Adobe Lightroom</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- Projects -->
-	<div class="section" id="featured-projects">
-		<h2>Featured Projects</h2>
-		<hr>
-		<div class="flex-grid">
-			<div class="portfolio-item plant transition"><a href="plant-parenthood.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Plant Parenthood</h3>
-					<h5>Node | jQuery | SCSS | SQL | Mocha</h5>
+			</ul>
+		</section>
+
+		<!-- Timeline of experience -->
+		<hr style="width: 100vw">
+	
+		<section>
+
+		</section>
+		<!-- Projects -->
+		<div class="section" id="featured-projects">
+			<h2>Featured Projects</h2>
+			<hr>
+			<div class="flex-grid">
+				<div class="portfolio-item plant transition"><a href="plant-parenthood.html" alt="Plant Parenthood"></a>
+					<div class="portfolio-text">
+						<h3>Plant Parenthood</h3>
+						<h5>Node | jQuery | SCSS | SQL | Mocha</h5>
+					</div>
 				</div>
-			</div>
-			<div class="portfolio-item skincare transition"><a href="skincare.html" alt="Skin/Care"></a>
-				<div class="portfolio-text">
-					<h3>Skin/Care</h3>
-					<h5>React | MongoDB | Node</h5>
+				<div class="portfolio-item skincare transition"><a href="skincare.html" alt="Skin/Care"></a>
+					<div class="portfolio-text">
+						<h3>Skin/Care</h3>
+						<h5>React | MongoDB | Node</h5>
+					</div>
 				</div>
-			</div>
-			<div class="portfolio-item dream transition">
-				<a href="dreamstate.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Dreamstate</h3>
-					<h5>React | MongoDB | Node | Data Visualization</h5>
+				<div class="portfolio-item dream transition">
+					<a href="dreamstate.html" alt="Plant Parenthood"></a>
+					<div class="portfolio-text">
+						<h3>Dreamstate</h3>
+						<h5>React | MongoDB | Node | Data Visualization</h5>
+					</div>
 				</div>
-			</div>
-			<div class="portfolio-item blackjack transition">
-				<a href="blackjack.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Blackjack</h3>
-					<h5>jQuery | Materialize</h5>
+				<div class="portfolio-item blackjack transition">
+					<a href="blackjack.html" alt="Plant Parenthood"></a>
+					<div class="portfolio-text">
+						<h3>Blackjack</h3>
+						<h5>jQuery | Materialize</h5>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Footer -->
-	<footer id="contact">
-		<div class="footer-content">
-			<h4>Let's get in touch.</h4>
-			<p><a href="https://github.com/jacquelynmarcella" target="_blank"><i class="fab fa-github fa-lg"></i> <span class="icon-label">jacquelynmarcella</span></a></p>
-			<p><a href="https://www.linkedin.com/in/jmarcella/" target="_blank"><i class="fab fa-linkedin fa-lg"></i> <span class="icon-label">jmarcella</span></a></p>
-			<p><a href="mailto:jacquelyn.marcella@gmail.com"><i class="fas fa-envelope fa-lg"></i> <span class="icon-label">jacquelyn.marcella@gmail.com</span></a></p>
-			<p><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank"><i class="fas fa-file-alt fa-lg"></i> <span class="icon-label">Download Resume</span></a></p>
-		</div>	
-	</footer>
+		<!-- Footer -->
+		<footer id="contact">
+			<div class="footer-content">
+				<div>
+					<h4>Jacquelyn Marcella</h4>
+					<p>©2021 - Present Jacquelyn Marcella.<br>All Rights Reserved.</p>
+				</div>
+				<div>
+					<h5>Let's get in touch.</h5>
+					<ul>
+						<li><p><a href="https://github.com/jacquelynmarcella" target="_blank"><i class="fab fa-github fa-lg"></i> <span class="icon-label">jacquelynmarcella</span></a></p></li>
+						<li><p><a href="https://www.linkedin.com/in/jmarcella/" target="_blank"><i class="fab fa-linkedin fa-lg"></i> <span class="icon-label">jmarcella</span></a></p></li>
+						<li><p><a href="mailto:jacquelyn.marcella@gmail.com"><i class="fas fa-envelope fa-lg"></i> <span class="icon-label">jacquelyn.marcella@gmail.com</span></a></p></li>
+						<li><p><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank"><i class="fas fa-file-alt fa-lg"></i> <span class="icon-label">Download Resume</span></a></p></li>
+					</ul>
+				</div>
+			</div>	
+		</footer>
+	</main>	
 	<!-- Scripts -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">

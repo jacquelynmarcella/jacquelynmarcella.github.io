@@ -1,0 +1,56 @@
+header {
+    height: 3rem;
+    @media screen and (min-width: $mid) {
+        height: 15rem;
+    }
+    h1, h2 {
+        visibility: hidden;
+    }
+}
+
+.header {
+    &-wrapper {
+        overflow: hidden;
+    }
+    &-background {
+        box-sizing: border-box;
+        width: 100%;
+        position: absolute;
+        transform-origin: top left;
+        transform: skewY(4deg);
+        &.top {
+            background: $pink;
+            background: var(--primary);
+            height: 7rem;
+            transform-origin: top left;
+            top: -2.5rem;
+            left: 0;
+            z-index: -1;
+            @media screen and (min-width: $mid) {
+                top: -30rem;
+                left: 20ch;
+                z-index: -1;
+            }
+        }
+        &.bottom {
+            @media screen and (min-width: $mid) {
+                background: var(--background);
+                transform-origin: top left;
+                top: 0;
+                left: 20ch;
+                z-index: 1;
+            }
+        }
+        &.top,
+        &.bottom {
+            @media screen and (min-width: $mid) {
+                height: 30rem;
+                transform: skewY(13deg);
+    
+            }
+            @media screen and (min-width: $wide) {
+                transform: skewY(8deg);
+            }
+        }
+    }
+}

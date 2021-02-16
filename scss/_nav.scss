@@ -1,0 +1,215 @@
+nav {
+    z-index: 0;
+    width: 100%;
+    background: $pink;
+    background: var(--primary);
+    @media screen and (min-width: $mid) {
+        background: transparent;
+    }
+
+    ul {
+        font-family: $pt_sans;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    > ul {
+        padding: $sm;
+        @media screen and (min-width: $mid) {
+            padding: $sm 0;
+        }
+    }
+
+    li {
+        padding: 0 $sm;
+        margin-bottom: 0;
+    }
+
+    a {
+        color: var(--copy);
+        &:hover {
+            color: var(--link);
+        }
+        &.icon {
+            &:hover {
+                border-bottom: 0;
+                svg > * {
+                    fill: var(--link);
+                }
+            }
+        }
+    }
+
+    .label {
+        visibility: hidden;
+        display: inline-block;
+        width: 0;
+    }
+
+    .nav-home {
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 1.5em;
+        margin-right: $sm;
+        @media screen and (min-width: $mid) {
+            min-width: 33vw;
+            flex: 1 0 auto;
+            margin-right: 0;
+        }
+        .label {
+            width: 14ch;
+        }
+        a:before {
+            content: "Jacquelyn Marcella";
+            display: block;
+            position: absolute;
+        }
+    }
+
+    // Mobile
+    .nav-nested {
+        display: none;
+        max-width: 75ch;
+        width: min-content;
+        flex: 0 0 100%;
+    }
+
+    &.is-open {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--background);
+    }
+
+
+    // Desktop
+    @media screen and (min-width: $mid) {
+        position: fixed;
+        ul {
+            flex-wrap: nowrap;
+        }
+        .nav-toggle {
+            display: none;
+        }
+        .nav-nested {
+            display: flex;
+            flex: 0 0 auto;
+            li {
+                
+            }
+        }
+    }
+
+    // Animation
+    &.nav-scrolling {
+        transition: all 150ms ease-in-out;
+       //top: -2em;
+        opacity: 0;
+    }
+    // &.slidedown {
+    //     top: -1em;
+    //     z-index: 99;
+    //     background: transparent;
+    //     opacity: 0;
+    //     transition: all 150ms ease-in-out;
+    // }
+    // &.top {
+    //     top: 0;
+    //     z-index: 99;
+    //     opacity: 1;
+    //     //transition: all 150ms ease-in-out;
+    // }
+    // &.nav-scrolling.slidedown {
+    //     top: 0;
+    //     opacity: 1;
+    //     background: $light;
+    //     background: var(--background);
+    //     z-index: 99;
+    // }
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+ .hamburger {
+     width: 2.5em;
+     padding: 0;
+     margin: 0 $xs;
+    position: relative;
+    /*  padding: 2px 10px;*/
+      display: inline-block;
+      cursor: pointer;
+      transition-property: opacity, filter;
+      transition-duration: 0.15s;
+      transition-timing-function: linear;
+      font: inherit;
+      color: inherit;
+      text-transform: none;
+      background-color: transparent;
+      border: 0;
+      margin: 0;
+      overflow: visible; }
+    
+    .hamburger-box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block; }
+    
+    .hamburger-inner {
+      display: block;
+      top: 50%;
+      margin-top: -2px; }
+      .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+        width: 22.5px;
+        height: 3px;
+        background-color: $dark;
+        background-color: var(--copy);
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease; }
+      .hamburger-inner::before, .hamburger-inner::after {
+        content: "";
+        display: block; }
+      .hamburger-inner::before {
+        top: -8px; }
+      .hamburger-inner::after {
+        bottom: -8px; }
+    
+    
+/*
+* Squeeze
+*/
+.hamburger--squeeze .hamburger-inner {
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+    .hamburger--squeeze .hamburger-inner::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+    .hamburger--squeeze .hamburger-inner::after {
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--squeeze.is-active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+    .hamburger--squeeze.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }

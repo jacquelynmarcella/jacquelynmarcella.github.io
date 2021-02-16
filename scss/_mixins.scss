@@ -1,0 +1,15 @@
+@mixin light-mode() {
+    --link: #{$green};
+    --copy: #{$dark};
+    --background: #{$light};
+    --primary: #{$pink};
+    --accent: #{$gray_lighter};
+  }
+  
+  @mixin dark-mode() {
+    --link: #{$pink_darker};
+    --copy: #{$light};
+    --background: #{$dark};
+    --primary: #{$green_darker};
+    --accent: #{$gray};
+  }
