@@ -1,5 +1,0 @@
-@import "tailwindcss";
-
-/* To use, run: 
-    npx @tailwindcss/cli -i ./src/css/input.css -o ./css/tailwind.css --watch 
-*/

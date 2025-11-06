@@ -8,8 +8,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
+        src: 'src/js/portfolio.js',
+        dest: 'js/portfolio.min.js'
       }
     },
     bake: {
@@ -22,16 +22,34 @@ module.exports = function(grunt) {
                 "skincare.html": "src/index.html"
             }
         }
-    }
+    },    
+    cssmin: {
+      options: {
+        // Optional: Add a banner to the minified CSS
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      minify: {
+        expand: true,
+        cwd: 'src/css/custom/', // Source directory for your CSS files
+        src: ['*.css', '!*.min.css'], // Match all .css files except already minified ones
+        dest: 'css/', // Destination directory for minified CSS
+        ext: '.min.css' // Add .min.css extension to minified files
+      },
+      minify: {
+        expand: true,
+        cwd: 'css/', // Source directory for your CSS files
+        src: ['*.css', '!*.min.css'], // Match all .css files except already minified ones
+        dest: 'css/', // Destination directory for minified CSS
+        ext: '.min.css' // Add .min.css extension to minified files
+      }
+    },
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  // Load bake task
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-bake');
 
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  // Default to compile theme updates
+  grunt.registerTask('default', ['bake', 'cssmin', 'uglify']);
 
 };
