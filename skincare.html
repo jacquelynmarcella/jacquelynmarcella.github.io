@@ -1,96 +1,210 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Front end leaning full stack developer. Based in Seattle. Experienced in Javascript, CSS, jQuery, and React.js." />
-	<title>Jacquelyn Marcella | Front End Developer</title>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|PT+Sans+Narrow:700" rel="stylesheet">
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-	<link href="css/hamburgers.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-	<!-- Nav -->
-	<nav class="nav-subpage">
-  		<div class="nav-left">
-			<a href="index.html" class="nav-logo" title="Home">JM</a>
-		</div>
-		<div class="nav-right">
-			<a href="index.html#about" class="nav-desktop">About</a>
-			<a href="index.html#featured-projects" class="nav-desktop">Projects</a>
-			<a href="#contact" class="nav-desktop">Contact</a>
-			<a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank" class="nav-resume nav-desktop">Resume</a>
-			<button class="hamburger hamburger--squeeze" type="button">
-  				<span class="hamburger-box">
-    				<span class="hamburger-inner"></span>
-  				</span>
-			</button> 		
-		</div>
-		<div class="nav-responsive">
-			<a href="index.html#about" class="nav-desktop">About</a>
-			<a href="index.html#featured-projects" class="nav-desktop">Projects</a>
-			<a href="#contact" class="nav-desktop">Contact</a>
-			<a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a>
-			<a href="https://github.com/jacquelynmarcella" target="_blank" class="nav-contact"><i class="fab fa-github fa-lg"></i></a>	
-			<a href="https://www.linkedin.com/in/jmarcella/" target="_blank" class="nav-contact"><i class="fab fa-linkedin fa-lg"></i></a> 
-		</div>
+	<!-- Page head -->
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description"
+	        content="UI engineer with 8 years of technical experience. Experienced in JavaScript, CSS, Drupal, React.js, and component-based design systems. Based in Portland, OR." />
+	    <title>Jacquelyn Marcella | Front End Software Engineer</title>
+	    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700|PT+Sans+Narrow:700" rel="stylesheet">
+	    <link rel="shortcut icon" href="img/favicon.ico">
+	    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	    <link href="css/hamburgers.css" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+	<!-- Global nav -->
+	<nav class="nav-home">
+	    <ul class="nav-right">
+	        <li><a href="#" class="nav-home" title="Home">Home</a></li>
+	        <li><a href="#skills">Skills</a></li>
+	        <li><a href="#experience">Experience</a></li>
+	        <li><a href="#featured-projects">Projects</a></li>
+	        <li><a href="#contact">Contact</a></li>
+	        <a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a>
+	        <button class="hamburger hamburger--squeeze" type="button">
+	            <span class="hamburger-box">
+	                <span class="hamburger-inner"></span>
+	            </span>
+	        </button>
+	    </ul>
 	</nav>
-	<!-- Main Section -->
-	<a href="plant-parenthood.html" class="project-arrow back"><i class="fas fa-caret-left"></i></a>
-	<a href="dreamstate.html" class="project-arrow forward"><i class="fas fa-caret-right"></i></a>
-	<div class="section portfolio">
-		<h1>Skin/Care</h1>
-		<div class="subtext">
-			<h5><b>React.js, MongoDB, Mongoose, Node.js, Express.js</b></h5>
-			<h5><b>Role:</b> Front and Back End Developer</h5>
-			<hr>
+
+	<!-- Hero -->
+	<div class="header-background">
+	</div>
+	<header id="top">
+		<div class="header-content">
+			<h1>
+				<span>Jacquelyn Marcella,</span> 
+				<span>Front End Software Engineer</span> 
+				<span>Based in Portland, OR</span>
+			</h1>
+			<h2>Introduction</h2>
+			<p>Front End Engineer with over 8 years of web development experience architecting intuitive, accessible, and scalable user experiences.</p>
+			<p>I have a deep appreciation for the design process and thrive in roles where collaboration is part of the culture. When I’m not coding, you can find me exploring the Pacific Northwest, baking cakes, watching horror movies, and building out my own native plant habitat.</p>
 		</div>
-		<div class="button">
-			<a href="https://skin-care.herokuapp.com/" target="_blank">Live Site</a>
-			<a href="https://github.com/jacquelynmarcella/the-skincare-project" target="_blank">Github</a>
+	</header>
+	<div class="section" id="skills">
+		<h2>Skills</h2>
+		<div class="skills grid">
+			<ul class="skills">
+				<li><h3>Languages</h3>
+					<ul>	
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>Scss</li>
+						<li>JavaScript</li>
+						<li>PHP</li>
+					</ul>
+				</li>
+				<li><h3>Technologies and frameworks</h3>
+					<ul>
+						<li>Drupal</li>
+						<li>React.js</li>
+						<li>jQuery</li>
+						<li>Twig</li>
+						<li>Bootstrap</li>
+						<li>Material UI</li>
+						<li>Mocha</li>
+					</ul>
+				</li>
+				<li><h3>Front end</h3>
+					<ul>
+						<li>WCAG Accessibility</li>
+						<li>CSS Grid</li>
+						<li>Flexbox</li>
+						<li>Responsive design</li>
+						<li>Atomic design</li>
+						<li>PatternLab</li>
+						<li>Lottie</li>
+					</ul>
+				</li>
+				<li><h3>Developer tools</h3>
+					<ul>
+						<li>Git, GitHub, GitLab</li>
+						<li>Gulp.js</li>
+						<li>Docker</li>
+						<li>BrowserStack</li>
+						<li>VS Code</li>
+						<li>Optimizely</li>
+						<li>Confluence</li>
+						<li>JIRA</li>
+					</ul>
+				</li>
+				<li><h3>Design tools</h3>
+					<ul>
+						<li>Figma Dev Mode</li>
+						<li>Adobe Photoshop</li>
+						<li>Adobe Lightroom</li>
+					</ul>
+				</li>
+			</ul>
 		</div>
-		<p>Skin/Care is a full stack MERN application that empowers users to draw connections between their cosmetics and potentially irritating ingredients.</p>
-		<p>Many users can have vastly different experiences with cosmetics, so it can take personal trial and error to determine what works. To make this process easier, this app allows users to easily flag ingredients and save products into three different categories: favorites, failures, and general bookmarks. When a user is researching a new product, they can easily see if it contains an ingredient they've flagged previously, as well as any other potentially irritating or acne-causing ingredients.</p>
-		<p>My approach to this project was making React components as reusable and scalable as possible. To gather and store data, I implemented data scraping and CRUD routes through Mongo. I established a simple icon system for adding to favorites and added clear visualizations to identify flagged ingredients.</p>
-		<p><b>To view a populated test account, use the following credentials:</b><br><i>jane_doe@email.com | skincare321</i></p>
 	</div>
-	<div class="portfolio-images transition">
-		<a href="https://skin-care.herokuapp.com/" target="_blank"><img src="img/skincare-1.jpg" alt="Dreamstate desktop landing page"></a>
+	<!-- Experience -->
+	<div id="experience" class="timeline">
+		<h2>Experience</h2>
+		<div class="horizontal-scroll">
+			<ul>
+				<li>The early days</li>
+				<li>Y2K, an era of self guided learning</li>
+				<li>B.A., Business and Communications, University of Puget Sound</li>
+				<li>Development Intern, Tacoma Art Museum</li>
+				<li>Marketing Assistant, Coldwell Banker Bain</li>
+				<li>Traffic Manager, Rusty George Creative</li>
+				<li>Traffic Manager, Avanade</li>
+				<li>Full Stack Developer, General Assembly</li>
+				<li>Senior Front End Engineer II, Smartsheet</li>
+				<li>What's next?</li>
+			</ul>
+		</div>
+		<a href="resume.pdf">Download Resume</a>
 	</div>
-	<div class="portfolio-images transition">
-		<a href="https://skin-care.herokuapp.com/" target="_blank"><img src="img/skincare-mobile.jpg" alt="Dreamstate mobile screens"></a>
+
+	<!-- Projects -->
+	<div class="section" id="featured-projects">
+		<h2>Recent projects</h2>
+		<ul class="tile-grid">
+			<li>Component-based Design System</li>
+			<li>Media Optimization</li>
+			<li>Signup Testing & Implementation</li>
+			<li>Accessibility Remediation</li>
+			<li>Information Architecture Redesign</li>
+			<li>Search API Migration</li> 
+		</ul>
+		<!-- <h3>Personal</h3> -->
+		<button>Show older projects</button>
+		<h2>Older projects</h2>
+		<ul class="old-grid">
+			<li>Plant Parenthood: Node | jQuery | SCSS | SQL | Mocha</li>
+			<li>Dreamstate: React | MongoDB | Node | Data Visualization</li>
+			<li>Skin/Care: React | MongoDB | Node</li>
+			<li>Blackjack: jQuery | Materialize</li>
+		</ul>
+		<div class="flex-grid">
+			<!-- <div class="portfolio-item plant transition"><a href="plant-parenthood.html" alt="Plant Parenthood"></a>
+				<div class="portfolio-text">
+					<h3>Plant Parenthood</h3>
+					<h5></h5>
+				</div>
+			</div>
+			<div class="portfolio-item skincare transition"><a href="skincare.html" alt="Skin/Care"></a>
+				<div class="portfolio-text">
+					<h3>Skin/Care</h3>
+					<h5>React | MongoDB | Node</h5>
+				</div>
+			</div>
+			<div class="portfolio-item dream transition">
+				<a href="dreamstate.html" alt="Plant Parenthood"></a>
+				<div class="portfolio-text">
+					<h3>Dreamstate</h3>
+					<h5>React | MongoDB | Node | Data Visualization</h5>
+				</div>
+			</div>
+			<div class="portfolio-item blackjack transition">
+				<a href="blackjack.html" alt="Plant Parenthood"></a>
+				<div class="portfolio-text">
+					<h3>Blackjack</h3>
+					<h5>jQuery | Materialize</h5>
+				</div>
+			</div> -->
+		</div>
 	</div>
-	<!-- Project nav buttons -->
-	<div class="section project-nav">
-		<p><a href="index.html#featured-projects">Back to all projects</a></p>
-		<p><a href="plant-parenthood.html">Previous</a> | <a href="dreamstate.html">Next</a></p>
-	</div>	
+
 	<!-- Footer -->
 	<footer id="contact">
-		<div class="footer-content">
-			<h4>Let's get in touch.</h4>
-			<p><a href="https://github.com/jacquelynmarcella" target="_blank"><i class="fab fa-github fa-lg"></i> <span class="icon-label">jacquelynmarcella</span></a></p>
-			<p><a href="https://www.linkedin.com/in/jmarcella/" target="_blank"><i class="fab fa-linkedin fa-lg"></i> <span class="icon-label">jmarcella</span></a></p>
-			<p><a href="mailto:jacquelyn.marcella@gmail.com"><i class="fas fa-envelope fa-lg"></i> <span class="icon-label">jacquelyn.marcella@gmail.com</span></a></p>
-			<p><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank"><i class="fas fa-file-alt fa-lg"></i> <span class="icon-label">Download Resume</span></a></p>
-		</div>	
+	    <div class="footer-content">
+	        <h4>Let's get in touch.</h4>
+	        <p><a href="https://github.com/jacquelynmarcella" target="_blank"><i class="fab fa-github fa-lg"></i> <span
+	                    class="icon-label">jacquelynmarcella</span></a></p>
+	        <p><a href="https://www.linkedin.com/in/jmarcella/" target="_blank"><i class="fab fa-linkedin fa-lg"></i> <span
+	                    class="icon-label">jmarcella</span></a></p>
+	        <p><a href="mailto:jacquelyn.marcella@gmail.com"><i class="fas fa-envelope fa-lg"></i> <span
+	                    class="icon-label">jacquelyn.marcella@gmail.com</span></a></p>
+	        <p><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank"><i class="fas fa-file-alt fa-lg"></i> <span
+	                    class="icon-label">Download Resume</span></a></p>
+	    </div>
 	</footer>
 	<!-- Scripts -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="js/script.js" type="text/javascript"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116161963-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+	    window.dataLayer = window.dataLayer || [];
 
-	  gtag('config', 'UA-116161963-1');
+	    function gtag() {
+	        dataLayer.push(arguments);
+	    }
+	    gtag('js', new Date());
+
+	    gtag('config', 'UA-116161963-1');
 	</script>
+
 </body>
 </html>

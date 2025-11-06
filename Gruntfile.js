@@ -15,7 +15,11 @@ module.exports = function(grunt) {
     bake: {
         build: {
             files: {
-                "index.html": "src/index.html"
+                "index.html": "src/index.html",
+                "blackjack.html": "src/blackjack.html",
+                "dreamstate.html": "src/dreamstate.html",
+                "plant-parenthood.html": "src/plant-parenthood.html",
+                "skincare.html": "src/index.html"
             }
         }
     }
