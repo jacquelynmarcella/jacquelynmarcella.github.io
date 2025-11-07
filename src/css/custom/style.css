@@ -11,8 +11,8 @@ body {
 	--md: 1.5rem;
 	--lg: 2rem;
 	--xl: 3rem;
-	--xxl: 3.5rem;
-	--xxxl: 8rem;
+	--xxl: 4rem;
+	--xxxl: 6rem;
 
 	--copyColor: black;
 	--backgroundColor: white;
@@ -185,12 +185,15 @@ nav.navbar {
 header,
 section,
 footer {
-	padding: var(--xxl) var(--lg);
+	padding: var(--xxxl) var(--lg);
 }
 .container {
 	max-width: 1500px;
 	margin: 0 auto;
 	width: 100%;
+}
+section, footer {
+	background: var(--backgroundColor);
 }
 
 .header--hero {
@@ -204,14 +207,25 @@ footer {
 	margin: auto;
 	gap: var(--md) var(--xl);
 	flex-wrap: wrap;
+
+	background-position: center right;
+	background-size: contain;
+	background-repeat: no-repeat;
+	
+	
 }
 .header--title {
 	flex: var(--flex-66);
 }
 .header--image {
 	flex: var(--flex-33);
-	background: var(--surfaceColor);
-	min-height: 200px;
+	min-height: 300px;
+}
+.header--image img {
+	position: fixed;
+	width: 300px;
+	top: 33vh;
+	z-index: -1;
 }
 .header--about { 
  	margin-top: var(--xl);
@@ -225,13 +239,9 @@ footer {
 	flex-wrap: wrap;
 }
 .skills--container {
-	flex: var(--flex-66);
 	display: flex;
 	flex-direction: column;
 	gap: var(--lg);
-}
-.skills--title {
-	flex: var(--flex-33);
 }
 .skills--list {
 	display: flex;
@@ -244,6 +254,8 @@ footer {
 	font-family: "Space Mono", monospace;
 	background: var(--surfaceColor);
 }
+
+
 
 
 
@@ -261,23 +273,79 @@ section.experience {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	gap: var(--md);
 	width: 100%;
 	overflow: auto; /* or overflow-x: auto; or overflow-y: auto; */
   	scroll-snap-type: x mandatory; /* or y mandatory, or both mandatory */
+	position: relative;
+	margin-top: var(--lg);
 }
 .slider--slide {
 	display: block;
-	background: var(--cardBackground);
+	text-align: center;
 	padding: var(--sm);
 	height: 100%;
-	min-height: 300px;
 	width: 100%;
-	scroll-snap-align: end;
-	flex: 1 0 20vw;
+	scroll-snap-align: center;
+	flex: 1 0 28vw;
+	text-wrap: balance;
+	position: relative
+}
+.slider--slide:first-child:before {
+	content: "";
+	position: absolute;
+	background: var(--backgroundColor);
+	height: 50px;
+	width: 50px;
+	left: 0;
+	top: -50px;
+	width: calc(50% - 0px + var(--lg));
+  	margin-left: calc((var(--lg) + 17px) * -1);
+	z-index: 0;
+}
+.slider--slide:last-child:before {
+	content: "";
+	position: absolute;
+	background: var(--backgroundColor);
+	height: 50px;
+	width: 50px;
+	right: 0;
+	top: -50px;
+	width: calc(50% - 17px + var(--lg));
+	margin-right: calc((var(--lg)) * -1);
+	z-index: 0;
+}
+.slider--controls {
+	width: fit-content;
+	display: flex;
+	flex-direction: row;
+	gap: var(--sm);
+	padding: 0 var(--lg);
+	margin: var(--md) auto var(--sm) auto;
+}
+.slider--slide p {
+	max-width: 400px;
+	margin: 0 auto var(--sm) auto;
+}
+.slider--slide img {
+	width: 36px;
+	height: auto;
+	margin: -3.75rem auto var(--sm) auto;
+}
+.experience hr {
+	height: 1px;
+	border: 1px solid var(--copyColor);
+	width: 100%;
+	margin-top: var(--xl);
 }
 
-
+@media screen and (min-width: 600px) {
+	.slider--timeline {
+		margin-top: calc((var(--xl) + .5rem )* -1);
+	}
+	.slider--slides {
+		padding: var(--xl) var(--lg) 0 var(--xl);
+	}
+}
 
 
 footer ul {
@@ -293,15 +361,9 @@ footer .container {
 
 
 
-
-.timeline ul {
-	display: flex;
-	list-style: none;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: nowrap;
+.projects-old {
+	padding-top: 0;
 }
-
 /* Mobile - to move out */
 .tile-grid {
 	grid-template-columns: 1fr;
@@ -310,8 +372,8 @@ footer .container {
 	display: grid;
 	list-style: none;
 	grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-	grid-auto-rows: 1fr;
-	gap: var(--md)
+	gap: var(--md);
+	grid-auto-flow: dense;
 }
 .tile-grid.odd {
 	grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
@@ -358,6 +420,11 @@ footer .container {
 	width: fit-content;
 	margin: var(--xl) auto 0 auto;
 }
+.section-cta-top {
+	display: block;
+	width: fit-content;
+	margin: 0 auto var(--xxl) auto;
+}
 .tile-grid .tile--arrow {
 	align-self: flex-end;
 	transform: scale(1.5);
@@ -375,8 +442,8 @@ footer .container {
 	gap: var(--md);
 }
 .tile-grid.compact img {
-	width: 75px;
-	flex: 0 1 75px;
+	width: 125px;
+	flex: 0 1 125px;
 }
 .tile-grid.compact .tags {
 	margin-top: 0;
@@ -386,10 +453,30 @@ footer .container {
 	padding: 0;
 	justify-content: center;
 }
+.tile-grid .wide {
+	grid-column: span 2;
+	flex-direction: row;
+}
+.tile-grid .wide img {
+	flex: 0 0 50%;
+}
+.tile-grid .wide svg {
+	right: 0;
+}
+.tile-grid .tall {
+	grid-row: span 2;
+}
+
+
 .tile-grid.compact .tile--arrow {
 	align-self: center;
 	margin: 0;
 	right: var(--md);
 	bottom: unset;
+}
+.two-up .sticky {
+	position: sticky;
+	top: var(--xxl);
+	height: fit-content;
 }
 
