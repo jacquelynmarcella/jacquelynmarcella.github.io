@@ -10,6 +10,7 @@
 	<title>Jacquelyn Marcella | Front End Software Engineer</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
 
+	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -32,7 +33,7 @@
 			<li class="navbar--home">
 				<a href="/">Home</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item navbar--links">
 				<button class="navbar--hamburger" id="navbar--toggle" aria-expanded="false"
 					aria-controls="navbar--dropdown">
 					<span class="visually-hidden">Menu</span>
@@ -50,7 +51,8 @@
 					<li><a href="#experience">Experience</a></li>
 					<li><a href="#featured-projects">Projects</a></li>
 					<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a></li>
-					<li><a href="#contact" class="button alternate">Contact</a></li>
+					<li class="right-align"><a href="#contact" class="button alternate">Contact</a></li>
+					<li><button class="toggle--scheme" id="color-mode-button">D</button></li>
 				</ul>
 			</li>
 		</ul>
@@ -59,8 +61,8 @@
 
 	<!-- Hero -->
 	<header id="top" class="header--hero">
-		<div class="container header--container">
-			<div class="header--title">
+		<div class="container two-up header--container">
+			<div class="header--title flex--33">
 				<hgroup>
 					<h1>&nbsp;Jacquelyn <br>Marcella</h1>
 					<p class="subhead">Front End Software Engineer</p>
@@ -68,19 +70,19 @@
 
 				<div class="header--about">
 					<h2 class="visually-hidden">Introduction</h2>
-					<p>I have over 8 years of web development experience architecting intuitive, accessible, and
-						scalable user
-						experiences. Because of my deep appreciation for the design process, I thrive in roles where collaboration is
-						part of
-						the culture. When I’m not coding, you can find me exploring the Pacific Northwest, baking cakes,
+					<p>I have over 8 years of technical experience architecting intuitive and accessible web applications. I love building projects with <code>JavaScript</code>, <code>CSS</code>, and <code>React.js</code>. When I’m not coding, you can find me exploring the Pacific Northwest, baking cakes,
 						watching horror movies, and building out my own native plant habitat.</p>
 					<p>Want to work together?</p>
+				
 					<p><a href="#contact" class="button primary">Contact me</a></p>
 				</div>
 
 			</div>
-			<div class="header--image">
-				<img src="https://placeimg.dev/500x500/222222?text=Placeholder&textColor=fff" alt="Gero image caption">
+			<div class="header--image flex--66">
+				<img src="https://placeimg.dev/500x500/38491d?text=Placeholder&textColor=fffff4" alt="Gero image caption">
+			</div>
+			<div class="header--background">
+				<img src="img/portland-map.png" aria-hidden="true" alt="">
 			</div>
 		</div>
 	</header>
@@ -150,90 +152,118 @@
 						<li>Adobe Lightroom</li>
 					</ul>
 				</li>
-				<li>
 			</ul>
 		</div>
 	</section>
+
 
 	<!-- Experience -->
 
 	<section id="experience" class="experience">
 		<div class="container">
+			<div class="image--container image--container-polaroid">
+				<img class="image--polaroid" src="img/Young Jacquelyn at computer.jpg"
+					alt="Me at a computer, in the early years" loading="lazy">
+			</div>
 			<h2 class="text-align-center">Experience</h2>
-			<p class="text-align-center">Take a ride through the wayback machine...</p>
+			<p class="text-align-center balance">My interest in technology started at a young age. Take a trip through the wayback machine to learn more about my journey.</p>
 			<a href="resume.pdf" class="button primary section-cta-top">Download Resume</a>
-		</div>
+			</div>
 		<hr>
-		<div class="slider--timeline">
+		<div class="slider--timeline" id="slider">
 			<ul class="slider--slides">
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/100x100/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<h3>The early years</h3>
 					<p>Spent my free time tinkering on the household computer in the days of DOS and dial-up.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/100x100/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<h3>Self-guided learning</h3>
-					<p>Taught myself the basics as a hobby, from learning CSS to setting up my own FTP server.</p>
+					<p>Taught myself the basics as a hobby, from learning CSS and Photoshop to setting up my own FTP server.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/100x100/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<h3>B.A., Business and Communications</h3>
 					<p>Graduated <em>cum laude</em> with an Honors in Business.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/100x100/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<h3>Internships</h3>
 					<p>Interned at the local art museum and worked as a marketing assistant retouching photos and creating print collateral.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/100x100/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<h3>Agency work</h3>
 					<p>Supported project management team on design and website projects.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
-						aria-hidden="true">
+					<dotlottie-wc
+						src="https://lottie.host/0b9781e7-5ad1-4734-ad8e-c7be16179a7c/CaQlwE9SWc.lottie"
+						style="width: 50px;height: 50px"
+						autoplay
+						loop
+					></dotlottie-wc>
 					<h3>Full Stack Developer</h3>
 					<p> Designed, built, and deployed MERN stack applications.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
-						aria-hidden="true">
+					<dotlottie-wc
+						src="https://lottie.host/0b9781e7-5ad1-4734-ad8e-c7be16179a7c/CaQlwE9SWc.lottie"
+						style="width: 50px;height: 50px"
+						autoplay
+						loop
+					></dotlottie-wc>
 					<h3>Front End Developer</h3>
 					<p>Built Drupal features and ran A/B tests to improve SEO and site performance.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
-						aria-hidden="true">
+					<dotlottie-wc
+						src="https://lottie.host/0b9781e7-5ad1-4734-ad8e-c7be16179a7c/CaQlwE9SWc.lottie"
+						style="width: 50px;height: 50px"
+						autoplay
+						loop
+					></dotlottie-wc>
 					<h3>Senior Front End Developer</h3>
 					<p>Grew in responsibility to deliver larger-scale front-end Drupal projects.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
-						aria-hidden="true">
+					<!-- <img src="https://placeimg.dev/100x100/38491d?text=Placeholder&textColor=fffff4" alt=""
+						aria-hidden="true"> -->
+					<dotlottie-wc
+						src="https://lottie.host/0b9781e7-5ad1-4734-ad8e-c7be16179a7c/CaQlwE9SWc.lottie"
+						style="width: 50px;height: 50px"
+						autoplay
+						loop
+					></dotlottie-wc>
 					<h3>Senior Front End Engineer II</h3>
 					<p>Promoted to oversee the component-based design system across mulitple enterprise Drupal websites.</p>
 				</li>
 				<li class="slider--slide">
-					<img src="https://placeimg.dev/100x100/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/100x100/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<h3>The future ahead</h3>
 					<p>Continuing to grow in my skillset as a Front End Engineer. </p>
 					<a href="#contact" class="button alternate">Work with me</a>
 				</li>
 			</ul>
-			<div class="slider--controls">
-				<button>
-					<span>Travel back</span>
+			<div class="slider--controls"> <!--Need more aria controls values-->
+				<button class="button alternate" id="slider-prev" data-direction="left">
+					<span class="visually-hidden">Travel back</span>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+					</svg>
 				</button>
-				<button>
-					<span>Travel forwards</span>
+				<button class="button alternate" id="slider-next" data-direction="right">
+					<span class="visually-hidden">Travel forwards</span>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+					</svg>
 			</button>
 			</div>
 		</div>
@@ -244,11 +274,11 @@
 	<section class="projects" id="featured-projects">
 		<div class="container">
 			<h2>Projects</h2>
-			<p>Intro text about what I've been working on lately. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit mattis, euismod nisl vitae, mollis elit. Proin eleifend aliquam tristique. Suspendisse massa metus, consectetur vitae purus in, laoreet venenatis mauris. </p>
+			<p class="balance">Intro text about what I've been working on lately. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit mattis, euismod nisl vitae, mollis elit. Proin eleifend aliquam tristique. Suspendisse massa metus, consectetur vitae purus in, laoreet venenatis mauris. </p>
 			<h3 class="visually-hidden">Recent projects</h3>
 			<ul class="tile-grid odd">
-				<li class="tall">
-					<img src="https://placeimg.dev/200x150/222222?text=Placeholder&textColor=fff" alt=""
+				<li class="">
+					<img src="https://placeimg.dev/640x480/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<div class="tile-content">
 						<a href="/component-design-system.html">Component-based Design System</a>
@@ -264,7 +294,7 @@
 					</svg>
 				</li>
 				<li>
-					<img src="https://placeimg.dev/300x125/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/640x480/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<div class="tile-content">
 						<a href="/signup-testing.html">Signup Testing & Implementation</a>
@@ -280,7 +310,7 @@
 					</svg>
 				</li>
 				<li>
-					<img src="https://placeimg.dev/300x125/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/640x480/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<div class="tile-content">
 						<a href="/form-api.html">Form API</a>
@@ -295,8 +325,8 @@
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4"/>
 					</svg>
 				</li>
-				<li class="wide">
-					<img src="https://placeimg.dev/100/222222?text=Placeholder&textColor=fff" alt=""
+				<li class="">
+					<img src="https://placeimg.dev/640x480/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<div class="tile-content">
 						<a href="/media-optimization.html">Media Optimization</a>
@@ -311,8 +341,8 @@
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4"/>
 					</svg>
 				</li>
-				<li class="wide">
-					<img src="https://placeimg.dev/100/222222?text=Placeholder&textColor=fff" alt=""
+				<li class="">
+					<img src="https://placeimg.dev/640x480/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<div class="tile-content">
 						<a href="/mega-menu-navigation.html">Global Mega-Menu Navigation</a>
@@ -328,7 +358,7 @@
 					</svg>
 				</li>
 				<li>
-					<img src="https://placeimg.dev/300x125/222222?text=Placeholder&textColor=fff" alt=""
+					<img src="https://placeimg.dev/640x480/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 					<div class="tile-content">
 						<a href="/search-api.html">Search API Migration</a>
@@ -346,12 +376,13 @@
 			</ul>
 		</div>
 	</section>
-	<section class="projects-old">
-		<button class="button alternate section-cta-top">
-			<span class="message--open">Show older projects</span>
-			<span class="message--close display-none">Hide older projects</span>
-		</button>
-		<div class="container">
+	<button class="button alternate section-cta-top drawer--toggle js-closed" aria-controls="projects-archive" aria-expanded="false">
+		<span class="message message--open">Show older projects</span>
+		<span class="message message--close display-none">Hide older projects</span>
+	</button>
+	<section id="projects-archive" class="projects-old display-none drawer--container">
+	
+		<div  class="container">
 			<div class="two-up">
 				<div class="flex--33 sticky">
 					<h2>Older projects</h3>
@@ -359,7 +390,7 @@
 				</div>
 				<div class="tile-grid compact flex--66">
 					<li>
-						<img src="https://placeimg.dev/300/222222?text=Placeholder&textColor=fff" alt=""
+						<img src="https://placeimg.dev/300/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 						<div class="tile-content">
 							<a href="/plant-parenthood.html">Plant Parenthood</a>
@@ -377,7 +408,7 @@
 						</svg>
 					</li>
 					<li>
-						<img src="https://placeimg.dev/300/222222?text=Placeholder&textColor=fff" alt=""
+						<img src="https://placeimg.dev/300/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 						<div class="tile-content">
 							<a href="/dreamstate.html">Dreamstate</a>
@@ -395,7 +426,7 @@
 						</svg>
 					</li>
 					<li>
-						<img src="https://placeimg.dev/300/222222?text=Placeholder&textColor=fff" alt=""
+						<img src="https://placeimg.dev/300/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 						<div class="tile-content">
 							<a href="/skincare.html">Skin/Care</a>
@@ -412,7 +443,7 @@
 						</svg>
 					</li>
 					<li>
-						<img src="https://placeimg.dev/300/222222?text=Placeholder&textColor=fff" alt=""
+						<img src="https://placeimg.dev/300/38491d?text=Placeholder&textColor=fffff4" alt=""
 						aria-hidden="true">
 						<div class="tile-content">
 							<a href="/blackjack.html">Blackjack</a>
@@ -447,9 +478,14 @@
 		</div>
 	</footer>
 	<!-- Scripts -->
-	<script src="js/portfolio.min.js" type="text/javascript"></script>
+	<script src="src/js/portfolio.js" type="text/javascript"></script>
+	<script src="src/js/slider.js" type="text/javascript"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116161963-1"></script>
+	<script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+  type="module"
+></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 

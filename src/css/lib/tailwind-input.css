@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
-* {
-    border: 1px solid red;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* To use, run: 
     npx @tailwindcss/cli -i ./src/css/lib/tailwind-input.css -o ./css/tailwind.css --watch 
 */

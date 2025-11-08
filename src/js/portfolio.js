@@ -1,102 +1,21 @@
-$( document ).ready(function() {
-  $('.header-content').toggleClass("active");
-})
+let colorToggle = document.getElementById("color-mode-button");
+let drawerToggle = document.querySelector(".drawer--toggle");
+let drawerContainer = document.querySelector(".drawer--container");
 
-// Animation when item is in view
-var $animation_elements = $('.transition');
-var $window = $(window);
-
-function check_if_in_view() {
-  var window_height = $window.height();
-  var window_top_position = $window.scrollTop();
-  var window_bottom_position = (window_top_position + window_height);
- 
-  $.each($animation_elements, function() {
-    var $element = $(this);
-    var element_height = $element.outerHeight();
-    var element_top_position = $element.offset().top;
-    var element_bottom_position = (element_top_position + element_height);
- 
-    //check to see if this current container is within viewport
-    if ((element_bottom_position >= window_top_position) &&
-        (element_top_position <= window_bottom_position)) {
-      $element.addClass('start');
+colorToggle.addEventListener("click", function() {
+    if (document.body.classList.contains("dark")) {
+        document.body.classList.remove("dark");
     } else {
-      $element.removeClass('start');
-    }
-  });
-}
-
-$window.on('scroll resize', check_if_in_view);
-$window.trigger('scroll');
-
-// Navbar adjusts when you scroll up
-$window.bind('touchmove scroll', function() {
-  
-  //general scrolling class
-  if ($(window).scrollTop() > 100) {
-    $('nav').addClass('nav-scrolling');
-  }
-  else {
-    $('nav').removeClass('nav-scrolling slideup slidedown');
-  }
-
-  //animations to slide up and down
-  if (this.oldScroll > this.scrollY) {   
-    $('nav').removeClass('slideup').addClass('slidedown');
-  }
-  else if (this.oldScroll < this.scrollY && $('nav').hasClass('slidedown')) { 
-    $('nav').removeClass('slidedown').addClass('slideup');
-  }
-  this.oldScroll = this.scrollY;
-
-});
-
-// Helps make full div clickable
-$(".portfolio-item").click(function() {
-  window.location = $(this).find("a").attr("href"); 
-  return false;
-});
-
-// Responsive Navbar
-$(".hamburger").click(function(event){
-  event.preventDefault();
-  $(".nav-responsive").toggle("slide", { direction: "right" }, 500);
-  $(".hamburger").toggleClass("is-active");
-  $("nav").toggleClass("is-open");
-});
-
-$(".nav-responsive a").click(function() {
-  $(".nav-responsive").toggle();
-  $(".hamburger").toggleClass("is-active");
-  $("nav").toggleClass("is-open");
-});
-
-$window.resize(function(){
-    checkSize();
-});
-
-function checkSize(){
-    if ($(".hamburger").css("display") == "none" ){
-        $(".nav-responsive").hide();
-        $(".hamburger").removeClass("is-active");
-        $(".nav-home").removeClass("is-open");
-    }
-}
-
-// Smooth scrolling
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-        || location.hostname == this.hostname) {
-
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-           if (target.length) {
-             $('html,body').animate({
-                 scrollTop: target.offset().top - 65
-            }, 300);
-            return false;
-        }
+        document.body.classList.add("dark");
     }
 });
 
+drawerToggle.addEventListener("click", function() {
+    if (drawerToggle.classList.contains("js-closed")) {
+      drawerToggle.classList.remove("js-closed");
+        drawerContainer.classList.remove("display-none");
+    } else {
+        drawerToggle.classList.add("js-closed");
+        drawerContainer.classList.add("display-none");
+    }
+});
