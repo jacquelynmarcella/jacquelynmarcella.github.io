@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="UI engineer with 8 years of technical experience. Experienced in JavaScript, CSS, Drupal, React.js, and component-based design systems. Based in Portland, OR." />
+    <title>Jacquelyn Marcella | Front End Software Engineer</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/hamburgers.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="src/css/custom/reset.css">
+    <link rel="stylesheet" type="text/css" href="src/css/custom/style.css">
+    <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+    <!-- <link rel="stylesheet" href="css/tailwind.css"> -->
+</head>
+
+<body>
+    <!-- Global nav -->
+
+
+    <nav class="navbar">
+        <h2 class="visually-hidden">Main Menu</h2>
+        <ul class="navbar--contents navbar--level-1">
+            <li class="navbar--home">
+                <a href="/">Home</a>
+            </li>
+            <li class="nav-item navbar--links">
+                <button class="navbar--hamburger" id="navbar--toggle" aria-expanded="false"
+                    aria-controls="navbar--dropdown">
+                    <span class="visually-hidden">Menu</span>
+                    <svg class="navbar--icon" aria-hidden="true" version="1.1" xmlns="https://www.w3.org/2000/svg"
+                        xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
+                        <g class="svg-menu-toggle">
+                            <path class="line line-1" d="M5 13h90v14H5z" />
+                            <path class="line line-2" d="M5 43h90v14H5z" />
+                            <path class="line line-3" d="M5 73h90v14H5z" />
+                        </g>
+                    </svg>
+                </button>
+                <ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#featured-projects">Projects</a></li>
+                    <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a></li>
+                    <li class="right-align"><a href="#contact" class="button alternate">Contact</a></li>
+                    <li><button class="toggle--scheme" id="color-mode-button">D</button></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero -->
+    <header id="top" class="">
+        <div class="container">
+            <nav class="breadrcrumbs">
+                <ul>
+                    <li><a href="index.html">Jacquelyn Marcella</a></li>
+                    <li><a href="index.html#featured-projects">Projects</a></li>
+                </ul>
+            </nav>
+            <hgroup>
+                <h1>Component-based Design System</h1>
+                <p class="subhead">Summary</p>
+                <p>Support the creation and lead ongoing maintenance of a component-based design system across multiple web
+							properties.</b></p>
+                                <div class="stats-container">
+                    <div class="flex--33">
+                        <span class="stats--number">$1mil ARR</span>
+                        <span>attributed to redesign within the first year</span>
+                    </div>
+                    <div class="flex--33">
+                        <span class="stats--number">###</span>
+                        <span>instances of components authored</span>
+                    </div>
+                    <div class="flex--33">
+                        <span class="stats--number">3</span>
+                        <span class="stats--desc">rebranding rounds supported</span>
+                    </div>
+                </div>
+                <p class="subhead">Technologies used</p>
+                <div class="tags">
+                    <ul>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Twig</li>
+                        <li>Figma</li>
+                        <li>PatternLab</li>
+                        <li>WCAG Accessibility</li>
+                        <li>Drupal</li>
+                    </ul>
+                </div>
+            </hgroup>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <section>
+            
+            <section>
+                <div class="container">
+                    <h2>Challenge</h2>
+                    <p>When migrating Smartsheet’s websites from Drupal 7 to Drupal 8, the engineering team identified the opportunity to do an entire design system overhaul. Not only should the site look more modern and on brand, it should be modular, have a clear path for visual updates and maintenance, and a component structure that makes it easy for web authors to build pages. </p>
+                    <!-- <p>While we had relied on libraries like Bootstrap in the past, we had a lot of frustrations with it (e.g. major breaking updates where you have to comb through your entire codebase to change CSS class names and markup structure and constantly battling styles in the cascade when we wanted to make it our own). We believed that while these frameworks can be helpful in quickly spinning up a new site or launching an MVP, at this time we felt there was a better way for long term maintenance and growth of a multilingual enterprise website of this size.</p> -->
+                </div>
+            </section>
+
+
+            <div class="container">
+                <h2>Solution</h2>
+                <p>We determined the best path forward was to leverage the exciting new features that were widely supported in CSS without any special framework. Flexbox, grid, and CSS custom properties could unlock all we needed for a simple variable-based approach to colors, spacing, and overall layout consistency.</p>
+                <p>Taking principles like <a href="https://talks.jensimmons.com/15TjNW/designing-intrinsic-layouts" target="_blank">intrinsic design</a> we set out to build a component library where we didn’t think only about mobile versus desktop and strict concepts like “grid with exactly three items,” but about flexible elements that could adapt based on real-life content needs and the component’s container size. </p>
+                <p>A grid of tiles may take up the full screen width on a desktop monitor, or be in a small column in a sidebar, and it should be able to seamlessly adapt to both scenarios. We set to work collaborating with UI/UX designers to architect an <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank">atomic design system</a> in PatternLab where we could organize everything from button styles (atoms) to grids of tiles (organisms) and use these building blocks to create templates for different content types and pages.</p>
+            </div>
+
+            <figure>
+                <img src="img/grid-organism-dark.png" alt="Caption">
+                <figcaption>Grid organism-level component that contains tile molecules. Shown in default scheme, dark variation. </figcaption>
+            </figure>
+
+            <div class="container">
+                <p>In Figma Dev Mode (previously in Zeplin and Invision), we have worked with the design team to ensure all global variables/tokens are mapped to all components and redlines. The values used in Figma match our codebase, so there are no surprises when design generates redlines for an update or a brand new component. Design has mapped the full suite of global variables using the semantic CSS custom property names, rather than just designing with hex codes and rigid pixel values, and we use these semantic property names in our build:</p>
+            </div>
+
+            <div class="two-up">
+                <div class="flex--50">
+                    <figure>
+                        <img src="img/tile-molecule-figma.png" alt="Caption">
+                        <figcaption>The Figma redlines for this molecule map perfectly to our global SCSS variable structure.</figcaption>
+                    </figure>
+                </div>
+                <div class="flex--50">
+                <figure>
+                    <pre>
+/** _tile-molecule.scss **/
+.tile-molecule {
+    padding: 0 var(--md) var(--sm) var(--md);
+    background: var(--cardBackground)
+    border: 1px solid var(--border1);
+    border-radius: var(--cardRadius);
+    color: var(--cardHeadlineColor);
+    ...
+    svg.caret {
+        fill: var(--cardLinkColor);
+    }
+    .tag {
+        background: var(--cardTagBg);
+        color: var(--cardTagText);
+        ...
+    }
+}</pre>
+                <figcaption>In our codebase, the component's SCSS file is comprised of global variables where possible.</figcaption>
+                </figure>
+                </div>
+            </div>
+
+            <div class="container">
+                <p>By using CSS custom properties, we were able to build out components that supported six color variations across three different schemes (light mode, dark mode, and special events color scheme). This means every component in the entire design system can easily be used in any of these 18 different color options without time-consuming color customizations needed at a per-component level:</p>
+            </div>
+
+            <div class="two-up">
+                <div class="flex--50">
+                    <figure>
+                        <img src="img/design-system-overview.png" alt="Caption">
+                        <figcaption>The semantic variable names (tokens) in Figma are clearly mapped according to our global SCSS variable sturcture.</figcaption>
+                    </figure>
+                </div>
+                <div class="flex--50">
+                <figure>
+                    <pre>
+/** _default-scheme.scss **/
+&.light-variation {
+    /** Main colors **/
+    --backgroundColor: #{$max};
+    --backgroundTransparent: transparent;
+    --headlineColor: #{$blue_900};
+    --headlineLinkColor: #{$blue_500};
+    --copyColor: #{transparentize($blue_900, .25)}; //75%
+    --linkColor: #{$blue_500};
+    --disabled: #{transparentize($blue_900, .40)}; //60%
+    --error: #{$red_500};
+
+    /** Accents and borders **/
+    --accentColor: #{$blue_400};
+    --accentBorder: #{$blue_300};
+    ...
+}
+&.gray-variation {
+    ...
+}</pre>
+                <figcaption>Each color variation in each scheme is clearly defined in one global spot and is inherited by the entire component system.</figcaption>
+                </figure>
+                </div>
+            </div>
+            
+            <div class="container">
+                <p>After prototyping in PatternLab, these components were built as Paragraphs within Drupal. These components are built as modular standalone elements a user can drag and drop within the Bricks UI. An author can choose the section’s color variation and some image size options, but all choices map back to our global design system, ensuring that the designs are cohesive. An author does not choose “light text” when they choose a dark section, as that choice has already been made for them to ensure proper contrast for <a href="accessibility.html">accessibility</a> and brand guideline adherence.</p>
+            </div>
+            <!-- <figure>
+                <img src="img/design-system-overview.png" alt="Caption">
+                <figcaption>Lorem ipsum of caption for image.</figcaption>
+            </figure> -->
+
+         </section>
+
+        <section>
+            <div class="container">
+                <h2>Results</h2>
+                <p class="subhead">Upon initial launch of the new design system and broader site migration, Smartsheet’s primary website had a fresh new look, modern user experience, improved authoring experience, and promising metrics to go with it: the project exceeded its offset goal by +71%, with $1MM in ARR attributed to the website rebuild and migration, compared to the original goal of $585k.</p>
+                <p>(Insert line about component usage stats)</p>
+                <p>Since its inception, we have been able to continually improve our component library to stay on brand and keep up with design standards in the industry, integrating more progressive enhancements and adding new features to components along the way. Our recent major update included working closely with design to bring the website design system to feel closer in line with the Smartsheet application’s latest UI revamp. This included updating the entire color scale, elevations/shadows, spacing, icons, typeramp, interactions, and more.</p>
+            </div>
+            <figure class="tile-grid odd">
+                <img src="img/tile-oldest.png" alt="Caption">
+                <img src="img/tile-old.png" alt="Caption">
+                <img src="img/tile-newest.png" alt="Caption">
+                <figcaption style="grid-column: 1/-1;">Tiles over the years as our design system evolved. The tiles have not only improved visually, but expanded to accommodate tags and metadata to better promote article content.</figcaption> 
+            </figure>
+            <div class="container">
+                <p>Over my years at Smartsheet, I have grown in responsibility to take on engineering ownership and governance of our global design system and have onboarded new front end engineers into the system. We have since brought this design system to multiple other web properties to ensure cohesion for the Smartsheet web experience.</p>
+            </div>
+            
+         </section>
+
+         <section>
+            <div class="container">
+                <h2>Future</h2>
+                <p>In the long term, our goal is to continue to evolve our UI and components and while minimizing design system sprawl. We regularly test component performance with approaches like heatmapping and user testing, making sure our interactive components get the engagement we’d expect and continue to find opportunities for improvement.</p>
+         </section>
+
+         <section>
+            <div class="container">
+                <nav class="project-nav" aria-label="Pagination">
+                    <ul>
+                        <li><a href="#">Previous project (Form API Integration)</a></li>
+                        <li><a href="#">Next project (Speed Optimization)</a></li>
+                    </ul>
+                </nav>
+            </div>
+         </section>
+         
+
+         <section>
+            <div class="container">
+                <h2 class="text-align-center">Additional projects</h2>
+                <ul class="tile-grid odd">
+                    <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+						style="width:50px;height:50px">
+						    </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                      <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+						style="width:50px;height:50px">
+						    </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                      <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+						style="width:50px;height:50px">
+						</lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+         </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h2 class="text-align-center">Let's get in touch</h2>
+            <ul class="text-align-center">
+                <li><a href="mailto:jacquelyn.marcella@gmail.com">Email me</a></li>
+                <li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
+                <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="src/js/portfolio.js" type="text/javascript"></script>
+    <script src="src/js/slider.js" type="text/javascript"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116161963-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-116161963-1');
+    </script>
+
+</body>
+
+</html>

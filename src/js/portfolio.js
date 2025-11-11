@@ -2,6 +2,8 @@ let colorToggle = document.getElementById("color-mode-button");
 let drawerToggle = document.querySelector(".drawer--toggle");
 let drawerContainer = document.querySelector(".drawer--container");
 
+//TODO - remove lorde-icon triggers for prefers reduced motion
+
 colorToggle.addEventListener("click", function() {
     if (document.body.classList.contains("dark")) {
         document.body.classList.remove("dark");
