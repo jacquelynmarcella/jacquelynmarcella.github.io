@@ -39,18 +39,32 @@ nav.breadcrumbs ul {
 nav.breadcrumbs li {
     display: inline-block;
 }
-nav.breadcrumbs li:nth-child(n+2)::before {
-    content: "/";
-    margin: 0 var(--xs) 0 var(--xxs);
-    color: var(--copyColor);
+nav.breadcrumbs li:first-child {
+    display: none;
 }
+@media screen and (min-width: 600px) {
+    nav.breadcrumbs li:first-child {
+        display: inline-block;
+    }
+    nav.breadcrumbs li:first-child::after {
+        content: "/";
+        margin: 0 var(--xs) 0 var(--xxs);
+        color: var(--copyColor);
+    }
+}
+
 nav.breadcrumbs a {
     color: var(--linkColor);
     text-decoration: none;
 }
 
+header h3 {
+    margin-top: var(--lg);
+}
+
 img {
     opacity: 1;
+    max-height: 1200px; /*improve this some */
     border: 1px solid var(--surfaceColor);
 }
 
@@ -80,8 +94,12 @@ section figure {
 }
 .two-up {
     margin: var(--xxl) 0 var(--xxxl) 0;
+    gap: var(--lg);
 } 
 @media screen and (min-width: 1000px) {
+    section > figure {
+        min-width: 980px;
+    }
     section > figure,
     section > .two-up {
         padding: 0 var(--lg);
@@ -136,6 +154,7 @@ section pre {
 
 .stats-container {
     max-width: 980px;
+    color: var(--copyColor);
     margin: var(--xl) auto var(--xl) auto;
     display: flex;
     flex-wrap: wrap;
@@ -143,6 +162,7 @@ section pre {
     gap: var(--md) var(--xl);
 }
 .stats--number {
+    
     font-size: 2.5rem; /*tbd*/
     display: block;
     font-family: "Fraunces", serif;

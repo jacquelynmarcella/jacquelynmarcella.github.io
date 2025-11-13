@@ -90,7 +90,8 @@ body {
 
 }
 
-body.dark {
+body.projects .navbar,
+body .dark {
 	--copyColor: #fef8f1;
 	--backgroundColor: #0a0e02;
 	--cardBackground: #0a0e02;
@@ -100,10 +101,8 @@ body.dark {
 	--tagText: #fef8f1;
 	--linkColor: #D6B4FC;
 	--accentColor: rgb(56,73,29);
-
 	--lord-icon-primary: #E8E2D4;
 	--lord-icon-secondary: #E8E2D4;
-
 }
 
 .slider--current-role lord-icon{
@@ -226,6 +225,9 @@ rgba(47,47,47,1);
 .balance {
 	text-wrap: balance;
 }
+h1, h2, h3, h4, h5, p, ul, ol {
+	color: var(--copyColor);
+}
 h1, h2 {
 	font-family: "Fraunces", serif;
 	line-height: .8;
@@ -235,6 +237,9 @@ h1, h2 {
 }
 h1 {
 	font-size: 6rem;
+}
+.header--hero h1 {
+	font-size: 7rem;
 }
 h2 {
 	font-size: 3rem;
@@ -246,6 +251,26 @@ p {
 	max-width: 900px; /*a11y readability */
 	margin-bottom: var(--lg);
 	line-height: 2;
+}
+p.subhead-large {
+	font-size: 1.7em;
+	line-height: 2.5;
+}
+img.image-inline {
+	display: inline;
+	height: 1.7em;
+	width: auto;
+	vertical-align: text-bottom;
+}
+
+.header--hero svg {
+	width: 100%; /*likely needs cross browser work */
+	fill: var(--copyColor);
+}
+
+
+figcaption {
+	font-size: 14px; /*todo- font sizes */
 }
 h3,
 .subhead,
@@ -303,23 +328,30 @@ code {
 }
 .image--container-polaroid {
 	width: 100%;
-	width: fit-content;
 	margin: 0 auto var(--lg) auto;
-}
+	height: 200px;
+	overflow: hidden;
+
+}	
 .image--polaroid {
-	height: auto;
 	opacity: .8;
 	mix-blend-mode: luminosity;
 	max-width: 100%;
 	width: 100%;
-	height: auto;
+	height: 200px;
+	object-fit: cover;
+	object-position: center;
 }
 @media screen and (min-width: 600px) {
 	.image--polaroid {
-	mix-blend-mode: luminosity;
-	max-width: 300px;
-
-}
+		mix-blend-mode: luminosity;
+		max-width: 300px;
+		height: auto;
+	}
+	.image--container-polaroid {
+		height: auto;
+		width: fit-content;
+	}
 }
 
 
@@ -416,6 +448,9 @@ footer {
 	flex-direction: row;
 	gap: var(--md) var(--xl);
 	flex-wrap: wrap;
+}
+.flex--25 {
+	flex: var(--flex-25);
 }
 .flex--50 {
 	flex: var(--flex-50);
@@ -524,6 +559,7 @@ section {
 
 header {
 	margin-top: var(--xxl);
+	background: var(--backgroundColor);
 }
 .header--hero {
 	min-height: 90vh;
@@ -533,7 +569,7 @@ header {
 .header--container {
 	margin: auto;
 	gap: var(--md) var(--xl);
-	flex-wrap: wrap-reverse;
+	flex-wrap: wrap;
 	z-index: 2;
 
 	background-position: center right;
@@ -766,7 +802,9 @@ section.experience {
 }
 
 
-
+footer {
+	background: var(--backgroundColor);
+}
 footer ul {
 	display: flex;
 	flex-direction: row;
@@ -822,7 +860,10 @@ footer .container {
 	object-fit: cover;
     overflow: hidden;
     position: relative;
-    max-height: 200px;
+    /* max-height: 200px; */
+}
+.tile-content a + p {
+	margin-bottom: var(--xs);
 }
 .tile-grid li:has(a) {
 	cursor: pointer;
@@ -903,10 +944,16 @@ footer .container {
 	width: fit-content;
 	margin: var(--xl) auto 0 auto;
 }
-.section-cta-top {
+.section-cta-top.button {
 	display: block;
 	width: fit-content;
-	margin: 0 auto var(--xxl) auto;
+	margin: 0 0 var(--xxl) var(--lg);
+}
+@media screen and (min-width: 600px) {
+	.section-cta-top.button {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 .tile-grid .tile--arrow {
@@ -969,12 +1016,12 @@ footer .container {
 		width: auto;
 		height: 100%;
 	}
-	.tile-grid .wide,
+	/* .tile-grid .wide,
 	.tile-grid .wide:last-child {
 		grid-column: span 2;
 		display: flex;
 		flex-direction: row;
-	}
+	} */
 	.tile-grid .wide .tile--image {
 		flex: 0 0 50%;
 		max-height: unset;

@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
 </head>
 
-<body>
+<body class="projects">
     <!-- Global nav -->
     	<nav class="navbar">
     		<h2 class="visually-hidden">Main Menu</h2>
@@ -45,19 +45,19 @@
     					</svg>
     				</button>
     				<ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
-    					<li class="right-align"><a href="#skills">Skills</a></li>
+    					<li class="right-align"><a href="index.html#skills">Skills</a></li>
     					<li><a href="index.html#experience">Experience</a></li>
     					<li><a href="index.html#featured-projects">Projects</a></li>
     					<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a></li>
     					<li class="right-align"><a href="#contact" class="button alternate">Contact</a></li>
-    					<li><button class="toggle--scheme" id="color-mode-button">D</button></li>
+    					<!-- <li><button class="toggle--scheme" id="color-mode-button"></button></li> -->
     				</ul>
     			</li>
     		</ul>
     	</nav>
 
     <!-- Hero -->
-    <header id="top" class="">
+    <header id="top" class="dark">
         <div class="container">
             <nav class="breadcrumbs">
                 <ul>
@@ -72,7 +72,7 @@
             <div class="stats-container">
                 <div class="flex--25">
                     <span class="stats--number">22%</span>
-                    <span class="stats--desc">increase in viable form submissions on initial integration</span>
+                    <span class="stats--desc">increase in valuable form submissions on initial integration</span>
                 </div>
                 <div class="flex--25">
                     <span class="stats--number">29%</span>
@@ -89,7 +89,10 @@
                 <li>Optimizely</li>
                 <li>API Integration</li>
             </ul>
-
+            <h3>Project links</h3>
+            <ul class="link-list">
+                <li><a href="http://www.smartsheet.com/try-it" target="_blank">Live trial form</a></li>
+            </ul>
         </div>
     </header>
 
@@ -125,10 +128,20 @@
                     the form experience, the user would likely enter less information than on the original full contact
                     form.</p>
             </div>
-            <figure>
-                <img src="img/signup-overview.png" alt="Caption">
-                <figcaption>Show two step experience with current form design.</figcaption>
-            </figure>
+            <div class="two-up">
+                <div class="flex--50">
+                    <figure>
+                        <img src="img/trial-form-step1.png" loading="lazy" alt="Visual of form, with email input empty">
+                        <figcaption>Step one: user is prompted for email.<br></figcaption>
+                    </figure>
+                </div>
+                <div class="flex--50">
+                    <figure>
+                        <img src="img/trial-form-step2.png" loading="lazy" alt="Visual of same form with email input completed and two additional inputs presented to the user: phone number and job title">
+                        <figcaption>Step two: user is only asked for additional data not augmented by ZoomInfo.</figcaption>
+                    </figure>
+                </div>
+            </div>
         </section>
 
         <section>
@@ -136,14 +149,16 @@
                 <h2>Results</h2>
                 <p>This original API integration <b>boosted form conversion rates by 22% for users submitting with
                         non-ISP email addresses</b> and was considered a pivotal change to our trial experience for the
-                    company. Following this A/B test, I continued to iterate on the trial form functionality on several
+                    company.</p>
+                    <p>Following this A/B test, I continued to iterate on the trial form functionality on several
                     additional projects:</p>
                 <ol>
                     <li>Worked closely with our Principal Engineer and MarTech team to integrate the FormComplete API to
                         into nearly all forms on the primary Smartsheet site.</li>
                     <li>A/B tested an email-only form that still sends any ZoomInfo augmented data to sales, which
                         reduced the need for user input even further.</li>
-                    <li>Currently working with UI/UX designers and numerous Smartsheet app stakeholders to A/B test the
+                    <li>Test how the business requirement to implement different Smartsheet app regions impacts the UI/UX of the form.</li>
+                    <li>Currently, I'm working with UI/UX designers and numerous Smartsheet app stakeholders to A/B test the
                         best way to present SSO options to users in lieu of the traditional form fill. The first round
                         of testing has <b>further increased trials by up to 29%</b>.</li>
                 </ol>
@@ -168,66 +183,71 @@
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
                     <li>
+                        <div class="tile--image">
+                            <img src="img/tile-search-api.png" alt="" aria-hidden="true">
+                        </div>
                         <div class="tile-content">
-                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
-                                style="width:50px;height:50px">
-                            </lord-icon>
-                            <a href="/form-api.html">Form API Integration</a>
-                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
-                                API,
-                                A/B testing, and UI/UX enhancements.</p>
+                            <a href="search-api.html">Search API Migration</a>
+                            <p><em>Smartsheet</em></p>
+                            <p class="no-mobile">Supported the migration from Coveo to OpenSearch, leading to $150k in
+                                annual cost savings.</p>
                             <div class="tags">
-                                <span>JavaScript</span>
                                 <span>CSS</span>
-                                <span>A/B Testing</span>
+                                <span>JavaScript</span>
+                                <span>Twig</span>
+                                <span>Drupal</span>
                             </div>
                         </div>
                         <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                             height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+                                d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                    <li class="">
+                        <div class="tile--image">
+                            <img src="img/tile-form-api.png" alt="" aria-hidden="true">
+                        </div>
+                        <div class="tile-content">
+                            <a href="media-optimization.html">Media Optimization</a>
+                            <p><em>Smartsheet</em></p>
+                            <p class="no-mobile">Drive initiative that cut image file sizes by up to 97% and animation file
+                                sizes by over 94%,
+                                resulting in a 28% increase in Google image search impressions and a 14% uptick in clicks.
+                            </p>
+                            <div class="tags">
+                                <span>Drupal</span>
+                                <span>PHP</span>
+                                <span>SEO</span>
+                                <span>Site performance</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+                                d="M19 12H5m14 0-4 4m4-4-4-4" />
                         </svg>
                     </li>
                     <li>
+                        <div class="tile--image">
+                            <img src="img/tile-accessibility.png" alt="" aria-hidden="true">
+                        </div>
                         <div class="tile-content">
-                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
-                                style="width:50px;height:50px">
-                            </lord-icon>
-                            <a href="/form-api.html">Form API Integration</a>
-                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
-                                API,
-                                A/B testing, and UI/UX enhancements.</p>
+                            <a href="accessibility.html">Accessibility Remediation</a>
+                            <p><em>Smartsheet</em></p>
+                            <p class="no-mobile">Lead front end accessibility remediation, surpassing the original goal of
+                                90%+ WCAG 2.1 AA
+                                compliance.</p>
                             <div class="tags">
+                                <span>WCAG Accessibility</span>
                                 <span>JavaScript</span>
-                                <span>CSS</span>
-                                <span>A/B Testing</span>
+                                <span>Drupal</span>
                             </div>
                         </div>
                         <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                             height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
-                        </svg>
-                    </li>
-                    <li>
-                        <div class="tile-content">
-                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
-                                style="width:50px;height:50px">
-                            </lord-icon>
-                            <a href="/form-api.html">Form API Integration</a>
-                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
-                                API,
-                                A/B testing, and UI/UX enhancements.</p>
-                            <div class="tags">
-                                <span>JavaScript</span>
-                                <span>CSS</span>
-                                <span>A/B Testing</span>
-                            </div>
-                        </div>
-                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+                                d="M19 12H5m14 0-4 4m4-4-4-4" />
                         </svg>
                     </li>
                 </ul>
@@ -236,11 +256,11 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="contact" class="dark">
         <h2 class="visually-hidden">Contact</h2>
         <div class="container">
             <div>
-                Copyright info here
+                <p>Copyright info here</p>
             </div>
             <div>
                 <h3 class="">Let's get in touch</h2>
