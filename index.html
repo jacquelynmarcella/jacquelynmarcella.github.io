@@ -1,75 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Page head -->
-<!-- TODO: Skip to page body -->
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description"
-		content="UI engineer with 8 years of technical experience. Experienced in JavaScript, CSS, Drupal, React.js, and component-based design systems. Based in Portland, OR." />
-	<title>Jacquelyn Marcella | Front End Software Engineer</title>
-	<link rel="shortcut icon" href="img/favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description"
+			content="UI engineer with 8 years of technical experience in JavaScript, CSS, Drupal, and component-based design systems. Based in Portland, OR." />
+		<title>Jacquelyn Marcella | Front End Software Engineer</title>
+		<link rel="shortcut icon" href="img/favicon.ico">
 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-		rel="stylesheet">
+		<!-- <link rel="stylesheet" href="css/hamburgers.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="src/css/custom/reset.css">
+		<link rel="stylesheet" type="text/css" href="src/css/custom/style.css">
 
-	<!-- <link rel="stylesheet" href="css/hamburgers.min.css"> -->
-	<link rel="stylesheet" type="text/css" href="src/css/custom/reset.css">
-	<link rel="stylesheet" type="text/css" href="src/css/custom/style.css">
-	<!-- <link rel="stylesheet" href="css/tailwind.css"> -->
 </head>
 
 <body>
 	<!-- Global nav -->
+		<nav class="navbar">
+			<h2 class="visually-hidden">Main Menu</h2>
+			<ul class="navbar--contents navbar--level-1">
+				<li class="navbar--home">
+					<a href="index.html">Jacquelyn Marcella</a>
+				</li>
+				<li class="nav-item navbar--links">
+					<button class="navbar--hamburger right-align" id="navbar--toggle" aria-expanded="false"
+						aria-controls="navbar--dropdown">
+						<span class="visually-hidden">Menu</span>
+						<svg class="navbar--icon" aria-hidden="true" version="1.1" xmlns="https://www.w3.org/2000/svg"
+							xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
+							<g class="svg-menu-toggle">
+								<path class="line line-1" d="M5 13h90v14H5z" />
+								<path class="line line-2" d="M5 43h90v14H5z" />
+								<path class="line line-3" d="M5 73h90v14H5z" />
+							</g>
+						</svg>
+					</button>
+					<ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
+						<li class="right-align"><a href="#skills">Skills</a></li>
+						<li><a href="index.html#experience">Experience</a></li>
+						<li><a href="index.html#featured-projects">Projects</a></li>
+						<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a></li>
+						<li class="right-align"><a href="#contact" class="button alternate">Contact</a></li>
+						<li><button class="toggle--scheme" id="color-mode-button">D</button></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
 
-
-	<nav class="navbar">
-		<h2 class="visually-hidden">Main Menu</h2>
-		<ul class="navbar--contents navbar--level-1">
-			<li class="navbar--home">
-				<a href="/">Home</a>
-			</li>
-			<li class="nav-item navbar--links">
-				<button class="navbar--hamburger" id="navbar--toggle" aria-expanded="false"
-					aria-controls="navbar--dropdown">
-					<span class="visually-hidden">Menu</span>
-					<svg class="navbar--icon" aria-hidden="true" version="1.1" xmlns="https://www.w3.org/2000/svg"
-						xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
-						<g class="svg-menu-toggle">
-							<path class="line line-1" d="M5 13h90v14H5z" />
-							<path class="line line-2" d="M5 43h90v14H5z" />
-							<path class="line line-3" d="M5 73h90v14H5z" />
-						</g>
-					</svg>
-				</button>
-				<ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#experience">Experience</a></li>
-					<li><a href="#featured-projects">Projects</a></li>
-					<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a></li>
-					<li class="right-align"><a href="#contact" class="button alternate">Contact</a></li>
-					<li><button class="toggle--scheme" id="color-mode-button">D</button></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-
-
+	<!-- Hero -->
 	<!-- Hero -->
 	<header id="top" class="header--hero">
 		<div class="container two-up header--container">
 			<div class="header--image flex--66">
-
+				<!-- 
 				<img src="https://placeimg.dev/500x500/38491d?text=Placeholder&textColor=fffff4"
 					class="hero--image-left" alt="Hero image caption">
 				<img src="https://placeimg.dev/500x500/38491d?text=Placeholder&textColor=fffff4" class="hero--image-mid"
 					alt="Hero image caption">
 				<img src="https://placeimg.dev/500x500/38491d?text=Placeholder&textColor=fffff4"
-					class="hero--image-right" alt="Hero image caption">
+					class="hero--image-right" alt="Hero image caption"> -->
 
 			</div>
 
@@ -83,7 +80,6 @@
 					<p>I have over 8 years of technical experience architecting intuitive and accessible web
 						applications. I love building projects with <code>JavaScript</code>, <code>CSS</code>, and
 						<code>Drupal</code>. When I’m not coding, you can find me exploring the Pacific Northwest,
-						practicing photography,
 						watching horror movies, and building out my own native plant habitat.</p>
 					<p>Want to work together?</p>
 					<p><a href="#contact" class="button primary">Contact me</a></p>
@@ -96,75 +92,80 @@
 
 		</div>
 	</header>
-
 	<!-- <img src="img/mountain.jpg"> -->
 
 	<section class="skills" id="skills">
-		<div class="container two-up">
-			<div class="sticky flex--33">
-				<h2>Technical skills</h2>
-				<p>I'm always ready to learn new technologies, whether it's a new front end framework or brushing up on
-					the latest CSS release that makes a once difficult design concept simpler to implement.</p>
+		<div class="container">
+			<h2>Technical skills</h2>
+			<hr>
+			<div class="two-up">
+				<div class="flex--33">
+
+					<p>I'm always ready to learn new technologies, whether it's a new front end framework or brushing up
+						on
+						the latest CSS release that makes a once difficult design concept simpler to implement.</p>
+				</div>
+				<ul class="skills--container flex--66">
+					<li>
+						<h3>Languages</h3>
+						<ul class="skills--list">
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>Scss</li>
+							<li>JavaScript</li>
+							<li>PHP</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Technologies and frameworks</h3>
+						<ul class="skills--list">
+							<li>Drupal</li>
+							<li>React.js</li>
+							<li>jQuery</li>
+							<li>Twig</li>
+							<li>Tailwind CSS</li>
+							<li>Bootstrap</li>
+							<li>Material UI</li>
+							<li>Mocha</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Front end</h3>
+						<ul class="skills--list">
+							<li>WCAG Accessibility</li>
+							<li>CSS Grid</li>
+							<li>Flexbox</li>
+							<li>Responsive design</li>
+							<li>Atomic design</li>
+							<li>PatternLab</li>
+							<li>Lottie</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Developer tools</h3>
+						<ul class="skills--list">
+							<li>Git</li>
+							<li>Gulp.js</li>
+							<li>Grunt</li>
+							<li>Docker</li>
+							<li>BrowserStack</li>
+							<li>VS Code</li>
+							<li>Optimizely</li>
+							<li>Confluence</li>
+							<li>JIRA</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Design tools</h3>
+						<ul class="skills--list">
+							<li>Figma Dev Mode</li>
+							<li>Adobe Photoshop</li>
+							<li>Adobe Lightroom</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
-			<ul class="skills--container flex--66">
-				<li>
-					<h3>Languages</h3>
-					<ul class="skills--list">
-						<li>HTML</li>
-						<li>CSS</li>
-						<li>Scss</li>
-						<li>JavaScript</li>
-						<li>PHP</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Technologies and frameworks</h3>
-					<ul class="skills--list">
-						<li>Drupal</li>
-						<li>React.js</li>
-						<li>jQuery</li>
-						<li>Twig</li>
-						<li>Tailwind CSS</li>
-						<li>Bootstrap</li>
-						<li>Material UI</li>
-						<li>Mocha</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Front end</h3>
-					<ul class="skills--list">
-						<li>WCAG Accessibility</li>
-						<li>CSS Grid</li>
-						<li>Flexbox</li>
-						<li>Responsive design</li>
-						<li>Atomic design</li>
-						<li>PatternLab</li>
-						<li>Lottie</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Developer tools</h3>
-					<ul class="skills--list">
-						<li>Git</li>
-						<li>Gulp.js</li>
-						<li>Grunt</li>
-						<li>Docker</li>
-						<li>BrowserStack</li>
-						<li>VS Code</li>
-						<li>Optimizely</li>
-						<li>Confluence</li>
-						<li>JIRA</li>
-					</ul>
-				</li>
-				<li>
-					<h3>Design tools</h3>
-					<ul class="skills--list">
-						<li>Figma Dev Mode</li>
-						<li>Adobe Photoshop</li>
-						<li>Adobe Lightroom</li>
-					</ul>
-				</li>
-			</ul>
+
 		</div>
 	</section>
 
@@ -326,10 +327,10 @@
 
 	</section>
 
-	<!-- Projects -->
 	<section class="projects" id="featured-projects">
 		<div class="container">
 			<h2>Projects</h2>
+			<hr>
 			<h3 class="visually-hidden">Recent projects</h3>
 			<p class="balance">In my recent role at Smarthseet as a Senior Front End Engineer, I have led the front-end
 				implementation of a range
@@ -337,13 +338,15 @@
 				components.
 			</p>
 			<ul class="tile-grid odd">
-				<li class="tall">
+				<li class="wide">
 					<div class="tile--image">
 						<img src="img/design-system-overview.png" alt="" aria-hidden="true">
 					</div>
 					<div class="tile-content">
 						<a href="design-system.html">Component-based Design System</a>
-						<p>Support the creation and lead ongoing maintenance of a component-based design system across multiple web
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Support the creation and lead ongoing maintenance of a component-based
+							design system across multiple web
 							properties. Initial migration and launch led to $1MM ARR within the first year.</p>
 						<div class="tags">
 							<span>CSS</span>
@@ -365,8 +368,10 @@
 						<img src="img/signup-overview.png" alt="" aria-hidden="true">
 					</div>
 					<div class="tile-content">
-						<a href="/form-api.html">Form API Integration</a>
-						<p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete API,
+						<a href="form-api.html">Form API Integration</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Boost form conversion rates by over 20% through integration of ZoomInfo’s
+							FormComplete API,
 							A/B testing, and UI/UX enhancements.</p>
 						<div class="tags">
 							<span>JavaScript</span>
@@ -385,8 +390,10 @@
 						<img src="img/nav-overview.png" alt="" aria-hidden="true">
 					</div>
 					<div class="tile-content">
-						<a href="/mega-menu-navigation.html">Global Mega-Menu Navigation</a>
-						<p>Architected an easily maintanable mega-menu navigation that increased clicks by over 30% to top-level pages.</p>
+						<a href="mega-menu-navigation.html">Global Mega-Menu Navigation</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Architected an easily maintanable mega-menu navigation that increased
+							clicks by over 30% to top-level pages.</p>
 						<div class="tags">
 							<span>CSS</span>
 							<span>JavaScript</span>
@@ -400,13 +407,15 @@
 							d="M19 12H5m14 0-4 4m4-4-4-4" />
 					</svg>
 				</li>
-								<li>
+				<li>
 					<div class="tile-content">
 						<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
-						style="width:50px;height:50px">
+							style="width:50px;height:50px">
 						</lord-icon>
-						<a href="/accessibility.html">Accessibility Remediation</a>
-						<p>Lead front end accessibility remediation, surpassing the original goal of 90%+ WCAG 2.1 AA
+						<a href="accessibility.html">Accessibility Remediation</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Lead front end accessibility remediation, surpassing the original goal of
+							90%+ WCAG 2.1 AA
 							compliance.</p>
 						<div class="tags">
 							<span>WCAG Accessibility</span>
@@ -423,10 +432,12 @@
 				<li class="">
 					<div class="tile-content">
 						<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
-						style="width:50px;height:50px">
+							style="width:50px;height:50px">
 						</lord-icon>
-						<a href="/media-optimization.html">Media Optimization</a>
-						<p>Drive initiative that cut image file sizes by up to 97% and animation file sizes by over 94%,
+						<a href="media-optimization.html">Media Optimization</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Drive initiative that cut image file sizes by up to 97% and animation file
+							sizes by over 94%,
 							resulting in a 28% increase in Google image search impressions and a 14% uptick in clicks.
 						</p>
 						<div class="tags">
@@ -444,11 +455,13 @@
 				</li>
 				<li>
 					<div class="tile-content">
-						<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json"  trigger="hover"
+						<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" trigger="hover"
 							style="width:50px;height:50px">
 						</lord-icon>
-						<a href="/search-api.html">Search API Migration</a>
-						<p>Supported the migration from Coveo to OpenSearch, leading to $150k in annual cost savings.</p>
+						<a href="search-api.html">Search API Migration</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Supported the migration from Coveo to OpenSearch, leading to $150k in
+							annual cost savings.</p>
 						<div class="tags">
 							<span>CSS</span>
 							<span>JavaScript</span>
@@ -469,7 +482,8 @@
 						</lord-icon>
 						<h3>Currently studying</h3>
 						<p>My recent work has largely included building enterprise projects in <code>Drupal</code> but I
-							have previously completed projects in <code>React.js</code> (check out my older projects
+							have previously completed projects in <code>React.js</code> (check out my additional
+							projects
 							below). In the meantime, I am enrolled in the
 							<em>React by Jonas Schmedtmann</em> course to keep my React skills fresh.</p>
 					</div>
@@ -485,116 +499,117 @@
 
 	<button class="button alternate section-cta-top drawer--toggle js-closed" aria-controls="projects-archive"
 		aria-expanded="false">
-		<span class="message message--open">Show older projects</span>
-		<span class="message message--close display-none">Hide older projects</span>
+		<span class="message message--open">Show additional projects</span>
+		<span class="message message--close display-none">Hide additional projects</span>
 	</button>
 	<section id="projects-archive" class="projects-old display-none drawer--container">
 
 		<div class="container">
-			<div class="two-up">
-				<div class="flex--33 sticky">
-					<h2>Older projects</h3>
+			<h2>Additional projects</h3>
+				<hr>
+				<div class="two-up">
+					<div class="flex--33 sticky">
 						<p>Intro text for older projects. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
 							at velit mattis, euismod nisl vitae, mollis elit. Proin eleifend aliquam tristique.
 							Suspendisse massa metus, consectetur vitae purus in, laoreet venenatis mauris. </p>
-				</div>
-				<div class="tile-grid compact flex--66">
-					<li>
-						<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431" fill="none"
-							viewBox="0 0 430 431">
-							<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
-								stroke-miterlimit="10" stroke-width="6"
-								d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
-						</svg>
-						<div class="tile-content">
-							<a href="/dreamstate.html">Dreamstate</a>
-							<p>Lorem ipsum one sentence project overview.</p>
-							<div class="tags">
-								<span>React.js</span>
-								<span>JavaScript</span>
-								<span>Node</span>
-								<span>MongoDB</span>
-								<span>Data Visualization</span>
+					</div>
+					<div class="tile-grid even compact flex--66">
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/dreamstate.html">Dreamstate</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>React.js</span>
+									<span>JavaScript</span>
+									<span>Node</span>
+									<span>MongoDB</span>
+									<span>Data Visualization</span>
+								</div>
 							</div>
-						</div>
-						<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-							height="24" fill="none" viewBox="0 0 24 24">
-							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-								stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
-						</svg>
-					</li>
-					<li>
-						<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431" fill="none"
-							viewBox="0 0 430 431">
-							<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
-								stroke-miterlimit="10" stroke-width="6"
-								d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
-						</svg>
-						<div class="tile-content">
-							<a href="/skincare.html">Skin/Care</a>
-							<p>Lorem ipsum one sentence project overview.</p>
-							<div class="tags">
-								<span>React.js</span>
-								<span>JavaScript</span>
-								<span>MongoDB</span>
-								<span>Node</span>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/skincare.html">Skin/Care</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>React.js</span>
+									<span>JavaScript</span>
+									<span>MongoDB</span>
+									<span>Node</span>
+								</div>
 							</div>
-						</div>
-						<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-							height="24" fill="none" viewBox="0 0 24 24">
-							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-								stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
-						</svg>
-					</li>
-					<li>
-						<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431" fill="none"
-							viewBox="0 0 430 431">
-							<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
-								stroke-miterlimit="10" stroke-width="6"
-								d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
-						</svg>
-						<div class="tile-content">
-							<a href="/plant-parenthood.html">Plant Parenthood</a>
-							<p>Lorem ipsum one sentence project overview.</p>
-							<div class="tags">
-								<span>Node</span>
-								<span>Sass</span>
-								<span>JavaScript</span>
-								<span>SQL</span>
-								<span>Mocha</span>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/plant-parenthood.html">Plant Parenthood</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>Node</span>
+									<span>Sass</span>
+									<span>JavaScript</span>
+									<span>SQL</span>
+									<span>Mocha</span>
+								</div>
 							</div>
-						</div>
-						<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-							height="24" fill="none" viewBox="0 0 24 24">
-							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-								stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
-						</svg>
-					</li>
-					<li>
-						<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431" fill="none"
-							viewBox="0 0 430 431">
-							<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
-								stroke-miterlimit="10" stroke-width="6"
-								d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
-						</svg>
-						<div class="tile-content">
-							<a href="/blackjack.html">Blackjack</a>
-							<p>Lorem ipsum one sentence project overview.</p>
-							<div class="tags">
-								<span>JavaScript</span>
-								<span>jQuery</span>
-								<span>Materialize</span>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/blackjack.html">Blackjack</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>JavaScript</span>
+									<span>jQuery</span>
+									<span>Materialize</span>
+								</div>
 							</div>
-						</div>
-						<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-							height="24" fill="none" viewBox="0 0 24 24">
-							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-								stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
-						</svg>
-					</li>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
 
+					</div>
 				</div>
-			</div>
 
 		</div>
 	</section>
@@ -602,8 +617,8 @@
 	<section>
 		<div class="container">
 			<h2 class="text-align-center">Recommendations</h2>
-			<p class="balance text-align-center">I do my best work in highly collaborative environments between engineers, designers, and
-				product owners. Read what my teammates have to say about working with me.</p>
+			<p class="balance text-align-center">I do my best work in highly collaborative environments where I work
+				closely with engineers, designers, and product owners. Read what my teammates have to say about working with me.</p>
 			<div class="recommendations tile-grid">
 				<figure>
 					<lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="" stroke="light"
@@ -643,33 +658,40 @@
 					Linkedin</a></p>
 	</section>
 
+
 	<!-- Footer -->
 	<footer id="contact">
-		<div class="container">
-			<h2 class="text-align-center">Let's get in touch</h2>
-			<ul class="text-align-center">
-				<li><a href="mailto:jacquelyn.marcella@gmail.com">Email me</a></li>
-				<li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
-				<li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
-				<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
-			</ul>
-		</div>
+	    <h2 class="visually-hidden">Contact</h2>
+	    <div class="container">
+	        <div>
+	            Copyright info here
+	        </div>
+	        <div>
+	            <h3 class="">Let's get in touch</h2>
+	            <ul class="">
+	                <li><a href="mailto:jacquelyn.marcella@gmail.com">Email me</a></li>
+	                <li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
+	                <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
+	                <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
+	            </ul>
+	        </div>
+	    </div>
 	</footer>
+
 	<!-- Scripts -->
 	<script src="https://cdn.lordicon.com/lordicon.js"></script>
 	<script src="src/js/portfolio.js" type="text/javascript"></script>
-	<script src="src/js/slider.js" type="text/javascript"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116161963-1"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-		gtag('config', 'UA-116161963-1');
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag() {
+	        dataLayer.push(arguments);
+	    }
+	    gtag('js', new Date());
+	    gtag('config', 'UA-116161963-1');
 	</script>
+
 
 </body>
 

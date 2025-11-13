@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+
+<head>
+    <!--(bake /includes/head.html)-->
+    <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+</head>
+
+<body>
+    <!-- Global nav -->
+    <!--(bake /includes/nav.html)-->
+
+    <!-- Hero -->
+    <header id="top" class="">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#featured-projects">Projects</a></li>
+                </ul>
+            </nav>
+            <h1>Accessibility Remediation</h1>
+            <h2 class="visually-hidden">Overview</h2>
+            <p class="subhead">Spearheaded front end accessibility remediation accross two multilingual enterprise
+                websites.</b></p>
+            <div class="stats-container">
+                <div class="flex--25">
+                    <span class="stats--number">92%+</span>
+                    <span class="stats--desc">WCAG 2.1 AA compliance</span>
+                </div>
+                <div class="flex--25">
+                    <span class="stats--number">X</span>
+                    <span class="stats--desc">issues remediated</span>
+                </div>
+            </div>
+            <h3>Company</h3>
+            <p>Smartsheet</p>
+            <h3>Technologies used</h3>
+            <ul class="tags">
+                <li>WCAG Accessibility</li>
+                <li>CSS</li>
+                <li>Sass</li>
+                <li>JavaScript</li>
+                <li>Figma</li>
+                <li>Drupal</li>
+                <li>Twig</li>
+
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- Main-->
+    <main id="main">
+        <section>
+            <section>
+                <div class="container">
+                    <h2>Challenge</h2>
+                    <p>An in-depth accessibility audit confirmed what our engineering team had hypothesized: there were
+                        several opportunities for accessibility improvements on the front end of our website, especially
+                        in regards to interactive elements.</p>
+                    <!-- <p>Automated tools can provide some direction, but our ability to identify issues required education
+                        and manual testing efforts to ensure content on the site is able to be accessed by all visitors.
+                        Additionally, we needed to ensure that improving accessibility of our site would not create new
+                        complexities that were impossible to maintain for our CMS authors.</p> -->
+                    <p>
+                        One of the more complex findings was on the Plans and Pricing page, which is one of the highest
+                        trafficked pages on the primary Smartsheet website. The large data table was inaccessible as it
+                        read out all content at once, not providingusers with an ability to parse through relationships
+                        between row and column headers. It also lacked
+                        a caption and used icons in lieu of text content without providing icon labels for screen
+                        readers.
+                    </p>
+                </div>
+
+                <figure>
+                    <img src="img/grid-organism-dark.png" alt="Caption">
+                    <figcaption>Video shows pricing table with NVDA screen reader running, where it rapidly lists out
+                        all
+                        table content in a confusing manner. </figcaption>
+                </figure>
+
+            </section>
+
+
+            <div class="container">
+                <h2>Solution</h2>
+                <p>
+                    Leading the front end effort, I helped provide recommendations for a plan of action for the team to
+                    organize our work by component and by the types of issues to resolve. There were several trends we
+                    found that were able to apply learnings across our component-based system. Many areas were
+                    straightforward updates to active focus states and color contrast, which we collaborated with the
+                    design team to update our global color variable values and <a href="design-system.html">centralized
+                        component styles</a> accordingly.
+                </p>
+                <p>Meanwhile, at the same time that this remediation effort was underway, we were in the midst of
+                    redesigning the Plans and Pricing page, so my task doubled as both a design update and an
+                    accessibility overhaul of the features table. The new table design needed to not only be accessible, it needed
+                    to incorporate collapsable section headers.</p>
+                <p>After thorough research on the best way to incorporate accordion headers into a data table, I rebuilt
+                    the table’s structure as a <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/"
+                        target="_blank">treegrid pattern</a>.</p>
+                <p>I kept the authoring experience simple, because this table is currently authored in a rich text
+                    editor, which has proved to be the easiest way for website authors to update data in a table this
+                    complex without consistent engineering support.</p>
+            </div>
+
+            <figure>
+                <img src="img/grid-organism-dark.png" alt="Caption">
+                <figcaption>Image showing minimal authoring experience. </figcaption>
+            </figure>
+
+            <div class="container">
+                <p>Because this table is in a rich text field, it meant that hardcoding aria-attributes directly into
+                    the editor was a non-starter, as this would be easily subject to breaking given the complex
+                    aria-count values and parent/child data that need to be present to describe the treegrid data
+                    structure. Therefore, the most sustainable approach was to write JavaScript that would parse the
+                    table and add accordion functionality and assign appropriate aria values to the elements.</p>
+            </div>
+
+            <figure>
+                <pre>
+/** _tile-molecule.scss **/
+.tile-molecule {
+    background: var(--cardBackground)
+    border: 1px solid var(--border1);
+    box-shadow: var(--cardShadow);
+    border-radius: var(--cardRadius);
+    color: var(--cardHeadlineColor);
+    .content {
+        padding: 0 var(--md) var(--sm) var(--md);
+    }
+    svg.caret {
+        fill: var(--cardLinkColor);
+    }
+    .tag {
+        background: var(--cardTagBg);
+        color: var(--cardTagText);
+    }
+}</pre>
+                <figcaption>JS attribute example</figcaption>
+            </figure>
+
+
+            <div class="container">
+                <p>Throughout this project, I collaborated with other engineers, having them code review and test my
+                    work on their devices and provide further feedback for improvement. I also conducted code review on
+                    their component refactors to ensure we were all learning from the accessibility improvements so we
+                    could be on the same page about best practices moving forward.</p>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Results</h2>
+                <p>By implementing a sitewide remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA
+                        compliance</b>. The front end team now had an improved understanding of proper standards for
+                    accessibility that should be adhered to for future projects.</p>
+
+
+                <p>For the Pricing and Plans table, the updated experience allows for keyboard navigation throughout the
+                    table using the expected treegrid keyboard commands and a much smoother expeirence for screen
+                    readers. Using the keyboard only, a user can open and close sections, navigate through
+                    entire rows or single columns at a time, get information describing rather than no content
+                    (checkmarks are described as “Included” rather than as an empty cell), and the table has a
+                    visually-hidden caption that provides an overview of its purpose to screen readers before reading
+                    all of the data within.</p>
+                <p>
+            </div>
+
+            <figure>
+                <img src="img/grid-organism-dark.png" alt="Caption">
+                <figcaption>Video showing improved NVDA experience. </figcaption>
+            </figure>
+
+
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Future</h2>
+                <p>Moving forward, we now leverage tools like WebAIM and Lighthouse for a quick automatic check of items, and NVDA for
+                    validating screen reader experiences, but we understand the importance of manually checking items
+                    within the context of their intended purpose, which an automated testing tool alone would not catch.
+                </p>
+                <p>I continue to stay informed about accessibility best practices through resources like [a11y
+                    newsletter link]. The engineering team is exploring adding more supporting features to the site,
+                    like the Editoria11y module[link] to help authors check their content for proper outline structure,
+                    image alt tags, and other common points of failure for accessibility.</p>
+        </section>
+
+        <section>
+            <div class="container">
+                <nav class="project-nav" aria-label="Pagination">
+                    <ul>
+                        <li><a href="#">Previous project (Form API Integration)</a></li>
+                        <li><a href="#">Next project (Speed Optimization)</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container">
+                <h2 class="text-align-center">Additional projects</h2>
+                <ul class="tile-grid odd">
+                    <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                    <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                    <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!--(bake /includes/footer.html)-->
+
+    <!-- Scripts -->
+    <!--(bake /includes/scripts.html)-->
+
+</body>
+
+</html>

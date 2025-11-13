@@ -65,22 +65,18 @@
                     <li><a href="index.html#featured-projects">Projects</a></li>
                 </ul>
             </nav>
-            <h1>Component-based Design System</h1>
+            <h1>Global Mega-Menu Navigation</h1>
             <h2 class="visually-hidden">Overview</h2>
-            <p class="subhead">Support the creation and lead ongoing maintenance of an atomic design system across
-                multiple enteprise web properties.</b></p>
+            <p class="subhead">Architected a robust navigation that can be easily updated in the CMS without engineering
+                support.</b></p>
             <div class="stats-container">
-                <div class="flex--33">
-                    <span class="stats--number">$1mil ARR</span>
-                    <span class="stats--desc">attributed to redesign within 8 months</span>
+                <div class="flex--25">
+                    <span class="stats--number">6x</span>
+                    <span class="stats--desc">increase in clicks to Platform page</span>
                 </div>
-                <div class="flex--33">
-                    <span class="stats--number">10,500+</span>
-                    <span class="stats--desc">component instances published</span>
-                </div>
-                <div class="flex--33">
-                    <span class="stats--number">18</span>
-                    <span class="stats--desc">color scheme variations supported</span>
+                <div class="flex--15">
+                    <span class="stats--number">34%+</span>
+                    <span class="stats--desc">increase in clicks to other top-level links</span>
                 </div>
             </div>
             <h3>Company</h3>
@@ -88,73 +84,92 @@
             <h3>Technologies used</h3>
             <ul class="tags">
                 <li>CSS</li>
+                <li>Sass</li>
                 <li>JavaScript</li>
                 <li>Twig</li>
                 <li>Drupal</li>
+                <li>PHP</li>
                 <li>Figma</li>
                 <li>PatternLab</li>
                 <li>WCAG Accessibility</li>
-
             </ul>
-
         </div>
     </header>
 
     <!-- Main-->
     <main id="main">
         <section>
-            <section>
-                <div class="container">
-                    <h2>Challenge</h2>
-                    <p>When migrating Smartsheet’s websites from Drupal 7 to Drupal 8, the engineering team identified
-                        the opportunity to do an entire design system overhaul. Not only should the site look more
-                        modern and on brand, it should be modular, have a clear path for visual updates and maintenance,
-                        and a component structure that makes it easy for web authors to build pages. </p>
-                    <!-- <p>While we had relied on libraries like Bootstrap in the past, we had a lot of frustrations with it (e.g. major breaking updates where you have to comb through your entire codebase to change CSS class names and markup structure and constantly battling styles in the cascade when we wanted to make it our own). We believed that while these frameworks can be helpful in quickly spinning up a new site or launching an MVP, at this time we felt there was a better way for long term maintenance and growth of a multilingual enterprise website of this size.</p> -->
-                </div>
-            </section>
+            <div class="container">
+                <h2>Challenge</h2>
+                <p>Auditing the Smartsheet's site navigation and information architecture strategy, we identified
+                    several areas for improvement. In particular, we found that the the sitewide top navigation was:</p>
+                <ol>
+                    <li>Not fully authorable in the CMS without engineering, which made it hard to quickly pivot in
+                        content strategy.</li>
+                    <li>Overly complex in functionality, which was difficult for engineers to maintain and caused
+                        frequent bugs.</li>
+                    <li>Completely inaccessible, as it was not using correct semantic markup, aria labels, and was not
+                        navigable with a keyboard or screen reader.</li>
+                    <li>Lacking an easy way to merchandise effectively, such as promoting the customer conference or new
+                        product offerings.</li>
+                    <li>Redundant in markup between desktop and mobile.</li>
+                </ol>
+            </div>
+        </section>
 
-
+        <section>
             <div class="container">
                 <h2>Solution</h2>
-                <p>We determined the best path forward was to leverage the exciting new features that were widely
-                    supported in CSS without any special framework. Flexbox, grid, and CSS custom properties could
-                    unlock all we needed for a simple variable-based approach to colors, spacing, and overall layout
-                    consistency.</p>
-                <p>Taking principles like <a href="https://talks.jensimmons.com/15TjNW/designing-intrinsic-layouts"
-                        target="_blank">intrinsic design</a> we set out to build a component library where we didn’t
-                    think only about mobile versus desktop and strict concepts like “grid with exactly three items,” but
-                    about flexible elements that could adapt based on real-life content needs and the component’s
-                    container size. </p>
-                <p>A grid of tiles may take up the full screen width on a desktop monitor, or be in a small column in a
-                    sidebar, and it should be able to seamlessly adapt to both scenarios. We set to work collaborating
-                    with UI/UX designers to architect an <a href="https://bradfrost.com/blog/post/atomic-web-design/"
-                        target="_blank">atomic design system</a> in PatternLab where we could organize everything from
-                    button styles (atoms) to grids of tiles (organisms) and use these building blocks to create
-                    templates for different content types and pages.</p>
-            </div>
-
-            <figure>
-                <img src="img/grid-organism-dark.png" alt="Caption">
-                <figcaption>Grid organism-level component that contains tile molecules. Shown in default scheme, dark
-                    variation. </figcaption>
-            </figure>
-
-            <div class="container">
-                <p>In Figma Dev Mode (previously in Zeplin and Invision), we have worked with the design team to ensure
-                    all global variables/tokens are mapped to all components and redlines. The values used in Figma
-                    match our codebase, so there are no surprises when design generates redlines for an update or a
-                    brand new component. Design has mapped the full suite of global variables using the semantic CSS
-                    custom property names, rather than just designing with hex codes and rigid pixel values, and we use
-                    these semantic property names in our build:</p>
+                <p>Working with UI/UX designers, product owners, back end engineers, and marketing stakeholders, we did
+                    a full overhaul of the navigation experience and built out an improved mega-menu experience that
+                    provided better structure for our site’s information architecture strategy.</p>
             </div>
 
             <div class="two-up">
                 <div class="flex--50">
                     <figure>
-                        <img src="img/tile-molecule-figma.png" alt="Caption">
-                        <figcaption>The Figma redlines for this molecule map perfectly to our global SCSS variable
-                            structure.</figcaption>
+                        <img src="img/nav-overview.png" alt="Caption">
+                        <figcaption>Nav before visual  - mobile and tablet included (video?)</figcaption>
+                    </figure>
+                </div>
+                <div class="flex--50">
+                    <figure>
+                        <img src="img/nav-overview.png" alt="Caption">
+                        <figcaption>Nav after visual - mobile and tablet included (video?)</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="container">
+                <p>The new mega-menu format has improved transitions and animations, overlays with grid layout
+                    structure, and cohesive color schemes that map to our <a href="design-system">global color
+                        variations</a>. It scales seamlessly from mobile, to tablet, and to the largest desktop viewports. Additionally, it is built with the correct semantic markup and aria attributes
+                    to be <a href="accessibility">fully accessible</a> by keyboard controls and screen readers:</p>
+            </div>
+
+            <div class="two-up">
+                <div class="flex--50">
+                    <figure>
+                        <pre>
+/** _tile-molecule.scss **/
+.tile-molecule {
+    background: var(--cardBackground)
+    border: 1px solid var(--border1);
+    box-shadow: var(--cardShadow);
+    border-radius: var(--cardRadius);
+    color: var(--cardHeadlineColor);
+    .content {
+        padding: 0 var(--md) var(--sm) var(--md);
+    }
+    svg.caret {
+        fill: var(--cardLinkColor);
+    }
+    .tag {
+        background: var(--cardTagBg);
+        color: var(--cardTagText);
+    }
+}</pre>
+                        <figcaption>Before - inaccessible markup.</figcaption>
                     </figure>
                 </div>
                 <div class="flex--50">
@@ -178,110 +193,36 @@
         color: var(--cardTagText);
     }
 }</pre>
-                        <figcaption>In our codebase, the component's SCSS file is comprised of global CSS custom
-                            properties where possible.</figcaption>
+                        <figcaption>After - improved accessible markup.</figcaption>
                     </figure>
                 </div>
             </div>
 
             <div class="container">
-                <p>By using CSS custom properties, we were able to build out components that supported six color
-                    variations across three different schemes (light mode, dark mode, and special events color scheme).
-                    This means every component in the entire design system can easily be used in any of these <b>18
-                        different color variations</b> without time-consuming color customizations needed at a
-                    per-component level:</p>
+                <p>When researching modules in Drupal, I found that existing mega-menu modules were overly complex for
+                    our needs. Instead, I relied on the Custom Menu Links core module and built custom theming
+                    for a mega-menu that served our needs. I reviewed my approach with back end engineers to ensure it
+                    would be a sustainable approach within our CMS. Authors are able to build out a simple tree of menu
+                    links for the mega-menu and add images, link styles, and merchandising sections as needed:</p>
             </div>
 
             <figure>
-                <img src="img/tile-molecule-figma.png" alt="Caption">
-                <figcaption>Overview of all 18 different color variations defined in Figma that are integrated into
-                    Drupal's front end.</figcaption>
+                <img src="img/grid-organism-dark.png" alt="Caption">
+                <figcaption>Image of simple authoring menu experience</figcaption>
             </figure>
-            <!-- <div class="two-up">
-                <div class="flex--50">
-                    <figure>
-                        <img src="img/design-system-overview.png" alt="Caption">
-                        <figcaption>The semantic variable names (tokens) in Figma are clearly mapped according to our global SCSS variable sturcture.</figcaption>
-                    </figure>
-                </div>
-                <div class="flex--50">
-                <figure>
-                    <pre>
-/** _default-scheme.scss **/
-&.light-variation {
-    /** Main colors **/
-    --backgroundColor: #{$max};
-    --backgroundTransparent: transparent;
-    --headlineColor: #{$blue_900};
-    --headlineLinkColor: #{$blue_500};
-    --copyColor: #{transparentize($blue_900, .25)}; //75%
-    --linkColor: #{$blue_500};
-    --disabled: #{transparentize($blue_900, .40)}; //60%
-    --error: #{$red_500};
-
-    /** Accents and borders **/
-    --accentColor: #{$blue_400};
-    --accentBorder: #{$blue_300};
-    ...
-}
-&.gray-variation {
-    ...
-}</pre>
-                <figcaption>Each color variation in each scheme is clearly defined in one global spot and is inherited by the entire component system.</figcaption>
-                </figure>
-                </div>
-            </div> -->
-
-            <div class="container">
-                <p>After prototyping in PatternLab, these components were built as Paragraphs within Drupal. These
-                    components are built as modular standalone elements a web author can drag and drop within the Bricks
-                    UI to build endless custom layout combinations. An author can choose the section’s color variation
-                    and some image size options, but all choices map back to our established global design system.
-            </div>
-
         </section>
 
         <section>
             <div class="container">
                 <h2>Results</h2>
-                <p>Upon initial launch of the new design system and broader site migration, Smartsheet’s primary website
-                    had a fresh new look, modern user experience, improved authoring experience, and promising metrics
-                    to go with it: <b>the project exceeded its offset goal by +71%, with $1MM in ARR attributed to the
-                        website rebuild and migration.</b></p>
-                <p>Currently, we have <b>over 10,500 organism-level components</b> in use across the primary website.
-                </p>
-                <p>Since its inception, we have been able to continually improve our component library to stay on brand
-                    and keep up with design standards in the industry, integrating more progressive enhancements and
-                    adding new features to components along the way. Our recent major update included working closely
-                    with design to bring the website design system to feel closer in line with the Smartsheet
-                    application’s latest UI revamp. This included updating the entire color scale, elevations/shadows,
-                    spacing, icons, typeramp, interactions, and more.</p>
-            </div>
-            <figure class="tile-grid odd">
-                <img src="img/tile-oldest.png" alt="Caption">
-                <img src="img/tile-old.png" alt="Caption">
-                <img src="img/tile-newest.png" alt="Caption">
-                <figcaption style="grid-column: 1/-1;">Tiles over the years as our design system evolved. The tiles have
-                    not only improved visually, but expanded to accommodate tags and metadata to better promote article
-                    content.</figcaption>
-            </figure>
-            <div class="container">
-                <p>Over my years at Smartsheet, I have grown in responsibility to take on engineering ownership and
-                    governance of our global design system and have onboarded new front end engineers into the system.
-                    We have conducted a thorough <a href="accessbility.html">accessibility remediation</a> of the
-                    component library to ensure it meets WCAG standards. We have since brought this design system to
-                    multiple other web properties to ensure cohesion for the Smartsheet web experience.</p>
+                <p>On initial launch, we saw a <b>6x increase in clicks the Platform page</b> and <b>up to a 34%
+                        increase to other top level links</b>.</p>
+                <p>Since the first launch, we have done a couple refreshes of the design and content structure to match
+                    our global UI changes on the site and evolving content strategy. The foundation I built in the first
+                    round has made subsequent engineering updates straightforward and has given authors the ability to
+                    manage routine content changes without engineering support.</p>
             </div>
 
-        </section>
-
-        <section>
-            <div class="container">
-                <h2>Future</h2>
-                <p>In the long term, our goal is to continue to evolve our UI and components and while minimizing design
-                    system sprawl. We regularly test component performance with approaches like heatmapping and user
-                    testing, making sure our interactive components get the engagement we’d expect and continue to find
-                    opportunities for improvement.</p>
         </section>
 
         <section>

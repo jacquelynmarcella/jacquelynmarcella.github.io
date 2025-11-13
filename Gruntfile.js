@@ -16,9 +16,15 @@ module.exports = function(grunt) {
         build: {
             files: {
                 "index.html": "src/index.html",
+                "accessibility.html": "src/accessibility.html",
                 "blackjack.html": "src/blackjack.html",
+                "design-system.html": "src/design-system.html",
                 "dreamstate.html": "src/dreamstate.html",
+                "form-api.html": "src/form-api.html",
+                "media-optimization.html": "src/media-optimization.html",
+                "mega-menu-navigation.html": "src/mega-menu-navigation.html",
                 "plant-parenthood.html": "src/plant-parenthood.html",
+                "search-api.html": "src/search-api.html",
                 "skincare.html": "src/index.html"
             }
         }

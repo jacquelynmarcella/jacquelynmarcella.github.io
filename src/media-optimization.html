@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+
+<head>
+    <!--(bake /includes/head.html)-->
+    <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+</head>
+
+<body>
+    <!-- Global nav -->
+    <!--(bake /includes/nav.html)-->
+
+    <!-- Hero -->
+    <header id="top" class="">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#featured-projects">Projects</a></li>
+                </ul>
+            </nav>
+            <h1>Media Optimization</h1>
+            <h2 class="visually-hidden">Overview</h2>
+            <p class="subhead">Led multi-phase initiative that improved site performance.</b></p>
+            <div class="stats-container">
+                <div class="flex--33">
+                    <span class="stats--number">97%</span>
+                    <span class="stats--desc">image file size reduction</span>
+                </div>
+                <div class="flex--33">
+                    <span class="stats--number">94%</span>
+                    <span class="stats--desc">animation file size reduction</span>
+                </div>
+                <div class="flex--33">
+                    <span class="stats--number">28%</span>
+                    <span class="stats--desc">increase in Google image search impressions</span>
+                </div>
+            </div>
+            <h3>Company</h3>
+            <p>Smartsheet</p>
+            <h3>Technologies and skills used</h3>
+            <ul class="tags">
+                <li>Drupal</li>
+                <li>PHP</li>
+                <li>Twig</li>
+                <li>SEO</li>
+                <li>Lottie</li>
+                <li>Site performance</li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- Main-->
+    <main id="main">
+        <section>
+            <section>
+                <div class="container">
+                    <h2>Challenge</h2>
+                    <p>When examining our Lighthouse speed scores for the site and investigating in the Network tab, I
+                        noticed a puzzling trend: we had responsive image modules and image compression enabled on the
+                        site, but image file sizes were still much larger than I’d expect, especially on mobile.</p>
+                    <p>Due to
+                        my research and advocacy for improvements, I was able to get the business to prioritize a
+                        mulit-phase project, where we took several steps to improve page performance through
+                        optimization of media. Over time, we sought to address the following three challenges:</p>
+                    <ol>
+                        <li>Images on the site are rendering at far larger sizes than expected.</li>
+                        <li> PNG is not the optimal file format for performance.</li>
+                        <li>Increasing use of animations on the site had led to massive MP4/GIF files.</li>
+                    </ol>
+                </div>
+            </section>
+
+
+            <div class="container">
+                <h2>Solution</h2>
+                <p>Based on the three issues above, we split the two into three phases of work:</p>
+
+                <h3>Phase 1: Improve responsive image formats</h3>
+                <p>I did extensive research on our current responsive image sizes and
+                    settings. I realized that the default values we use for the “sizes” attribute on images didn’t
+                    encourage the browser to actually pick the smaller size for mobile. I found that the “1x, 2x” values
+                    typically used for this attribute weren’t cutting it, as there was not enough information on mobile
+                    for the browser to actually choose the smaller image.</p>
+                <p>Thinking big picture, I started testing out various combinations of “srcset” and “size” values for
+                    image tags in an <a href="#" target="_blank">experimental codepen</a> to determine values that would
+                    encourage the browser to render the smaller size file on mobile. I had to think through a variety of
+                    scenarios for file size needs (e.g. an image might be medium sized on desktop, but technically full
+                    screen width on mobile). Then, I was able to implement those configurations into Drupal into a range
+                    of responsive image size options that were integrated into our <a href="design-system.html">global
+                        component library</a>.</p>
+            </div>
+            <figure>
+                <img src="img/grid-organism-dark.png" alt="Caption">
+                <figcaption>Working demo of srcset/size values in action. Reszize your browser to see different
+                    image sizes requested by the browser.</figcaption>
+            </figure>
+            <div class="container">
+
+
+                <p>As part of this first phase, I also noticed that our background images were skipping our responsive
+                    image formatter entirely, due to how background images were authored and themed in the CMS. I wrote
+                    a new PHP function in our theme to provide a range of compressed image sizes for backgrounds that
+                    get appended as a <code>&lt;style&gt;</code> tag, so that the background is style applied like a
+                    traditional CSS background, while actually loading a properly sized file on smaller devices.</p>
+
+            </div>
+                <figure>
+                    <pre>
+/** _tile-molecule.scss **/
+.tile-molecule {
+    background: var(--cardBackground)
+    border: 1px solid var(--border1);
+    box-shadow: var(--cardShadow);
+    border-radius: var(--cardRadius);
+    color: var(--cardHeadlineColor);
+    .content {
+        padding: 0 var(--md) var(--sm) var(--md);
+    }
+    svg.caret {
+        fill: var(--cardLinkColor);
+    }
+    .tag {
+        background: var(--cardTagBg);
+        color: var(--cardTagText);
+    }
+}</pre>
+                    <figcaption>Background media PHP example</figcaption>
+                </figure>
+            <div class="container">
+
+                <h3>Phase 2: Implement WebP module to reduce PNG usage </h3>
+
+                <p>After launching the first phase, we knew that even with their newly reduced sizes, PNGs were still
+                    not optimal for performance. Further research and partnership with the SEO team confirmed that the
+                    next best step would be integrating WebP on the site.</p>
+                <p>I collaborated with our back end engineers to get the WebP Drupal module installed, which converts
+                    regular PNG files into WebP images, allowing our web authors to not have to do any extra work to
+                    improve image performance. I did a front end pass on the work, ensuring that the original PNG
+                    fallbacks (with the responsive image formats from Phase 1) still worked as expected and that there
+                    was no regression in our site’s design or performance.</p>
+
+                <h3>Phase 3: Integrate Lottie to use SVG animations instead of MP4/GIF</h3>
+                <p>After improving images, I advocated for the next phase of this work, which was to improve the
+                    performance of animating media. Due to the need to make compelling landing pages, large file size
+                    MP4s and GIFs were now everywhere on the site. If engineering forced compression of these files,
+                    they became so low quality that it was a dealbreaking issue for stakeholders.</p>
+                <p>We knew the next step was to shift to SVG-based animations. I supported the engineering and design
+                    teams in the effort to integrate Lottie as a supported media type on the site. Now, authors have
+                    begun converting pages that once had large MP4s/GIFs into pages with extremely low file size and
+                    crisp Lottie format animations.</p>
+            </div>
+
+
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Results</h2>
+                <p>The first rounds of improving responsive image formats and shifting to WebP led to both file size
+                    improvements and SEO wins. This work <b>reduced image file sizes by up to 97%</b>, which resulted in
+                    a <b>28% increase in Google image search impressions</b> and a <b>14% uptick in clicks</b>.</p>
+                <p>While we don’t have full sitewide conversion to Lottie yet, we are seeing <b>improvements to
+                        animation file sizes by over 94%</b> and have launched compelling new pages that are entirely
+                    composed of performant SVG animations.</p>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="container">
+                <nav class="project-nav" aria-label="Pagination">
+                    <ul>
+                        <li><a href="#">Previous project (Form API Integration)</a></li>
+                        <li><a href="#">Next project (Speed Optimization)</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container">
+                <h2 class="text-align-center">Additional projects</h2>
+                <ul class="tile-grid odd">
+                    <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                    <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                    <li>
+                        <div class="tile-content">
+                            <lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+                                style="width:50px;height:50px">
+                            </lord-icon>
+                            <a href="/form-api.html">Form API Integration</a>
+                            <p>Boost form conversion rates by over 20% through integration of ZoomInfo’s FormComplete
+                                API,
+                                A/B testing, and UI/UX enhancements.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                                <span>A/B Testing</span>
+                            </div>
+                        </div>
+                        <svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!--(bake /includes/footer.html)-->
+
+    <!-- Scripts -->
+    <!--(bake /includes/scripts.html)-->
+
+</body>
+
+</html>

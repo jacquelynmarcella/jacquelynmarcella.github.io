@@ -3,58 +3,13 @@
 <!-- Page head -->
 
 <head>
-    	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<meta name="description"
-    		content="UI engineer with 8 years of technical experience in JavaScript, CSS, Drupal, and component-based design systems. Based in Portland, OR." />
-    	<title>Jacquelyn Marcella | Front End Software Engineer</title>
-    	<link rel="shortcut icon" href="img/favicon.ico">
-
-    	<link rel="preconnect" href="https://fonts.googleapis.com">
-    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    	<link
-    		href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    		rel="stylesheet">
-
-    	<!-- <link rel="stylesheet" href="css/hamburgers.min.css"> -->
-    	<link rel="stylesheet" type="text/css" href="src/css/custom/reset.css">
-    	<link rel="stylesheet" type="text/css" href="src/css/custom/style.css">
-
+    <!--(bake /includes/head.html)-->
     <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
 </head>
 
 <body>
     <!-- Global nav -->
-    	<nav class="navbar">
-    		<h2 class="visually-hidden">Main Menu</h2>
-    		<ul class="navbar--contents navbar--level-1">
-    			<li class="navbar--home">
-    				<a href="index.html">Jacquelyn Marcella</a>
-    			</li>
-    			<li class="nav-item navbar--links">
-    				<button class="navbar--hamburger right-align" id="navbar--toggle" aria-expanded="false"
-    					aria-controls="navbar--dropdown">
-    					<span class="visually-hidden">Menu</span>
-    					<svg class="navbar--icon" aria-hidden="true" version="1.1" xmlns="https://www.w3.org/2000/svg"
-    						xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
-    						<g class="svg-menu-toggle">
-    							<path class="line line-1" d="M5 13h90v14H5z" />
-    							<path class="line line-2" d="M5 43h90v14H5z" />
-    							<path class="line line-3" d="M5 73h90v14H5z" />
-    						</g>
-    					</svg>
-    				</button>
-    				<ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
-    					<li class="right-align"><a href="#skills">Skills</a></li>
-    					<li><a href="index.html#experience">Experience</a></li>
-    					<li><a href="index.html#featured-projects">Projects</a></li>
-    					<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a></li>
-    					<li class="right-align"><a href="#contact" class="button alternate">Contact</a></li>
-    					<li><button class="toggle--scheme" id="color-mode-button">D</button></li>
-    				</ul>
-    			</li>
-    		</ul>
-    	</nav>
+    <!--(bake /includes/nav.html)-->
 
     <!-- Hero -->
     <header id="top" class="">
@@ -369,37 +324,10 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact">
-        <h2 class="visually-hidden">Contact</h2>
-        <div class="container">
-            <div>
-                Copyright info here
-            </div>
-            <div>
-                <h3 class="">Let's get in touch</h2>
-                <ul class="">
-                    <li><a href="mailto:jacquelyn.marcella@gmail.com">Email me</a></li>
-                    <li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
-                    <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <!--(bake /includes/footer.html)-->
 
     <!-- Scripts -->
-    <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <script src="src/js/portfolio.js" type="text/javascript"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116161963-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-116161963-1');
-    </script>
+    <!--(bake /includes/scripts.html)-->
 
 </body>
 

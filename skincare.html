@@ -1,231 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
-	<!-- Page head -->
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="description"
-	        content="UI engineer with 8 years of technical experience. Experienced in JavaScript, CSS, Drupal, React.js, and component-based design systems. Based in Portland, OR." />
-	    <title>Jacquelyn Marcella | Front End Software Engineer</title>
-	    <link rel="shortcut icon" href="img/favicon.ico">
-	    <link rel="stylesheet" href="css/hamburgers.min.css">
-	    <link rel="stylesheet" type="text/css" href="css/style.min.css">
-	    <link rel="stylesheet" href="css/tailwind.css">
-	</head>
-	<body>
+<!-- Page head -->
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description"
+			content="UI engineer with 8 years of technical experience in JavaScript, CSS, Drupal, and component-based design systems. Based in Portland, OR." />
+		<title>Jacquelyn Marcella | Front End Software Engineer</title>
+		<link rel="shortcut icon" href="img/favicon.ico">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet">
+
+		<!-- <link rel="stylesheet" href="css/hamburgers.min.css"> -->
+		<link rel="stylesheet" type="text/css" href="src/css/custom/reset.css">
+		<link rel="stylesheet" type="text/css" href="src/css/custom/style.css">
+
+</head>
+
+<body>
 	<!-- Global nav -->
-	<!-- <nav class="nav-home">
-	    <ul class="nav-right">
-	        <li><a href="#" class="nav-home" title="Home">Home</a></li>
-	        <li><a href="#skills">Skills</a></li>
-	        <li><a href="#experience">Experience</a></li>
-	        <li><a href="#featured-projects">Projects</a></li>
-	        <li><a href="#contact">Contact</a></li>
-	        <a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a>
-	        <button class="hamburger hamburger--squeeze" type="button">
-	            <span class="hamburger-box">
-	                <span class="hamburger-inner"></span>
-	            </span>
-	        </button>
-	    </ul>
-	</nav> -->
-
-
-
-
-	<nav class="bg-white border-gray-200 dark:bg-gray-900">
-	  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-	    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-	        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-	        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-	    </a>
-	    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-	        <span class="sr-only">Open main menu</span>
-	        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-	            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-	        </svg>
-	    </button>
-	    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-	      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-	        <li>
-	          <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-	        </li>
-	        <li>
-	          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-	        </li>
-	        <li>
-	          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-	        </li>
-	        <li>
-	          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-	        </li>
-	        <li>
-	          <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-	        </li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-
+		<nav class="navbar">
+			<h2 class="visually-hidden">Main Menu</h2>
+			<ul class="navbar--contents navbar--level-1">
+				<li class="navbar--home">
+					<a href="index.html">Jacquelyn Marcella</a>
+				</li>
+				<li class="nav-item navbar--links">
+					<button class="navbar--hamburger right-align" id="navbar--toggle" aria-expanded="false"
+						aria-controls="navbar--dropdown">
+						<span class="visually-hidden">Menu</span>
+						<svg class="navbar--icon" aria-hidden="true" version="1.1" xmlns="https://www.w3.org/2000/svg"
+							xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
+							<g class="svg-menu-toggle">
+								<path class="line line-1" d="M5 13h90v14H5z" />
+								<path class="line line-2" d="M5 43h90v14H5z" />
+								<path class="line line-3" d="M5 73h90v14H5z" />
+							</g>
+						</svg>
+					</button>
+					<ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
+						<li class="right-align"><a href="#skills">Skills</a></li>
+						<li><a href="index.html#experience">Experience</a></li>
+						<li><a href="index.html#featured-projects">Projects</a></li>
+						<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a></li>
+						<li class="right-align"><a href="#contact" class="button alternate">Contact</a></li>
+						<li><button class="toggle--scheme" id="color-mode-button">D</button></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
 
 	<!-- Hero -->
-	<div class="header-background">
-	</div>
-	<header id="top" class="text-3xl font-bold">
-		<div class="header-content">
-			<h1>
-				<span>Jacquelyn Marcella,</span> 
-				<span>Front End Software Engineer</span> 
-				<span>Based in Portland, OR</span>
-			</h1>
-			<h2>Introduction</h2>
-			<p>Front End Engineer with over 8 years of web development experience architecting intuitive, accessible, and scalable user experiences.</p>
-			<p>I have a deep appreciation for the design process and thrive in roles where collaboration is part of the culture. When I’m not coding, you can find me exploring the Pacific Northwest, baking cakes, watching horror movies, and building out my own native plant habitat.</p>
+	<!-- Hero -->
+	<header id="top" class="header--hero">
+		<div class="container two-up header--container">
+			<div class="header--image flex--66">
+				<!-- 
+				<img src="https://placeimg.dev/500x500/38491d?text=Placeholder&textColor=fffff4"
+					class="hero--image-left" alt="Hero image caption">
+				<img src="https://placeimg.dev/500x500/38491d?text=Placeholder&textColor=fffff4" class="hero--image-mid"
+					alt="Hero image caption">
+				<img src="https://placeimg.dev/500x500/38491d?text=Placeholder&textColor=fffff4"
+					class="hero--image-right" alt="Hero image caption"> -->
+
+			</div>
+
+			<div class="header--title flex--33">
+				<hgroup>
+					<h1>&nbsp;Jacquelyn <br>Marcella</h1>
+					<p class="subhead">Front End Software Engineer</p>
+				</hgroup>
+				<div class="header--about">
+					<h2 class="visually-hidden">Introduction</h2>
+					<p>I have over 8 years of technical experience architecting intuitive and accessible web
+						applications. I love building projects with <code>JavaScript</code>, <code>CSS</code>, and
+						<code>Drupal</code>. When I’m not coding, you can find me exploring the Pacific Northwest,
+						watching horror movies, and building out my own native plant habitat.</p>
+					<p>Want to work together?</p>
+					<p><a href="#contact" class="button primary">Contact me</a></p>
+				</div>
+			</div>
+
+			<!-- <div class="header--background">
+				<img src="img/portland-map.png" aria-hidden="true" alt="">
+			</div> -->
+
 		</div>
 	</header>
-	<div class="section" id="skills">
-		<h2>Skills</h2>
-		<div class="skills grid">
-			<ul class="skills">
-				<li><h3>Languages</h3>
-					<ul>	
-						<li>HTML</li>
-						<li>CSS</li>
-						<li>Scss</li>
-						<li>JavaScript</li>
-						<li>PHP</li>
-					</ul>
-				</li>
-				<li><h3>Technologies and frameworks</h3>
-					<ul>
-						<li>Drupal</li>
-						<li>React.js</li>
-						<li>jQuery</li>
-						<li>Twig</li>
-						<li>Bootstrap</li>
-						<li>Material UI</li>
-						<li>Mocha</li>
-					</ul>
-				</li>
-				<li><h3>Front end</h3>
-					<ul>
-						<li>WCAG Accessibility</li>
-						<li>CSS Grid</li>
-						<li>Flexbox</li>
-						<li>Responsive design</li>
-						<li>Atomic design</li>
-						<li>PatternLab</li>
-						<li>Lottie</li>
-					</ul>
-				</li>
-				<li><h3>Developer tools</h3>
-					<ul>
-						<li>Git, GitHub, GitLab</li>
-						<li>Gulp.js</li>
-						<li>Docker</li>
-						<li>BrowserStack</li>
-						<li>VS Code</li>
-						<li>Optimizely</li>
-						<li>Confluence</li>
-						<li>JIRA</li>
-					</ul>
-				</li>
-				<li><h3>Design tools</h3>
-					<ul>
-						<li>Figma Dev Mode</li>
-						<li>Adobe Photoshop</li>
-						<li>Adobe Lightroom</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- Experience -->
-	<div id="experience" class="timeline">
-		<h2>Experience</h2>
-		<div class="horizontal-scroll">
-			<ul>
-				<li>The early days</li>
-				<li>Y2K, an era of self guided learning</li>
-				<li>B.A., Business and Communications, University of Puget Sound</li>
-				<li>Development Intern, Tacoma Art Museum</li>
-				<li>Marketing Assistant, Coldwell Banker Bain</li>
-				<li>Traffic Manager, Rusty George Creative</li>
-				<li>Traffic Manager, Avanade</li>
-				<li>Full Stack Developer, General Assembly</li>
-				<li>Senior Front End Engineer II, Smartsheet</li>
-				<li>What's next?</li>
-			</ul>
-		</div>
-		<a href="resume.pdf">Download Resume</a>
-	</div>
+	<!-- <img src="img/mountain.jpg"> -->
 
-	<!-- Projects -->
-	<div class="section" id="featured-projects">
-		<h2>Recent projects</h2>
-		<ul class="tile-grid">
-			<li>Component-based Design System</li>
-			<li>Media Optimization</li>
-			<li>Signup Testing & Implementation</li>
-			<li>Accessibility Remediation</li>
-			<li>Information Architecture Redesign</li>
-			<li>Search API Migration</li> 
-		</ul>
-		<!-- <h3>Personal</h3> -->
-		<button>Show older projects</button>
-		<h2>Older projects</h2>
-		<ul class="old-grid">
-			<li>Plant Parenthood: Node | jQuery | SCSS | SQL | Mocha</li>
-			<li>Dreamstate: React | MongoDB | Node | Data Visualization</li>
-			<li>Skin/Care: React | MongoDB | Node</li>
-			<li>Blackjack: jQuery | Materialize</li>
-		</ul>
-		<div class="flex-grid">
-			<!-- <div class="portfolio-item plant transition"><a href="plant-parenthood.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Plant Parenthood</h3>
-					<h5></h5>
+	<section class="skills" id="skills">
+		<div class="container">
+			<h2>Technical skills</h2>
+			<hr>
+			<div class="two-up">
+				<div class="flex--33">
+
+					<p>I'm always ready to learn new technologies, whether it's a new front end framework or brushing up
+						on
+						the latest CSS release that makes a once difficult design concept simpler to implement.</p>
 				</div>
+				<ul class="skills--container flex--66">
+					<li>
+						<h3>Languages</h3>
+						<ul class="skills--list">
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>Scss</li>
+							<li>JavaScript</li>
+							<li>PHP</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Technologies and frameworks</h3>
+						<ul class="skills--list">
+							<li>Drupal</li>
+							<li>React.js</li>
+							<li>jQuery</li>
+							<li>Twig</li>
+							<li>Tailwind CSS</li>
+							<li>Bootstrap</li>
+							<li>Material UI</li>
+							<li>Mocha</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Front end</h3>
+						<ul class="skills--list">
+							<li>WCAG Accessibility</li>
+							<li>CSS Grid</li>
+							<li>Flexbox</li>
+							<li>Responsive design</li>
+							<li>Atomic design</li>
+							<li>PatternLab</li>
+							<li>Lottie</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Developer tools</h3>
+						<ul class="skills--list">
+							<li>Git</li>
+							<li>Gulp.js</li>
+							<li>Grunt</li>
+							<li>Docker</li>
+							<li>BrowserStack</li>
+							<li>VS Code</li>
+							<li>Optimizely</li>
+							<li>Confluence</li>
+							<li>JIRA</li>
+						</ul>
+					</li>
+					<li>
+						<h3>Design tools</h3>
+						<ul class="skills--list">
+							<li>Figma Dev Mode</li>
+							<li>Adobe Photoshop</li>
+							<li>Adobe Lightroom</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
-			<div class="portfolio-item skincare transition"><a href="skincare.html" alt="Skin/Care"></a>
-				<div class="portfolio-text">
-					<h3>Skin/Care</h3>
-					<h5>React | MongoDB | Node</h5>
-				</div>
-			</div>
-			<div class="portfolio-item dream transition">
-				<a href="dreamstate.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Dreamstate</h3>
-					<h5>React | MongoDB | Node | Data Visualization</h5>
-				</div>
-			</div>
-			<div class="portfolio-item blackjack transition">
-				<a href="blackjack.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Blackjack</h3>
-					<h5>jQuery | Materialize</h5>
-				</div>
-			</div> -->
+
 		</div>
-	</div>
+	</section>
+
+
+	<!-- Experience -->
+
+	<section id="experience" class="experience">
+		<div class="container">
+			<div class="image--container image--container-polaroid">
+				<img class="image--polaroid" src="img/Young Jacquelyn at computer.jpg"
+					alt="Me at a computer, in the early years" loading="lazy">
+			</div>
+			<h2 class="text-align-center">Experience</h2>
+			<p class="text-align-center balance">My interest in technology started at a young age. Take a trip through
+				the wayback machine to learn more about my journey.</p>
+			<a href="resume.pdf" class="button primary section-cta-top">View full resume</a>
+		</div>
+		<hr>
+		<div class="slider--timeline" id="slider">
+			<ul class="slider--slides">
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/dwhxbrvz.json" trigger="loop" stroke="light"
+							style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>The early years</h3>
+						<p>Spent my free time tinkering on the household computer in the days of DOS and dial-up.</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+							style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>Self-guided learning</h3>
+						<p>Taught myself the basics as a hobby, from learning CSS and Photoshop to setting up my own FTP
+							server.</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/vvyxyrur.json" trigger="loop" stroke="light"
+							state="loop-cycle" style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>B.A., Business and Communications</h3>
+						<p>Graduated <em>cum laude</em> with an Honors in Business.</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/zhiiqoue.json" trigger="loop" stroke="light"
+							state="loop-cycle" style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>Internships</h3>
+						<p>Interned at the local art museum and worked as a marketing assistant retouching photos and
+							creating print collateral.</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/cfoaotmk.json" trigger="loop" stroke="light"
+							style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>Agency work</h3>
+						<p>Supported project management team on design and website projects in both large and small
+							agencies.</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+							style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>Full Stack Developer</h3>
+						<p>Pivoted to technical work through designing, building, and deploying MERN stack applications.
+						</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+							style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>Front End Developer</h3>
+						<p>Built Drupal features and ran A/B tests to improve SEO and site performance.</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+							style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>Senior Front End Developer</h3>
+						<p>Promoted as I grew in responsibility to deliver larger-scale front-end Drupal projects.</p>
+					</div>
+				</li>
+				<li class="slider--slide slider--current-role">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+							state="morph-code" style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>Senior Front End Engineer II</h3>
+						<!-- Inset some kind of "you are here" marker-->
+						<p>Currently overseeing a component-based design system across mulitple enterprise Drupal
+							websites.</p>
+					</div>
+				</li>
+				<li class="slider--slide">
+					<div class="slider--icon-container">
+						<lord-icon src="https://cdn.lordicon.com/bpwrqrbv.json" trigger="loop" stroke="light"
+							style="width:75px;height:75px">
+						</lord-icon>
+					</div>
+					<div class="slider--text-container">
+						<h3>The future ahead</h3>
+						<p>Continuing to grow in my skillset as a Front End Engineer. </p>
+						<p><a href="#contact" class="button alternate">Work with me</a></p>
+					</div>
+				</li>
+			</ul>
+			<div class="slider--controls">
+				<!--Need more aria controls values-->
+				<button class="button alternate" id="slider-prev" data-direction="left">
+					<span class="visually-hidden">Travel back</span>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</button>
+				<button class="button alternate" id="slider-next" data-direction="right">
+					<span class="visually-hidden">Travel forwards</span>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</button>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="projects" id="featured-projects">
+		<div class="container">
+			<h2>Projects</h2>
+			<hr>
+			<h3 class="visually-hidden">Recent projects</h3>
+			<p class="balance">In my recent role at Smarthseet as a Senior Front End Engineer, I have led the front-end
+				implementation of a range
+				of projects, from improving our global design system to A/B testing UI improvements to existing
+				components.
+			</p>
+			<ul class="tile-grid odd">
+				<li class="wide">
+					<div class="tile--image">
+						<img src="img/design-system-overview.png" alt="" aria-hidden="true">
+					</div>
+					<div class="tile-content">
+						<a href="design-system.html">Component-based Design System</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Support the creation and lead ongoing maintenance of a component-based
+							design system across multiple web
+							properties. Initial migration and launch led to $1MM ARR within the first year.</p>
+						<div class="tags">
+							<span>CSS</span>
+							<span>JavaScript</span>
+							<span>Atomic design</span>
+							<span>Drupal</span>
+							<span>PatternLab</span>
+							<span>Figma</span>
+						</div>
+					</div>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</li>
+				<li>
+					<div class="tile--image">
+						<img src="img/signup-overview.png" alt="" aria-hidden="true">
+					</div>
+					<div class="tile-content">
+						<a href="form-api.html">Form API Integration</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Boost form conversion rates by over 20% through integration of ZoomInfo’s
+							FormComplete API,
+							A/B testing, and UI/UX enhancements.</p>
+						<div class="tags">
+							<span>JavaScript</span>
+							<span>CSS</span>
+							<span>A/B Testing</span>
+						</div>
+					</div>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</li>
+				<li class="">
+					<div class="tile--image">
+						<img src="img/nav-overview.png" alt="" aria-hidden="true">
+					</div>
+					<div class="tile-content">
+						<a href="mega-menu-navigation.html">Global Mega-Menu Navigation</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Architected an easily maintanable mega-menu navigation that increased
+							clicks by over 30% to top-level pages.</p>
+						<div class="tags">
+							<span>CSS</span>
+							<span>JavaScript</span>
+							<span>Drupal</span>
+							<span>Figma</span>
+						</div>
+					</div>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</li>
+				<li>
+					<div class="tile-content">
+						<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+							style="width:50px;height:50px">
+						</lord-icon>
+						<a href="accessibility.html">Accessibility Remediation</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Lead front end accessibility remediation, surpassing the original goal of
+							90%+ WCAG 2.1 AA
+							compliance.</p>
+						<div class="tags">
+							<span>WCAG Accessibility</span>
+							<span>JavaScript</span>
+							<span>Drupal</span>
+						</div>
+					</div>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</li>
+				<li class="">
+					<div class="tile-content">
+						<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" state="morph-open" trigger="hover"
+							style="width:50px;height:50px">
+						</lord-icon>
+						<a href="media-optimization.html">Media Optimization</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Drive initiative that cut image file sizes by up to 97% and animation file
+							sizes by over 94%,
+							resulting in a 28% increase in Google image search impressions and a 14% uptick in clicks.
+						</p>
+						<div class="tags">
+							<span>Drupal</span>
+							<span>PHP</span>
+							<span>SEO</span>
+							<span>Site performance</span>
+						</div>
+					</div>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</li>
+				<li>
+					<div class="tile-content">
+						<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" trigger="hover"
+							style="width:50px;height:50px">
+						</lord-icon>
+						<a href="search-api.html">Search API Migration</a>
+						<p><em>Smartsheet</em></p>
+						<p class="no-mobile">Supported the migration from Coveo to OpenSearch, leading to $150k in
+							annual cost savings.</p>
+						<div class="tags">
+							<span>CSS</span>
+							<span>JavaScript</span>
+							<span>Twig</span>
+							<span>Drupal</span>
+						</div>
+					</div>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</li>
+				<li class="wide">
+					<div class="tile-content">
+						<lord-icon src="https://cdn.lordicon.com/rrbmabsx.json" trigger="hover"
+							style="width:50px;height:50px">
+						</lord-icon>
+						<h3>Currently studying</h3>
+						<p>My recent work has largely included building enterprise projects in <code>Drupal</code> but I
+							have previously completed projects in <code>React.js</code> (check out my additional
+							projects
+							below). In the meantime, I am enrolled in the
+							<em>React by Jonas Schmedtmann</em> course to keep my React skills fresh.</p>
+					</div>
+				</li>
+			</ul>
+
+
+
+		</div>
+
+	</section>
+
+
+	<button class="button alternate section-cta-top drawer--toggle js-closed" aria-controls="projects-archive"
+		aria-expanded="false">
+		<span class="message message--open">Show additional projects</span>
+		<span class="message message--close display-none">Hide additional projects</span>
+	</button>
+	<section id="projects-archive" class="projects-old display-none drawer--container">
+
+		<div class="container">
+			<h2>Additional projects</h3>
+				<hr>
+				<div class="two-up">
+					<div class="flex--33 sticky">
+						<p>Intro text for older projects. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+							at velit mattis, euismod nisl vitae, mollis elit. Proin eleifend aliquam tristique.
+							Suspendisse massa metus, consectetur vitae purus in, laoreet venenatis mauris. </p>
+					</div>
+					<div class="tile-grid even compact flex--66">
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/dreamstate.html">Dreamstate</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>React.js</span>
+									<span>JavaScript</span>
+									<span>Node</span>
+									<span>MongoDB</span>
+									<span>Data Visualization</span>
+								</div>
+							</div>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/skincare.html">Skin/Care</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>React.js</span>
+									<span>JavaScript</span>
+									<span>MongoDB</span>
+									<span>Node</span>
+								</div>
+							</div>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/plant-parenthood.html">Plant Parenthood</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>Node</span>
+									<span>Sass</span>
+									<span>JavaScript</span>
+									<span>SQL</span>
+									<span>Mocha</span>
+								</div>
+							</div>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
+						<li>
+							<svg class="icon--code" xmlns="http://www.w3.org/2000/svg" width="430" height="431"
+								fill="none" viewBox="0 0 430 431">
+								<path stroke="var(--copyColor)" stroke-linecap="round" stroke-linejoin="round"
+									stroke-miterlimit="10" stroke-width="6"
+									d="M171.9 324.2v-217m0 173.7 85.2-39.7c13-6.1 21.4-19.2 21.4-33.6v-41.5m-.1 0c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9m-106.5-58.8c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9S146 67.096 146 81.4s11.596 25.9 25.9 25.9m0 268.7c14.304 0 25.9-11.596 25.9-25.9s-11.596-25.9-25.9-25.9-25.9 11.596-25.9 25.9 11.596 25.9 25.9 25.9" />
+							</svg>
+							<div class="tile-content">
+								<a href="/blackjack.html">Blackjack</a>
+								<p class="no-mobile">Lorem ipsum one sentence project overview.</p>
+								<div class="tags">
+									<span>JavaScript</span>
+									<span>jQuery</span>
+									<span>Materialize</span>
+								</div>
+							</div>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</li>
+
+					</div>
+				</div>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<h2 class="text-align-center">Recommendations</h2>
+			<p class="balance text-align-center">I do my best work in highly collaborative environments where I work
+				closely with engineers, designers, and product owners. Read what my teammates have to say about working with me.</p>
+			<div class="recommendations tile-grid">
+				<figure>
+					<lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="" stroke="light"
+						style="width:50px;height:50px">
+					</lord-icon>
+					<blockquote>
+						<p> Jacquelyn is a strong advocate for maintaining the integrity of our code base, while
+							embracing other's ideas. She is patient, generous, and an excellent teacher, always ready to
+							offer guidance and support to team members facing challenges.</p>
+					</blockquote>
+					<figcaption>Emmy L., Senior Front End Engineer</figcaption>
+				</figure>
+				<figure>
+					<lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="" stroke="light"
+						style="width:50px;height:50px">
+					</lord-icon>
+					<blockquote>
+						<p>Jacquelyn is a huge asset when it comes to scalable and maintainable code, having mastered
+							our tech stack extremely quickly. Her commitment to excellence is unmatched. </p>
+					</blockquote>
+					<figcaption>Katie K., Senior QA Engineer</figcaption>
+				</figure>
+				<figure>
+					<lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="" stroke="light"
+						style="width:50px;height:50px">
+					</lord-icon>
+					<blockquote>
+						<p>Jacquelyn is a rare front end engineer, who is willing to work in ambiguity and complexity,
+							while bringing valuable expertise to help find the right solution. She is highly praised by
+							stakeholders for building web experiences that achieve user and business goals. </p>
+					</blockquote>
+					<figcaption>Megan J., Principal UI/UX Designer</figcaption>
+				</figure>
+			</div>
+			<p class="section-cta"><a href="https://www.linkedin.com/in/jmarcella/details/recommendations"
+					target="_blank" class="text-cta">Read more recomendations on
+					Linkedin</a></p>
+	</section>
+
 
 	<!-- Footer -->
 	<footer id="contact">
-	    <div class="footer-content">
-	        <h4>Let's get in touch.</h4>
-	        <p><a href="https://github.com/jacquelynmarcella" target="_blank"><i class="fab fa-github fa-lg"></i> <span
-	                    class="icon-label">jacquelynmarcella</span></a></p>
-	        <p><a href="https://www.linkedin.com/in/jmarcella/" target="_blank"><i class="fab fa-linkedin fa-lg"></i> <span
-	                    class="icon-label">jmarcella</span></a></p>
-	        <p><a href="mailto:jacquelyn.marcella@gmail.com"><i class="fas fa-envelope fa-lg"></i> <span
-	                    class="icon-label">jacquelyn.marcella@gmail.com</span></a></p>
-	        <p><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank"><i class="fas fa-file-alt fa-lg"></i> <span
-	                    class="icon-label">Download Resume</span></a></p>
+	    <h2 class="visually-hidden">Contact</h2>
+	    <div class="container">
+	        <div>
+	            Copyright info here
+	        </div>
+	        <div>
+	            <h3 class="">Let's get in touch</h2>
+	            <ul class="">
+	                <li><a href="mailto:jacquelyn.marcella@gmail.com">Email me</a></li>
+	                <li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
+	                <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
+	                <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
+	            </ul>
+	        </div>
 	    </div>
 	</footer>
+
 	<!-- Scripts -->
-	<script src="js/portfolio.min.js" type="text/javascript"></script>
+	<script src="https://cdn.lordicon.com/lordicon.js"></script>
+	<script src="src/js/portfolio.js" type="text/javascript"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116161963-1"></script>
 	<script>
@@ -237,5 +692,7 @@
 	    gtag('config', 'UA-116161963-1');
 	</script>
 
+
 </body>
+
 </html>

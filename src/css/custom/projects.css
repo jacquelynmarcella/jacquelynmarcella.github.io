@@ -2,11 +2,51 @@ header .container {
     max-width: 980px;
 }
 
+
+h1 {
+    margin-bottom: var(--xl);
+}
 section h2,
-section p {
+section h3,
+section p, 
+section ol{
     max-width: 980px;
     margin-left: auto;
     margin-right: auto;
+}
+ol {
+    padding-left: var(--lg);
+}
+ol li {
+    margin-bottom: var(--xxs);
+}
+section h2 {
+    border-bottom: 2px solid var(--surfaceColor);
+    padding-bottom: var(--xs);
+}
+section h2.text-align-center {
+    border-bottom: 0;
+}
+nav.breadcrumbs {
+    position: relative;
+    z-index: 2;
+    margin-bottom: var(--xxs);
+    /* opacity: .8; */
+}
+nav.breadcrumbs ul {
+    display: block;
+}
+nav.breadcrumbs li {
+    display: inline-block;
+}
+nav.breadcrumbs li:nth-child(n+2)::before {
+    content: "/";
+    margin: 0 var(--xs) 0 var(--xxs);
+    color: var(--copyColor);
+}
+nav.breadcrumbs a {
+    color: var(--linkColor);
+    text-decoration: none;
 }
 
 img {
@@ -35,17 +75,51 @@ section .container {
 }
 
 section figure {
-    margin-top: var(--xl);
-    margin-bottom: var(--xl);
+    margin-top: var(--xxl);
+    margin-bottom: var(--xxxl);
 }
 .two-up {
-    margin: var(--xl) 0;
+    margin: var(--xxl) 0 var(--xxxl) 0;
+} 
+@media screen and (min-width: 1000px) {
+    section > figure,
+    section > .two-up {
+        padding: 0 var(--lg);
+        max-width: 1980px;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+    
 }
 .two-up figure {
     margin: 0;
 }
+
+.two-up figure {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--surfaceColor);
+}
+.two-up img,
+.two-up pre {
+    margin: auto 0;
+}
+.two-up pre {
+    height: 100%;
+}
+.two-up figcaption {
+    background: var(--backgroundColor);
+    width: 100%;
+    margin-top: 0;
+    padding-top: var(--sm);
+    max-width: unset;
+}
+
 .tile-grid figcaption {
     background: none;
+
 }
 .tile-grid img {
     opacity: 1;
@@ -62,11 +136,11 @@ section pre {
 
 .stats-container {
     max-width: 980px;
-    margin: var(--md) auto var(--xl) auto;
+    margin: var(--xl) auto var(--xl) auto;
     display: flex;
     flex-wrap: wrap;
     text-wrap: balance;
-    gap: var(--md);
+    gap: var(--md) var(--xl);
 }
 .stats--number {
     font-size: 2.5rem; /*tbd*/
@@ -74,7 +148,7 @@ section pre {
     font-family: "Fraunces", serif;
 	line-height: .8;
 	font-weight: 500;
-	letter-spacing: -.2rem;
+	letter-spacing: 0em;
 	margin-bottom: var(--sm);
 }
 /* @media screen and (min-width: 600px) {
@@ -94,3 +168,4 @@ nav.project-nav ul {
     flex-direction: row;
     justify-content: space-between;
 }
+
