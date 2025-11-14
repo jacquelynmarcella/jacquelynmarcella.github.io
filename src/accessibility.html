@@ -8,12 +8,12 @@
 </head>
 
 <body class="projects">
-    
+
     <!-- Global nav -->
     <!--(bake /includes/nav.html)-->
 
     <!-- Hero -->
-    <header id="top" class="dark">
+    <header id="top">
         <div class="container">
             <nav class="breadcrumbs">
                 <ul>
@@ -42,6 +42,7 @@
                 <li>CSS</li>
                 <li>Sass</li>
                 <li>JavaScript</li>
+                <li>jQuery</li>
                 <li>Figma</li>
                 <li>Drupal</li>
                 <li>Twig</li>
@@ -81,56 +82,84 @@
 
             <div class="container">
                 <h2>Solution</h2>
+                <h3>Cross-site remediation process</h3>
                 <p>
                     Leading the front end effort, I helped provide recommendations for a plan of action for the team to
-                    organize our work by component and by the types of issues to resolve.</p>
-                    <p>There were several trends we
-                    found that were able to apply learnings across our <a href="design-system.html">component-based system</a>. Many areas were
-                    straightforward updates to active focus states and color contrast, which we collaborated with the
-                    design team to update our global color variable values and centralized component styles accordingly.
+                    organize our work by component and by the types of issues to resolve. There were several trends we
+                    found that were able to work with UI/UX designers to apply learnings across our <a href="design-system.html">component-based system</a>. 
                 </p>
-                <p>For the Plans and Pricing table, after thorough research on the best way to incorporate accordion headers into a data table, I rebuilt
-                    the table’s structure as a <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/"
-                        target="_blank">treegrid pattern</a>.</p>
-                <p>I kept the authoring experience simple, because this table is currently authored in a rich text
-                    editor, which has proved to be the easiest way for website authors to update data in a table this
-                    complex without consistent engineering support.</p>
-            </div>
 
+                <h3>Plans and Pricing table process</h3>
+                <p>For the Plans and Pricing table, thoroughly researching the best way to incorporate accessible accordion
+                    headers into a table, I rebuilt the table’s structure as a <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/" target="_blank">treegrid pattern</a>.</p>
+                <p>Because this table is in a rich text field maintained by non-engineers, the simplest way to ensure long-term accessibility and ease of maintenance was to apply the necessary attributes via JavaScript. I wrote JavaScript functions that parse the table ensuring the appropriate <code>aria</code>, <code>tabindex</code>, <code>role</code>, and <code>scope</code> values are accurate on both load and user interaction.</p>
+                <p>The final markup follows this structure:</p>
+            </div>
             <figure>
-                <img src="img/grid-organism-dark.png" alt="Caption">
-                <figcaption>Image showing minimal authoring experience. </figcaption>
+                <pre>
+&lt;table role=&quot;treegrid&quot;&gt;
+    &lt;caption&gt;Feature comparison table for four Smartsheet plan types&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Feature&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Pro&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Business&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Enterprise&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Advanced Work Management&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;!-- Parent level row when expanded --&gt;
+        &lt;tr role=&quot;row&quot; tabindex=&quot;0&quot; aria-level=&quot;1&quot; aria-setsize=&quot;9&quot; aria-posinset=&quot;1&quot; 
+            aria-expanded=&quot;true&quot; aria-selected=&quot;true&quot;&gt;
+            &lt;td colspan=&quot;5&quot; role=&quot;gridcell&quot; scope=&quot;rowgroup&quot;&gt;Essential features&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!-- Child level row --&gt;
+        &lt;tr role=&quot;row&quot; tabindex=&quot;-1&quot; aria-level=&quot;2&quot; aria-posinset=&quot;1&quot; aria-setsize=&quot;10&quot;&gt;
+            &lt;td role=&quot;rowheader&quot; scope=&quot;row&quot;&gt;Sheets&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;Unlimited&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;Unlimited&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;Unlimited&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;Unlimited&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!-- continued for the remaining parent and child rows --&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+                <figcaption>The <code>aria</code> attributes help define the current level of the row (<code>aria-level</code>), how many rows are in that same level (<code>aria-setsize</code>), and the position of that row relative to the other rows in the same level (<code>aria-posinset</code>).</figcaption>
             </figure>
 
             <div class="container">
-                <p>Because this table is in a rich text field, it meant that hardcoding <code>aria</code> attributes directly into
-                    the editor was a non-starter, as this would be easily subject to breaking given the complex
-                    <code>aria-count</code> values and parent/child data that need to be present to describe the treegrid data
-                    structure. Therefore, the most sustainable approach was to write JavaScript that would parse the
-                    table and add accordion functionality and assign appropriate <code>aria</code> values to the elements.</p>
+            </div><p>The updated experience allows for keyboard navigation throughout the
+                    table using the expected treegrid keyboard commands and a much smoother expeirence for screen
+                    readers.</p>
+                <!-- <p>Using the keyboard only, a user can open and close sections, navigate through
+                    entire rows or single columns at a time, get information describing rather than no content
+                    (checkmarks are properly described as “Included”), and the table has a
+                    visually-hidden caption that provides an overview of its purpose to screen readers before reading
+                    all of the data within.</p>
+                <p> -->
             </div>
 
             <figure>
-                <pre>
-/** _tile-molecule.scss **/
-.tile-molecule {
-    background: var(--cardBackground)
-    border: 1px solid var(--border1);
-    box-shadow: var(--cardShadow);
-    border-radius: var(--cardRadius);
-    color: var(--cardHeadlineColor);
-    .content {
-        padding: 0 var(--md) var(--sm) var(--md);
-    }
-    svg.caret {
-        fill: var(--cardLinkColor);
-    }
-    .tag {
-        background: var(--cardTagBg);
-        color: var(--cardTagText);
-    }
-}</pre>
-                <figcaption>JS attribute example</figcaption>
+                <video src="img/accessibility-nvda-treegrid.mp4" preload="none" poster="img/tile-accessibility.png"
+                    muted="false" controls loop="false" playsinline title="NVDA demo of the treegrid table experience"
+                    width="1600" height="900">
+                </video>
+                <figcaption>Video of keyboard only table navigation along with NVDA screen reader enabled. Play with
+                    audio enabled to hear screen reader announcements</figcaption>
+            </figure>
+
+           <div class="container">
+                <p>The authoring experience is still simple given the complexity of the table. Website authors are able
+                    to update data in in this treegrid without the need for engineering support:</p>
+            </div>
+
+            <figure>
+                <img src="img/accessibility-table-authoring.png" loading="lazy"
+                    alt="Visual of rich text editor showing the treegrid table authoring experience." width="1272"
+                    height="991">
+                <figcaption>Simple table editor experience allows authors to maintain an accessible treegrid by using familiar rich text formatting options.</figcaption>
             </figure>
 
 
@@ -140,47 +169,27 @@
                     their component refactors to ensure we were all learning from the accessibility improvements so we
                     could be on the same page about best practices moving forward.</p>
             </div>
-
         </section>
-
         <section>
             <div class="container">
                 <h2>Results</h2>
-                <p>By implementing a sitewide remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA
-                        compliance</b>. The front end team now had an improved understanding of proper standards for
+                <p>By implementing cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA
+                        compliance</b>. The front end team now has an improved understanding of proper standards for
                     accessibility that should be adhered to for future projects.</p>
-
-
-                <p>For the Pricing and Plans table, the updated experience allows for keyboard navigation throughout the
-                    table using the expected treegrid keyboard commands and a much smoother expeirence for screen
-                    readers. Using the keyboard only, a user can open and close sections, navigate through
-                    entire rows or single columns at a time, get information describing rather than no content
-                    (checkmarks are described as “Included” rather than as an empty cell), and the table has a
-                    visually-hidden caption that provides an overview of its purpose to screen readers before reading
-                    all of the data within.</p>
-                <p>
-            </div>
-
-            <figure>
-                <img src="img/grid-organism-dark.png" alt="Caption">
-                <figcaption>Video showing improved NVDA experience. </figcaption>
-            </figure>
-
-
+                <p>Moving forward, we now leverage tools like WebAIM and Lighthouse for a quick automatic check of
+                    items and NVDA for validating screen reader experiences. We understand the importance of manually checking items within the context of their intended purpose, which an automated testing tool alone would not catch.
+                </p>
         </section>
-
+<!-- 
         <section>
             <div class="container">
                 <h2>Future</h2>
-                <p>Moving forward, we now leverage tools like WebAIM and Lighthouse for a quick automatic check of items, and NVDA for
-                    validating screen reader experiences, but we understand the importance of manually checking items
-                    within the context of their intended purpose, which an automated testing tool alone would not catch.
-                </p>
+       
                 <p>I continue to stay informed about accessibility best practices through resources like [a11y
                     newsletter link]. The engineering team is exploring adding more supporting features to the site,
                     like the Editoria11y module[link] to help authors check their content for proper outline structure,
                     image alt tags, and other common points of failure for accessibility.</p>
-        </section>
+        </section> -->
 
         <section>
             <div class="container">
@@ -194,7 +203,7 @@
         </section>
 
 
-        <section>
+         <section class="dark">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">

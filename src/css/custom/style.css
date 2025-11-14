@@ -24,60 +24,23 @@ body {
 
 	--flex-desktop: 768px;
 
-	/*
+	/* rgb base */
+	--lightest: 256, 256, 256;
+	--light: 244, 243, 238;
+	--midAccent: 83, 115, 92; /*#53735c */
+	--midAccent: 42,106,72; 	
+	--paleAccent: 181, 183, 228; /*B5B7E4*/
+	--dark: 22, 42, 43;
+	--darkest: 18, 18, 12;
 
-	v3
-	Green
-	#058947
-	rgba(5, 137, 71, 1)
-
-	Light
-	#F4F0E6
-	rgba(244, 240, 230, 1)
-
-	Dark
-	#060201
-	rgba(6, 2, 1, 1)
-
-	v4
-	Green
-	#488368
-
-	Lavender
-	#D4C1DA
-
-	Black
-	#141313
-
-	White
-	#F0F0F0 or FOFOFO?
-
-	V5
-
-	Dark
-	#31332E
-	rgba(49,51,46,1);
-
-	Light
-	E8E2D4
-	rgba(252,229,223,1);
-
-	Link
-
-
-	*/
-
-	--copyColor: #253206;
-	--backgroundColor: #fef8f1;
-	--cardBackground: #fef8f1;
-	--cardHoverBackground: rgba(23, 24, 75, .075);
-	/* --cardBackground: #E5E3E4; */
-	--surfaceColor: rgba(189,211,199, .5);
-	/* --tagBg: rgba(23, 24, 75, .1); */
-	--tagBg: rgba(189,211,199, .5);
-	--tagText: #0a0e02;
-	--linkColor: #4015A2;
-	--accentColor: #D3D4FD;
+	--copyColor: rgb(var(--darkest));
+	--backgroundColor: rgb(var(--light));
+	--cardBackground: rgba(var(--dark), .05);
+	--surfaceColor: rgba(var(--midAccent), .25);
+	--tagBg: rgba(var(--dark), .15);
+	--tagText: var(--copyColor);
+	--linkColor: rgb(var(--midAccent));
+	--accentColor: var(--surfaceColor);
 
 	--borderRadiusSm: 4px;
 	--borderRadiusMd: 8px;
@@ -85,24 +48,21 @@ body {
 	color: var(--copyColor);
 	background-color: var(--backgroundColor);
 
-	--lord-icon-primary: #253206;
-	--lord-icon-secondary: #253206;
-
+	--lord-icon-primary: var(--copyColor);
+	--lord-icon-secondary: var(--copyColor);
 }
 
-body.projects .navbar,
 body .dark {
-	--copyColor: #fef8f1;
-	--backgroundColor: #0a0e02;
-	--cardBackground: #0a0e02;
-	--cardHoverBackground: rgb(252,229,223,.075);
-	--surfaceColor: rgba(189,211,199, .25);
-	--tagBg: rgba(189,211,199, .15);
-	--tagText: #fef8f1;
-	--linkColor: #D6B4FC;
-	--accentColor: rgb(56,73,29);
-	--lord-icon-primary: #E8E2D4;
-	--lord-icon-secondary: #E8E2D4;
+	--copyColor: rgb(var(--light));
+	--backgroundColor: rgb(var(--darkest));
+	--cardBackground: rgba(var(--lightest), .05);
+	/* --surfaceColor: rgba(189,211,199, .25); */
+	--tagBg: rgba(var(--midAccent), .35);
+	--tagText: rgb(var(--light));
+	--linkColor: rgb(var(--light));
+
+	--lord-icon-primary: var(--copyColor);
+	--lord-icon-secondary: var(--copyColor);
 }
 
 .slider--current-role lord-icon{
@@ -124,18 +84,17 @@ img {
 	/*Temp, for placeholder img */
 	opacity: .2;
 }
+
 a {
-	font-weight: 500;
-	text-decoration: none;
-}
-p a,
-a:hover {
 	text-decoration-style: wavy;
 	color: var(--linkColor);
 	text-decoration-color: var(--linkColor);
 	font-weight: 500;
 	text-decoration: underline wavy var(--linkColor) 1px;
 	text-underline-offset: 6px;
+}
+a:hover {
+	color: var(--copyColor);
 }
 
 b {
@@ -295,7 +254,7 @@ code {
 /* Buttons */
 .button {
 	padding: var(--xs) var(--sm);
-	border: 2px solid var(--linkColor);
+	border: 2px solid var(--copyColor);
 	text-decoration: none;
 	border-radius: var(--borderRadiusSm);
 	/* box-shadow: 3px 3px 1px var(--surfaceColor);
@@ -304,7 +263,7 @@ code {
 }
 .button.primary {
 	display: inline-block;
-	background: var(--linkColor);
+	background: var(--copyColor);
 	color: var(--backgroundColor);
 }
 .button.primary:hover {
@@ -344,7 +303,7 @@ code {
 }
 @media screen and (min-width: 600px) {
 	.image--polaroid {
-		mix-blend-mode: luminosity;
+		/* mix-blend-mode: luminosity; */
 		max-width: 300px;
 		height: auto;
 	}
@@ -409,13 +368,13 @@ code {
 
 @media screen and (min-width: 600px) {
   @supports (animation-timeline: scroll()) {
-	.image--polaroid {
+	/* .image--polaroid {
 		
 		transform: translate(0, -100px);
 		animation: move-down ease-out forwards;
-  		/* -webkit-animation-timeline: scroll(); */
+  		/* -webkit-animation-timeline: scroll();
   		animation-timeline: view();
-  	}
+  	} */
 
 	.header--image img {
 		/* transform: translate(0, 100px);
@@ -486,9 +445,9 @@ nav.navbar {
 	width: 14px;
 }
 .navbar a {
-	/* text-decoration: none; */
 	color: var(--copyColor);
 	white-space: nowrap;
+	text-decoration: none;
 }
 .navbar--home a {
 	color: var(--linkColor);
@@ -658,6 +617,13 @@ section.experience {
 	padding-right: 0;
 	position: relative;
 	z-index: 0;
+	background: transparent;
+	padding-top: 0;
+}
+@media screen and (min-width: 600px) {
+	section.experience {
+		margin-top: calc(var(--lg) * -1);
+	}
 }
 .experience h2, 
 .experience .container > p {
@@ -697,6 +663,7 @@ section.experience {
 	flex: 1 0 70vw;
 	text-wrap: balance;
 	position: relative;
+	background: var(--cardBackground);
 }
 
 
@@ -777,6 +744,9 @@ section.experience {
 	opacity: 1;
 	width: 100px;
 }
+.slider--current-role {
+	background: var(--backgroundColor);
+}
 .slider--current-role lord-icon{
 	opacity: 1;
 }
@@ -814,6 +784,7 @@ footer ul {
 }
 footer .container {
 	padding: var(--xxl) 0;
+	border-top: 2px solid var(--surfaceColor);
 }
 
 .projects {
@@ -852,22 +823,19 @@ footer .container {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	border: 1px solid var(--copyColor);
-	/* border-radius: var(--borderRadiusMd); */
+	/* border: 1px solid var(--copyColor); */
+	border-radius: var(--borderRadiusMd);
 	overflow: hidden;
 }
-.tile--image {
-	object-fit: cover;
-    overflow: hidden;
-    position: relative;
-    /* max-height: 200px; */
-}
-.tile-content a + p {
-	margin-bottom: var(--xs);
+
+.tile-content .eyebrow {
+	margin-bottom: var(--xxxs);
+	text-align: left;
+	margin-left: 0;
 }
 .tile-grid li:has(a) {
 	cursor: pointer;
-	transition: all 250ms ease-in;
+	/* transition: all 250ms ease-in; */
 	/*transition-delay: 250ms;*/
 }
 /* .tile--image:after {
@@ -883,26 +851,78 @@ footer .container {
 .tile-grid img {
 	width: 100%;
 	height: auto;
-	opacity: .75;
-	transition: all 250ms ease-in;
+	transition: all 250ms ease-in; 
 }
-.tile-grid li:hover .tile--image:after {
+.tile--image {
+	/* /* object-fit: cover;
+    overflow: hidden; */
+    /* position: relative; */
+	background: var(--backgroundColor);
+    /* max-height: 200px; */
+	display: none;
+}
+.tile--image img {
+	opacity: 1;
+}
+/* .tile-grid li:hover .tile--image:after {
 	opacity: 0;
-}
-.tile-grid li .tile--arrow path {
+} */
+/* .tile-grid li .tile--arrow path {
 	fill: var(--linkColor);
 	stroke: var(--linkColor);
 }
 .tile-grid li:hover .tile--arrow {
 	margin-right: calc(var(--md) - 3px);
-}
+} */
 /* .tile-grid li:hover .tile--arrow path {
 	stroke: var(--linkColor);
 } */
-.tile-grid li:hover img {
-	opacity: 1;
-	transform: scale(1.05);
+
+.tile--image img {
+	object-fit: cover;
+	object-position: center;
+	height: 100%;
 }
+
+.tile--image.left img {
+	object-position: left;
+}
+.tile--image.right img {
+	object-position: right;
+}
+/* Simplify mobile */
+.tile-grid li .learn-more,
+.tile-grid li .description {
+	display: none;
+}
+@media screen and (min-width: 950px) {
+	.tile--image {
+		display: block;
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+	}
+	.tile-grid li .learn-more,
+	.tile-grid li .description {
+		display: block;
+	}
+	.tile-content {
+		opacity: 0;
+		transition: all 250ms ease-in;
+		z-index: 1;
+	}
+	.tile-grid li:hover .tile-content,
+	.tile-grid li:focus-within .tile-content {
+		opacity: 1;
+	} 
+	.tile-grid li:focus-within .tile--image,
+	.tile-grid li:hover .tile--image {
+		opacity: 0;
+	}
+}
+
+
 .tile-grid li:hover:has(a) {
 	/* background: var(--cardHoverBackground); */
 	/* box-shadow: 0px 2px 4px rgba(0,0,0,0.12),
@@ -990,19 +1010,16 @@ footer .container {
 
 
 @media screen and (min-width: 600px) { */
-	/* .tile-grid.even {
-		grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-	}
 	.tile-grid.even {
 		grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-	} */
+	}
 }
 @media screen and (min-width: 800px) {
 	.tile-grid {
 		grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
 	}
-	.tile-grid.compact {
-		grid-template-columns: 1fr;
+	.tile-grid.even {
+		grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
 	}
 	.tile-grid .wide:last-child {
 		grid-column: 1/-1;
@@ -1025,6 +1042,7 @@ footer .container {
 	.tile-grid .wide .tile--image {
 		flex: 0 0 50%;
 		max-height: unset;
+		position: unset;
 	}
 	.tile-grid .wide .tile--image img {
 		height: 100%;
@@ -1032,6 +1050,7 @@ footer .container {
         width: auto;
         max-height: 100%;
         position: absolute;
+		top: 0;
 	}
 	.tile-grid .wide svg {
 		right: 0;

@@ -25,7 +25,7 @@ module.exports = function(grunt) {
                 "mega-menu-navigation.html": "src/mega-menu-navigation.html",
                 "plant-parenthood.html": "src/plant-parenthood.html",
                 "search-api.html": "src/search-api.html",
-                "skincare.html": "src/index.html"
+                "skincare.html": "src/skincare.html"
             }
         }
     },    

@@ -12,7 +12,7 @@
     <!--(bake /includes/nav.html)-->
 
     <!-- Hero -->
-    <header id="top" class="dark">
+    <header id="top">
         <div class="container">
             <nav class="breadcrumbs">
                 <ul>
@@ -41,16 +41,18 @@
                 <li>CSS</li>
                 <li>Sass</li>
                 <li>JavaScript</li>
+                <li>jQuery</li>
                 <li>Twig</li>
                 <li>Drupal</li>
                 <li>PHP</li>
                 <li>Figma</li>
-                <li>PatternLab</li>
+                <li>Responsive design</li>
                 <li>WCAG Accessibility</li>
             </ul>
             <h3>Project links</h3>
             <ul class="link-list">
-                <li><a href="https://www.smartsheet.com/pricing" target="_blank">Smartsheet site with live navigation</a></li>
+                <li><a href="https://www.smartsheet.com/pricing" target="_blank">Smartsheet site with live
+                        navigation</a></li>
             </ul>
         </div>
     </header>
@@ -67,118 +69,96 @@
                         content strategy.</li>
                     <li>Overly complex in functionality, which was difficult for engineers to maintain and caused
                         frequent bugs.</li>
-                    <li>Completely inaccessible, as it was not using correct semantic markup, aria labels, and was not
+                    <li>Completely inaccessible, as it was not using correct semantic markup, <code>aria</code> labels,
+                        and was not
                         navigable with a keyboard or screen reader.</li>
                     <li>Lacking an easy way to merchandise effectively, such as promoting the customer conference or new
                         product offerings.</li>
                     <li>Redundant in markup between desktop and mobile.</li>
                 </ol>
             </div>
-
-             <figure>
-                <img src="img/nav-old-desktop.png" alt="Caption">
-                <figcaption>Nav before visual  - mobile and tablet included (video?)</figcaption>
+            <figure>
+                <img src="img/nav-old-desktop.png" loading="lazy" alt="">
+                <figcaption>Before:</figcaption>
             </figure>
         </section>
 
         <section>
             <div class="container">
                 <h2>Solution</h2>
-                <p>Working with UI/UX designers, product owners, back end engineers, and marketing stakeholders, we did
-                    a full overhaul of the navigation experience and built out an improved mega-menu experience that
-                    provided better structure for our site’s information architecture strategy.</p>
+                <p>Working with UI/UX designers, product owners, back end engineers, and marketing stakeholders, we did a full overhaul of the navigation experience and built out an improved mega-menu experience thatprovided better structure for our site’s information architecture strategy.</p>
+                <p>The new mega-menu format has improved transitions and animations, overlays with grid layout structure, and cohesive color schemes that map to our <a href="design-system.html">global color schemes</a>. It scales seamlessly from mobile, to tablet, and to the largest desktop viewports. Additionally, it is built with the correct semantic markup and aria attributes to be <a href="accessibility.html">fully accessible</a> by keyboard controls and screen readers.</p>
             </div>
-
-             <figure>
-                    <img src="img/nav-new-desktop.png" alt="Caption">
-                    <figcaption>Nav after visual - mobile and tablet included (video?)</figcaption>
-            </figure>
-            <div class="two-up">
-                <div class="flex--50">
-                    <figure>
-                        <img src="img/help-search-old.png" loading="lazy" alt="Visual of old Help Center Search with a 'basics' query entered and a long list of exposed filters on the left">
-                        <figcaption>Tablet.</figcaption>
-                    </figure>
-                </div>
-                <div class="flex--50">
-                    <figure>
-                        <img src="img/help-search-new.png" loading="lazy" alt="Visual of new Help Center Search with collapsed filters, clearer tabs, and a 'formulas' query entered">
-                        <figcaption>Mobile.</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            <div class="container">
-                <p>The new mega-menu format has improved transitions and animations, overlays with grid layout
-                    structure, and cohesive color schemes that map to our <a href="design-system">global color
-                        variations</a>. It scales seamlessly from mobile, to tablet, and to the largest desktop viewports. Additionally, it is built with the correct semantic markup and aria attributes
-                    to be <a href="accessibility">fully accessible</a> by keyboard controls and screen readers:</p>
-            </div>
-
-            <div class="two-up">
-                <div class="flex--50">
-                    <figure>
-                        <pre>
-/** _tile-molecule.scss **/
-.tile-molecule {
-    background: var(--cardBackground)
-    border: 1px solid var(--border1);
-    box-shadow: var(--cardShadow);
-    border-radius: var(--cardRadius);
-    color: var(--cardHeadlineColor);
-    .content {
-        padding: 0 var(--md) var(--sm) var(--md);
-    }
-    svg.caret {
-        fill: var(--cardLinkColor);
-    }
-    .tag {
-        background: var(--cardTagBg);
-        color: var(--cardTagText);
-    }
-}</pre>
-                        <figcaption>Before - inaccessible markup.</figcaption>
-                    </figure>
-                </div>
-                <div class="flex--50">
-                    <figure>
-                        <pre>
-/** _tile-molecule.scss **/
-.tile-molecule {
-    background: var(--cardBackground)
-    border: 1px solid var(--border1);
-    box-shadow: var(--cardShadow);
-    border-radius: var(--cardRadius);
-    color: var(--cardHeadlineColor);
-    .content {
-        padding: 0 var(--md) var(--sm) var(--md);
-    }
-    svg.caret {
-        fill: var(--cardLinkColor);
-    }
-    .tag {
-        background: var(--cardTagBg);
-        color: var(--cardTagText);
-    }
-}</pre>
-                        <figcaption>After - improved accessible markup.</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            <div class="container">
-                <p>When researching modules in Drupal, I found that existing mega-menu modules were overly complex for
-                    our needs. Instead, I relied on the Custom Menu Links core module and built custom theming
-                    for a mega-menu that served our needs. I reviewed my approach with back end engineers to ensure it
-                    would be a sustainable approach within our CMS.</p>
-                    <p>Authors are able to build out a simple tree of menu
-                    links for the mega-menu and add images, link styles, and merchandising sections as needed:</p>
             </div>
 
             <figure>
-                <img src="img/grid-organism-dark.png" alt="Caption">
-                <figcaption>Image of simple authoring menu experience</figcaption>
+                <img src="img/nav-new-desktop.png" loading="lazy" alt="">
+                <figcaption>After:</figcaption>
             </figure>
+            <div class="two-up">
+                <div class="flex--66">
+                    <figure>
+                        <img src="img/nav-new-tablet.png" loading="lazy" alt="">
+                        <figcaption>Tablet navigation, all sections closed.</figcaption>
+                    </figure>
+                </div>
+                <div class="flex--33">
+                    <figure>
+                        <img src="img/nav-new-mobile.png" loading="lazy" alt="">
+                        <figcaption>Mobile navigation, first section expanded.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+                <!-- <figure>
+                <pre>
+<nav role="navigation">
+    <ul>
+        <li><a href="/">Smartsheet Home</a></li>
+        <li>
+            Hamburger toggle is only visible on mobile/tablet 
+            <button aria-controls="primary-menu" class="nav-toggle" aria-expanded="true" aria-haspopup="true">Open navigation</button>
+            Primary menu contents are always expanded on desktop 
+            <div id="primary-menu">
+                <ul>
+                    <li>
+                        <button aria-controls="menu-accordion--product" aria-expanded="false" aria-haspopup="true">Product</button>
+                        <div id="menu-accordion--product" class="nav--section-content">
+                            <ul>
+                                <li>Nested menu grid and links for Product</li>
+                            </ul>
+                        </div>
+                    </li>
+                     Additional <li> for primary menu dropdowns and links 
+                </ul>
+            </div>
+        </li>
+       Utility menu list items go here
+    </ul>
+</nav>
+</pre>
+                <figcaption>Navigation markup is semantically correct and uses the same for mobile and desktop, with <code>&lt;button&gt;</code> elements that have proper <code>aria</code> labels to convey menu state and relationships.</figcaption>
+            </figure> -->
+
+
+                <div class="container">
+                    <p>When researching modules in Drupal, I found that existing mega-menu modules were overly complex
+                        for
+                        our needs. Instead, I relied on the Custom Menu Links core module and built custom theming
+                        for a mega-menu that served our needs. I reviewed my approach with back end engineers to ensure
+                        it
+                        would be a sustainable approach within our CMS.</p>
+                    <p>Using the familiar Drupal Menu UI, authors are able to build out a simple tree of menu
+                        links for the mega-menu and add images, link styles, and merchandising sections as needed:</p>
+                </div>
+
+                <figure>
+                    <img src="img/nav-authoring.png" loading="lazy" alt="Caption">
+                    <figcaption>Maintaining the standard Drupal Menu experience allows non-engineers to maintain
+                        content,
+                        rather than relying on a hardcoded navigation that requires a release cycle.
+                    </figcaption>
+                </figure>
         </section>
 
         <section>
@@ -187,7 +167,9 @@
                 <p>On initial launch, we saw a <b>6x increase in clicks the Platform page</b> and <b>up to a 34%
                         increase to other top level links</b>.</p>
                 <p>Since the first launch, we have done a couple refreshes of the design and content structure to match
-                    our global UI changes on the site and evolving content strategy. The foundation I built in the first
+                    our global UI changes on the site and evolving content strategy. I also led the implementation of
+                    this same navigation architecture on the Help Center site to ensure brand cohesion.</p>
+                <p>The foundation I built in the first
                     round has made subsequent engineering updates straightforward and has given authors the ability to
                     manage routine content changes without engineering support.</p>
             </div>
@@ -206,7 +188,7 @@
         </section>
 
 
-        <section>
+         <section class="dark">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">

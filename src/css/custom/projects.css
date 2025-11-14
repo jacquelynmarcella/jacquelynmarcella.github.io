@@ -79,6 +79,9 @@ figure figcaption {
     margin: var(--sm) auto 0 auto;
     padding: 0 var(--lg);
 }
+figure figcaption code {
+    font-style: normal;
+}
 
 section {
     padding: var(--lg) 0;
@@ -189,3 +192,15 @@ nav.project-nav ul {
     justify-content: space-between;
 }
 
+
+video {
+    height: auto;
+}
+img {
+    height: auto;
+}
+
+
+footer .container {
+    border-top: unset;
+}
