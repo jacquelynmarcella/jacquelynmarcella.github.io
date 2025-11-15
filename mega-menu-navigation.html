@@ -59,12 +59,6 @@
     <!-- Hero -->
     <header id="top">
         <div class="container">
-            <nav class="breadcrumbs">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#featured-projects">Projects</a></li>
-                </ul>
-            </nav>
             <h1>Global Mega-Menu Navigation</h1>
             <h2 class="visually-hidden">Overview</h2>
             <p class="subhead">Architected a robust navigation that can be easily updated in the CMS without engineering
@@ -122,10 +116,10 @@
                     <li>Redundant in markup between desktop and mobile.</li>
                 </ol>
             </div>
-            <figure>
-                <img src="img/nav-old-desktop.png" loading="lazy" alt="">
+            <!-- <figure>
+                <img src="img/nav-old-desktop.png" class="width-content" loading="lazy" alt="">
                 <figcaption>Before:</figcaption>
-            </figure>
+            </figure> -->
         </section>
 
         <section>
@@ -135,12 +129,16 @@
                 <p>The new mega-menu format has improved transitions and animations, overlays with grid layout structure, and cohesive color schemes that map to our <a href="design-system.html">global color schemes</a>. It scales seamlessly from mobile, to tablet, and to the largest desktop viewports. Additionally, it is built with the correct semantic markup and aria attributes to be <a href="accessibility.html">fully accessible</a> by keyboard controls and screen readers.</p>
             </div>
             </div>
-
             <figure>
-                <img src="img/nav-new-desktop.png" loading="lazy" alt="">
+                <img src="img/nav-mockup-large.png" class="width-max" loading="lazy" alt="">
+                <figcaption>New navigation is responsive to different screen sizes without needing to re-render separate mobile markup.</figcaption>
+            </figure>
+
+            <!-- <figure>
+                <img src="img/nav-new-desktop.png" class="width-max" loading="lazy" alt="">
                 <figcaption>After:</figcaption>
             </figure>
-            <div class="two-up">
+            <div class="two-up width-max">
                 <div class="flex--66">
                     <figure>
                         <img src="img/nav-new-tablet.png" loading="lazy" alt="">
@@ -153,7 +151,7 @@
                         <figcaption>Mobile navigation, first section expanded.</figcaption>
                     </figure>
                 </div>
-            </div>
+            </div> -->
 
                 <!-- <figure>
                 <pre>
@@ -198,10 +196,9 @@
                 </div>
 
                 <figure>
-                    <img src="img/nav-authoring.png" loading="lazy" alt="Caption">
-                    <figcaption>Maintaining the standard Drupal Menu experience allows non-engineers to maintain
-                        content,
-                        rather than relying on a hardcoded navigation that requires a release cycle.
+                    <img src="img/nav-authoring.png" class="width-content" loading="lazy" alt="Two admin screens showing editing a menu link and how users can drag and drop items into different menu levels">
+                    <figcaption>Side by side of Drupal Menu UI for the mega menu. Maintaining the standard Drupal Menu experience allows non-engineers to maintain
+                        content, rather than relying on a hardcoded navigation that requires a release cycle.
                     </figcaption>
                 </figure>
         </section>
@@ -238,6 +235,9 @@
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
                     <li>
+                        <div class="tile--image left">
+                            <img src="img/design-system-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="design-system.html">Component-based Design System</a>
@@ -254,11 +254,11 @@
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
-                        <div class="tile--image left">
-                            <img src="img/design-system-overview.png" alt="" loading="lazy" aria-hidden="true" width="800" height="450">
-                        </div>
                     </li>
                     <li>
+                        <div class="tile--image right">
+                            <img src="img/tile-accessibility-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="accessibility.html">Accessibility Remediation</a>
@@ -272,11 +272,11 @@
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
-                        <div class="tile--image right">
-                            <img src="img/tile-accessibility.png" alt="" loading="lazy"aria-hidden="true" width="800" height="450">
-                        </div>
                     </li>
                     <li>
+                        <div class="tile--image center">
+                            <img src="img/signup-large.png" alt="" loading="lazy"aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="form-api.html">Form API Integration</a>
@@ -289,9 +289,6 @@
                                 <li>A/B Testing</li>
                             </ul>
                             <p class="learn-more">Learn more -></p>
-                        </div>
-                        <div class="tile--image center">
-                            <img src="img/tile-form-api.png" alt="" loading="lazy"aria-hidden="true" width="800" height="450">
                         </div>
                     </li>
                 </ul>

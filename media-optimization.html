@@ -59,12 +59,6 @@
     <!-- Hero -->
     <header id="top">
         <div class="container">
-            <nav class="breadcrumbs">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#featured-projects">Projects</a></li>
-                </ul>
-            </nav>
             <h1>Media Optimization</h1>
             <h2 class="visually-hidden">Overview</h2>
             <p class="subhead">Led multi-phase initiative that improved site performance.</b></p>
@@ -111,8 +105,8 @@
                         mulit-phase project, where we took several steps to improve page performance through
                         optimization of media. Over time, we sought to address the following three challenges:</p>
                     <ol>
-                        <li>Images on the site are rendering at far larger sizes than expected.</li>
-                        <li> PNG is not the optimal file format for performance.</li>
+                        <li>Images on the site are rendering at far larger sizes than expected, especially on mobile.</li>
+                        <li>PNG and JPG are not best for page performance, but the entire CMS is comprised of these file formats.</li>
                         <li>Increasing use of animations on the site had led to massive MP4/GIF files.</li>
                     </ol>
                 </div>
@@ -125,61 +119,43 @@
 
                 <h3>Phase 1: Improve responsive image formats</h3>
                 <p>I did extensive research on our current responsive image sizes and
-                    settings. I realized that the default values we use for the “sizes” attribute on images didn’t
-                    encourage the browser to actually pick the smaller size for mobile. I found that the “1x, 2x” values
+                    settings. I realized that the default values we use for the <code>sizes</code> and <code>srcset</code> attributes on images didn’t encourage the browser to actually pick the smaller size for mobile, even though they are industry standard values. </p>
+                    <!-- I found that the “1x, 2x” values
                     typically used for this attribute weren’t cutting it, as there was not enough information on mobile
-                    for the browser to actually choose the smaller image.</p>
-                <p>Thinking big picture, I started testing out various combinations of “srcset” and “size” values for
-                    image tags in an <a href="#" target="_blank">experimental codepen</a> to determine values that would
-                    encourage the browser to render the smaller size file on mobile. I had to think through a variety of
+                    for the browser to actually choose the smaller image. -->
+                <p>Thinking big picture, I started testing out various combinations of <code>sizes</code> and <code>srcset</code> values for image tags in an <a href="https://codepen.io/jacquelynmarcella/pen/odRzrw" target="_blank">experimental codepen</a> to determine values that would
+                    encourage the browser to render the smaller size file on mobile. Then, I was able to implement those configurations into Drupal into a range of responsive image size options that were integrated into our <a href="design-system.html">global component library</a>.</p>
+                        <!-- I had to think through a variety of
                     scenarios for file size needs (e.g. an image might be medium sized on desktop, but technically full
-                    screen width on mobile). Then, I was able to implement those configurations into Drupal into a range
-                    of responsive image size options that were integrated into our <a href="design-system.html">global
-                        component library</a>.</p>
-            </div>
-            <figure>
-                <img src="img/grid-organism-dark.png" alt="Caption">
-                <figcaption>Working demo of srcset/size values in action. Reszize your browser to see different
-                    image sizes requested by the browser.</figcaption>
-            </figure>
-            <div class="container">
-
-
+                    screen width on mobile). -->
                 <p>As part of this first phase, I also noticed that our background images were skipping our responsive
                     image formatter entirely, due to how background images were authored and themed in the CMS. I wrote
-                    a new PHP function in our theme to provide a range of compressed image sizes for backgrounds that
+                    new PHP functions in our theme to provide a range of compressed image sizes for backgrounds that
                     get appended as a <code>&lt;style&gt;</code> tag, so that the background is style applied like a
                     traditional CSS background, while actually loading a properly sized file on smaller devices.</p>
-
             </div>
-                <figure>
-                    <pre>
-/** _tile-molecule.scss **/
-.tile-molecule {
-    background: var(--cardBackground)
-    border: 1px solid var(--border1);
-    box-shadow: var(--cardShadow);
-    border-radius: var(--cardRadius);
-    color: var(--cardHeadlineColor);
-    .content {
-        padding: 0 var(--md) var(--sm) var(--md);
-    }
-    svg.caret {
-        fill: var(--cardLinkColor);
-    }
-    .tag {
-        background: var(--cardTagBg);
-        color: var(--cardTagText);
-    }
-}</pre>
-                    <figcaption>Background media PHP example</figcaption>
-                </figure>
+
+            <div class="two-up width-max">
+                <div class="flex--50">
+                    <figure>
+                        <img src="img/background-size-before.png" loading="lazy" alt="Screenshot of Network tap, showing 1.5MB file size">
+                        <figcaption>Before: Background images were massive at 1.5MB and larger, even on mobile.</figcaption>
+                    </figure>
+                </div>
+                <div class="flex--50">
+                    <figure>
+                        <img src="img/background-size-after.png" loading="lazy" alt="Screenshot of Network tab, showing 36.8kB file size">
+                        <figcaption>After: The same background image is now down to 36.8kB on mobile.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+
             <div class="container">
 
                 <h3>Phase 2: Implement WebP module to reduce PNG usage </h3>
 
-                <p>After launching the first phase, we knew that even with their newly reduced sizes, PNGs were still
-                    not optimal for performance. Further research and partnership with the SEO team confirmed that the
+                <p>After launching the first phase, we knew that even with their newly reduced sizes, PNGs and JPGs were still not optimal for performance. Further research and partnership with the SEO team confirmed that the
                     next best step would be integrating WebP on the site.</p>
                 <p>I collaborated with our back end engineers to get the WebP Drupal module installed, which converts
                     regular PNG files into WebP images, allowing our web authors to not have to do any extra work to
@@ -231,6 +207,9 @@
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
                     <li>
+                        <div class="tile--image left">
+                            <img src="img/design-system-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="design-system.html">Component-based Design System</a>
@@ -247,11 +226,11 @@
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
-                        <div class="tile--image left">
-                            <img src="img/design-system-overview.png" alt="" loading="lazy" aria-hidden="true" width="800" height="450">
-                        </div>
                     </li>
                     <li>
+                        <div class="tile--image right">
+                            <img src="img/tile-accessibility-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="accessibility.html">Accessibility Remediation</a>
@@ -265,11 +244,11 @@
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
-                        <div class="tile--image right">
-                            <img src="img/tile-accessibility.png" alt="" loading="lazy"aria-hidden="true" width="800" height="450">
-                        </div>
                     </li>
                     <li class="">
+                        <div class="tile--image left">
+                            <img src="img/tile-nav-mockup-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="mega-menu-navigation.html">Global Mega-Menu Navigation</a>
@@ -282,9 +261,6 @@
                                 <li>Figma</li>
                             </ul>
                             <p class="learn-more">Learn more -></p>
-                        </div>
-                        <div class="tile--image left">
-                            <img src="img/tile-mega-menu.png" alt="" loading="lazy" aria-hidden="true" width="800" height="450">
                         </div>
                     </li>
                 </ul>

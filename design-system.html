@@ -59,12 +59,6 @@
     <!-- Hero -->
     <header id="top">
         <div class="container">
-            <nav class="breadcrumbs">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#featured-projects">Projects</a></li>
-                </ul>
-            </nav>
             <h1>Component-based Design System</h1>
             <h2 class="visually-hidden">Overview</h2>
             <p class="subhead">Support the creation and lead ongoing maintenance of an atomic design system across
@@ -125,9 +119,8 @@
                         target="_blank">intrinsic design</a> we set out to build a component library where we didn’t
                     think only about mobile versus desktop and strict concepts like “grid with exactly three items,” but
                     about flexible elements that could adapt based on real-life content needs and the component’s
-                    container size. </p>
-                <p>A grid of tiles may take up the full screen width on a desktop monitor, or be in a small column in a
-                    sidebar, and it should be able to seamlessly adapt to both scenarios. We set to work collaborating
+                    container size, not just the viewport size. </p>
+                <p>We set to work collaborating
                     with UI/UX designers to architect an <a href="https://bradfrost.com/blog/post/atomic-web-design/"
                         target="_blank">atomic design system</a> in PatternLab where we could organize everything from
                     button styles (atoms) to grids of tiles (organisms) and use these building blocks to create
@@ -135,26 +128,20 @@
             </div>
 
             <figure>
-                <img src="img/grid-organism-dark.png" alt="Caption">
-                <figcaption>Grid organism-level component that contains tile molecules. Shown in default scheme, dark
-                    variation. </figcaption>
+                <img src="img/design-system-large.png" loading="lazy" class="width-content" alt="Component example split half and half to show different elements and how the different color schemes apply to both">
+                <figcaption>Organism level component with button atom and tile molecule, shown in "default" and "event" schemes.</figcaption>
             </figure>
 
             <div class="container">
-                <p>In Figma Dev Mode (previously in Zeplin and Invision), we have worked with the design team to ensure
-                    all global variables/tokens are mapped to all components and redlines. The values used in Figma
-                    match our codebase, so there are no surprises when design generates redlines for an update or a
-                    brand new component. Design has mapped the full suite of global variables using the semantic CSS
-                    custom property names, rather than just designing with hex codes and rigid pixel values, and we use
-                    these semantic property names in our build:</p>
+                <p>In Figma Dev Mode (previously in Zeplin and Invision), we have worked with the design team to ensure all global variables/tokens are mapped to all components and redlines. We  mapped the full suite of global variables using the semantic CSS
+                    custom property names, rather than just designing with hex codes and rigid pixel values, and we use these semantic property names in our build:</p>
             </div>
 
-            <div class="two-up">
+            <div class="two-up width-max">
                 <div class="flex--50">
                     <figure>
                         <img src="img/tile-molecule-figma.png" alt="Caption">
-                        <figcaption>The Figma redlines for this molecule map perfectly to our global SCSS variable
-                            structure.</figcaption>
+                        <figcaption>The Figma redlines for this molecule use variable names, not just pixel and hex values.</figcaption>
                     </figure>
                 </div>
                 <div class="flex--50">
@@ -178,14 +165,14 @@
         color: var(--cardTagText);
     }
 }</pre>
-                        <figcaption>In our codebase, the component's SCSS file is comprised of global CSS custom
+                        <figcaption>The component's SCSS file is comprised of global CSS custom
                             properties where possible.</figcaption>
                     </figure>
                 </div>
             </div>
 
             <div class="container">
-                <p>By using CSS custom properties, we were able to build out components that supported six color
+                <p>By using CSS custom properties, we were able to build out over ### components (and counting) that support six color
                     variations across three different schemes (light mode, dark mode, and special events color scheme).
                     This means every component in the entire design system can easily be used in any of these <b>18
                         different color variations</b> without time-consuming color customizations needed at a
@@ -193,7 +180,7 @@
             </div>
 
             <figure>
-                <img src="img/design-system-schemes.png" loading="lazy" alt="Grid of 18 different color variations.">
+                <img src="img/design-system-schemes.png" class="width-content" loading="lazy" alt="Grid of 18 different color variations.">
                 <figcaption>Figma overview of 6 color variations within the 3 schemes that are integrated into the front end system. Currently, some variations are 1:1 with to variations in other schemes. </figcaption>
             </figure>
             <!-- <div class="two-up">
@@ -234,8 +221,7 @@
             <div class="container">
                 <p>After prototyping in PatternLab, these components were built as Paragraphs within Drupal. These
                     components are built as modular standalone elements a web author can drag and drop within the Bricks
-                    UI to build endless custom layout combinations. An author can choose the section’s color variation
-                    and some image size options, but all choices map back to our established global design system.
+                    UI to build endless custom layout combinations. An author can choose the section’s color variation and preset size/alignment options, but all choices map back to our established global design system.
             </div>
 
         </section>
@@ -267,7 +253,7 @@
             <div class="container">
                 <p>Over my years at Smartsheet, I have grown in responsibility to take on engineering ownership and
                     governance of our global design system and have onboarded new front end engineers into the system.
-                    We have conducted a thorough <a href="accessbility.html">accessibility remediation</a> of the
+                    We have conducted a thorough <a href="accessibility.html">accessibility remediation</a> of the
                     component library to ensure it meets WCAG standards. We have since brought this design system to
                     multiple other web properties to ensure cohesion for the Smartsheet web experience.</p>
             </div>
@@ -300,6 +286,9 @@
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
                     <li>
+                        <div class="tile--image right">
+                            <img src="img/tile-accessibility-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="accessibility.html">Accessibility Remediation</a>
@@ -313,11 +302,11 @@
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
-                        <div class="tile--image right">
-                            <img src="img/tile-accessibility.png" alt="" loading="lazy"aria-hidden="true" width="800" height="450">
-                        </div>
                     </li>
                     <li>
+                        <div class="tile--image center">
+                            <img src="img/signup-large.png" alt="" loading="lazy"aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="form-api.html">Form API Integration</a>
@@ -331,11 +320,11 @@
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
-                        <div class="tile--image center">
-                            <img src="img/tile-form-api.png" alt="" loading="lazy"aria-hidden="true" width="800" height="450">
-                        </div>
                     </li>
                     <li class="">
+                        <div class="tile--image left">
+                            <img src="img/tile-nav-mockup-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
                             <a href="mega-menu-navigation.html">Global Mega-Menu Navigation</a>
@@ -348,9 +337,6 @@
                                 <li>Figma</li>
                             </ul>
                             <p class="learn-more">Learn more -></p>
-                        </div>
-                        <div class="tile--image left">
-                            <img src="img/tile-mega-menu.png" alt="" loading="lazy" aria-hidden="true" width="800" height="450">
                         </div>
                     </li>
                 </ul>
