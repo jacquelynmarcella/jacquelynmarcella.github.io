@@ -1,11 +1,40 @@
 header .container {
     max-width: 980px;
 }
-
-
+header .tile-grid {
+    max-width: 850px;
+    gap: 0 var(--md);
+}
+/* header h3 {
+    grid-column: 1;
+} */
+header .tags {
+    flex-direction: row;
+}
+header .stats--desc {
+    text-wrap: balance
+}
 h1 {
     margin-bottom: var(--xl);
 }
+
+@media screen and (min-width: 800px) {
+    h1 {
+        margin-bottom: var(--xxl);
+    }
+    header .container {
+        margin-top: var(--xl);
+    }
+    header .tags {
+        grid-column: 1/-1;
+        padding-bottom: var(--xl);
+    }
+    header .stats--desc {
+        padding-bottom: var(--xl);
+    }
+}
+
+
 section h2,
 section h3,
 section p, 
@@ -58,8 +87,12 @@ nav.breadcrumbs a {
     text-decoration: none;
 }
 
-header h3 {
-    margin-top: var(--lg);
+
+.overview {
+    background: var(--cardBackground);
+    border-radius: var(--borderRadiusMd);
+    padding: var(--md);
+    margin-top: var(--xl);
 }
 
 img {
@@ -155,24 +188,13 @@ section pre {
     overflow: scroll;
 }
 
-.stats-container {
-    max-width: 980px;
-    color: var(--copyColor);
-    margin: var(--xl) auto var(--xl) auto;
-    display: flex;
-    flex-wrap: wrap;
-    text-wrap: balance;
-    gap: var(--md) var(--xl);
-}
 .stats--number {
-    
-    font-size: 2.5rem; /*tbd*/
     display: block;
+    /* color: var(--linkColor); */
+    line-height: 1;
     /* font-family: "Fraunces", serif; */
-	line-height: .8;
 	font-weight: 500;
-	letter-spacing: 0em;
-	margin-bottom: var(--sm);
+	margin-bottom: var(--xxs);
 }
 /* @media screen and (min-width: 600px) {
     .stats-container {
@@ -202,7 +224,11 @@ img {
 
 
 footer .container {
-    border-top: unset;
+    border-top: 2px solid var(--surfaceColor);
+}
+footer {
+    mask: unset;
+    padding-top: 0;
 }
 
 
@@ -213,4 +239,15 @@ footer .container {
 .width-max {
     max-width: 1500px;
     width: 100%;
+}
+
+.wave {
+  --mask:
+    radial-gradient(78.1px at 50% 110px,#000 99%,#0000 101%) calc(50% - 100px) 0/200px 100%,
+    radial-gradient(78.1px at 50% -60px,#0000 99%,#000 101%) 50% 50px/200px 100% repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+footer {
+    background: var(--cardBackground);
 }

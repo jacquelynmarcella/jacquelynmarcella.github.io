@@ -62,38 +62,45 @@
         <div class="container">
             <h1>Oversee scalable component-based design system that improves efficiency</h1>
             <h2 class="visually-hidden">Overview</h2>
-            <!-- <p class="subhead">Support the creation and lead ongoing maintenance of an atomic design system across
-                multiple enteprise web properties.</b></p> -->
-            <div class="stats-container">
-                <div class="flex--33">
-                    <span class="stats--number">$1mil ARR</span>
-                    <span class="stats--desc">attributed to redesign within 8 months</span>
+            <div class="tile-grid odd">
+                <div>
+                    <span class="stats--number size-2">$1MM</span>
+                    <span class="stats--desc fine-print">ARR attributed to redesign within 8 months</span>
                 </div>
-                <div class="flex--33">
-                    <span class="stats--number">10.5k+</span>
-                    <span class="stats--desc">component instances published</span>
+                <div>
+                    <span class="stats--number size-2">10.5k+</span>
+                    <span class="stats--desc fine-print">component instances published in Drupal</span>
                 </div>
-                <div class="flex--33">
-                    <span class="stats--number">18</span>
-                    <span class="stats--desc">color scheme variations supported</span>
+                <div>
+                    <span class="stats--number size-2">18</span>
+                    <span class="stats--desc fine-print">color scheme variations</span>
+                </div>
+                <h3>Technology stack + skills</h3>
+                <ul class="tags">
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Twig</li>
+                    <li>Drupal</li>
+                    <li>Figma</li>
+                    <li>PatternLab</li>
+                    <li>WCAG Accessibility</li>
+                </ul>
+                <!-- <div>
+                    <h3>Project links</h3>
+                    <ul class="link-list">
+                        <li><a href="https://brandguides.brandfolder.com/smartsheet-web-guide/foundations"
+                                target="_blank">Smartsheet web guidelines</a></li>
+                    </ul>
+                </div> -->
+                <div>
+                    <h3>Role</h3>
+                    <p>Front end engineer</p>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <p>Smartsheet</p>
                 </div>
             </div>
-            <h3>Role</h3>
-            <p>Front end engineer</p>
-            <h3>Company</h3>
-            <p>Smartsheet</p>
-            <h3>Technology stack & skills used</h3>
-            <ul class="tags">
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Twig</li>
-                <li>Drupal</li>
-                <li>Figma</li>
-                <li>PatternLab</li>
-                <li>WCAG Accessibility</li>
-
-            </ul>
-
         </div>
     </header>
 
@@ -131,20 +138,26 @@
             </div>
 
             <figure>
-                <img src="img/design-system-large.png" loading="lazy" class="width-content" alt="Component example split half and half to show different elements and how the different color schemes apply to both">
-                <figcaption>Organism level component with button atom and tile molecule, shown in "default" and "event" schemes.</figcaption>
+                <img src="img/design-system-large.png" loading="lazy" class="width-content"
+                    alt="Component example split half and half to show different elements and how the different color schemes apply to both">
+                <figcaption>Organism level component with button atom and tile molecule, shown in "default" and "event"
+                    schemes.</figcaption>
             </figure>
 
             <div class="container">
-                <p>In Figma Dev Mode (previously in Zeplin and Invision), we have worked with the design team to ensure all global variables/tokens are mapped to all components and redlines. We  mapped the full suite of global variables using the semantic CSS
-                    custom property names, rather than just designing with hex codes and rigid pixel values, and we use these semantic property names in our build:</p>
+                <p>In Figma Dev Mode (previously in Zeplin and Invision), we have worked with the design team to ensure
+                    all global variables/tokens are mapped to all components and redlines. We mapped the full suite of
+                    global variables using the semantic CSS
+                    custom property names, rather than just designing with hex codes and rigid pixel values, and we use
+                    these semantic property names in our build:</p>
             </div>
 
             <div class="two-up width-max">
                 <div class="flex--50">
                     <figure>
                         <img src="img/tile-molecule-figma.png" alt="Caption">
-                        <figcaption>The Figma redlines for this molecule use variable names, not just pixel and hex values.</figcaption>
+                        <figcaption>The Figma redlines for this molecule use variable names, not just pixel and hex
+                            values.</figcaption>
                     </figure>
                 </div>
                 <div class="flex--50">
@@ -175,7 +188,8 @@
             </div>
 
             <div class="container">
-                <p>By using CSS custom properties, we were able to build out over ### components (and counting) that support six color
+                <p>By using CSS custom properties, we were able to build out over ### components (and counting) that
+                    support six color
                     variations across three different schemes (light mode, dark mode, and special events color scheme).
                     This means every component in the entire design system can easily be used in any of these <b>18
                         different color variations</b> without time-consuming color customizations needed at a
@@ -183,8 +197,10 @@
             </div>
 
             <figure>
-                <img src="img/design-system-schemes.png" class="width-content" loading="lazy" alt="Grid of 18 different color variations.">
-                <figcaption>Figma overview of 6 color variations within the 3 schemes that are integrated into the front end system. Currently, some variations are 1:1 with to variations in other schemes. </figcaption>
+                <img src="img/design-system-schemes.png" class="width-content" loading="lazy"
+                    alt="Grid of 18 different color variations.">
+                <figcaption>Figma overview of 6 color variations within the 3 schemes that are integrated into the front
+                    end system. Currently, some variations are 1:1 with to variations in other schemes. </figcaption>
             </figure>
             <!-- <div class="two-up">
                 <div class="flex--50">
@@ -224,7 +240,8 @@
             <div class="container">
                 <p>After prototyping in PatternLab, these components were built as Paragraphs within Drupal. These
                     components are built as modular standalone elements a web author can drag and drop within the Bricks
-                    UI to build endless custom layout combinations. An author can choose the section’s color variation and preset size/alignment options, but all choices map back to our established global design system.
+                    UI to build endless custom layout combinations. An author can choose the section’s color variation
+                    and preset size/alignment options, but all choices map back to our established global design system.
             </div>
 
         </section>
@@ -241,7 +258,7 @@
                 <p>Since its inception, we have been able to continually improve our component library to stay on brand
                     and keep up with design standards in the industry, integrating more progressive enhancements and
                     adding new features to components along the way.</p>
-                    <!-- Our recent major update included working closely
+                <!-- Our recent major update included working closely
                     with design to bring the website design system to feel closer in line with the Smartsheet
                     application’s latest UI revamp. This included updating the entire color scale, elevations/shadows,
                     spacing, icons, typeramp, interactions, and more. -->
@@ -267,7 +284,8 @@
         <section>
             <div class="container">
                 <h2>Future</h2>
-                <p>In the long term, the goal is to continue to evolve components while minimizing design system sprawl. We regularly test component performance with approaches like heatmapping and user
+                <p>In the long term, the goal is to continue to evolve components while minimizing design system sprawl.
+                    We regularly test component performance with approaches like heatmapping and user
                     testing, making sure our interactive components get the engagement we’d expect and continue to find
                     opportunities for improvement.</p>
         </section>
@@ -284,7 +302,7 @@
         </section>
 
 
-        <section class="dark">
+        <section class="accent wave">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
@@ -352,13 +370,13 @@
         <h2 class="visually-hidden">Contact</h2>
         <div class="container">
             <div>
-                <p>Copyright info here</p>
+                <p class="fine-print">Copyright info here</p>
 
             </div>
 
             <div>
                 <h3 class="">Let's get in touch</h2>
-                    <ul class="">
+                    <ul class="fine-print">
                         <li><a href="mailto:jacquelyn.marcella@gmail.com">Email me</a></li>
                         <li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
                         <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
@@ -366,7 +384,7 @@
                     </ul>
             </div>
 
-            <p>When I'm not at my keyboard, you can find me 🌲 exploring the Pacific
+            <p class="fine-print">When I'm not at my keyboard, you can find me 🌲 exploring the Pacific
                 Northwest, 🧟 watching horror movies, 📷 practicing photography, and building out my own 🌻 native plant
                 habitat .</p>
         </div>

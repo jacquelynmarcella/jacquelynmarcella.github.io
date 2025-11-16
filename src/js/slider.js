@@ -9,57 +9,57 @@ document.addEventListener("DOMContentLoaded", function() {
         slideCount: document.querySelectorAll('.slider--slide').length
     }
 
-    function setScrollIncrement(slider) {
-        // Based on slide visibility and number of slides, figure out scroll distance
-        let slideWidth = slider.$slideItems[0].offsetWidth;
-        let increment = 1;
-        console.log(slider.directionCount, "How many in this direction");
-        if (slider.slidesVisible >= 2.75) {
-            // If more slides are visible, reveal more slides at once to minimize extra clicks
-            increment = 2;
-            // On wider containers/screens, avoid having a half-slide remaining when close to the beginning/end.
-            // This can still happen on smaller containers, but not worth trying to override it because we
-            // could accidentally skip a whole slide instead.
-            // (This issue happens because of our choice to center slides via CSS Scroll Snap)
-            if (Math.round(slider.slidesVisible) >= slider.directionCount
-                && slider.directionCount >= 1) {
-                increment = (slider.directionCount * 2);
-            }
-        }
-        slider.scrollIncrement = (increment * slideWidth);
-        slider.scrollToEnd = (Math.round(slider.slidesVisible) <= increment);
-        console.log(slider.scrollToEnd, "scrollToEnd?");
-    }
+    // function setScrollIncrement(slider) {
+    //     // Based on slide visibility and number of slides, figure out scroll distance
+    //     let slideWidth = slider.$slideItems[0].offsetWidth;
+    //     let increment = 1;
+    //     console.log(slider.directionCount, "How many in this direction");
+    //     if (slider.slidesVisible >= 2.75) {
+    //         // If more slides are visible, reveal more slides at once to minimize extra clicks
+    //         increment = 2;
+    //         // On wider containers/screens, avoid having a half-slide remaining when close to the beginning/end.
+    //         // This can still happen on smaller containers, but not worth trying to override it because we
+    //         // could accidentally skip a whole slide instead.
+    //         // (This issue happens because of our choice to center slides via CSS Scroll Snap)
+    //         if (Math.round(slider.slidesVisible) >= slider.directionCount
+    //             && slider.directionCount >= 1) {
+    //             increment = (slider.directionCount * 2);
+    //         }
+    //     }
+    //     slider.scrollIncrement = (increment * slideWidth);
+    //     slider.scrollToEnd = (Math.round(slider.slidesVisible) <= increment);
+    //     console.log(slider.scrollToEnd, "scrollToEnd?");
+    // }
 
-    function countSlides(direction, slider) {
-        let containerWidth = slider.$slideScrollable.offsetWidth;
-        let containerOffset = slider.$slideScrollable.scrollLeft;
-        let slideWidth = slider.$slideItems[0].offsetWidth;
-        // Count how many slides *could* be visible at once based on slide width vs container width
-        slider.slidesVisible = Math.trunc((containerWidth / slideWidth) * 100) / 100;
-        slider.$slideScrollable.setAttribute('data-slides-visible', slider.slidesVisible);
-        // Count number of slides that are not scrolled to yet on the left or right
-        // If scrolling right, counting slides that may be partially hidden to the right (slideWidth/2)
-        slider.directionCount = 0;
-        slider.$slideItems.forEach(function (slide, i) {
-            let offset = slide.offsetLeft;
-            console.log("Inside set direction count", offset, slideWidth, containerOffset, containerWidth);
-            if ((direction == "right" && (offset + (slideWidth / 2) >= (containerOffset + containerWidth))) ||
-                (direction == "left" && (offset < containerOffset))) {
-                slider.directionCount++;
-            }
-        });
-    }
+    // function countSlides(direction, slider) {
+    //     let containerWidth = slider.$slideScrollable.offsetWidth;
+    //     let containerOffset = slider.$slideScrollable.scrollLeft;
+    //     let slideWidth = slider.$slideItems[0].offsetWidth;
+    //     // Count how many slides *could* be visible at once based on slide width vs container width
+    //     slider.slidesVisible = Math.trunc((containerWidth / slideWidth) * 100) / 100;
+    //     slider.$slideScrollable.setAttribute('data-slides-visible', slider.slidesVisible);
+    //     // Count number of slides that are not scrolled to yet on the left or right
+    //     // If scrolling right, counting slides that may be partially hidden to the right (slideWidth/2)
+    //     slider.directionCount = 0;
+    //     slider.$slideItems.forEach(function (slide, i) {
+    //         let offset = slide.offsetLeft;
+    //         console.log("Inside set direction count", offset, slideWidth, containerOffset, containerWidth);
+    //         if ((direction == "right" && (offset + (slideWidth / 2) >= (containerOffset + containerWidth))) ||
+    //             (direction == "left" && (offset < containerOffset))) {
+    //             slider.directionCount++;
+    //         }
+    //     });
+    // }
 
-    function disableButton(button) {
-        button.classList.remove('js-enabled');
-        button.setAttribute('aria-hidden', 'true');
-    }
+    // function disableButton(button) {
+    //     button.classList.remove('js-enabled');
+    //     button.setAttribute('aria-hidden', 'true');
+    // }
 
-    function enableButton(button) {
-        button.classList.add('js-enabled');
-        button.setAttribute('aria-hidden', '');
-    }
+    // function enableButton(button) {
+    //     button.classList.add('js-enabled');
+    //     button.setAttribute('aria-hidden', '');
+    // }
 
 //     function handleButtonClick(direction, slider) {
 //     let leftPos = slider.$slideScrollable.scrollLeft;
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function scrollToPreferredSlide() {
         // Specific slide - want the focus to be on current "Senior FE Engineer II" role on load
         // Magic numbers for now because content is rigid
-        let preferredSlide = slider.$slideItems[9];
+        // let preferredSlide = slider.$slideItems[9];
         let scrollLeftMax = slider.$slideScrollable.scrollWidth - slider.$slideScrollable.clientWidth;
         let scrollIncrement = scrollLeftMax / 10;
         let scrollLeft = scrollLeftMax - scrollIncrement;

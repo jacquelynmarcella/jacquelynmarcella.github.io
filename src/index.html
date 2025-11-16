@@ -16,8 +16,11 @@
 				<div class="header--image">
 					<img src="img/jacquelyn.jpg" alt="Jacquelyn Marcella photo" width="100">
 				</div>
-				<h1>Front end engineer who transforms complex ideas into accessible, scalable web applications through <span class="mobile-break"></span><em>design</em> + <code class="type">&lt;<span class="animate">code</span><span class="end">&gt;</span></code></h1>
-				<p>I'm <b>Jacquelyn</b> and I have 8 years of technical experience working at the intersection of engineering and
+				<h1>Front end engineer who transforms complex ideas into accessible, scalable web applications through
+					&nbsp;<span class="mobile-break"></span><em>design</em> + <code class="type">&lt;<span
+							class="animate">code</span><span class="end">&gt;</span></code></h1>
+				<p class="balance">I'm <b>Jacquelyn</b> and I have 8 years of technical experience working at the
+					intersection of engineering and
 					design. Using <code>JavaScript</code>, <code>CSS</code>, and <code>Drupal</code> I bring
 					solutions to life that improve user experiences and drive measurable results.
 				</p>
@@ -33,250 +36,259 @@
 		</div>
 	</header>
 	<!-- <img src="img/mountain.jpg"> -->
+	<div class="wave accent">
+		<section class="skills " id="skills">
+			<div class="container">
+				<h2>Technical skills</h2>
+				<hr>
+				<div class="two-up">
+					<div class="flex--33">
 
-	<section class="skills" id="skills">
-		<div class="container">
-			<h2>Technical skills</h2>
-			<hr>
-			<div class="two-up">
-				<div class="flex--33">
-
-					<p>I'm always ready to learn new technologies, whether it's a new front end framework or brushing up
-						on
-						the latest CSS release that makes a once difficult design concept simpler to implement.</p>
+						<p class="no-mobile">I'm always ready to learn new technologies, whether it's a new front end
+							framework or brushing up
+							on
+							the latest CSS release that makes a once difficult design concept a breeze to implement.</p>
+					</div>
+					<ul class="skills--container flex--66">
+						<li>
+							<h3>Languages</h3>
+							<ul class="skills--list tags">
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>Scss</li>
+								<li>JavaScript</li>
+								<li>PHP</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Technologies and frameworks</h3>
+							<ul class="skills--list tags">
+								<li>Drupal</li>
+								<li>React.js</li>
+								<li>jQuery</li>
+								<li>Twig</li>
+								<li>Tailwind CSS</li>
+								<li>Bootstrap</li>
+								<li>Mocha</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Front end</h3>
+							<ul class="skills--list tags">
+								<li>WCAG Accessibility</li>
+								<li>CSS Grid</li>
+								<li>Flexbox</li>
+								<li>Responsive design</li>
+								<li>Atomic design</li>
+								<li>PatternLab</li>
+								<li>Lottie</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Developer tools</h3>
+							<ul class="skills--list tags">
+								<li>Git</li>
+								<li>Gulp.js</li>
+								<li>Grunt</li>
+								<li>Docker</li>
+								<li>BrowserStack</li>
+								<li>VS Code</li>
+								<li>Optimizely</li>
+								<li>Confluence</li>
+								<li>JIRA</li>
+							</ul>
+						</li>
+						<li>
+							<h3>Design tools</h3>
+							<ul class="skills--list tags">
+								<li>Figma Dev Mode</li>
+								<li>Adobe Photoshop</li>
+								<li>Adobe Lightroom</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
-				<ul class="skills--container flex--66">
-					<li>
-						<h3>Languages</h3>
-						<ul class="skills--list tags">
-							<li>HTML</li>
-							<li>CSS</li>
-							<li>Scss</li>
-							<li>JavaScript</li>
-							<li>PHP</li>
-						</ul>
+
+			</div>
+		</section>
+
+		<!-- Experience -->
+		<section id="experience" class="experience">
+			<div class="container">
+				<div class="image--container image--container-polaroid">
+					<img class="image--polaroid" src="img/Young Jacquelyn at computer.jpg"
+						alt="Me at a computer, in the early years" loading="lazy">
+				</div>
+				<h2 class="text-align-center">Experience</h2>
+				<p class="text-align-center balance">My interest in technology started at a young age. Take a trip
+					through
+					the wayback machine below to learn more about my journey or <a href="resume.pdf">download my
+						resume</a>.
+				</p>
+			</div>
+			<div class="slider--controls">
+				<!--Need more aria controls values-->
+				<button class="button alternate" id="slider-prev" data-direction="left">
+					<span class="visually-hidden">Travel back</span>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</button>
+				<button class="button alternate" id="slider-next" data-direction="right">
+					<span class="visually-hidden">Travel forwards</span>
+					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+						height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
+							d="M19 12H5m14 0-4 4m4-4-4-4" />
+					</svg>
+				</button>
+			</div>
+			<hr>
+			<div class="slider--timeline" id="slider">
+				<ul class="slider--slides">
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/dwhxbrvz.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>The early years</h3>
+							<p>Spent my free time tinkering on the household computer in the days of DOS and dial-up.
+							</p>
+						</div>
 					</li>
-					<li>
-						<h3>Technologies and frameworks</h3>
-						<ul class="skills--list tags">
-							<li>Drupal</li>
-							<li>React.js</li>
-							<li>jQuery</li>
-							<li>Twig</li>
-							<li>Tailwind CSS</li>
-							<li>Bootstrap</li>
-							<li>Mocha</li>
-						</ul>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>Self-guided learning</h3>
+							<p>Taught myself the basics as a hobby, from learning CSS and Photoshop to setting up my own
+								FTP
+								server.</p>
+						</div>
 					</li>
-					<li>
-						<h3>Front end</h3>
-						<ul class="skills--list tags">
-							<li>WCAG Accessibility</li>
-							<li>CSS Grid</li>
-							<li>Flexbox</li>
-							<li>Responsive design</li>
-							<li>Atomic design</li>
-							<li>PatternLab</li>
-							<li>Lottie</li>
-						</ul>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/vvyxyrur.json" trigger="loop" stroke="light"
+								state="loop-cycle" style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>B.A., Business and Communications</h3>
+							<p>Graduated <em>cum laude</em> with an Honors in Business.</p>
+						</div>
 					</li>
-					<li>
-						<h3>Developer tools</h3>
-						<ul class="skills--list tags">
-							<li>Git</li>
-							<li>Gulp.js</li>
-							<li>Grunt</li>
-							<li>Docker</li>
-							<li>BrowserStack</li>
-							<li>VS Code</li>
-							<li>Optimizely</li>
-							<li>Confluence</li>
-							<li>JIRA</li>
-						</ul>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/zhiiqoue.json" trigger="loop" stroke="light"
+								state="loop-cycle" style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>Internships</h3>
+							<p>Interned at the local art museum and worked as a marketing assistant retouching photos
+								and
+								creating print collateral.</p>
+						</div>
 					</li>
-					<li>
-						<h3>Design tools</h3>
-						<ul class="skills--list tags">
-							<li>Figma Dev Mode</li>
-							<li>Adobe Photoshop</li>
-							<li>Adobe Lightroom</li>
-						</ul>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/cfoaotmk.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>Agency work</h3>
+							<em>2012 - 2017</em>
+							<p>Supported project management team on design and website projects in both large and small
+								agencies.</p>
+						</div>
+					</li>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>Full Stack Developer</h3>
+							<em>2017 - 2018</em>
+							<p>Pivoted to technical work through designing, building, and deploying MERN stack
+								applications.
+							</p>
+						</div>
+					</li>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>Front End Developer</h3>
+							<em>2018 - 2020</em>
+							<p>Built Drupal features and ran A/B tests to improve SEO and site performance.</p>
+						</div>
+					</li>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>Senior Front End Developer</h3>
+							<em>2020 - 2023</em>
+							<p>Promoted as I grew in responsibility to deliver larger-scale front-end Drupal projects.
+							</p>
+						</div>
+					</li>
+					<li class="slider--slide slider--current-role">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
+								state="morph-code" style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>Senior Front End Engineer II</h3>
+							<em>2023 - Present</em>
+							<!-- Inset some kind of "you are here" marker-->
+							<p>Currently overseeing a component-based design system across mulitple enterprise Drupal
+								websites.</p>
+						</div>
+					</li>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/bpwrqrbv.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>The future ahead</h3>
+							<p>Continuing to grow in my skillset as a Front End Engineer. </p>
+							<p><a href="#contact" class="button primary">Work with me</a></p>
+						</div>
 					</li>
 				</ul>
 			</div>
-
-		</div>
-	</section>
-
-	<!-- Experience -->
-	<section id="experience" class="experience">
-		<div class="container">
-			<div class="image--container image--container-polaroid">
-				<img class="image--polaroid" src="img/Young Jacquelyn at computer.jpg"
-					alt="Me at a computer, in the early years" loading="lazy">
-			</div>
-			<h2 class="text-align-center">Experience</h2>
-			<p class="text-align-center balance">My interest in technology started at a young age. Take a trip through
-				the wayback machine below to learn more about my journey or <a href="resume.pdf">download my resume</a>.
-			</p>
-		</div>
-		<div class="slider--controls">
-			<!--Need more aria controls values-->
-			<button class="button alternate" id="slider-prev" data-direction="left">
-				<span class="visually-hidden">Travel back</span>
-				<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-					fill="none" viewBox="0 0 24 24">
-					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
-						d="M19 12H5m14 0-4 4m4-4-4-4" />
-				</svg>
-			</button>
-			<button class="button alternate" id="slider-next" data-direction="right">
-				<span class="visually-hidden">Travel forwards</span>
-				<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-					fill="none" viewBox="0 0 24 24">
-					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8"
-						d="M19 12H5m14 0-4 4m4-4-4-4" />
-				</svg>
-			</button>
-		</div>
-		<hr>
-		<div class="slider--timeline" id="slider">
-			<ul class="slider--slides">
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/dwhxbrvz.json" trigger="loop" stroke="light"
-							style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>The early years</h3>
-						<p>Spent my free time tinkering on the household computer in the days of DOS and dial-up.</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
-							style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>Self-guided learning</h3>
-						<p>Taught myself the basics as a hobby, from learning CSS and Photoshop to setting up my own FTP
-							server.</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/vvyxyrur.json" trigger="loop" stroke="light"
-							state="loop-cycle" style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>B.A., Business and Communications</h3>
-						<p>Graduated <em>cum laude</em> with an Honors in Business.</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/zhiiqoue.json" trigger="loop" stroke="light"
-							state="loop-cycle" style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>Internships</h3>
-						<p>Interned at the local art museum and worked as a marketing assistant retouching photos and
-							creating print collateral.</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/cfoaotmk.json" trigger="loop" stroke="light"
-							style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>Agency work</h3>
-						<em>2012 - 2017</em>
-						<p>Supported project management team on design and website projects in both large and small
-							agencies.</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
-							style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>Full Stack Developer</h3>
-						<em>2017 - 2018</em>
-						<p>Pivoted to technical work through designing, building, and deploying MERN stack applications.
-						</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
-							style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>Front End Developer</h3>
-						<em>2018 - 2020</em>
-						<p>Built Drupal features and ran A/B tests to improve SEO and site performance.</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
-							style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>Senior Front End Developer</h3>
-						<em>2020 - 2023</em>
-						<p>Promoted as I grew in responsibility to deliver larger-scale front-end Drupal projects.</p>
-					</div>
-				</li>
-				<li class="slider--slide slider--current-role">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light"
-							state="morph-code" style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>Senior Front End Engineer II</h3>
-						<em>2023 - Present</em>
-						<!-- Inset some kind of "you are here" marker-->
-						<p>Currently overseeing a component-based design system across mulitple enterprise Drupal
-							websites.</p>
-					</div>
-				</li>
-				<li class="slider--slide">
-					<div class="slider--icon-container">
-						<lord-icon src="https://cdn.lordicon.com/bpwrqrbv.json" trigger="loop" stroke="light"
-							style="width:75px;height:75px">
-						</lord-icon>
-					</div>
-					<div class="slider--text-container">
-						<h3>The future ahead</h3>
-						<p>Continuing to grow in my skillset as a Front End Engineer. </p>
-						<p><a href="#contact" class="button alternate">Work with me</a></p>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</section>
+		</section>
+	</div>
 
 	<!-- Projects -->
 	<section class="projects" id="featured-projects">
 		<div class="container">
 			<h2>Projects</h2>
 			<hr>
-			<h3>Recent work</h3>
-			<p>In my current role at Smartsheet, I have worked on a cross-functional team to launch a range of impactful
+			<h3 class="visually-hidden">Recent work</h3>
+			<!--<p>In my current role at Smartsheet, I have worked on a cross-functional team to launch a range of impactful
 				projects.
-			</p>
+			</p> -->
 			<ul class="tile-grid odd">
 				<!--(bake /includes/tile-design-system.html)-->
 				<!--(bake /includes/tile-form-api.html)-->
@@ -295,14 +307,13 @@
 					</div>
 				</li> -->
 			</ul>
-			<div class="two-up-grid">
-				<div>
-					<h3>Learning & side projects</h3>
-					<p>While my recent professional experience has focused on enteprise-level <code>Drupal</code> work,
-						I have also developed a variety of smaller projects that use technologies such as
-						<code>React.js</code>, <code>Node.js</code>, and <code>Express.js</code>.</p>
-				</div>
-				<ul>
+			<!-- <div class="two-up-grid"> -->
+				<!-- <div> -->
+					<h3 class="text-align-center">Learning + side projects</h3>
+					<p class="text-align-center">While my recent professional experience has focused on enteprise-level <code>Drupal</code> work,
+						I have also developed a variety of smaller projects that use technologies such as <code>React.js</code>, <code>Node.js</code>, and <code>Express.js</code>:</p>
+				<!-- </div> -->
+				<ul class="github-list">
 					<li><a href="https://github.com/jacquelynmarcella/Project3" class="arrow-link"
 							target="_blank">React.js
 							app that analyzes and provides data visualizations for your dreams</a></li>
@@ -312,7 +323,7 @@
 					<li><a href="https://github.com/jacquelynmarcella/blackjack" class="arrow-link"
 							target="_blank">JavaScript-based Blackjack game</a></li>
 				</ul>
-			</div>
+			<!-- </div> -->
 		</div>
 
 
@@ -348,47 +359,89 @@
 	<!-- Recommednations -->
 	<section id="recommendations">
 		<div class="container">
-			<h2 class="text-align-center">Recommendations</h2>
-			<p class="balance text-align-center">I do my best work in highly collaborative environments where I work
-				closely with engineers, designers, and product owners. Read what my teammates have to say about working
-				with me.</p>
-			<div class="recommendations tile-grid">
-				<figure>
-					<lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="" stroke="light"
-						style="width:50px;height:50px">
-					</lord-icon>
-					<blockquote>
-						<p> Jacquelyn is a strong advocate for maintaining the integrity of our code base, while
-							embracing other's ideas. She is patient, generous, and an excellent teacher, always ready to
-							offer guidance and support to team members facing challenges.</p>
-					</blockquote>
-					<figcaption>Emmy L., Senior Front End Engineer</figcaption>
-				</figure>
-				<figure>
-					<lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="" stroke="light"
-						style="width:50px;height:50px">
-					</lord-icon>
-					<blockquote>
-						<p>Jacquelyn is a huge asset when it comes to scalable and maintainable code, having mastered
-							our tech stack extremely quickly. Her commitment to excellence is unmatched. </p>
-					</blockquote>
-					<figcaption>Katie K., Senior QA Engineer</figcaption>
-				</figure>
-				<figure>
-					<lord-icon src="https://cdn.lordicon.com/cvwrvyjv.json" trigger="" stroke="light"
-						style="width:50px;height:50px">
-					</lord-icon>
-					<blockquote>
-						<p>Jacquelyn is a rare front end engineer, who is willing to work in ambiguity and complexity,
-							while bringing valuable expertise to help find the right solution. She is highly praised by
-							stakeholders for building web experiences that achieve user and business goals. </p>
-					</blockquote>
-					<figcaption>Megan J., Principal UI/UX Designer</figcaption>
-				</figure>
+			<h2 class="">Recommendations</h2>
+			<hr>
+
+			<div class="two-up">
+
+				<div class="flex--66">
+					<ul class="carousel quote" data-slide-visible="1">
+						<li data-slide="1" class="js-active">
+							<figure>
+								<blockquote>
+									<p>Jacquelyn is a rare front end engineer, who is willing to work in ambiguity and
+										complexity,
+										while bringing valuable expertise to help find the right solution. She is highly
+										praised
+										by
+										stakeholders for building web experiences that achieve user and business goals.
+									</p>
+								</blockquote>
+								<figcaption>Megan J., Principal UI/UX Designer</figcaption>
+							</figure>
+						</li>
+						<li data-slide="2" aria-hidden="true">
+							<figure>
+								<blockquote>
+									<p> Jacquelyn is a strong advocate for maintaining the integrity of our code base,
+										while
+										embracing other's ideas. She is patient, generous, and an excellent teacher,
+										always
+										ready to
+										offer guidance and support to team members facing challenges.</p>
+								</blockquote>
+								<figcaption>Emmy L., Senior Front End Engineer</figcaption>
+							</figure>
+						</li>
+						<li data-slide="2" aria-hidden="true">
+							<figure>
+								<blockquote>
+									<p>Jacquelyn is a huge asset when it comes to scalable and maintainable code, having
+										mastered
+										our tech stack extremely quickly. Her commitment to excellence is unmatched.
+									</p>
+								</blockquote>
+								<figcaption>Katie K., Senior QA Engineer</figcaption>
+							</figure>
+						</li>
+					</ul>
+					<div class="slider--controls">
+						<!--Need more aria controls values-->
+						<button class="button alternate" id="carousel-prev" data-direction="left">
+							<span class="visually-hidden">Previous quote</span>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</button>
+						<button class="button alternate" id="carousel-next" data-direction="right">
+							<span class="visually-hidden">Next quote</span>
+							<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+								height="24" fill="none" viewBox="0 0 24 24">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+									stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
+							</svg>
+						</button>
+					</div>
+				</div>
+
+				<div class="flex--33">
+					<p class="no-mobile">I do my best work in highly collaborative environments where I
+						work
+						closely with engineers, designers, and product owners. Read what my teammates have to say about
+						working
+						with me.</p>
+					<p><a href="https://www.linkedin.com/in/jmarcella/details/recommendations" target="_blank"
+							class="arrow-link">Read more recomendations on
+							Linkedin</a></p>
+				</div>
 			</div>
-			<p class="section-cta"><a href="https://www.linkedin.com/in/jmarcella/details/recommendations"
-					target="_blank" class="fine-print arrow-link right-align">Read more recomendations on
-					Linkedin</a></p>
+
+
+
+
+
 	</section>
 	<!-- Footer -->
 	<!--(bake /includes/footer.html)-->
