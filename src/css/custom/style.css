@@ -37,7 +37,9 @@ body {
 	--copyColor: rgb(var(--darkest));
 	--backgroundColor: rgb(var(--light));
 	--cardBackground: rgba(var(--dark), .05);
-	--surfaceColor: rgba(var(--darkest), .66);
+	--surfaceColor: rgba(var(--darkest), .45);
+	--border1: rgba(var(--darkest), .25);
+	--border2: rgba(var(--darkest), .45);
 	--tagBg: rgba(var(--midAccent), .15);
 	--tagText: var(--copyColor);
 	--linkColor: rgb(var(--midAccent));
@@ -51,6 +53,8 @@ body {
 
 	--lord-icon-primary: var(--copyColor);
 	--lord-icon-secondary: var(--copyColor);
+
+	padding-top: var(--xl);
 }
 
 body.dark {
@@ -204,6 +208,7 @@ rgba(47,47,47,1);
 	}
 }
 .balance {
+	display: inline-block;
 	text-wrap: balance;
 }
 h1, h2, h3, h4, h5, p, ul, ol {
@@ -213,22 +218,55 @@ h1, h2 {
 	font-family: "Fraunces", serif;
 	line-height: .8;
 	font-weight: 400;
-	letter-spacing: -.2rem;
 	margin-bottom: var(--sm);
 }
 h1 {
-	font-size: 5rem;
+	font-size: 2.36rem;
 	line-height: 1;
+	letter-spacing: -.175rem;
+	max-width: 968px;
 }
 h1 code {
-	font-size: 3.75rem;
+	font-size: 2rem;
 }
+h2 {
+	font-size: 2rem;
+	letter-spacing: -.125rem;
+}
+/* p.subhead-large {
+	font-size: 1.7em;
+    line-height: 1.5;
+} */
+@media screen and (min-width: 850px) {
+	h1 {
+		font-size: 5rem;
+		line-height: 1;
+		letter-spacing: -.2rem;
+	}
+	h1 code {
+		font-size: 4.33rem;
+	}	
+	h2 {
+		font-size: 2.5rem;
+		letter-spacing: -.175rem;
+	}
+	p.subhead-large {
+		font-size: 1.25rem;
+    	line-height: 1.6;
+	}
+	p.subhead-large .image--container {
+		display: inline;
+	}
+	p.subhead-large code {
+		font-size: 1.1rem;
+	}
+}
+
+
 /* .header--hero h1 {
 	font-size: 7rem;
 } */
-h2 {
-	font-size: 3rem;
-}
+
 h3 {
 	font-weight: 500;
 }
@@ -237,9 +275,12 @@ p {
 	margin-bottom: var(--lg);
 	line-height: 2;
 }
-p.subhead-large {
-	font-size: 1.7em;
-	line-height: 2.5;
+
+.fine-print,
+.tags,
+code,
+pre {
+	font-size: 14px;
 }
 img.image-inline {
 	display: inline;
@@ -544,9 +585,51 @@ section {
 }
 
 header {
-	/* margin-top: var(--xxl); */
+	margin-top: var(--xl);
 	background: var(--backgroundColor);
 }
+header .container {
+	display: block;
+	/* gap: 0; */
+}
+@media screen and (min-width: 850px) {
+	
+	header .align-center {
+		text-align: center;
+	}	
+	header .align-center > * {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	header .container {
+		flex-direction: row;
+	}
+}
+@media screen and (min-width: 1500px) {
+	header .container {
+		display: flex;
+	}
+}
+
+.header--image img {
+	width: 100px;
+	height: auto;
+	width: 75%;
+	object-position: center top;
+	object-fit: contain;
+	opacity: 1;
+	margin: auto;
+	mix-blend-mode: luminosity;
+}
+.header--image {
+	width: 75px;
+	height: 75px;
+	border-radius: 100px;
+	background: var(--cardBackground);
+	overflow: hidden;
+	margin-bottom: var(--sm);
+}
+.header
 .header--hero {
 	/* min-height: 90vh; */
 	display: flex;
@@ -559,20 +642,20 @@ header {
 	z-index: 2;
 	align-items: center;
 
-	background-position: center right;
+	/* background-position: center right;
 	background-size: contain;
 	background-repeat: no-repeat;
-	
+	 */
 	
 }
 .header--title {
 }
-.header--image {
+/* .header--image {
 	min-height: 300px;
 	position: relative;
-}
+} 
 .header--image img {
-	/* position: fixed; */
+	/* position: fixed; 
 	width: 300px;
 	position: absolute;
 }
@@ -587,7 +670,7 @@ header {
 .header--image .hero--image-right {
 	right: 0;
 	bottom: 0;
-}
+} */
 
 .header--background {
 	position: absolute;
@@ -622,7 +705,7 @@ header {
 	flex-direction: column;
 	gap: var(--lg);
 }
-.skills--list {
+/* .skills--list {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--xs);
@@ -634,7 +717,7 @@ header {
 	background: var(--tagBg);
 	color: var(--tagText);
 	border-radius: 2px;
-}
+} */
 
 
 
@@ -1160,3 +1243,26 @@ footer .container {
 	flex-wrap: wrap;
 }
 
+
+
+.type {
+  display:inline-flex;
+}
+.type .animate {
+  word-break: break-all;
+  height: 1.1em;
+  width:0%;
+  overflow: hidden;
+  animation: type 1.75s ease-in-out forwards;
+	padding: 0 var(--xxxs);
+}
+.type .animate:before {
+  content: " ";
+  display: inline-block;
+}
+.type .end {
+	margin-left: auto;
+}
+@keyframes type {
+  90%,100% {width:100%}
+}
