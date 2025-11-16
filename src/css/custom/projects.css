@@ -168,7 +168,7 @@ section pre {
     
     font-size: 2.5rem; /*tbd*/
     display: block;
-    font-family: "Fraunces", serif;
+    /* font-family: "Fraunces", serif; */
 	line-height: .8;
 	font-weight: 500;
 	letter-spacing: 0em;
