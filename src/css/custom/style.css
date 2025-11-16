@@ -224,27 +224,35 @@ h1 {
 	font-size: 2.36rem;
 	line-height: 1;
 	letter-spacing: -.175rem;
-	max-width: 968px;
+	max-width: 1056px;
 }
 h1 code {
 	font-size: 2rem;
+	text-align: left;
 }
 h2 {
 	font-size: 2rem;
 	letter-spacing: -.125rem;
 }
-/* p.subhead-large {
-	font-size: 1.7em;
-    line-height: 1.5;
-} */
+h1 + p {
+	margin-top: var(--xl);
+	margin-bottom: var(--md);
+}
+
+@media screen and (max-width: 675px) {
+	.mobile-break {
+		display: block;
+	}	
+}
+
 @media screen and (min-width: 850px) {
 	h1 {
-		font-size: 5rem;
+		font-size: 4rem;
 		line-height: 1;
 		letter-spacing: -.2rem;
 	}
 	h1 code {
-		font-size: 4.33rem;
+		font-size: 3.33rem;
 	}	
 	h2 {
 		font-size: 2.5rem;
@@ -254,10 +262,10 @@ h2 {
 		font-size: 1.25rem;
     	line-height: 1.6;
 	}
-	p.subhead-large .image--container {
+	p.subhead .image--container {
 		display: inline;
 	}
-	p.subhead-large code {
+	p.subhead code {
 		font-size: 1.1rem;
 	}
 }
@@ -585,8 +593,12 @@ section {
 }
 
 header {
-	margin-top: var(--xl);
+	/* margin-top: var(--xl); */
 	background: var(--backgroundColor);
+}
+header .subhead {
+	font-weight: normal;
+	letter-spacing: 0;
 }
 header .container {
 	display: block;
@@ -597,7 +609,8 @@ header .container {
 	header .align-center {
 		text-align: center;
 	}	
-	header .align-center > * {
+	header .align-center,
+	header .align-center > *  {
 		margin-left: auto;
 		margin-right: auto;
 	}
