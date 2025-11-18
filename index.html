@@ -31,17 +31,18 @@
 					<a href="index.html">Jacquelyn Marcella</a>
 				</li>
 				<li class="nav-item navbar--links">
-					<button class="navbar--hamburger right-align" id="navbar--toggle" aria-expanded="false"
+					<button class="navbar--toggle right-align button alternate" id="navbar--toggle" aria-expanded="false"
 						aria-controls="navbar--dropdown">
-						<span class="visually-hidden">Menu</span>
-						<svg class="navbar--icon" aria-hidden="true" version="1.1" xmlns="https://www.w3.org/2000/svg"
+						Menu
+						<!-- <span class="visually-hidden">Menu</span> -->
+						<!-- <svg class="navbar--icon" aria-hidden="true" version="1.1" xmlns="https://www.w3.org/2000/svg"
 							xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
 							<g class="svg-menu-toggle">
 								<path class="line line-1" d="M5 13h90v14H5z" />
 								<path class="line line-2" d="M5 43h90v14H5z" />
 								<path class="line line-3" d="M5 73h90v14H5z" />
 							</g>
-						</svg>
+						</svg> -->
 					</button>
 					<ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
 						<li class="right-align"><a href="index.html#skills">Skills</a></li>
@@ -70,7 +71,7 @@
 					design. Using <code>JavaScript</code>, <code>CSS</code>, and <code>Drupal</code> I bring
 					solutions to life that improve user experiences and drive measurable results.
 				</p>
-				<p><a href="#contact" class="button primary">Work with me</a>
+				<p class="button-section"><a href="#contact" class="button primary">Work with me</a>
 					<a href="#featured-projects" class="button alternate">See projects</a></p>
 			</div>
 
@@ -161,11 +162,31 @@
 		<!-- Experience -->
 		<section id="experience" class="experience">
 			<div class="container">
-				<div class="image--container image--container-polaroid">
-					<img class="image--polaroid" src="img/Young Jacquelyn at computer.jpg"
-						alt="Me at a computer, in the early years" loading="lazy">
+
+				<!-- <div class="filmstrip">
+					<img class="image--polaroid" src="img/photography-class.JPG" loading="lazy">
+					<img class="image--polaroid" src="img/rgc.JPG" loading="lazy">
+					<img class="image--polaroid" src="img/avanade.JPEG" loading="lazy">
+					<img class="image--polaroid" src="img/smartsheet.JPG" loading="lazy">
+					<img class="image--polaroid" src="img/presidents-club.JPG" loading="lazy">
+					<img class="image--polaroid" src="img/wfh.JPG" loading="lazy">
+					<img class="image--polaroid" src="img/whiteboarding.JPG" loading="lazy">
+				</div> -->
+
+				<div class="polaroid--border">
+					<div class="polaroid--background">
+						<div class="polaroid--bg-developing">
+							<img class="polaroid--image" src="img/young-computer-bw.png"
+						alt="Polaroid style photo of Jacquelyn at a computer, in the early years" loading="lazy">
+						</div>
+						<div class="polaroid--bg-stable">
+							<img class="polaroid--image" src="img/young-computer-bw.png"
+						alt="Polaroid style photo of Jacquelyn at a computer, in the early years" loading="lazy">
+						</div>
+					</div>
+					<h2 class="text-align-center">Experience</h2>
 				</div>
-				<h2 class="text-align-center">Experience</h2>
+				<!-- <h2 class="text-align-center">Experience</h2> -->
 				<p class="text-align-center balance">My interest in technology started at a young age. Take a trip
 					through
 					the wayback machine below to learn more about my journey or <a href="resume.pdf">download my
@@ -202,7 +223,7 @@
 						</div>
 						<div class="slider--text-container">
 							<h3>The early years</h3>
-							<p>Spent my free time tinkering on the household computer in the days of DOS and dial-up.
+							<p>Spent my free time tinkering on the household computer in the days of DOS and dial-up
 							</p>
 						</div>
 					</li>
@@ -215,8 +236,7 @@
 						<div class="slider--text-container">
 							<h3>Self-guided learning</h3>
 							<p>Taught myself the basics as a hobby, from learning CSS and Photoshop to setting up my own
-								FTP
-								server.</p>
+								FTP server</p>
 						</div>
 					</li>
 					<li class="slider--slide">
@@ -227,7 +247,7 @@
 						</div>
 						<div class="slider--text-container">
 							<h3>B.A., Business and Communications</h3>
-							<p>Graduated <em>cum laude</em> with an Honors in Business.</p>
+							<p>Graduated <em>cum laude</em> with an Honors in Business</p>
 						</div>
 					</li>
 					<li class="slider--slide">
@@ -239,8 +259,7 @@
 						<div class="slider--text-container">
 							<h3>Internships</h3>
 							<p>Interned at the local art museum and worked as a marketing assistant retouching photos
-								and
-								creating print collateral.</p>
+								and creating print collateral</p>
 						</div>
 					</li>
 					<li class="slider--slide">
@@ -253,7 +272,7 @@
 							<h3>Agency work</h3>
 							<em>2012 - 2017</em>
 							<p>Supported project management team on design and website projects in both large and small
-								agencies.</p>
+								agencies</p>
 						</div>
 					</li>
 					<li class="slider--slide">
@@ -266,7 +285,7 @@
 							<h3>Full Stack Developer</h3>
 							<em>2017 - 2018</em>
 							<p>Pivoted to technical work through designing, building, and deploying MERN stack
-								applications.
+								applications
 							</p>
 						</div>
 					</li>
@@ -279,7 +298,19 @@
 						<div class="slider--text-container">
 							<h3>Front End Developer</h3>
 							<em>2018 - 2020</em>
-							<p>Built Drupal features and ran A/B tests to improve SEO and site performance.</p>
+							<p>Built Drupal features and ran A/B tests to improve SEO and site performance</p>
+						</div>
+					</li>
+					<li class="slider--slide">
+						<div class="slider--icon-container">
+							<lord-icon src="https://cdn.lordicon.com/vttzorhw.json" trigger="loop" stroke="light"
+								style="width:40px;height:40px">
+							</lord-icon>
+						</div>
+						<div class="slider--text-container">
+							<h3>President's Club Award</h3>
+							<em>2020</em>
+							<p>Awarded "Impact Maker" for my impact on SEO and Demand Generation</p>
 						</div>
 					</li>
 					<li class="slider--slide">
@@ -291,7 +322,7 @@
 						<div class="slider--text-container">
 							<h3>Senior Front End Developer</h3>
 							<em>2020 - 2023</em>
-							<p>Promoted as I grew in responsibility to deliver larger-scale front-end Drupal projects.
+							<p>Promoted as I grew in responsibility to deliver larger-scale front-end Drupal projects
 							</p>
 						</div>
 					</li>
@@ -306,7 +337,7 @@
 							<em>2023 - Present</em>
 							<!-- Inset some kind of "you are here" marker-->
 							<p>Currently overseeing a component-based design system across mulitple enterprise Drupal
-								websites.</p>
+								websites</p>
 						</div>
 					</li>
 					<li class="slider--slide">
@@ -317,7 +348,7 @@
 						</div>
 						<div class="slider--text-container">
 							<h3>The future ahead</h3>
-							<p>Continuing to grow in my skillset as a Front End Engineer. </p>
+							<p>Continuing to grow in my skillset as a Front End Engineer </p>
 							<p><a href="#contact" class="button primary">Work with me</a></p>
 						</div>
 					</li>
@@ -461,21 +492,22 @@
 				</li> -->
 			</ul>
 			<!-- <div class="two-up-grid"> -->
-				<!-- <div> -->
-					<h3 class="text-align-center">Learning + side projects</h3>
-					<p class="text-align-center">While my recent professional experience has focused on enteprise-level <code>Drupal</code> work,
-						I have also developed a variety of smaller projects that use technologies such as <code>React.js</code>, <code>Node.js</code>, and <code>Express.js</code>:</p>
-				<!-- </div> -->
-				<ul class="github-list">
-					<li><a href="https://github.com/jacquelynmarcella/Project3" class="arrow-link"
-							target="_blank">React.js
-							app that analyzes and provides data visualizations for your dreams</a></li>
-					<li><a href="https://github.com/jacquelynmarcella/plantparenthood" class="arrow-link"
-							target="_blank">Node.js/Express.js app to inventory your houseplants and their care
-							needs</a></li>
-					<li><a href="https://github.com/jacquelynmarcella/blackjack" class="arrow-link"
-							target="_blank">JavaScript-based Blackjack game</a></li>
-				</ul>
+			<!-- <div> -->
+			<h3 class="text-align-center">Learning + side projects</h3>
+			<p class="text-align-center">While my recent professional experience has focused on enteprise-level
+				<code>Drupal</code> work,
+				I have also developed a variety of smaller projects that use technologies such as <code>React.js</code>,
+				<code>Node.js</code>, and <code>Express.js</code>:</p>
+			<!-- </div> -->
+			<ul class="github-list">
+				<li><a href="https://github.com/jacquelynmarcella/Project3" class="arrow-link" target="_blank">React.js
+						app that analyzes and provides data visualizations for your dreams</a></li>
+				<li><a href="https://github.com/jacquelynmarcella/plantparenthood" class="arrow-link"
+						target="_blank">Node.js/Express.js app to inventory your houseplants and their care
+						needs</a></li>
+				<li><a href="https://github.com/jacquelynmarcella/blackjack" class="arrow-link"
+						target="_blank">JavaScript-based Blackjack game</a></li>
+			</ul>
 			<!-- </div> -->
 		</div>
 
@@ -601,23 +633,24 @@
 	    <h2 class="visually-hidden">Contact</h2>
 	    <div class="container">
 	        <div>
-	            <p class="fine-print">Copyright info here</p>
-
+	            <p class="subhead">Let's get in touch</p>
+	            <ul class="fine-print">
+	                <li class="email"><a href="mailto:jacquelyn.marcella@gmail.com" class="button primary">@ Email me</a>
+	                </li>
+	                <li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
+	                <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
+	                <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
+	            </ul>
+	            <p class="about fine-print">When I'm not at my keyboard, you can find me 🌲 exploring the Pacific
+	                Northwest, 🧟 watching horror movies, 📷 practicing photography, and building out my own 🌻 native plant
+	                habitat .</p>
+	        </div>
+	        <div class="copyright fine-print">
+	            <p>Copyright info here</p>
+	            <p>Link to credits for icons, etc.</p>
 	        </div>
 
-	        <div>
-	            <h3 class="">Let's get in touch</h2>
-	                <ul class="fine-print">
-	                    <li><a href="mailto:jacquelyn.marcella@gmail.com">Email me</a></li>
-	                    <li><a href="https://github.com/jacquelynmarcella" target="_blank">Follow on GitHub</a></li>
-	                    <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
-	                    <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
-	                </ul>
-	        </div>
 
-	        <p class="fine-print">When I'm not at my keyboard, you can find me 🌲 exploring the Pacific
-	            Northwest, 🧟 watching horror movies, 📷 practicing photography, and building out my own 🌻 native plant
-	            habitat .</p>
 	    </div>
 
 	</footer>

@@ -251,3 +251,20 @@ footer {
 footer {
     background: var(--cardBackground);
 }
+
+
+@media screen and (max-width: 600px) {
+    img.no-mobile {
+        display: none;
+    }
+    img.mobile-only {
+        max-height: unset;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 600px) {
+    img.mobile-only {
+        display: none;
+    }
+    
+}

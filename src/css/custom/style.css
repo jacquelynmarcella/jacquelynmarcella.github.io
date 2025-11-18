@@ -365,39 +365,149 @@ code {
 	color: var(--backgroundColor);
 	text-decoration: none; */
 }
-
-.image--container {
-	background: var(--backgroundColor);
+.button-section {
+	display: flex;
+	width: 100%;
+	text-align: center;
+	border: 2px solid var(--copyColor);
+	border-radius: var(--borderRadiusSm);
 }
-.image--container-polaroid {
-	width: 100%;
-	margin: 0 auto var(--lg) auto;
-	height: 200px;
-	overflow: hidden;
+.button-section .button {
+	border: unset;
+	flex: 1 0 auto;
+	border-radius: unset;
+}
+@media screen and (min-width: 600px) {
+	.button-section {
+		width: fit-content;
+	}
+	.button-section .button {
+		flex: auto;
+	}
+}
 
-}	
-.image--polaroid {
-	opacity: .8;
+/* Do not use dark/light schemes as polaroid stays "light" on all schemes */
+.polaroid--border {
+	background: rgb(var(--light));
+	padding: 20px 20px 35px 20px;
+	width: fit-content;
+	margin: 0 auto var(--md) auto;
+	border: 1px solid rgba(var(--dark), .05);
+    border-radius: 2px;
+}
+.polaroid--background {
+	position: relative;
+}
+.polaroid--bg-stable,
+.polaroid--bg-developing {
+	background: rgb(var(--light));
+	max-height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.polaroid--bg-stable {
+	z-index: 1;
+}
+.polaroid--bg-stable .polaroid--image {
 	mix-blend-mode: luminosity;
+	opacity: .80;
+}
+
+.polaroid--bg-developing {
+	position: absolute;
+	background: rgb(var(--midAccent));
+}
+.polaroid--bg-developing .polaroid--image {
+	opacity: .2;
+	mix-blend-mode: exclusion;
+}
+
+.polaroid--image-developing,
+.polaroid--image {
 	max-width: 100%;
-	width: 100%;
-	height: 200px;
+	height: auto;
+	/* opacity: .75; */
+	/* mix-blend-mode: luminosity; */
 	object-fit: cover;
 	object-position: center;
 }
+
+.polaroid--border h2 {
+	position: relative;
+	color: rgb(var(--darkest));
+	/* transform: translate(0, 25px); */
+	margin: 25px 0 0 0;
+}
 @media screen and (min-width: 600px) {
-	.image--polaroid {
-		/* mix-blend-mode: luminosity; */
+	.polaroid--bg-developing,
+	.polaroid--bg-stable {
+		max-height: unset;
 		max-width: 33vh;
-		height: auto;
-	}
-	.image--container-polaroid {
-		height: auto;
-		width: fit-content;
-		border-radius: 100%;
 	}
 }
 
+/* Animation attempt for polaroid */
+.polaroid--bg-stable {
+	opacity: 0;
+}
+.polaroid--bg-developing {
+	opacity: 1;
+}
+.js-animating .polaroid--bg-stable {
+	/* opacity: 0; */
+	/* mix-blend-mode: exclusion;
+	opacity: .25; */
+	animation: 1.5s polaroid-stable ease-in-out forwards;
+	animation-delay: .5s;
+	/* -webkit-animation-timeline: scroll();
+  	animation-timeline: view();
+	animation-range: 40vh 80vh;
+	animation-duration: 1s;  */
+}
+.js-animating .polaroid--bg-developing {
+	/* opacity: 1; */
+	/* opacity: 1; */
+	animation: 1.5s polaroid-developing ease-in-out forwards;
+	animation-delay: .5s;
+	/* -webkit-animation-timeline: scroll();
+  	animation-timeline: view();
+	animation-range: 40vh 80vh; */
+	/* animation-duration: 1s;  */
+}
+@keyframes polaroid-stable {
+	0% { opacity: 0; }
+	/* 90% { opacity: .66; } */
+	100% { opacity: 1; }
+}
+@keyframes polaroid-developing {
+	0% { opacity: 1; }
+	/* 90% { opacity: .33; } */
+	100% { opacity: 0; }
+}
+
+
+
+/* Header hero animation attempt */
+.header--hero .header--container {
+	/* opacity: 1; */
+	/* animation: follow-down ease-out forwards;
+	-webkit-animation-timeline: scroll();
+  	animation-timeline: view();
+	animation-range: 90vh 120vh;
+	animation-duration: 1s; */
+}
+
+@keyframes follow-down {
+	0% {
+		opacity: 1;
+		/* transform: translate(0, 0); */
+	}
+	100% {
+		opacity: .2;
+		/* transform: translate(0, 20vh); */
+	}
+}
 
 @keyframes move-down {
   0% {
@@ -439,7 +549,7 @@ code {
   }
 }
 
-@keyframes follow-down {
+/* @keyframes follow-down {
   0% {
     transform: translate(0, 0);
   }
@@ -449,7 +559,7 @@ code {
   100% {
 	transform: translate(0, 50vh);
   }
-}
+} */
 
 @media screen and (min-width: 600px) {
   @supports (animation-timeline: scroll()) {
@@ -523,7 +633,7 @@ nav.navbar {
 	flex-direction: row;
 	gap: var(--md);
 }
-.navbar--hamburger {
+.navbar--toggle {
 	display: block;
 }
 .navbar--icon {
@@ -575,7 +685,7 @@ nav.navbar {
 }
 /* Desktop only styles - can we exclude on mobile somehow? */
 @media screen and (min-width: 800px) {
-	.navbar--hamburger {
+	.navbar--toggle.button {
 		display: none;
 	}
 	.navbar--level-2 {
@@ -762,7 +872,7 @@ section.experience {
 		/* margin-top: calc(var(--xxl) * -1); */
 	}
 }
-.experience h2, 
+/* .experience h2,  */
 .experience .container > p {
 	padding: 0 var(--md);
 }
@@ -937,10 +1047,46 @@ footer ul {
 	gap: var(--sm);
 	width: fit-content;
 	padding-bottom: var(--xxl);
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
+footer li {
+	flex: 1 1 10ch;
+}
+
 footer .container {
 	padding: var(--xxl) 0;
-	/* border-top: 2px solid var(--surfaceColor); */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+footer .email {
+	flex: 1 0 100%;
+}
+footer .email a {
+	width: 100%;
+	text-align: center;
+}
+footer .about {
+	flex: 1 0 100%;
+}
+@media screen and (min-width: 600px) {
+	footer .email {
+		/* flex: auto; */
+	}
+	footer li {
+		flex: unset;
+	}
+	footer ul {
+		justify-content: flex-start;
+	}
+	footer .email a {
+		min-width: 25ch;
+		width: fit-content;
+	}
 }
 
 /* .projects {
@@ -1313,13 +1459,6 @@ footer .container {
 }
 
 
-footer .container {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
 
 
 
