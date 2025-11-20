@@ -66,11 +66,15 @@
             <h2 class="visually-hidden">Overview</h2>
             <!-- <p class="subhead">Spearhead front end accessibility remediation and ongoing governance.</b></p> -->
             <div class="stats-container">
-                <div class="flex--25">
+                <div class="flex--33">
                     <span class="stats--number">92%+</span>
                     <span class="stats--desc">WCAG 2.1 AA compliance</span>
                 </div>
-                <div class="flex--25">
+                <div class="flex--33">
+                    <span class="stats--number">165</span>
+                    <span class="stats--desc">issues resolved in JIRA</span>
+                </div>
+                <div class="flex--33">
                     <span class="stats--number">2</span>
                     <span class="stats--desc">multilingual enterprise sites remediated</span>
                 </div>
@@ -101,47 +105,27 @@
     <!-- Main-->
     <main id="main">
         <section>
-            <section>
-                <div class="container">
-                    <h2>Challenge</h2>
-                    <p>An in-depth accessibility audit of Smartsheet's web properties confirmed what the engineering team had hypothesized: there were several opportunities for accessibility improvements on the front end of our website, especially in regards to interactive elements.</p>
-                    <!-- <p>Automated tools can provide some direction, but our ability to identify issues required education
-                        and manual testing efforts to ensure content on the site is able to be accessed by all visitors.
-                        Additionally, we needed to ensure that improving accessibility of our site would not create new
-                        complexities that were impossible to maintain for our CMS authors.</p> -->
-                    <p>
-                        One of the more complex findings was on the Plans and Pricing page, which is one of the highest
-                        trafficked pages on the primary Smartsheet website. The large data table was inaccessible as it
-                        read out all content at once, not providing users with an ability to navigate with a keyboard or screenreader. It also lacked a caption and used icons in lieu of text content without providing icon labels for screen readers.
-                    </p>
-                </div>
+            <h2>Plan</h2>
+            <p>An in-depth accessibility audit of Smartsheet's web properties confirmed what the engineering
+                team had hypothesized: there were several opportunities for accessibility improvements on the
+                front end of our website, especially in regards to interactive elements.
+            </p>
+            <p>
+                Leading the front end effort, I helped provide recommendations for a plan of action for the team to organize our work by component and by the types of issues to resolve. Many of the issues could be resolved centrally in our <a href="design-system.html">component-based system</a>.
+            </p>
+            <p>
+                One of the more complex findings was on the Plans and Pricing page, which is one of the highest trafficked pages on the primary Smartsheet website. The large features comparison data table was inaccessible as it was not navigable by a keyboard or screenreader. As the engineer working on this item, I determined the best solution was to re-engineer the table’s structure as a <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/" target="_blank">treegrid pattern</a>.
+            </p>
+        </section>
 
-            </section>
-
-
-            <div class="container">
-                <h2>Solution</h2>
-                <h3>Cross-site remediation process</h3>
-                <p>
-                    Leading the front end effort, I helped provide recommendations for a plan of action for the team to
-                    organize our work by component and by the types of issues to resolve. There were several trends we
-                    found that were able to work with UI/UX designers to apply learnings across our <a
-                        href="design-system.html">component-based system</a>.
-                </p>
-
-                <h3>Plans and Pricing table process</h3>
-                <p>For the Plans and Pricing table, thoroughly researching the best way to incorporate accessible
-                    accordion
-                    headers into a table, I rebuilt the table’s structure as a <a
-                        href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/" target="_blank">treegrid pattern</a>.
-                </p>
-                <p>Because this table is in a rich text field maintained by non-engineers, the simplest way to ensure
-                    long-term accessibility and ease of maintenance was to apply the necessary attributes via
-                    JavaScript. I wrote JavaScript functions that parse the table ensuring the appropriate
-                    <code>aria</code>, <code>tabindex</code>, <code>role</code>, and <code>scope</code> values are
-                    accurate on both load and user interaction.</p>
-                <p>The final markup follows this structure:</p>
-            </div>
+        <section>
+            <h2>Process</h2>
+            <h3>Cross-site remediation process</h3>
+            <p>Throughout this project, I collaborated with other engineers on the broad scope of remediation tickets, having them code review and test my work on their devices and provide further feedback for improvement. I also conducted code review on their component refactors to ensure we were all learning from the accessibility improvements so we could be on the same page about best practices moving forward.</p>
+            <h3>Features table process</h3>
+            <p>For this remediation item, because this table is in a rich text field maintained by non-engineers, the simplest way to ensure long-term accessibility and ease of maintenance was to apply the necessary attributes via JavaScript. I wrote JavaScript functions that parse the table ensuring the appropriate <code>aria</code>, <code>tabindex</code>, <code>role</code>, and <code>scope</code> values are accurate on both load and user interaction.</p>
+            <p>The final markup follows this structure:</p>
+  
             <figure>
                 <pre>
 &lt;table role=&quot;treegrid&quot;&gt;
@@ -179,70 +163,29 @@
                 </figcaption>
             </figure>
 
-            <div class="container">
-                <p>The updated experience allows for keyboard navigation throughout the
-                    table using the expected treegrid keyboard commands and is a much more useful experience for screen
-                    readers.</p>
-                <!-- <p>Using the keyboard only, a user can open and close sections, navigate through
-                    entire rows or single columns at a time, get information describing rather than no content
-                    (checkmarks are properly described as “Included”), and the table has a
-                    visually-hidden caption that provides an overview of its purpose to screen readers before reading
-                    all of the data within.</p>
-                <p> -->
-            </div>
+            <p>The updated experience allows for keyboard navigation throughout the table using the expected treegrid keyboard commands and is a much more useful experience for screen readers.</p>
 
             <figure>
-                <video src="img/accessibility-nvda-treegrid.mp4" preload="none" poster="img/tile-accessibility.png"
-                    class="width-content" muted="false" controls loop="false" playsinline
-                    title="NVDA demo of the treegrid table experience" width="1600" height="900">
+                <video src="img/accessibility-nvda-treegrid.mp4" preload="none" poster="img/tile-accessibility.png" class="width-content" muted="false" controls loop="false" playsinline title="NVDA demo of the treegrid table experience" width="1600" height="900">
                 </video>
                 <figcaption>Video of keyboard only table navigation along with NVDA screen reader enabled. Play with
                     audio enabled to hear screen reader announcements</figcaption>
             </figure>
 
-            <div class="container">
-                <p>The authoring experience is still simple given the complexity of the table. Website authors are able
-                    to update data in in this treegrid without the need for engineering support:</p>
-            </div>
+            <p>The authoring experience is still simple given the complexity of the table. Website authors are able to update data in in this treegrid without the need for engineering support:</p>
 
             <figure>
-                <img src="img/accessibility-table-authoring.png" class="width-content" loading="lazy"
-                    alt="Visual of rich text editor showing the treegrid table authoring experience." width="1272"
-                    height="991">
+                <img src="img/accessibility-table-authoring.png" class="width-content" loading="lazy" alt="Visual of rich text editor showing the treegrid table authoring experience." width="1272" height="991">
                 <figcaption>Simple table editor experience allows authors to maintain an accessible treegrid by using
                     familiar rich text formatting options.</figcaption>
             </figure>
-
-
-            <div class="container">
-                <p>Throughout this project, I collaborated with other engineers, having them code review and test my
-                    work on their devices and provide further feedback for improvement. I also conducted code review on
-                    their component refactors to ensure we were all learning from the accessibility improvements so we
-                    could be on the same page about best practices moving forward.</p>
-            </div>
         </section>
+
         <section>
-            <div class="container">
-                <h2>Results</h2>
-                <p>By implementing cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA
-                        compliance</b>. The front end team now has an improved understanding of proper standards for
-                    accessibility that should be adhered to for future projects.</p>
-                <p>Moving forward, we now leverage tools like WebAIM and Lighthouse for a quick automatic check of
-                    items and NVDA for validating screen reader experiences. We understand the importance of manually
-                    checking items within the context of their intended purpose, which an automated testing tool alone
-                    would not catch.
-                </p>
+            <h2>Impact</h2>
+            <p>By implementing cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA compliance</b>. The front end team now has an improved understanding of proper standards for  accessibility that should be adhered to for future projects.</p>
+            <p>Moving forward, we now leverage tools like WebAIM and Lighthouse for a quick automatic check of items and NVDA for validating screen reader experiences. We understand the importance of manually checking items within the context of their intended purpose, which an automated testing tool alone would not catch.</p>
         </section>
-        <!-- 
-        <section>
-            <div class="container">
-                <h2>Future</h2>
-       
-                <p>I continue to stay informed about accessibility best practices through resources like [a11y
-                    newsletter link]. The engineering team is exploring adding more supporting features to the site,
-                    like the Editoria11y module[link] to help authors check their content for proper outline structure,
-                    image alt tags, and other common points of failure for accessibility.</p>
-        </section> -->
 
         <section>
             <div class="container">
@@ -254,7 +197,6 @@
                 </nav>
             </div>
         </section>
-
 
         <section class="accent wave">
             <div class="container">

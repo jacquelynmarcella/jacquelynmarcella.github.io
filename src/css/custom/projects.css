@@ -228,6 +228,7 @@ footer .container {
 }
 footer {
     mask: unset;
+    background: var(--backgroundColor);
     padding-top: 0;
 }
 
@@ -241,16 +242,30 @@ footer {
     width: 100%;
 }
 
-.wave {
+
+.article-body {
+    background: var(--cardBackground);
+    	--mask:
+		radial-gradient(78.1px at 50% 110px,#000 99%,#0000 101%) calc(50% - 100px) 0/200px 51% repeat-x,
+		radial-gradient(78.1px at 50% -60px,#0000 99%,#000 101%) 50% 50px/200px calc(51% - 50px) repeat-x,
+		radial-gradient(78.1px at 50% calc(100% - 110px),#000 99%,#0000 101%) calc(50% - 100px) 100%/200px 51% repeat-x,
+		radial-gradient(78.1px at 50% calc(100% + 60px),#0000 99%,#000 101%) 50% calc(100% - 50px)/200px calc(51% - 50px) repeat-x;
+	-webkit-mask: var(--mask);
+			mask: var(--mask);
+}
+.article-body section {
+    background: transparent;
+}
+/* .wave {
   --mask:
     radial-gradient(78.1px at 50% 110px,#000 99%,#0000 101%) calc(50% - 100px) 0/200px 100%,
     radial-gradient(78.1px at 50% -60px,#0000 99%,#000 101%) 50% 50px/200px 100% repeat-x;
   -webkit-mask: var(--mask);
           mask: var(--mask);
-}
-footer {
+} */
+/* footer {
     background: var(--cardBackground);
-}
+} */
 
 
 @media screen and (max-width: 600px) {

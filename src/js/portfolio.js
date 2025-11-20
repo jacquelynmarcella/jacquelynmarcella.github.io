@@ -28,7 +28,7 @@ const classNameToToggle = 'js-animating'; // The CSS class to add/remove
 
 function checkVisibility() {
   const rect = targetElement.getBoundingClientRect();
-  const isVisible = (rect.top >= 0 && rect.bottom + 100 <= window.innerHeight);
+  const isVisible = (rect.top >= 0 && rect.bottom + 300 <= window.innerHeight);
   console.log(rect.top, rect.bottom, window.innerHeight);
   // Need: only on scroll down
   // dont jump back to green so quickly, different range for rect
