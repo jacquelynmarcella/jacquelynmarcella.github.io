@@ -59,7 +59,7 @@
 	<!-- Hero -->
 	<header id="top" class="header--hero">
 		<div class="container two-up header--container">
-			<div class="align-center">
+			<div class="align-center" id="sticky-header">
 				<div class="header--image">
 					<img src="img/jacquelyn.jpg" alt="Jacquelyn Marcella photo" width="100">
 				</div>
@@ -88,12 +88,8 @@
 				<h2>Technical skills</h2>
 				<hr>
 				<div class="two-up">
-					<div class="flex--33">
-
-						<p class="no-mobile">I'm always ready to learn new technologies, whether it's a new front end
-							framework or brushing up
-							on
-							the latest CSS release that makes a once difficult design concept a breeze to implement.</p>
+					<div class="flex--33 sticky">
+						<p class="no-mobile">I'm always ready to learn new technologies, whether it's a new front end framework or brushing upon the latest CSS release that makes a once difficult design concept a breeze to implement.</p>
 					</div>
 					<ul class="skills--container flex--66">
 						<li>
@@ -159,21 +155,29 @@
 		</section>
 
 		<!-- Experience -->
+		<div class="polaroid--border mobile">
+			<div class="polaroid--background">
+				<div class="polaroid--bg-developing">
+					<img class="polaroid--image" src="img/young-computer-bw.png" aria-hidden="true" alt="" loading="lazy">
+				</div>
+				<div class="polaroid--bg-stable">
+					<img class="polaroid--image" src="img/young-computer-bw.png" alt="Polaroid style photo of Jacquelyn at a computer, in the early years" loading="lazy">
+				</div>
+			</div>
+		</div>
 		<section id="experience" class="experience">
 			<div class="container">
 				<h2 class="text-align-center">Experience</h2>
 				<p class="text-align-center balance">My interest in technology started at a young age. Take a trip
-						through the wayback machine to learn more about my journey or <a href="resume.pdf">download my resume</a>.
-					</p>
+					through the wayback machine to learn more about my journey or <a href="resume.pdf">download my resume</a>.
+				</p>
 			</div>
 			<div class="container two-up">
-				<div class="flex--33 sticky">
-					<!-- <h2 class="text-align-center">Experience</h2> -->
-				
-					<div class="polaroid--border">
+				<div class="flex--50 sticky polaroid--sticky">
+					<div class="polaroid--border desktop">
 						<div class="polaroid--background">
 							<div class="polaroid--bg-developing">
-								<img class="polaroid--image" src="img/young-computer-bw.png" alt="Polaroid style photo of Jacquelyn at a computer, in the early years" loading="lazy">
+								<img class="polaroid--image" src="img/young-computer-bw.png" aria-hidden="true" alt="" loading="lazy">
 							</div>
 							<div class="polaroid--bg-stable">
 								<img class="polaroid--image" src="img/young-computer-bw.png" alt="Polaroid style photo of Jacquelyn at a computer, in the early years" loading="lazy">
@@ -181,16 +185,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="flex--66">
-					<div class="slider--timeline" id="slider">
-						<ul class="slider--slides">
+				<!-- <div class="flex--33"> -->
+					<div class="slider--timeline flex--50" id="slider">
+						<ul class="slider--slides js-mobile-collapsed" id="timeline">
 							<li class="slider--slide slider--current-role">
 								<div class="slider--icon-container">
 									<lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="loop" stroke="light" state="morph-code" style="width:40px;height:40px">
 									</lord-icon>
 								</div>
 								<div class="slider--text-container">
-									<h3>Senior Front End Engineer II <em>2023 - Present</em></h3>
+									<h3>Senior Front End Engineer II</h3>
 									<!-- Inset some kind of "you are here" marker-->
 									<p>Currently overseeing a component-based design system across mulitple enterprise Drupal
 										websites</p>
@@ -202,7 +206,7 @@
 									</lord-icon>
 								</div>
 								<div class="slider--text-container">
-									<h3>Senior Front End Developer <em>2020 - 2023</em></h3>
+									<h3>Senior Front End Developer</h3>
 									<p>Promoted as I grew in responsibility to deliver larger-scale front-end Drupal projects
 									</p>
 								</div>
@@ -213,7 +217,7 @@
 									</lord-icon>
 								</div>
 								<div class="slider--text-container">
-									<h3>President's Club Award <em>2020</em></h3>
+									<h3>President's Club Award</h3>
 									<p>Awarded "Impact Maker" for my impact on SEO and Demand Generation</p>
 								</div>
 							</li>
@@ -223,7 +227,7 @@
 									</lord-icon>
 								</div>
 								<div class="slider--text-container">
-									<h3>Front End Developer <em>2018 - 2020</em></h3>
+									<h3>Front End Developer</h3>
 									<p>Built Drupal features and ran A/B tests to improve SEO and site performance</p>
 								</div>
 							</li>
@@ -233,7 +237,7 @@
 									</lord-icon>
 								</div>
 								<div class="slider--text-container">
-									<h3>Full Stack Developer <em>2017 - 2018</em></h3>
+									<h3>Full Stack Developer</h3>
 									<p>Pivoted to technical work through designing, building, and deploying MERN stack
 										applications
 									</p>
@@ -245,7 +249,7 @@
 									</lord-icon>
 								</div>
 								<div class="slider--text-container">
-									<h3>Agency work <em>2012 - 2017</em></h3>
+									<h3>Agency work</h3>
 									<p>Supported project management team on design and website projects in both large and small
 										agencies</p>
 								</div>
@@ -283,7 +287,7 @@
 										FTP server</p>
 								</div>
 							</li>
-							<li class="slider--slide">
+							<!-- <li class="slider--slide">
 								<div class="slider--icon-container">
 									<lord-icon src="https://cdn.lordicon.com/dwhxbrvz.json" trigger="loop" stroke="light" style="width:40px;height:40px">
 									</lord-icon>
@@ -293,7 +297,7 @@
 									<p>Spent my free time tinkering on the household computer in the days of DOS and dial-up
 									</p>
 								</div>
-							</li>
+							</li> -->
 
 							<!-- <li class="slider--slide">
 								<div class="slider--icon-container">
@@ -306,32 +310,17 @@
 									<p><a href="#contact" class="button primary">Work with me</a></p>
 								</div>
 							</li> -->
+
+							<!-- TODO: Shjow more button for mobile -->
 						</ul>
+						<button class="button timeline--button" id="timeline--toggle" aria-expanded="true" aria-controls="timeline">
+							<span class="js-closed">Show all experience</span>
+							<span class="js-open">Show less experience</span>
+						</button>
 					</div>
-				</div>
+				<!-- </div> -->
 
 			</div>
-
-
-
-
-			<div class="slider--controls">
-				<!--Need more aria controls values-->
-				<button class="button alternate" id="slider-prev" data-direction="left">
-					<span class="visually-hidden">Travel back</span>
-					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
-					</svg>
-				</button>
-				<button class="button alternate" id="slider-next" data-direction="right">
-					<span class="visually-hidden">Travel forwards</span>
-					<svg class="tile--arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M19 12H5m14 0-4 4m4-4-4-4" />
-					</svg>
-				</button>
-			</div>
-
-
 		</section>
 	</div>
 
@@ -341,9 +330,6 @@
 			<h2>Projects</h2>
 			<hr>
 			<h3 class="visually-hidden">Recent work</h3>
-			<!--<p>In my current role at Smartsheet, I have worked on a cross-functional team to launch a range of impactful
-				projects.
-			</p> -->
 			<ul class="tile-grid odd">
 				<li>
 				    <div class="tile--image left">
@@ -458,73 +444,38 @@
 				        <p class="learn-more">Learn more -></p>
 				    </div>
 				</li>
-
-				<!-- <li class="wide">
-					<div class="tile-content">
-						<h3>Currently studying</h3>
-						<p>My recent work has largely included building enterprise projects in <code>Drupal</code> but I
-							have previously completed projects in <code>React.js</code> (check out my additional
-							projects below). In the meantime, I am enrolled in the
-							<em>React by Jonas Schmedtmann</em> course to keep my React skills fresh.</p>
-					</div>
-				</li> -->
 			</ul>
-			<!-- <div class="two-up-grid"> -->
-			<!-- <div> -->
 			<h3 class="text-align-center">Learning + side projects</h3>
 			<p class="text-align-center">While my recent professional experience has focused on enteprise-level
 				<code>Drupal</code> work,
 				I have also developed a variety of smaller projects that use technologies such as <code>React.js</code>,
 				<code>Node.js</code>, and <code>Express.js</code>:</p>
-			<!-- </div> -->
+
 			<ul class="github-list">
-				<li><a href="https://github.com/jacquelynmarcella/Project3" class="arrow-link" target="_blank">React.js
-						app that analyzes and provides data visualizations for your dreams</a></li>
-				<li><a href="https://github.com/jacquelynmarcella/plantparenthood" class="arrow-link" target="_blank">Node.js/Express.js app to inventory your houseplants and their care
-						needs</a></li>
-				<li><a href="https://github.com/jacquelynmarcella/blackjack" class="arrow-link" target="_blank">JavaScript-based Blackjack game</a></li>
+				<li>
+					<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" trigger="hover" style="width:24px;height:24px">
+					</lord-icon> 
+					<a href="https://github.com/jacquelynmarcella/Project3" class="arrow-link" target="_blank">React.js app that analyzes and provides data visualizations for your dreams</a>
+				</li>
+				<li>
+					<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" trigger="hover" style="width:24px;height:24px">
+					</lord-icon>
+					<a href="https://github.com/jacquelynmarcella/plantparenthood" class="arrow-link" target="_blank">Node.js/Express.js app to inventory your houseplants and their care needs</a>
+				</li>
+				<li>
+					<lord-icon src="https://cdn.lordicon.com/ubpgwkmy.json" trigger="hover" style="width:24px;height:24px">
+						</lord-icon>
+					<a href="https://github.com/jacquelynmarcella/blackjack" class="arrow-link" target="_blank">JavaScript-based Blackjack game</a></li>
 			</ul>
-			<!-- </div> -->
 		</div>
-
-
-		<!-- Additional projects -->
-		<!-- <button class="button alternate section-cta-top drawer--toggle js-closed" aria-controls="projects-archive"
-			aria-expanded="false">
-			<span class="message message--open">Show additional projects</span>
-			<span class="message message--close display-none">Hide additional projects</span>
-		</button> -->
-		<!-- <div id="projects-archive" class="projects-old drawer--container">
-			<div class="container">
-				<h2>Additional projects</h3>
-					<hr>
-					<div class="two-up">
-						<div class="flex--33 sticky">
-							<p>Intro text for older projects. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Sed
-								at velit mattis, euismod nisl vitae, mollis elit. Proin eleifend aliquam tristique.
-								Suspendisse massa metus, consectetur vitae purus in, laoreet venenatis mauris. </p>
-						</div>
-						
-					</div>
-			</div> -->
-		</div>
-
 	</section>
-
-
-
-
-
 
 	<!-- Recommednations -->
 	<section id="recommendations">
 		<div class="container">
 			<h2 class="">Recommendations</h2>
 			<hr>
-
 			<div class="two-up">
-
 				<div class="flex--66">
 					<ul class="carousel quote" data-slide-visible="1">
 						<li data-slide="1" class="js-active">

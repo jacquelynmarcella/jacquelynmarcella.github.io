@@ -63,81 +63,59 @@
         <div class="container">
             <h1>Improved site and SEO performance through media optimization</h1>
             <h2 class="visually-hidden">Overview</h2>
-            <!-- <p class="subhead">Led multi-phase initiative that improved site performance.</b></p> -->
-            <div class="stats-container">
-                <div class="flex--33">
-                    <span class="stats--number">97%</span>
+
+            <div class="tile-grid odd">
+                <div>
+                    <span class="stats--number size-2">97%</span>
                     <span class="stats--desc">image file size reduction</span>
                 </div>
-                <div class="flex--33">
-                    <span class="stats--number">94%</span>
+                <div>
+                    <span class="stats--number size-2">94%</span>
                     <span class="stats--desc">animation file size reduction</span>
                 </div>
-                <div class="flex--33">
-                    <span class="stats--number">28%</span>
+                <div>
+                    <span class="stats--number size-2">28%</span>
                     <span class="stats--desc">increase in Google image search impressions</span>
                 </div>
+                <h3>Technology stack & skills used</h3>
+                <ul class="tags">
+                    <li>Drupal</li>
+                    <li>PHP</li>
+                    <li>Twig</li>
+                    <li>SEO</li>
+                    <li>Lottie</li>
+                    <li>Site performance</li>
+                </ul>
+                <div>
+                    <h3>Role</h3>
+                    <p>Lead front end engineer</p>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <p>Smartsheet</p>
+                </div>
             </div>
-            <h3>Role</h3>
-            <p>Lead front end engineer</p>
-            <h3>Company</h3>
-            <p>Smartsheet</p>
-            <h3>Technology stack & skills used</h3>
-            <ul class="tags">
-                <li>Drupal</li>
-                <li>PHP</li>
-                <li>Twig</li>
-                <li>SEO</li>
-                <li>Lottie</li>
-                <li>Site performance</li>
-            </ul>
-
         </div>
     </header>
 
     <!-- Main-->
     <main id="main">
         <section>
-            <section>
-                <div class="container">
-                    <h2>Challenge</h2>
-                    <p>When examining our Lighthouse speed scores for the site and investigating in the Network tab, I
-                        noticed a puzzling trend: we had responsive image modules and image compression enabled on the
-                        site, but image file sizes were still much larger than I’d expect, especially on mobile.</p>
-                    <p>Due to
-                        my research and advocacy for improvements, I was able to get the business to prioritize a
-                        mulit-phase project, where we took several steps to improve page performance through
-                        optimization of media. Over time, we sought to address the following three challenges:</p>
-                    <ol>
-                        <li>Images on the site are rendering at far larger sizes than expected, especially on mobile.</li>
-                        <li>PNG and JPG are not best for page performance, but the entire CMS is comprised of these file formats.</li>
-                        <li>Increasing use of animations on the site had led to massive MP4/GIF files.</li>
-                    </ol>
-                </div>
-            </section>
-
-
-            <div class="container">
-                <h2>Solution</h2>
-                <p>Based on the three issues above, we split the two into three phases of work:</p>
-
-                <h3>Phase 1: Improve responsive image formats</h3>
-                <p>I did extensive research on our current responsive image sizes and
-                    settings. I realized that the default values we use for the <code>sizes</code> and <code>srcset</code> attributes on images didn’t encourage the browser to actually pick the smaller size for mobile, even though they are industry standard values. </p>
-                    <!-- I found that the “1x, 2x” values
-                    typically used for this attribute weren’t cutting it, as there was not enough information on mobile
-                    for the browser to actually choose the smaller image. -->
-                <p>Thinking big picture, I started testing out various combinations of <code>sizes</code> and <code>srcset</code> values for image tags in an <a href="https://codepen.io/jacquelynmarcella/pen/odRzrw" target="_blank">experimental codepen</a> to determine values that would
-                    encourage the browser to render the smaller size file on mobile. Then, I was able to implement those configurations into Drupal into a range of responsive image size options that were integrated into our <a href="design-system.html">global component library</a>.</p>
-                        <!-- I had to think through a variety of
-                    scenarios for file size needs (e.g. an image might be medium sized on desktop, but technically full
-                    screen width on mobile). -->
-                <p>As part of this first phase, I also noticed that our background images were skipping our responsive
-                    image formatter entirely, due to how background images were authored and themed in the CMS. I wrote
-                    new PHP functions in our theme to provide a range of compressed image sizes for backgrounds that
-                    get appended as a <code>&lt;style&gt;</code> tag, so that the background is style applied like a
-                    traditional CSS background, while actually loading a properly sized file on smaller devices.</p>
-            </div>
+            <h2>Plan</h2>
+            <p>When examining our Lighthouse speed scores for the site and investigating in the Network tab, I noticed a puzzling trend: we had responsive image modules and image compression enabled on the site, but image file sizes were still much larger than I’d expect, especially on mobile.</p>
+            <p>Due to my research and advocacy, I was able to persuade the business to prioritize multiple phases of this work over time. We sought to address the following goals in three phases:</p>
+            <ol>
+                <li><b>Improve responsive image formats:</b> Ensure appropriate sized images are rendered, especially on mobile.</li>
+                <li><b>Implement WebP module to reduce PNG usage:</b> Since PNG and JPG are not optimal for page performance, but are already used widely in the CMS, we need to implement a simple approach to convert existing images to WebP.</li>
+                <li><b>Integrate Lottie to use SVG animations:</b> We should provide a better option than MP4/GIF so authors can implement crisp, low file size SVG animations.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Process</h2>
+            <h3>Phase 1: Improve responsive image formats</h3>
+            <p>I did extensive research on our current responsive image sizes and settings. I realized that the default values we use for the <code>sizes</code> and <code>srcset</code> attributes on images didn’t encourage the browser to actually pick the smaller size for mobile, even though they are industry standard values. </p>
+            <p>Thinking big picture, I started testing out various combinations of <code>sizes</code> and <code>srcset</code> values for image tags in an <a href="https://codepen.io/jacquelynmarcella/pen/odRzrw" target="_blank">experimental codepen</a> to determine values that would encourage the browser to render the smaller size file on mobile. Then, I was able to implement those configurations into Drupal into a range of responsive image size options that were integrated into our <a href="design-system.html">global component library</a>.</p>
+            <p>As part of this first phase, I also noticed that our background images were skipping our responsive image formatter entirely, due to how background images were authored and themed in the CMS. I wrote new PHP functions in our theme to provide a range of compressed image sizes for backgrounds that get appended as a <code>&lt;style&gt;</code> tag, so that the background is style applied like a traditional CSS background, while actually loading a properly sized file on smaller devices.</p>
 
             <div class="two-up width-max">
                 <div class="flex--50">
@@ -154,44 +132,19 @@
                 </div>
             </div>
 
+            <h3>Phase 2: Implement WebP module to reduce PNG usage </h3>
+            <p>After launching the first phase, we knew that even with their newly reduced sizes, PNGs and JPGs were still not optimal for performance. I collaborated with our back end engineers to get the WebP Drupal module installed, which converts regular PNG files into WebP images, allowing our web authors to not have to do any extra work to improve image performance.</p>
+            <p>I did a front end pass on the work, ensuring that the original PNG fallbacks (with the responsive image formats from Phase 1) still worked as expected and that there was no regression in our site’s design or performance.</p>
 
-            <div class="container">
-
-                <h3>Phase 2: Implement WebP module to reduce PNG usage </h3>
-
-                <p>After launching the first phase, we knew that even with their newly reduced sizes, PNGs and JPGs were still not optimal for performance. Further research and partnership with the SEO team confirmed that the
-                    next best step would be integrating WebP on the site.</p>
-                <p>I collaborated with our back end engineers to get the WebP Drupal module installed, which converts
-                    regular PNG files into WebP images, allowing our web authors to not have to do any extra work to
-                    improve image performance. I did a front end pass on the work, ensuring that the original PNG
-                    fallbacks (with the responsive image formats from Phase 1) still worked as expected and that there
-                    was no regression in our site’s design or performance.</p>
-
-                <h3>Phase 3: Integrate Lottie to use SVG animations instead of MP4/GIF</h3>
-                <p>After improving images, I advocated for the next phase of this work, which was to improve the
-                    performance of animating media. Due to the need to make compelling landing pages, large file size
-                    MP4s and GIFs were now everywhere on the site. If engineering forced compression of these files,
-                    they became so low quality that it was a dealbreaking issue for stakeholders.</p>
-                <p>We knew the next step was to shift to SVG-based animations. I supported the engineering and design
-                    teams in the effort to integrate Lottie as a supported media type on the site. Now, authors have
-                    begun converting pages that once had large MP4s/GIFs into pages with extremely low file size and
-                    crisp Lottie format animations.</p>
-            </div>
-
-
+            <h3>Phase 3: Integrate Lottie to use SVG animations instead of MP4/GIF</h3>
+            <p>Due to the need to make compelling landing pages, large file size MP4s and GIFs were everywhere on the site. If engineering forced compression of these files, they became so low quality that it was a dealbreaking issue for stakeholders.</p>
+            <p>I advocated for and supported the engineering and design teams in the effort to integrate Lottie as a media type on the site. Now, authors have begun converting pages that once had large MP4s/GIFs into pages with extremely low file size and crisp Lottie SVG animations.</p>
         </section>
 
         <section>
-            <div class="container">
-                <h2>Results</h2>
-                <p>The first rounds of improving responsive image formats and shifting to WebP led to both file size
-                    improvements and SEO wins. This work <b>reduced image file sizes by up to 97%</b>, which resulted in
-                    a <b>28% increase in Google image search impressions</b> and a <b>14% uptick in clicks</b>.</p>
-                <p>While we don’t have full sitewide conversion to Lottie yet, we are seeing <b>improvements to
-                        animation file sizes by over 94%</b> and have launched compelling new pages that are entirely
-                    composed of performant SVG animations.</p>
-            </div>
-
+            <h2>Impact</h2>
+            <p>The first rounds of improving responsive image formats and shifting to WebP led to both file size improvements and SEO wins. This work <b>reduced image file sizes by up to 97%</b>, which resulted in a <b>28% increase in Google image search impressions</b> and a <b>14% uptick in clicks</b>.</p>
+            <p>While we don’t have full sitewide conversion to Lottie yet, we are seeing <b>improvements to animation file sizes by over 94%</b> and have launched compelling new pages that are entirely composed of performant SVG animations.</p>
         </section>
 
         <section>
@@ -206,7 +159,7 @@
         </section>
 
 
-         <section class="accent wave">
+        <section class="accent wave">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">

@@ -65,67 +65,62 @@
             <h2 class="visually-hidden">Overview</h2>
             <!-- <p class="subhead">Boost form conversion rates through integration of ZoomInfo’s FormComplete API, A/B
                 testing, and UI/UX enhancements</b></p> -->
-            <div class="stats-container">
-                <div class="flex--25">
-                    <span class="stats--number">22%</span>
-                    <span class="stats--desc">increase in valuable form submissions on initial integration</span>
+            <div class="tile-grid odd">
+                <div>
+                    <span class="stats--number size-2">22%</span>
+                    <span class="stats--desc">increase in quality form submissions</span>
                 </div>
-                <div class="flex--25">
-                    <span class="stats--number">29%</span>
+                <div>
+                    <span class="stats--number size-2">29%</span>
                     <span class="stats--desc">additional increase in signups through integration of SSO</span>
                 </div>
-            </div>
-            <h3>Role</h3>
-            <p>Front end engineer</p>
-            <h3>Company</h3>
-            <p>Smartsheet</p>
-            <h3>Technology stack</h3>
-            <ul class="tags">
-                <li>JavaScript</li>
-                <li>CSS</li>
-                <li>A/B Testing</li>
-                <li>Optimizely</li>
-                <li>API Integration</li>
-            </ul>
-            <h3>Project links</h3>
-            <ul class="link-list">
-                <li><a href="http://www.smartsheet.com/try-it" target="_blank">Live trial form</a></li>
-            </ul>
+                <div></div>
+                 <h3>Technology stack + skills</h3>
+                 <ul class="tags">
+                     <li>JavaScript</li>
+                     <li>CSS</li>
+                     <li>A/B Testing</li>
+                     <li>Optimizely</li>
+                     <li>API Integration</li>
+                 </ul>
+                 <div>
+                    <h3>Role</h3>
+                    <p>Front end engineer</p>
+                 </div>
+                 <div>
+                      <h3>Company</h3>
+                      <p>Smartsheet</p>
+                 </div>
+                 <div>
+                     <h3>Project links</h3>
+                     <ul class="link-list">
+                         <li><a href="http://www.smartsheet.com/try-it" target="_blank">Live trial form</a></li>
+                     </ul>
+                 </div>
+            </div>      
         </div>
     </header>
 
     <!-- Main-->
     <main id="main">
         <section>
-            <div class="container">
-                <h2>Challenge</h2>
-                <p>All prospective customers of Smartsheet start their trials from the same place: the Smartsheet
-                    website’s trial signup form. I have built many rounds of A/B tests on this form’s UI over my
-                    time at Smartsheet, with a particular focus of not only increasing form submissions but
-                    improving the quality of leads that make their way to sales.
-                </p>
-                <p>For this project, the goal was to see if we could ask users for less information, without sacrificing
-                    the ability to generate quality leads for sales. Marketing and Demand Generation stakeholders were
-                    interested in trying a ZoomInfo API integration, but they wanted to see how it impacted form fills and
-                    conversions into paid Smartsheet accounts.
-                </p>
-            </div>
+            <h2>Plan</h2>
+            <p>All prospective customers of Smartsheet start their trials in the same place: the Smartsheet
+                website’s trial signup form. One of the key challenges with this form experience is that the sales team needs good data to properly score and route prospective leads, but asking for all this information upfront greatly reduces form submission rates.</p>
+            <p>Partnering with the demand generation team, the web team developed a strategic A/B testing plan to validate the integration of the ZoomInfo FormComplete API. This API serves as a data augmentation solution designed to:</p>
+            <ol>
+                <li><b>Reduce friction:</b> Allow users to submit a shorter form (reduced field count).
+                </li>
+                <li><b>Maintain data quality:</b> Leverage the API to retrieve and append supplementary, GDPR-compliant, publicly available firmographic and contact data to the submission record.
+                </li>
+            </ol>
         </section>
 
         <section>
-            <div class="container">
-                <h2>Solution</h2>
-                <p>For this A/B test, I turned the form into a two-step experience with the augmentation of data from
-                    ZoomInfo’s Form Complete API. This API gathers GDPR-compliant publicly available information to
-                    support
-                    sales teams in vetting prospective leads.</p>
-                <p>Within Optimizely, our A/B testing platform, I built the two-step experience using JavaScript, CSS, and HTML, and integrated the FormComplete API. With the API integrated, the second step of the form experience is dynamic: it
-                    only
-                    prompts the user for data that ZoomInfo was unable to augment. This means that for the second step
-                    of
-                    the form experience, the user would likely enter less information than on the original full contact
-                    form.</p>
-            </div>
+            <h2>Process</h2>
+            <p>For the A/B test, I turned the single-step form into a two-step experience with the augmentation of data from the API. Within Optimizely, our A/B testing platform, I integrated the API via JavaScript and built the updated UI/UX of the two-step experience using JavaScript, CSS, and HTML.</p>
+            <p>With the API integrated, the second step of the form experience is dynamic: it only prompts the user for data that ZoomInfo was unable to augment. This means that for the second step of the form experience, the user would likely enter less information than on the original full contact form.</p>
+
             <div class="two-up width-content">
                 <div class="flex--50">
                     <figure>
@@ -143,24 +138,19 @@
         </section>
 
         <section>
-            <div class="container">
-                <h2>Results</h2>
-                <p>This original API integration <b>boosted form submission rates by 22% for users submitting with
-                        non-ISP email addresses</b> and was considered a pivotal change to our trial experience for the
-                    company.</p>
-                    <p>Following this A/B test, I continued to iterate on the trial form functionality on several
-                    additional projects:</p>
-                <ol>
-                    <li>Worked closely with our Principal Engineer and MarTech team to integrate the FormComplete API to
-                        into nearly all forms on the primary Smartsheet site.</li>
-                    <li>A/B tested an email-only form that still sends any ZoomInfo augmented data to sales, which
-                        reduced the need for user input even further.</li>
-                    <li>Test how the business requirement to implement different Smartsheet app regions impacts the UI/UX of the form.</li>
-                    <li>Currently, I'm working with UI/UX designers and numerous Smartsheet app stakeholders to A/B test the
-                        best way to present SSO options to users in lieu of the traditional form fill. The first round
-                        of testing has <b>further increased trials by up to 29%</b>.</li>
-                </ol>
-            </div>
+            <h2>Impact</h2>
+            <p>This API integration and two-step redesign <b>boosted form submission rates by 22% for users submitting with non-ISP (business) email addresses</b>, which resulted in sales getting a much higher volume of qualified leads. This integration was considered a pivotal change to our trial experience at Smartsheet.</p>
+            <p>Following this A/B test, I continued to iterate on the trial form functionality on several additional projects:</p>
+            <ol>
+                <li>Worked closely with our Principal Engineer and MarTech team to integrate the FormComplete API to
+                    into nearly all forms on the primary Smartsheet site.</li>
+                <li>A/B tested an email-only form that still sends any ZoomInfo augmented data to sales, which
+                    reduced the need for user input even further.</li>
+                <li>Tested how the business requirement to implement different Smartsheet app regions impacts the UI/UX of the form.</li>
+                <li>Currently, I'm working with UI/UX designers and numerous Smartsheet app stakeholders to A/B test the
+                    best way to present SSO options to users in lieu of the traditional form fill. The first round
+                    of testing has <b>further increased trials by up to 29%</b>.</li>
+            </ol>
         </section>
 
 
@@ -176,7 +166,7 @@
         </section>
 
 
-         <section class="accent wave">
+        <section class="accent wave">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
