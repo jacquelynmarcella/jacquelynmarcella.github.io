@@ -55,26 +55,17 @@ colorToggle.addEventListener("click", function() {
 // window.addEventListener('scroll', checkVisibility);
 
 // TODO - aria states here, unset for mobile vs desktop
-let timelineToggle = document.querySelector("#timeline--toggle");
-let timeline = document.querySelector("#timeline");
-timelineToggle.addEventListener("click", function() {
-    if (timeline.classList.contains("js-mobile-collapsed")) {
-        timeline.classList.remove("js-mobile-collapsed");
-        timeline.classList.add("js-mobile-open");
-    } else {
-        timeline.classList.add("js-mobile-collapsed");
-        timeline.classList.remove("js-mobile-open");
 
-    }
-});
 
 
 // Define a function to get and log the element's height
+const headerContainer = document.querySelector('.header--hero');
+let headerContentHeight = 500; //default value
+
 function getHeaderHeight() {
     let stickyHeader = document.getElementById('sticky-header'); 
-    let headerContainer = document.querySelector('.header--hero');
     let headerHeight = stickyHeader.offsetHeight; 
-    console.log('Sticky header height:', headerHeight);
+    headerContentHeight = headerHeight;
     let tripleHeight = headerHeight * 3;
     headerContainer.style.setProperty('--headerContainerHeight', tripleHeight + 'px');
     headerContainer.style.setProperty('--headerContentHeight', headerHeight + 'px');
@@ -83,36 +74,52 @@ function getHeaderHeight() {
 window.addEventListener('resize', getHeaderHeight);
 getHeaderHeight();
 
-
-
-let targetElement = document.querySelectorAll('.slider--slide'); // Replace with your element's ID
+window.addEventListener('scroll', () => {
+    if (window.scrollY <= ( headerContentHeight * .90) ) {
+        console.log("Now at the top!", headerContentHeight, scrollY);
+        headerContainer.classList.add("js-typing");
+    } else {
+        console.log("not at top", headerContentHeight, scrollY)
+        headerContainer.classList.remove("js-typing");
+    }
+});
 
 const viewportHeight = window.innerHeight;
 const topBottomMargin = (viewportHeight / 2.75) - .5; // Half of the viewport minus half of the 1px line
 
-const options = {
+let timelineItem = document.querySelectorAll('#timeline li'); // Replace with your element's ID
+let timelineToggle = document.querySelector("#timeline--toggle");
+let timeline = document.querySelector("#timeline");
+
+timelineToggle.addEventListener("click", function () {
+    if (timeline.classList.contains("js-mobile-collapsed")) {
+        timeline.classList.remove("js-mobile-collapsed");
+        timeline.classList.add("js-mobile-open");
+    } else {
+        timeline.classList.add("js-mobile-collapsed");
+        timeline.classList.remove("js-mobile-open");
+    }
+});
+
+
+const timelineOptions = {
     rootMargin: `${-topBottomMargin}px 0px ${-topBottomMargin}px 0px`, // Shrink the root to a 1px line in the middle
     threshold: 0 // Trigger when any part of the element intersects the 1px line
 };
-
-const observer = new IntersectionObserver((entries) => {
+const timelineObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('js-active');
             entry.target.playerInstance.play();
-            // Perform actions when the element is in view
         } else {
-            // Perform actions when the element is out of view
             entry.target.classList.remove('js-active');
             entry.target.playerInstance.pause();
         }
     });
-}, options);
-
-Array.from(targetElement).forEach(function(item, index) {
+}, timelineOptions);
+Array.from(timelineItem).forEach(function(item, index) {
     let icon = item.querySelector("lord-icon");
-    console.log(icon);
     icon.addEventListener("ready", () => {
-        observer.observe(icon);
+        timelineObserver.observe(icon);
     });
 });

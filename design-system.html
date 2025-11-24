@@ -111,9 +111,10 @@
         <div class="article-body">
             <section>
                 <h2>Plan</h2>
-                <p>Smartsheet needed to update its website from Drupal 7 to Drupal 8. The Drupal 7 site had lots of room for improvement: most of the site's CMS authoring experience was using HTML editors for all content instead of templated content types and there was no unified design system. As a result, most content updates were managed by engineers, rather than web producers.</p>
-                <p>The website team recommended that we not only upgrade Drupal versions, but restructure the site using a design system that is component-based, easy to author, modular, and positioned for long term growth as the Smartsheet brand evolves.</p>
-                <p>For the front end, rather than using a library like Bootstrap, we determined the best path forward was to leverage the exciting new features that were widely supported in CSS without any special framework. Flexbox, grid, and CSS custom properties could unlock all we needed for a simple variable-based approach to colors, spacing, and overall layout consistency. As the back end team worked on broader system updates, the front end team set out to build an <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank">atomic component library</a> folowing the principles of <a href="https://talks.jensimmons.com/15TjNW/designing-intrinsic-layouts" target="_blank">intrinsic design</a>.
+
+                <p>Smartsheet required a comprehensive migration of its CMS from Drupal 7 to Drupal 8. The legacy site had a huge maintenance problem: content management was heavily reliant on engineers due to a lack of templates and an inadequate authoring experience.</p>
+                <p>The engineering team recommended that we not only upgrade Drupal versions, but restructure the site to use a design system that is component-based, easy to author, modular, and positioned for long term growth as the Smartsheet brand evolves.</p>
+                <p>For the front end, rather than using a library like Bootstrap, we determined the best path forward was to leverage the exciting new features that were widely supported in CSS without any special framework. Flexbox, grid, and CSS custom properties could unlock all we needed for a simple variable-based approach to colors, spacing, and overall layout consistency. As the back end team worked on broader Drupal updates, the front end team set out to build an <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank">atomic component library</a> folowing the principles of <a href="https://talks.jensimmons.com/15TjNW/designing-intrinsic-layouts" target="_blank">intrinsic design</a>.
             </section>
 
             <section>
@@ -125,7 +126,7 @@
                     <figcaption>Organism level component with button atom and tile molecule, shown in "default" and "event"
                         schemes.</figcaption>
                 </figure>
-                <p>In Figma Dev Mode (previously in Zeplin and Invision), we have worked with the design team to ensure all global variables/tokens are mapped to all components and redlines. We mapped the full suite of global variables using the semantic CSS custom property names, rather than just designing with hex codes and rigid pixel values, and we use these semantic property names in our build:</p>
+                <p>In Figma Dev Mode (previously in Zeplin and Invision), we worked with the design team to ensure all global variables/tokens are mapped to all components and redlines. We mapped the full suite of global variables using the semantic CSS custom property names, rather than just designing with hex codes and rigid pixel values, and we used these semantic property names in our build:</p>
 
                 <div class="two-up width-max">
                     <div class="flex--50">
@@ -167,22 +168,21 @@
                     <figcaption>Figma overview of 6 color variations within the 3 schemes that are integrated into the front
                         end system. Currently, some variations are 1:1 with to variations in other schemes. </figcaption>
                 </figure>
-                <p>After prototyping in PatternLab, these components were built as Paragraphs within Drupal. These components are built as templated content types for some use cases as well as modular standalone elements a web author can drag and drop within the Bricks UI to build custom page designs. An author can choose the component's color variation and preset size/alignment options, but all choices map back to our established global design system.</p>
+                <p>After prototyping in PatternLab using Sass, CSS, Twig, HTML, and JavaScript, we integrated components into Drupal as Paragraphs and templated Content Types. Components are exposed to web authors as modular elements, enabling them to use a drag-and-drop interface (Drupal Bricks) to construct custom pages. All author choices, from color variation to size/alignment, map back to and enforce the established global design system.</p>
             </section>
             <section>
                 <h2>Impact</h2>
-                <p>Upon initial launch of the new design system and broader site migration, Smartsheet’s primary website had a fresh new look, modern user experience, improved authoring experience, and promising metrics to go with it: <b>the project exceeded its offset goal by +71%, with $1MM in ARR attributed to the website rebuild and migration.</b></p>
-                <p>Currently, we have <b>over 10,500 organism-level components</b> in use across the primary website.
+                <p>The launch of the new site and design system delivered a modern UX and improved authoring experience. Financially, the project <b>exceeded its offset goal by +71%, with $1MM in ARR</b> directly attributed to the website rebuild and migration.</p>
+                <p>The system has demonstrated significant reuse and scalability, as we now have <b>over 10,500 organism-level component instances</b> across the primary website.
                 </p>
                 <p>Since its inception, we have been able to continually improve our component library to stay on brand and keep up with design standards in the industry, integrating more progressive enhancements and adding new features to components along the way. For example, our tile molecule, pictured below from oldest to newest, has significantly evolved over the years:</p>
                 <figure>
-                    <img src="img/tile-timeline-vertical.png" class="mobile-only" loading="lazy" alt="Caption">
-                    <img src="img/tile-timeline-horizontal.png" class="no-mobile" loading="lazy" alt="Caption">
+                    <img src="img/tile-timeline-vertical.png" class="mobile-only" loading="lazy" alt="Top to bottom display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags">
+                    <img src="img/tile-timeline-horizontal.png" class="no-mobile" loading="lazy" alt="Left to right display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags">
                     <figcaption>The tile molecule has not only improved visually, but expanded to accommodate tags and metadata to better promote article content.</figcaption>
                 </figure>
 
-                <p>Over my years at Smartsheet, I have grown in responsibility to take on engineering ownership and
-                    governance of our global design system and have onboarded new front end engineers into the system. We have conducted a thorough <a href="accessibility.html">accessibility remediation</a> of the component library to ensure it meets WCAG standards. We have since brought this design system to multiple other web properties to ensure cohesion for the Smartsheet web experience.</p>
+                <p>As a senior engineer, I've taken on the engineering ownership and governance of this global design system, including onboarding new team members and leading improvements. One major initiative involved a thorough <a href="accessibility.html">accessibility remediation</a> of the component library to ensure WCAG compliance. We have since successfully rolled out this component library to other Smartsheet web properties, ensuring a cohesive digital experience for the brand.</p>
             </section>
 
             <section>
@@ -201,9 +201,7 @@
                 </div>
             </section>
 
-
         </div>
-
 
         <section>
             <div class="container">
@@ -251,7 +249,7 @@
                         </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
-                            <a href="mega-menu-navigation.html">Architected global mega-menu navigation that increased clicks</a>
+                            <a href="mega-menu-navigation.html">Architected global mega-menu navigation that increased engagement</a>
                             <p class="description">Architected an easily maintanable mega-menu navigation that increased
                                 clicks by over 30% to top-level pages.</p>
                             <ul class="tags">

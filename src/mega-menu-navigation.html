@@ -14,180 +14,112 @@
     <!-- Hero -->
     <header id="top">
         <div class="container">
-            <h1>Architected global mega-menu navigation that increased clicks</h1>
+            <h1>Architected global mega-menu navigation that increased engagement</h1>
             <h2 class="visually-hidden">Overview</h2>
             <!-- <p class="subhead">Architected a robust navigation that can be easily updated in the CMS without engineering
                 support.</b></p> -->
-            <div class="stats-container">
-                <div class="flex--25">
-                    <span class="stats--number">6x</span>
+
+            <div class="tile-grid odd">
+                <div>
+                    <span class="stats--number size-2">6x</span>
                     <span class="stats--desc">increase in clicks to Platform page</span>
                 </div>
-                <div class="flex--15">
-                    <span class="stats--number">34%+</span>
-                    <span class="stats--desc">increase in clicks to other top-level links</span>
+                <div>
+                    <span class="stats--number size-2">34%+</span>
+                    <span class="stats--desc">increase in engagement on other top-level links</span>
+                </div>
+                <div></div>
+                <h3>Technology stack & skills used</h3>
+                <ul class="tags">
+                    <li>CSS</li>
+                    <li>Sass</li>
+                    <li>JavaScript</li>
+                    <li>jQuery</li>
+                    <li>Twig</li>
+                    <li>Drupal</li>
+                    <li>PHP</li>
+                    <li>Figma</li>
+                    <li>Responsive design</li>
+                    <li>WCAG Accessibility</li>
+                </ul>
+                <div>
+                    <h3>Role</h3>
+                    <p>Lead front end engineer</p>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <p>Smartsheet</p>
+                </div>
+                <div>
+                    <h3>Project links</h3>
+                    <ul class="link-list">
+                        <li><a href="https://www.smartsheet.com/pricing" target="_blank">Smartsheet site with live
+                                navigation</a></li>
+                    </ul>
                 </div>
             </div>
-            <h3>Role</h3>
-            <p>Lead front end engineer</p>
-            <h3>Company</h3>
-            <p>Smartsheet</p>
-            <h3>Technology stack & skills used</h3>
-            <ul class="tags">
-                <li>CSS</li>
-                <li>Sass</li>
-                <li>JavaScript</li>
-                <li>jQuery</li>
-                <li>Twig</li>
-                <li>Drupal</li>
-                <li>PHP</li>
-                <li>Figma</li>
-                <li>Responsive design</li>
-                <li>WCAG Accessibility</li>
-            </ul>
-            <h3>Project links</h3>
-            <ul class="link-list">
-                <li><a href="https://www.smartsheet.com/pricing" target="_blank">Smartsheet site with live
-                        navigation</a></li>
-            </ul>
-        </div>
     </header>
 
     <!-- Main-->
     <main id="main">
-        <section>
-            <div class="container">
-                <h2>Challenge</h2>
-                <p>Auditing the Smartsheet's site navigation and information architecture strategy, we identified
-                    several areas for improvement. In particular, we found that the the sitewide top navigation was:</p>
-                <ol>
-                    <li>Not fully authorable in the CMS without engineering, which made it hard to quickly pivot in
-                        content strategy.</li>
-                    <li>Overly complex in functionality, which was difficult for engineers to maintain and caused
-                        frequent bugs.</li>
-                    <li>Completely inaccessible, as it was not using correct semantic markup, <code>aria</code> labels,
-                        and was not
-                        navigable with a keyboard or screen reader.</li>
-                    <li>Lacking an easy way to merchandise effectively, such as promoting the customer conference or new
-                        product offerings.</li>
-                    <li>Redundant in markup between desktop and mobile.</li>
-                </ol>
-            </div>
-            <!-- <figure>
-                <img src="img/nav-old-desktop.png" class="width-content" loading="lazy" alt="">
-                <figcaption>Before:</figcaption>
-            </figure> -->
-        </section>
-
-        <section>
-            <div class="container">
-                <h2>Solution</h2>
-                <p>Working with UI/UX designers, product owners, back end engineers, and marketing stakeholders, we did a full overhaul of the navigation experience and built out an improved mega-menu experience that provided better structure for our site’s information architecture strategy.</p>
-                <p>The new mega-menu format has improved transitions and animations, overlays with grid layout structure, and cohesive color schemes that map to our <a href="design-system.html">global color schemes</a>. It scales seamlessly from mobile, to tablet, and to the largest desktop viewports. Additionally, it is built with the correct semantic markup and aria attributes to be <a href="accessibility.html">fully accessible</a> by keyboard controls and screen readers.</p>
-            </div>
-            </div>
-            <figure>
-                <img src="img/nav-mockup-large.png" class="width-max" loading="lazy" alt="">
-                <figcaption>New navigation is responsive to different screen sizes without needing to re-render separate mobile markup.</figcaption>
-            </figure>
-
-            <!-- <figure>
-                <img src="img/nav-new-desktop.png" class="width-max" loading="lazy" alt="">
-                <figcaption>After:</figcaption>
-            </figure>
-            <div class="two-up width-max">
-                <div class="flex--66">
-                    <figure>
-                        <img src="img/nav-new-tablet.png" loading="lazy" alt="">
-                        <figcaption>Tablet navigation, all sections closed.</figcaption>
-                    </figure>
-                </div>
-                <div class="flex--33">
-                    <figure>
-                        <img src="img/nav-new-mobile.png" loading="lazy" alt="">
-                        <figcaption>Mobile navigation, first section expanded.</figcaption>
-                    </figure>
-                </div>
-            </div> -->
-
-                <!-- <figure>
-                <pre>
-<nav role="navigation">
-    <ul>
-        <li><a href="/">Smartsheet Home</a></li>
-        <li>
-            Hamburger toggle is only visible on mobile/tablet 
-            <button aria-controls="primary-menu" class="nav-toggle" aria-expanded="true" aria-haspopup="true">Open navigation</button>
-            Primary menu contents are always expanded on desktop 
-            <div id="primary-menu">
-                <ul>
-                    <li>
-                        <button aria-controls="menu-accordion--product" aria-expanded="false" aria-haspopup="true">Product</button>
-                        <div id="menu-accordion--product" class="nav--section-content">
-                            <ul>
-                                <li>Nested menu grid and links for Product</li>
-                            </ul>
-                        </div>
-                    </li>
-                     Additional <li> for primary menu dropdowns and links 
-                </ul>
-            </div>
-        </li>
-       Utility menu list items go here
-    </ul>
-</nav>
-</pre>
-                <figcaption>Navigation markup is semantically correct and uses the same for mobile and desktop, with <code>&lt;button&gt;</code> elements that have proper <code>aria</code> labels to convey menu state and relationships.</figcaption>
-            </figure> -->
-
-
+        <div class="article-body">
+            <section>
                 <div class="container">
-                    <p>When researching modules in Drupal, I found that existing mega-menu modules were overly complex
-                        for
-                        our needs. Instead, I relied on the Custom Menu Links core module and built custom theming
-                        for a mega-menu that served our needs. I reviewed my approach with back end engineers to ensure
-                        it
-                        would be a sustainable approach within our CMS.</p>
-                    <p>Using the familiar Drupal Menu UI, authors are able to build out a simple tree of menu
-                        links for the mega-menu and add images, link styles, and merchandising sections as needed:</p>
+                    <h2>Plan</h2>
+                    <p>An audit of the primary Smartsheet site navigation revealed significant opportunities to improve both the information architecture (IA) and the engineering complexity. We aimed to address several issues with a full navigation overhaul:
+                        <ol>
+                            <li>Ensure the navigation is fully authorable in the CMS without constant engineering support.</li>
+                            <li>Simplify the front end functionality to improve engineering maintainability.</li>
+                            <li>Achieve WCAG <a href="accessibility.html">accessibility</a> for keyboard and screen reader users.</li>
+                            <li>Introduce the ability for authors to add customizable merchandising content within the navigation.</li>
+                            <li>Significantly reduce redundant markup by unifying desktop and mobile theming.</li>
+                        </ol>
                 </div>
+            </section>
+
+            <section>
+                <h2>Process</h2>
+                <p>I led the technical overhaul, collaborating closely with UI/UX designers, product owners, and back-end engineers to build an improved mega-menu that effectively reflected the new site IA. My core architectural decision was to treat the navigation as a single, consistent HTML structure that is rendered responsively via CSS and JavaScript across all viewports. This was a departure from the previous pattern of maintaining separate desktop and mobile navigation markup.</p>
+                <p>Using Drupal, HTML, JavaScript, Twig, PHP, and CSS, I ensured the structure was built with correct semantic markup and ARIA attributes to achieve WCAG compliance for keyboard controls and screen readers.</p>
+                <p>Visually, I worked closely with design in Figma and during development to improve transitions and animations, overlays with grid layout structure, and add comprehensive color options that map to our <a href="design-system.html">global color schemes</a>.</p>
+                <figure>
+                    <img src="img/nav-mockup-large.png" class="width-max no-mobile" loading="lazy" alt="Global navigation on desktop, tablet, and mobile">
+                    <img src="img/nav-new-desktop.png" class="width-padding mobile-only" loading="lazy" alt="Globpal navigation on desktop">
+                    <img src="img/nav-new-mobile.png" class="width-padding mobile-only" loading="lazy" alt="Global navigation on mobile device">
+                    <figcaption>New navigation is responsive to different screen sizes without needing to re-render separate mobile markup.</figcaption>
+                </figure>
+
+                <p>After researching available Drupal modules, I determined that the existing third-party mega-menu modules were overkill. Instead, I relied on the lightweight Custom Menu Links core module and developed custom Twig templating and PHP functions to render a straightforward mega-menu structure. This solution provided flexibility while remaining simple to maintain for both authors and engineers. I ensured the sustainability of this approach by seeking back-end engineering review before implementation.</p>
+                <p>The solution uses the familiar Drupal Menu UI, allowing authors to easily build a hierarchical tree of links. The custom theming layers allow authors to add elements like images, link styles, and promotional sections as needed, all without writing code or waiting for a deployment:</p>
 
                 <figure>
-                    <img src="img/nav-authoring.png" class="width-content" loading="lazy" alt="Two admin screens showing editing a menu link and how users can drag and drop items into different menu levels">
+                    <img src="img/nav-authoring.png" class="width-full" loading="lazy" alt="Two admin screens showing editing a menu link and how users can drag and drop items into different menu levels">
                     <figcaption>Side by side of Drupal Menu UI for the mega menu. Maintaining the standard Drupal Menu experience allows non-engineers to maintain
                         content, rather than relying on a hardcoded navigation that requires a release cycle.
                     </figcaption>
                 </figure>
-        </section>
+            </section>
 
-        <section>
-            <div class="container">
-                <h2>Results</h2>
-                <p>On initial launch, we saw a <b>6x increase in clicks the Platform page</b> and <b>up to a 34%
-                        increase to other top level links</b>.</p>
-                <p>Since the first launch, we have done a couple refreshes of the design and content structure to match
-                    our global UI changes on the site and evolving content strategy. I also led the implementation of
-                    this same navigation architecture on the Help Center site to ensure brand cohesion.</p>
-                <p>The foundation I built in the first
-                    round has made subsequent engineering updates straightforward and has given authors the ability to
-                    manage routine content changes without engineering support.</p>
-            </div>
+            <section>
+                <h2>Impact</h2>
+                <p>The launch of the new navigation architecture immediately improved user engagement. We measured a <b>6x increase in clicks</b> to the Smartsheet Platform page and up to a <b>34% increase in engagement</b> for other top-level links, validating the improved IA and UX.</p>
+                <p>Since the initial launch, we have done refreshes of the design and IA to match our global UI changes on the site and the evolving Smartsheet brand strategy. The improved architecture and structure of the navigation has made these subsequent engineering updates simple and straightforward.</p>
+                <p>The foundation I built has empowered content authors to manage routine content and merchandising updates independently, significantly reducing the demand for engineering support for common changes.</p>
+                <p>Following the initial success, I led the implementation of this same navigation architecture on the Smartsheet Help Center site, ensuring a unified and cohesive experience across key Smartsheet web properties.</p>
+            </section>
 
-        </section>
-
-        <section>
-            <div class="container">
+            <section>
                 <nav class="project-nav" aria-label="Pagination">
                     <ul>
                         <li><a href="#">Previous project (Form API Integration)</a></li>
                         <li><a href="#">Next project (Speed Optimization)</a></li>
                     </ul>
                 </nav>
-            </div>
-        </section>
+            </section>
 
+        </div>
 
-         <section class="accent wave">
+        <section>
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">

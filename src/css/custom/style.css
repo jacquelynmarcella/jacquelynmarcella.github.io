@@ -346,10 +346,7 @@ p {
 	line-height: 2;
 }
 
-.fine-print,
-.tags,
-code,
-pre {
+.fine-print {
 	font-size: .95rem;
 }
 img.image-inline {
@@ -1606,8 +1603,6 @@ footer .about {
 
 
 
-
-
 .type {
   display:inline-flex;
 }
@@ -1617,9 +1612,11 @@ footer .about {
   width:0%;
   overflow: hidden;
   /* animation-delay: 1.5s; */
-  animation: type 1.75s ease-in-out forwards;
+  /* animation: type 1.75s ease-in-out forwards; */
 	padding: 0 var(--xxxs);
-	
+}
+.js-typing .type .animate {
+	animation: type 1.25s ease-in-out forwards;
 }
 .type .animate:before {
   content: " ";

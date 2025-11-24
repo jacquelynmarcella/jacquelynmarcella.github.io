@@ -62,10 +62,6 @@
     <header id="top">
         <div class="container">
             <h1>Generated cost savings through search API migration</h1>
-
-
-
-
             <h2 class="visually-hidden">Overview</h2>
             <div class="tile-grid odd">
                 <div>
@@ -88,16 +84,6 @@
                     <li>Figma</li>
                 </ul>
                 <div>
-                    <h3>Project links</h3>
-                    <ul class="link-list">
-                        <li><a href="https://help.smartsheet.com/search?search_api_fulltext=formulas"
-                                target="_blank">Help Center
-                                live search</a></li>
-                        <li><a href="https://www.smartsheet.com/content-center/managing-work/project-management"
-                                target="_blank">Content Center live search</a></li>
-                    </ul>
-                </div>
-                <div>
                     <h3>Role</h3>
                     <p>Front end engineer</p>
                 </div>
@@ -105,107 +91,77 @@
                     <h3>Company</h3>
                     <p>Smartsheet</p>
                 </div>
+                <div>
+                    <h3>Project links</h3>
+                    <ul class="link-list">
+                        <li><a href="https://help.smartsheet.com/search?search_api_fulltext=formulas" target="_blank">Help Center
+                                live search</a></li>
+                        <li><a href="https://www.smartsheet.com/content-center/managing-work/project-management" target="_blank">Content Center live search</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Main-->
     <main id="main">
-        <section>
+        <div class="article-body">
+
             <section>
-                <div class="container">
-                    <h2>Challenge</h2>
-                    <p>For two of Smartsheet’s primary enterprise web properties, we leveraged Coveo’s Search API for
-                        site search functionality. While it is an extremely powerful API, we realized that we were only
-                        using a small fraction of its capabilities and that the value of our actual usage was far
-                        disproportionate to its cost to the business.</p>
-                    <p>Additionally, we found that using a proprietary system felt like a bit of a black box, where it
-                        was difficult to control some functionality on our site at the level we would like.</p>
-                    <p>Lastly, on the front end side, we felt our approach towards theming, styles, and overrides to
-                        Coveo had become disorganized and difficult to maintain and was overdue for a clean-up.</p>
-                </div>
+                <h2>Plan</h2>
+                <p>Smartsheet’s enterprise web properties leveraged Coveo’s Search API for site search functionality. A cost-benefit analysis determined that our minimal usage of Coveo’s advanced features was disproportionate to the contract cost, driving a search for a more efficient solution.</p>
+                <p>As engineers on Drupal, an open source CMS, it felt only natural to seek out an open source solution for our search experience. Our back end engineers conducted thorough research and recommended a migration to Open Search’s Search API, an open source option with existing Drupal modules, documentation, and an open source community to lean on for issue resolution.</p>
+                <p>The secondary front-end goal for the project was to resolve a long-standing issue of disorganized, redundant search styles that had accumulated over time and had made maintanence a challenge.</p>
             </section>
 
-
-            <div class="container">
-                <h2>Solution</h2>
-                <p>As engineers on Drupal, an open source CMS, it felt only natural to seek out an open source solution
-                    for our search experience. Our back end engineers conducted thorough research and recommended a
-                    migration to Open Search’s Search API, an open source option with existing Drupal modules,
-                    documentation, and an open source community to lean on for issue resolution.</p>
-
-                <p>While our back end engineers worked to integrate the new API, my role on this project was to lead the
-                    front end rebuild to support the updated search functionality. The team did two migrations
-                    concurrently on two different enterprise websites:</p>
-
-                <h3>Help Center Site</h3>
-                <p>Included not only a migration, but included partnering closely with UI/UX designers to do a design
-                    overhaul to improve the UI/UX of facets, sorts, and results on a single search experience.</p>
-            </div>
-
-            <div class="two-up width-max">
-                <div class="flex--50">
-                    <figure>
-                        <img src="img/help-search-old.png" loading="lazy"
-                            alt="Visual of old Help Center Search with a 'basics' query entered and a long list of exposed filters on the left">
-                        <figcaption>Before: Help Center search used Coveo and had too many confusing filters exposed
-                            that provided little value to users.</figcaption>
-                    </figure>
+            <section>
+                <h2>Process</h2>
+                <p>While our back-end engineers worked to integrate the new API, my role on this project was to lead the front-end rebuild to support the updated search functionality. The engineering team implemented migrations concurrently on two multilingual Drupal websites:</p>
+                <h3>Smartsheet Help Center Site</h3>
+                <p>Working with back-end engineers and UI/UX designers, the front-end engineers implemented a total design overhaul of the Help Center search experience as part of the migration. First, the design team completed user testing, which confirmed that the excessive amount of exposed filters provided a confusing and overwhelming experience. After collaborating extensively in Figma with the design team, we built out improved facets, sorts, tabs, and results in Drupal using Twig, JavaScript, PHP, and CSS.</p>
+                <div class="two-up width-max">
+                    <div class="flex--50">
+                        <figure>
+                            <img src="img/help-search-old.png" loading="lazy" alt="Visual of old Help Center Search with a 'basics' query entered and a long list of exposed filters on the left">
+                            <figcaption>Before: Help Center search used Coveo and had too many confusing filters exposed
+                                that provided little value to users.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="flex--50">
+                        <figure>
+                            <img src="img/help-search-new.png" loading="lazy" alt="Visual of new Help Center Search with collapsed filters, clearer tabs, and a 'formulas' query entered">
+                            <figcaption>After: Help Center uses OpenSearch and has an improved UI with where filters are
+                                collapsed on medium sized and below monitors by default.</figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <div class="flex--50">
-                    <figure>
-                        <img src="img/help-search-new.png" loading="lazy"
-                            alt="Visual of new Help Center Search with collapsed filters, clearer tabs, and a 'formulas' query entered">
-                        <figcaption>After: Help Center uses OpenSearch and has an improved UI with where filters are
-                            collapsed on medium sized and below monitors by default.</figcaption>
-                    </figure>
-                </div>
-            </div>
+                <h3>Primary Smartsheet Marketing Site</h3>
+                <p>Simultaneously, I worked with closely with back-end engineers to figure out an approach to centralize our search styles and themes on the primary Smartsheet site, as this site contained dozens of search experiences across different pages. I focused on consolidating numerous repetitive Coveo templates into a centralized Drupal View template, while ensuring that there was no regression visually in the search experiences sitewide.</p>
+                <p>This centralization made it easy to rapidly spin up new search Views with standardized filters and visual components. By integrating the search components with our <a href="design-system.html">global component system</a> (e.g., using our existing tile/card molecule), I ensured visual consistency sitewide while drastically improving the efficiency of the front-end code base.</p>
+                <figure>
+                    <img src="img/www-content-center.png" class="width-content" loading="lazy" alt="Visual of Content Center with results filtered for the topic 'Artifical Intelligence'">
+                    <figcaption>Smartsheet's Content Center is one area of the site that could be simplified into a
+                        re-usable View template.</figcaption>
+                </figure>
+            </section>
 
-            <div class="container">
-                <h3>Primary Smartsheet Site</h3>
-                <p>This site contained dozens of search experiences across various areas of the site, so it needed a
-                    broader approach that minimized redundant theming and templates. This effort included a
-                    consolidation of numerous repetitive Coveo templates into a centralized Drupal View template.</p>
-                <p>I made it easy to spin up new search Views that contained styled filters and consistent visual
-                    components. Because these search experiences were styled to match our <a
-                        href="design-system.html">global component system</a>, I was able to integrate our existing
-                    component theming (e.g. our tile/card molecule) into the search experience in a more efficient way
-                    than we had done previously.</p>
-            </div>
+            <section>
+                <h2>Impact</h2>
+                <p>The successful migration to Open Search’s Search API provided an immediate, quantifiable return on investment: Smartsheet was able to substantially scale back its contract with Coveo, resulting in <b>$150k in annual savings</b> for the business.</p>
+                <p>We completed our migration on both sites without any downtime or disruption to the user experience. For both sites, we now have a simplified front-end architecture that is far easier to maintain and expand upon in the future.</p>
+            </section>
 
-            <figure>
-                <img src="img/www-content-center.png" class="width-content" loading="lazy"
-                    alt="Visual of Content Center with results filtered for the topic 'Artifical Intelligence'">
-                <figcaption>Smartsheet's Content Center is one area of the site that could be simplified into a
-                    re-usable View template.</figcaption>
-            </figure>
-
-        </section>
-        <section>
-            <div class="container">
-                <h2>Results</h2>
-                <p>After completing the migration, Smartsheet was able to scale back their contract with Coveo
-                    substantially, which <b>saves the business $150k annually</b>.</p>
-                <p>We completed our migration on both sites without any downtime or disruption to the user experience.
-                    For both sites, we now have a simplified front end approach that is far easier to maintain and
-                    expand upon in the future.</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
+            <section>
                 <nav class="project-nav" aria-label="Pagination">
                     <ul>
                         <li><a href="#">Previous project (Form API Integration)</a></li>
                         <li><a href="#">Next project (Speed Optimization)</a></li>
                     </ul>
                 </nav>
-            </div>
-        </section>
+            </section>
+        </div>
 
-
-        <section class="accent wave">
+        <section>
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">

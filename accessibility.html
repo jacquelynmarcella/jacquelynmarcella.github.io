@@ -112,22 +112,18 @@
         <div class="article-body">
             <section>
                 <h2>Plan</h2>
-                <p>An in-depth accessibility audit of Smartsheet's web properties confirmed what the engineering
-                    team had hypothesized: there were several opportunities for accessibility improvements on the
-                    front end of our website, especially in regards to interactive elements.
+                <p>An extensive, third-party accessibility audit of Smartsheet's core web properties validated the engineering team's internal hypothesis: the front end, particularly interactive components, presented several opportunities for improvement to achieve WCAG 2.1 AA compliance.</p>
+                <p>Leading the front end effort, I helped provide recommendations for a plan of action for the team to organize our work by component and by the types of issues to resolve. Many of the issues could be resolved centrally in our <a href="design-system.html">component-based system</a>.
                 </p>
-                <p>
-                    Leading the front end effort, I helped provide recommendations for a plan of action for the team to organize our work by component and by the types of issues to resolve. Many of the issues could be resolved centrally in our <a href="design-system.html">component-based system</a>.
-                </p>
-                <p>
-                    One of the more complex findings was on the Plans and Pricing page, which is one of the highest trafficked pages on the primary Smartsheet website. The large features comparison data table was inaccessible as it was not navigable by a keyboard or screenreader. As the engineer working on this item, I determined the best solution was to re-engineer the table’s structure following the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/" target="_blank">treegrid pattern</a>.
+                <p>One of the more complex findings was on the Plans and Pricing page, which is one of the highest trafficked pages on the primary Smartsheet website. The large features comparison data table was inaccessible as it was not navigable by a keyboard or screenreader. As the engineer working on this item, I determined the best solution was to re-engineer the table’s structure following the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/" target="_blank">treegrid pattern</a>.
                 </p>
             </section>
 
             <section>
                 <h2>Process</h2>
                 <h3>Cross-site remediation process</h3>
-                <p>Throughout this project, I collaborated with other engineers on the broad scope of remediation tickets, having them code review and test my work on their devices and provide further feedback for improvement. I also conducted code review on their component refactors to ensure we were all learning from the accessibility improvements so we could be on the same page about best practices moving forward.</p>
+                <p>I oversaw the front-end effort, providing recommendations for refactoring and implementing complex fixes. A key part of the process was establishing a feedback loop: I conducted code reviews on the team's component refactors, while also having the team code review and test my work. This collaborative approach ensured that accessibility standards became an ingrained part of the team’s development culture moving forward.</p>
+    
                 <h3>Features table process</h3>
                 <p>For this remediation item, because this table is in a rich text field maintained by non-engineers, the simplest way to ensure long-term accessibility and ease of maintenance was to apply the necessary attributes via JavaScript. I wrote JavaScript functions that parse the table ensuring the appropriate <code>aria</code>, <code>tabindex</code>, <code>role</code>, and <code>scope</code> values are accurate on both load and user interaction.</p>
                 <p>The final markup follows this structure:</p>
@@ -189,8 +185,14 @@
 
             <section>
                 <h2>Impact</h2>
-                <p>By implementing cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA compliance</b>. The front end team now has an improved understanding of proper standards for accessibility that should be adhered to for future projects.</p>
-                <p>Moving forward, we now leverage tools like WebAIM and Lighthouse for a quick automatic check of items and NVDA for validating screen reader experiences. We understand the importance of manually checking items within the context of their intended purpose, which an automated testing tool alone would not catch.</p>
+                <p>Due to our cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA compliance</b>.</p>
+
+                <p>Additionally, the project resulted in a significant uplift in the front-end team's technical proficiency and governance of accessibility. We now proactively integrate both automated and manual testing into our workflow:</p>
+                <ol>
+                    <li><b>Automated checks:</b> Leveraging tools like WebAIM and Lighthouse for fast, baseline auditing of components.</li>
+                    <li><b>Manual validation:</b> Using screen reader software, specifically NVDA, to manually test user flows and confirm that interactive elements function correctly within their intended context, as we understand that automated tools can only catch a fraction of issues.</li>
+                </ol>
+                <p>This project transitioned accessibility from a reactive fix to a proactive development standard for all future projects at Smartsheet.</p>
             </section>
 
             <section>
