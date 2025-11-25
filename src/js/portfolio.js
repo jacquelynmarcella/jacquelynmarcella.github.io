@@ -1,4 +1,4 @@
-let colorToggle = document.getElementById("color-mode-button");
+let colorToggle = document.querySelectorAll(".toggle--scheme");
 let drawerToggle = document.querySelector(".drawer--toggle");
 let drawerContainer = document.querySelector(".drawer--container");
 //TODO - remove lorde-icon triggers for prefers reduced motion
@@ -19,8 +19,10 @@ function setColorMode() {
     }
 }
 
-colorToggle.addEventListener("click", function() {
-    setColorMode();
+colorToggle.forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+        setColorMode();
+    });
 });
 
 // const targetElement = document.querySelector('.polaroid--background'); // Replace with your element selector
@@ -45,7 +47,7 @@ colorToggle.addEventListener("click", function() {
 //     }
 //   }
 
- 
+
 // }
 
 // Initial check on page load
@@ -63,8 +65,8 @@ const headerContainer = document.querySelector('.header--hero');
 let headerContentHeight = 500; //default value
 
 function getHeaderHeight() {
-    let stickyHeader = document.getElementById('sticky-header'); 
-    let headerHeight = stickyHeader.offsetHeight; 
+    let stickyHeader = document.getElementById('sticky-header');
+    let headerHeight = stickyHeader.offsetHeight;
     headerContentHeight = headerHeight;
     let tripleHeight = headerHeight * 3;
     headerContainer.style.setProperty('--headerContainerHeight', tripleHeight + 'px');
@@ -75,7 +77,7 @@ window.addEventListener('resize', getHeaderHeight);
 getHeaderHeight();
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY <= ( headerContentHeight * .90) ) {
+    if (window.scrollY <= (headerContentHeight * .90)) {
         console.log("Now at the top!", headerContentHeight, scrollY);
         headerContainer.classList.add("js-typing");
     } else {
@@ -117,9 +119,37 @@ const timelineObserver = new IntersectionObserver((entries) => {
         }
     });
 }, timelineOptions);
-Array.from(timelineItem).forEach(function(item, index) {
+Array.from(timelineItem).forEach(function (item, index) {
     let icon = item.querySelector("lord-icon");
     icon.addEventListener("ready", () => {
         timelineObserver.observe(icon);
     });
+});
+
+let navbarToggle = document.getElementById("navbar--toggle");
+let navbarDropdown = document.getElementById("navbar--dropdown");
+
+navbarToggle.addEventListener("click", function () {
+    if (window.innerWidth <= 800) {
+        if (navbarDropdown.classList.contains("js-open")) {
+            navbarDropdown.classList.remove("js-open");
+            navbarDropdown.classList.add("js-closed");
+            navbarToggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("js-nav-open");
+        } else {
+            navbarDropdown.classList.remove("js-closed");
+            navbarDropdown.classList.add("js-open");
+            navbarToggle.setAttribute("aria-expanded", "true");
+            document.body.classList.add("js-nav-open");
+        }
+    }
+});
+
+window.addEventListener("resize", function () {
+    if (window.innerWidth > 800) {
+        navbarDropdown.classList.remove("js-open");
+        navbarDropdown.classList.add("js-closed");
+        navbarToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("js-nav-open");
+    }
 });
