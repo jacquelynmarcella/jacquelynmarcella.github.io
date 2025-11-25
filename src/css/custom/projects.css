@@ -456,6 +456,14 @@ section.projects-section {
         max-height: unset;
         width: 100%;
     }
+
+    img.width-padding {
+        margin: var(--md) var(--md) 0 var(--md);
+        border-radius: var(--borderRadiusMd);
+        border: 1px solid var(--surfaceColor);
+        max-width: 100%;
+        width: calc(100% - var(--md) - var(--md));
+    }
 }
 
 @media screen and (min-width: 600px) {
