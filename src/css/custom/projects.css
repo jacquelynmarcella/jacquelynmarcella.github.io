@@ -1,9 +1,25 @@
-header .container {
+/* header .container {
     max-width: 980px;
+} */
+.projects header .tile-grid {
+    /* max-width: 850px; */
+
+    gap: var(--xs) var(--xxl);
+    margin-bottom: 0;
+    margin-top: var(--lg);
 }
-header .tile-grid {
-    max-width: 850px;
-    gap: 0 var(--md);
+
+header {
+    padding: var(--xxl) 0;
+}
+
+header p,
+header h3 {
+    margin-bottom: 0;
+}
+header .stats--number,
+header h3 {
+    margin-top: var(--sm);
 }
 /* header h3 {
     grid-column: 1;
@@ -12,52 +28,103 @@ header .tags {
     flex-direction: row;
 }
 header .stats--desc {
-    text-wrap: balance
+    text-wrap: balance;
 }
-h1 {
-    margin-bottom: var(--xl);
+header h1 {
+    margin-bottom: 0;
+
+}
+.link-list li {
+    background: transparent;
 }
 
 @media screen and (min-width: 800px) {
+    header .stats--number,
+    header h3 {
+        margin-top: var(--lg);
+    }
     h1 {
         margin-bottom: var(--xxl);
+        /* text-align: center; */
     }
     header .container {
         margin-top: var(--xl);
     }
     header .tags {
         grid-column: 1/-1;
-        padding-bottom: var(--xl);
+        /* padding-bottom: var(--xl); */
     }
     header h3 {
         grid-column: 1/-1;
     }
     header .stats--desc {
-        padding-bottom: var(--xl);
+        /* padding-bottom: var(--xl); */
     }
+    .projects header .tile-grid {
+        grid-template-columns: repeat(auto-fit, minmax(26%, 1fr));
+    }
+    /* .stats--number,
+    .stats--desc {
+        text-align: center;
+    } */
 }
 
-
+header .container,
 section h2,
 section h3,
 section p, 
-section ol{
-    max-width: 980px;
+section ol,
+section > ul,
+figure figcaption,
+.width-content,
+nav.project-nav {
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+
 }
-ol {
-    padding-left: var(--lg);
+header .container,
+section h2,
+section h3,
+section p, 
+section ol,
+section > ul,
+figure figcaption {
+    padding: 0 var(--md);
 }
-ol li {
-    margin-bottom: var(--xxs);
+section > p {
+    margin-bottom: var(--md);
+}
+section > h3 {
+    margin-top: var(--lg);
+}
+section > ul li,
+section > ol li {
+    margin-left: var(--sm);
+    margin-bottom: var(--xs);
+    padding-left: var(--xs);
 }
 section h2 {
-    border-bottom: 2px solid var(--surfaceColor);
-    padding-bottom: var(--xs);
+    padding-bottom: var(--sm);
+    margin-bottom: var(--lg);
+    position: relative;
+}
+section h2:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: var(--surfaceColor);
+    width: calc(100% - var(--md) - var(--md));
+    position: absolute;
+    bottom: 0;
+    left: var(--md);
 }
 section h2.text-align-center {
-    border-bottom: 0;
+    padding-bottom: 0;
+    padding: 0;
+}
+section h2.text-align-center:after {
+    display: none;
 }
 nav.breadcrumbs {
     position: relative;
@@ -110,29 +177,29 @@ figure {
 
 figure figcaption {
     font-style: italic;
-    max-width: calc(980px + var(--lg) + var(--lg));
     margin: var(--sm) auto 0 auto;
-    padding: 0 var(--lg);
 }
 figure figcaption code {
     font-style: normal;
 }
 
 section {
-    padding: var(--lg) 0;
+    padding: var(--xxl) 0 var(--sm) 0;
 }
 
-section .container {
-    padding: 0 var(--lg);
-}
 
-section figure {
-    margin-top: var(--xxl);
-    margin-bottom: var(--xxxl);
+section figure,
+section .two-up {
+    margin-top: var(--md);
+    margin-bottom: var(--lg);
+}
+section .two-up:last-child,
+section figure:last-child {
+    margin-bottom: 0;
 }
 .two-up {
     margin: var(--xxl) 0 var(--xxxl) 0;
-    gap: var(--lg);
+    gap: var(--lg) var(--xs);
 } 
 @media screen and (min-width: 1000px) {
     section > figure {
@@ -140,7 +207,7 @@ section figure {
     }
     section > figure,
     section > .two-up {
-        padding: 0 var(--lg);
+        /* padding: 0 var(--lg); */
         /* max-width: 1980px; */
         margin-left: auto;
         margin-right: auto;
@@ -205,8 +272,8 @@ section pre {
 } */
 
 nav.project-nav {
-    max-width: 980px;
-    margin: 0 auto var(--lg) auto;
+    padding: 0 var(--md);
+    margin: var(--xl) auto var(--xxl) auto;
 }
 nav.project-nav ul {
     display: flex;
@@ -215,7 +282,48 @@ nav.project-nav ul {
     flex-direction: row;
     justify-content: space-between;
 }
-
+nav.project-nav .description {
+    display: none;
+}
+nav.project-nav a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    position: relative;
+    padding-left: var(--sm);
+}
+nav.project-nav a:hover {
+    color: var(--copyColor);
+}
+/* nav.project-nav a:hover .direction {
+    text-decoration: underline wavy var(--linkColor) 1px;
+    text-underline-offset: 6px;
+    text-decoration-skip-ink: none;
+} */
+nav.project-nav a:before {
+    content: "<";
+    position: absolute;
+    left: 0;
+}
+nav.project-nav  li:last-child {
+    text-align: right;
+}
+nav.project-nav  li:last-child a {
+    padding-left: 0;
+    padding-right: var(--sm);
+}
+nav.project-nav  li:last-child a:before {
+    transform: rotate(180deg);
+    left: unset;
+    right: 0;
+}
+ @media screen and (min-width: 600px) { 
+    nav.project-nav .description {
+        display: inline-block;
+        font-weight: 400;
+        font-style: italic;
+    }
+} 
 
 video {
     height: auto;
@@ -226,7 +334,8 @@ img {
 
 @media screen and (min-width: 1045px) {
     pre,
-    img {
+    img, 
+    video{
         border-radius: var(--borderRadiusMd);
     }
 }
@@ -238,13 +347,16 @@ footer .container {
 footer {
     mask: unset;
     background: var(--backgroundColor);
-    padding-top: 0;
+    padding-top: var(--md);
+    padding-bottom: 0;
 }
 
 
 .width-content {
-    max-width: 980px;
     width: 100%;
+}
+.width-content img {
+    margin: 0 auto;
 }
 .width-max {
     max-width: 1500px;
@@ -253,6 +365,7 @@ footer {
 
 
 .article-body {
+    padding: var(--xxxl) 0;
     background: var(--cardBackground);
     	--mask:
 		radial-gradient(78.1px at 50% 110px,#000 99%,#0000 101%) calc(50% - 100px) 0/200px 51% repeat-x,
@@ -276,6 +389,9 @@ footer {
     background: var(--cardBackground);
 } */
 
+section.projects-section {
+    padding: var(--xxl) var(--md) var(--sm) var(--md);
+}
 
 @media screen and (max-width: 600px) {
     img.no-mobile {

@@ -66,23 +66,14 @@
             <div class="tile-grid odd">
                 <div>
                     <span class="stats--number size-2">$150k</span>
-                    <span class="stats--desc fine-print">saved annually after migration</span>
+                    <span class="stats--desc">saved annually after migration</span>
                 </div>
                 <div>
                     <span class="stats--number size-2">2</span>
-                    <span class="stats--desc fine-print">migrations completed concurrently</span>
+                    <span class="stats--desc">migrations completed concurrently</span>
                 </div>
                 <div>
                 </div>
-                <h3>Technology stack</h3>
-                <ul class="tags">
-                    <li>CSS</li>
-                    <li>Sass</li>
-                    <li>JavaScript</li>
-                    <li>Twig</li>
-                    <li>Drupal</li>
-                    <li>Figma</li>
-                </ul>
                 <div>
                     <h3>Role</h3>
                     <p>Front end engineer</p>
@@ -99,6 +90,15 @@
                         <li><a href="https://www.smartsheet.com/content-center/managing-work/project-management" target="_blank">Content Center live search</a></li>
                     </ul>
                 </div>
+                <h3>Technology stack</h3>
+                <ul class="tags">
+                    <li>CSS</li>
+                    <li>Sass</li>
+                    <li>JavaScript</li>
+                    <li>Twig</li>
+                    <li>Drupal</li>
+                    <li>Figma</li>
+                </ul>
             </div>
         </div>
     </header>
@@ -110,33 +110,31 @@
             <section>
                 <h2>Plan</h2>
                 <p>Smartsheet’s enterprise web properties leveraged Coveo’s Search API for site search functionality. A cost-benefit analysis determined that our minimal usage of Coveo’s advanced features was disproportionate to the contract cost, driving a search for a more efficient solution.</p>
-                <p>As engineers on Drupal, an open source CMS, it felt only natural to seek out an open source solution for our search experience. Our back end engineers conducted thorough research and recommended a migration to Open Search’s Search API, an open source option with existing Drupal modules, documentation, and an open source community to lean on for issue resolution.</p>
+                <p>As engineers on Drupal, an open source CMS, it felt only natural to seek out an open source solution for our search experience. Our back-end engineers conducted thorough research and recommended a migration to Open Search’s Search API, an open source option with existing Drupal modules, documentation, and a community to lean on for issue resolution.</p>
                 <p>The secondary front-end goal for the project was to resolve a long-standing issue of disorganized, redundant search styles that had accumulated over time and had made maintanence a challenge.</p>
             </section>
 
             <section>
                 <h2>Process</h2>
-                <p>While our back-end engineers worked to integrate the new API, my role on this project was to lead the front-end rebuild to support the updated search functionality. The engineering team implemented migrations concurrently on two multilingual Drupal websites:</p>
+                <p>My role on this project was to lead the front-end rebuild to support the updated search functionality. The engineering team implemented migrations concurrently on two multilingual Drupal websites:</p>
                 <h3>Smartsheet Help Center Site</h3>
                 <p>Working with back-end engineers and UI/UX designers, the front-end engineers implemented a total design overhaul of the Help Center search experience as part of the migration. First, the design team completed user testing, which confirmed that the excessive amount of exposed filters provided a confusing and overwhelming experience. After collaborating extensively in Figma with the design team, we built out improved facets, sorts, tabs, and results in Drupal using Twig, JavaScript, PHP, and CSS.</p>
                 <div class="two-up width-max">
                     <div class="flex--50">
                         <figure>
                             <img src="img/help-search-old.png" loading="lazy" alt="Visual of old Help Center Search with a 'basics' query entered and a long list of exposed filters on the left">
-                            <figcaption>Before: Help Center search used Coveo and had too many confusing filters exposed
-                                that provided little value to users.</figcaption>
+                            <figcaption>Before: Help Center search used Coveo and had too many confusing filters exposed that provided little value to users.</figcaption>
                         </figure>
                     </div>
                     <div class="flex--50">
                         <figure>
                             <img src="img/help-search-new.png" loading="lazy" alt="Visual of new Help Center Search with collapsed filters, clearer tabs, and a 'formulas' query entered">
-                            <figcaption>After: Help Center uses OpenSearch and has an improved UI with where filters are
-                                collapsed on medium sized and below monitors by default.</figcaption>
+                            <figcaption>After: Help Center uses OpenSearch and has an improved UI with collapsed filters on medium sized and below monitors.</figcaption>
                         </figure>
                     </div>
                 </div>
                 <h3>Primary Smartsheet Marketing Site</h3>
-                <p>Simultaneously, I worked with closely with back-end engineers to figure out an approach to centralize our search styles and themes on the primary Smartsheet site, as this site contained dozens of search experiences across different pages. I focused on consolidating numerous repetitive Coveo templates into a centralized Drupal View template, while ensuring that there was no regression visually in the search experiences sitewide.</p>
+                <p>Simultaneously, I worked with closely with back-end engineers to figure out an approach to centralize our search styles and themes on the primary Smartsheet site, as this site contains dozens of search experiences across different pages. I focused on consolidating numerous repetitive Coveo templates into a centralized Drupal View template, while ensuring that there was no regression visually in the search experiences sitewide.</p>
                 <p>This centralization made it easy to rapidly spin up new search Views with standardized filters and visual components. By integrating the search components with our <a href="design-system.html">global component system</a> (e.g., using our existing tile/card molecule), I ensured visual consistency sitewide while drastically improving the efficiency of the front-end code base.</p>
                 <figure>
                     <img src="img/www-content-center.png" class="width-content" loading="lazy" alt="Visual of Content Center with results filtered for the topic 'Artifical Intelligence'">
@@ -151,41 +149,18 @@
                 <p>We completed our migration on both sites without any downtime or disruption to the user experience. For both sites, we now have a simplified front-end architecture that is far easier to maintain and expand upon in the future.</p>
             </section>
 
-            <section>
-                <nav class="project-nav" aria-label="Pagination">
-                    <ul>
-                        <li><a href="#">Previous project (Form API Integration)</a></li>
-                        <li><a href="#">Next project (Speed Optimization)</a></li>
-                    </ul>
-                </nav>
-            </section>
+             <nav class="project-nav" aria-label="Project pagination">
+                 <ul>
+                     <li><a href="media-optimization.html"><span class="direction">Previous project</span> <span class="description">Media Optimization</span></a></li>
+                     <li><a href="design-system.html"><span class="direction">Next project</span> <span class="description">Component Design System</span></a></li>
+                 </ul>
+             </nav>
         </div>
 
-        <section>
+        <section class="projects-section">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
-                    <li>
-                        <div class="tile--image left">
-                            <img src="img/design-system-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
-                        </div>
-                        <div class="tile-content">
-                            <p class="eyebrow">Smartsheet</p>
-                            <a href="design-system.html">Oversee scalable component-based design system that improves efficiency</a>
-                            <p class="description">Support the creation and lead ongoing maintenance of a component-based
-                                design system across multiple web
-                                properties. Initial migration and launch led to $1MM ARR within the first year.</p>
-                            <ul class="tags">
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Atomic design</li>
-                                <li>Drupal</li>
-                                <li>PatternLab</li>
-                                <li>Figma</li>
-                            </ul>
-                            <p class="learn-more">Learn more -></p>
-                        </div>
-                    </li>
                     <li>
                         <div class="tile--image center">
                             <img src="img/signup-large.png" alt="" loading="lazy"aria-hidden="true" width="900" height="506">
@@ -204,22 +179,38 @@
                             <p class="learn-more">Learn more -></p>
                         </div>
                     </li>
-                    <li class="">
-                        <div class="tile--image center">
-                            <img src="img/tile-media-optimization.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                    <li>
+                        <div class="tile--image right">
+                            <img src="img/tile-accessibility-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
                         </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
-                            <a href="media-optimization.html">Improved site and SEO performance through media optimization</a>
-                            <p class="description">Drive initiative that cut image file sizes by up to 97% and animation file
-                                sizes by over 94%,
-                                resulting in a 28% increase in Google image search impressions and a 14% uptick in clicks.
-                            </p>
+                            <a href="accessibility.html">Led accessibility remediation to achieve WCAG compliance</a>
+                            <p class="description">Lead front end accessibility remediation, surpassing the original goal of
+                                90%+ WCAG 2.1 AA
+                                compliance.</p>
                             <ul class="tags">
+                                <li>WCAG Accessibility</li>
+                                <li>JavaScript</li>
                                 <li>Drupal</li>
-                                <li>PHP</li>
-                                <li>SEO</li>
-                                <li>Site performance</li>
+                            </ul>
+                            <p class="learn-more">Learn more -></p>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="tile--image left">
+                            <img src="img/tile-nav-mockup-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        </div>
+                        <div class="tile-content">
+                            <p class="eyebrow">Smartsheet</p>
+                            <a href="mega-menu-navigation.html">Architected global mega-menu navigation that increased engagement</a>
+                            <p class="description">Architected an easily maintanable mega-menu navigation that increased
+                                clicks by over 30% to top-level pages.</p>
+                            <ul class="tags">
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Drupal</li>
+                                <li>Figma</li>
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
@@ -242,9 +233,9 @@
                     <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
                     <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
                 </ul>
-                <p class="about fine-print">When I'm not at my keyboard, you can find me 🌲 exploring the Pacific
-                    Northwest, 🧟 watching horror movies, 📷 practicing photography, and building out my own 🌻 native plant
-                    habitat .</p>
+                <p class="about fine-print">When I'm not at my keyboard, you can find me exploring the Pacific
+                    Northwest 🌲, watching horror movies 🧟, practicing photography 📷, and building out my own native plant
+                    habitat 🌻</p>
             </div>
             <div class="copyright fine-print">
                 <p>Copyright info here</p>

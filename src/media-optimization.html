@@ -30,6 +30,14 @@
                     <span class="stats--number size-2">28%</span>
                     <span class="stats--desc">increase in Google image search impressions</span>
                 </div>
+                <div>
+                    <h3>Role</h3>
+                    <p>Lead front end engineer</p>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <p>Smartsheet</p>
+                </div>
                 <h3>Technology stack & skills used</h3>
                 <ul class="tags">
                     <li>Drupal</li>
@@ -39,14 +47,6 @@
                     <li>Lottie</li>
                     <li>Site performance</li>
                 </ul>
-                <div>
-                    <h3>Role</h3>
-                    <p>Lead front end engineer</p>
-                </div>
-                <div>
-                    <h3>Company</h3>
-                    <p>Smartsheet</p>
-                </div>
             </div>
         </div>
     </header>
@@ -56,19 +56,19 @@
         <div class="article-body">
             <section>
                 <h2>Plan</h2>
-                <p>When examining our Lighthouse speed scores for the site and investigating in the Network tab, I noticed a puzzling trend: we had responsive image modules and image compression enabled on the site, but image file sizes were still much larger than I’d expect, especially on mobile.</p>
+                <p>When examining our Lighthouse speed scores for the primary Smartsheet site and investigating in the Network tab, I noticed a puzzling trend: we had responsive image modules and image compression enabled, but image file sizes were still much larger than I’d expect, especially on mobile.</p>
                 <p>Due to my research and advocacy, I was able to persuade the business to prioritize multiple phases of this work over time. We sought to address the following goals in three phases:</p>
                 <ol>
                     <li><b>Improve responsive image formats:</b> Ensure appropriate sized images are rendered, especially on mobile.</li>
-                    <li><b>Implement WebP module:</b> Reduce reliance on legacy PNG and JPG formats by simple, server-side conversion to the superior WebP format.</li>
-                    <li><b>Integrate Lottie:</b> Provide authors with a performant alternative to heavy MP4 and GIF animations by leveraging lightweight SVG animations.</li>
+                    <li><b>Implement WebP module:</b> Reduce reliance on legacy PNG and JPG formats by allowing for server-side conversion to WebP format.</li>
+                    <li><b>Integrate Lottie:</b> Provide authors with a performant SVG alternative to heavy MP4 and GIF animations.</li>
                 </ol>
             </section>
             <section>
                 <h2>Process</h2>
                 <h3>Phase 1: Improve responsive image formats</h3>
-                <p>I did extensive research on our current responsive image sizes and settings. I realized that the default values we use for the <code>sizes</code> and <code>srcset</code> attributes on images didn’t encourage the browser to actually pick the smaller size for mobile, even though they are industry standard values. </p>
-                <p>Thinking big picture, I started testing out various combinations of <code>sizes</code> and <code>srcset</code> values for image tags in an <a href="https://codepen.io/jacquelynmarcella/pen/odRzrw" target="_blank">experimental codepen</a> to determine values that would encourage the browser to render the smaller size file on mobile. Then, I implemented these configurations into Drupal as new responsive image style options, integrating them directly into our <a href="design-system.html">global component library</a> for sitewide application.</p>
+                <p>After extensive research on our current responsive image sizes and settings, I realized that the default values we use for the <code>sizes</code> and <code>srcset</code> attributes didn’t encourage the browser to actually pick the smaller size for mobile, even though they are industry standard values. </p>
+                <p>Thinking big picture, I started testing out various combinations of <code>sizes</code> and <code>srcset</code> values for image tags in an <a href="https://codepen.io/jacquelynmarcella/pen/odRzrw" target="_blank">experimental codepen</a> to determine values that would encourage the browser to render the smaller size file on mobile. Then, I implemented these configurations into Drupal as new responsive image style options, integrating them directly into our <a href="design-system.html">global component library</a> for a sitewide application.</p>
                 <p>As part of this first phase, I also noticed that our background images were skipping our responsive image formatter entirely, due to how background images were were authored and themed in our components. I wrote new PHP functions in our theme to provide a range of compressed image sizes for authored backgrounds that get appended as a <code>&lt;style&gt;</code> tag, so that the background is style applied like a traditional CSS background, while actually loading a properly sized file on smaller devices.</p>
                 <div class="two-up width-max">
                     <div class="flex--50">
@@ -100,24 +100,20 @@
                 <p>While sitewide content conversion to Lottie is ongoing, we are seeing <b>improvements to animation file sizes by over 94%</b> and have launched compelling new pages that are entirely composed of performant Lottie SVG animations.</p>
             </section>
 
-            <section>
-                <div class="container">
-                    <nav class="project-nav" aria-label="Pagination">
-                        <ul>
-                            <li><a href="#">Previous project (Form API Integration)</a></li>
-                            <li><a href="#">Next project (Speed Optimization)</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-
+            <nav class="project-nav" aria-label="Project pagination">
+                <ul>
+                    <li><a href="accessibility.html"><span class="direction">Previous project</span> <span class="description">Accessibility Remediation</span></a></li>
+                    <li><a href="search-api.html"><span class="direction">Next project</span> <span class="description">Search API Migration</span></a></li>
+                </ul>
+            </nav>
         </div>
-        <section>
+
+         <section class="projects-section">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
                     <!--(bake /includes/tile-design-system.html)-->
-                    <!--(bake /includes/tile-accessibility.html)-->
+                    <!--(bake /includes/tile-form-api.html)-->
                     <!--(bake /includes/tile-mega-menu-navigation.html)-->
                 </ul>
             </div>

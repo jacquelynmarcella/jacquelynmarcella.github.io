@@ -69,13 +69,27 @@
             <div class="tile-grid odd">
                 <div>
                     <span class="stats--number size-2">6x</span>
-                    <span class="stats--desc">increase in clicks to Platform page</span>
+                    <span class="stats--desc">increase in clicks to Smartsheet Platform page</span>
                 </div>
                 <div>
                     <span class="stats--number size-2">34%+</span>
                     <span class="stats--desc">increase in engagement on other top-level links</span>
                 </div>
                 <div></div>
+                <div>
+                    <h3>Role</h3>
+                    <p>Lead front end engineer</p>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <p>Smartsheet</p>
+                </div>
+                <div>
+                    <h3>Project links</h3>
+                    <ul class="link-list">
+                        <li><a href="https://www.smartsheet.com/pricing" target="_blank">Live navigation</a></li>
+                    </ul>
+                </div>
                 <h3>Technology stack & skills used</h3>
                 <ul class="tags">
                     <li>CSS</li>
@@ -89,21 +103,6 @@
                     <li>Responsive design</li>
                     <li>WCAG Accessibility</li>
                 </ul>
-                <div>
-                    <h3>Role</h3>
-                    <p>Lead front end engineer</p>
-                </div>
-                <div>
-                    <h3>Company</h3>
-                    <p>Smartsheet</p>
-                </div>
-                <div>
-                    <h3>Project links</h3>
-                    <ul class="link-list">
-                        <li><a href="https://www.smartsheet.com/pricing" target="_blank">Smartsheet site with live
-                                navigation</a></li>
-                    </ul>
-                </div>
             </div>
     </header>
 
@@ -111,22 +110,22 @@
     <main id="main">
         <div class="article-body">
             <section>
-                <div class="container">
-                    <h2>Plan</h2>
-                    <p>An audit of the primary Smartsheet site navigation revealed significant opportunities to improve both the information architecture (IA) and the engineering complexity. We aimed to address several issues with a full navigation overhaul:
-                        <ol>
-                            <li>Ensure the navigation is fully authorable in the CMS without constant engineering support.</li>
-                            <li>Simplify the front end functionality to improve engineering maintainability.</li>
-                            <li>Achieve WCAG <a href="accessibility.html">accessibility</a> for keyboard and screen reader users.</li>
-                            <li>Introduce the ability for authors to add customizable merchandising content within the navigation.</li>
-                            <li>Significantly reduce redundant markup by unifying desktop and mobile theming.</li>
-                        </ol>
-                </div>
+
+                <h2>Plan</h2>
+                <p>An audit of the primary Smartsheet site navigation revealed significant opportunities to improve both the information architecture (IA) and the engineering complexity. We aimed to address several issues with a full navigation overhaul:
+                    <ol>
+                        <li>Ensure the navigation is fully authorable in the CMS without constant engineering support.</li>
+                        <li>Simplify the front-end functionality to improve engineering maintainability.</li>
+                        <li>Achieve WCAG <a href="accessibility.html">accessibility compliance</a>, including for keyboard and screen reader users.</li>
+                        <li>Introduce the ability for authors to add customizable merchandising content within the navigation.</li>
+                        <li>Significantly reduce redundant markup by unifying desktop and mobile theming.</li>
+                    </ol>
+
             </section>
 
             <section>
                 <h2>Process</h2>
-                <p>I led the technical overhaul, collaborating closely with UI/UX designers, product owners, and back-end engineers to build an improved mega-menu that effectively reflected the new site IA. My core architectural decision was to treat the navigation as a single, consistent HTML structure that is rendered responsively via CSS and JavaScript across all viewports. This was a departure from the previous pattern of maintaining separate desktop and mobile navigation markup.</p>
+                <p>I led the technical overhaul, collaborating closely with UI/UX designers, product owners, and back-end engineers to build an improved mega-menu that effectively reflected the new site IA. My core architectural decision was to treat the navigation as a single, consistent HTML element that is responsive across all viewports through CSS and JavaScript. This was a departure from the previous pattern of maintaining separate desktop and mobile navigation markup.</p>
                 <p>Using Drupal, HTML, JavaScript, Twig, PHP, and CSS, I ensured the structure was built with correct semantic markup and ARIA attributes to achieve WCAG compliance for keyboard controls and screen readers.</p>
                 <p>Visually, I worked closely with design in Figma and during development to improve transitions and animations, overlays with grid layout structure, and add comprehensive color options that map to our <a href="design-system.html">global color schemes</a>.</p>
                 <figure>
@@ -136,37 +135,33 @@
                     <figcaption>New navigation is responsive to different screen sizes without needing to re-render separate mobile markup.</figcaption>
                 </figure>
 
-                <p>After researching available Drupal modules, I determined that the existing third-party mega-menu modules were overkill. Instead, I relied on the lightweight Custom Menu Links core module and developed custom Twig templating and PHP functions to render a straightforward mega-menu structure. This solution provided flexibility while remaining simple to maintain for both authors and engineers. I ensured the sustainability of this approach by seeking back-end engineering review before implementation.</p>
+                <p>After researching available Drupal modules, I determined that the existing mega-menu contrib modules were overkill. Instead, I relied on the lightweight Custom Menu Links core module and developed custom Twig templating and PHP functions to render a straightforward mega-menu structure. This solution provided flexibility while remaining simple to maintain for both authors and engineers. I ensured the sustainability of this approach by seeking back-end engineering review before implementation.</p>
                 <p>The solution uses the familiar Drupal Menu UI, allowing authors to easily build a hierarchical tree of links. The custom theming layers allow authors to add elements like images, link styles, and promotional sections as needed, all without writing code or waiting for a deployment:</p>
 
                 <figure>
                     <img src="img/nav-authoring.png" class="width-full" loading="lazy" alt="Two admin screens showing editing a menu link and how users can drag and drop items into different menu levels">
-                    <figcaption>Side by side of Drupal Menu UI for the mega menu. Maintaining the standard Drupal Menu experience allows non-engineers to maintain
-                        content, rather than relying on a hardcoded navigation that requires a release cycle.
-                    </figcaption>
+                    <figcaption>Maintaining the standard Drupal Menu UI allows non-engineers to maintain and localize content.</figcaption>
                 </figure>
             </section>
 
             <section>
                 <h2>Impact</h2>
-                <p>The launch of the new navigation architecture immediately improved user engagement. We measured a <b>6x increase in clicks</b> to the Smartsheet Platform page and up to a <b>34% increase in engagement</b> for other top-level links, validating the improved IA and UX.</p>
+                <p>The launch of the new navigation immediately increased user engagement. We measured a <b>6x increase in clicks</b> to the Smartsheet Platform page and up to a <b>34% increase in engagement</b> for other top-level links, validating the improved IA and UX.</p>
                 <p>Since the initial launch, we have done refreshes of the design and IA to match our global UI changes on the site and the evolving Smartsheet brand strategy. The improved architecture and structure of the navigation has made these subsequent engineering updates simple and straightforward.</p>
                 <p>The foundation I built has empowered content authors to manage routine content and merchandising updates independently, significantly reducing the demand for engineering support for common changes.</p>
                 <p>Following the initial success, I led the implementation of this same navigation architecture on the Smartsheet Help Center site, ensuring a unified and cohesive experience across key Smartsheet web properties.</p>
             </section>
 
-            <section>
-                <nav class="project-nav" aria-label="Pagination">
-                    <ul>
-                        <li><a href="#">Previous project (Form API Integration)</a></li>
-                        <li><a href="#">Next project (Speed Optimization)</a></li>
-                    </ul>
-                </nav>
-            </section>
+            <nav class="project-nav" aria-label="Project pagination">
+                <ul>
+                    <li><a href="form-api.html"><span class="direction">Previous project</span> <span class="description">Form API Integration</span></a></li>
+                    <li><a href="accessibility.html"><span class="direction">Next project</span> <span class="description">Accessibiliy Remediation</span></a></li>
+                </ul>
+            </nav>
 
         </div>
 
-        <section>
+        <section class="projects-section">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
@@ -192,37 +187,39 @@
                         </div>
                     </li>
                     <li>
-                        <div class="tile--image right">
-                            <img src="img/tile-accessibility-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+                        <div class="tile--image left">
+                            <img src="img/search-large.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
                         </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
-                            <a href="accessibility.html">Led accessibility remediation to achieve WCAG compliance</a>
-                            <p class="description">Lead front end accessibility remediation, surpassing the original goal of
-                                90%+ WCAG 2.1 AA
-                                compliance.</p>
+                            <a href="search-api.html">Generated cost savings through search API migration</a>
+                            <p class="description">Supported the migration from Coveo to OpenSearch, leading to $150k in
+                                annual cost savings.</p>
                             <ul class="tags">
-                                <li>WCAG Accessibility</li>
+                                <li>CSS</li>
                                 <li>JavaScript</li>
+                                <li>Twig</li>
                                 <li>Drupal</li>
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
                     </li>
-                    <li>
+                    <li class="">
                         <div class="tile--image center">
-                            <img src="img/signup-large.png" alt="" loading="lazy"aria-hidden="true" width="900" height="506">
+                            <img src="img/tile-media-optimization.png" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
                         </div>
                         <div class="tile-content">
                             <p class="eyebrow">Smartsheet</p>
-                            <a href="form-api.html">Increased signups through form API integration</a>
-                            <p class="description">Boost form conversion rates by over 20% through integration of ZoomInfo’s
-                                FormComplete API,
-                                A/B testing, and UI/UX enhancements.</p>
+                            <a href="media-optimization.html">Improved site and SEO performance through media optimization</a>
+                            <p class="description">Drive initiative that cut image file sizes by up to 97% and animation file
+                                sizes by over 94%,
+                                resulting in a 28% increase in Google image search impressions and a 14% uptick in clicks.
+                            </p>
                             <ul class="tags">
-                                <li>JavaScript</li>
-                                <li>CSS</li>
-                                <li>A/B Testing</li>
+                                <li>Drupal</li>
+                                <li>PHP</li>
+                                <li>SEO</li>
+                                <li>Site performance</li>
                             </ul>
                             <p class="learn-more">Learn more -></p>
                         </div>
@@ -245,9 +242,9 @@
                     <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank">Connect on LinkedIn</a></li>
                     <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Download Resume</a></li>
                 </ul>
-                <p class="about fine-print">When I'm not at my keyboard, you can find me 🌲 exploring the Pacific
-                    Northwest, 🧟 watching horror movies, 📷 practicing photography, and building out my own 🌻 native plant
-                    habitat .</p>
+                <p class="about fine-print">When I'm not at my keyboard, you can find me exploring the Pacific
+                    Northwest 🌲, watching horror movies 🧟, practicing photography 📷, and building out my own native plant
+                    habitat 🌻</p>
             </div>
             <div class="copyright fine-print">
                 <p>Copyright info here</p>

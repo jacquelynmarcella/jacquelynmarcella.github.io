@@ -19,26 +19,16 @@
             <div class="tile-grid odd">
                 <div>
                     <span class="stats--number size-2">$1MM</span>
-                    <span class="stats--desc fine-print">ARR attributed to redesign within 8 months</span>
+                    <span class="stats--desc">ARR attributed to redesign within 8 months</span>
                 </div>
                 <div>
                     <span class="stats--number size-2">10.5k+</span>
-                    <span class="stats--desc fine-print">component instances published in Drupal</span>
+                    <span class="stats--desc">component instances published in Drupal</span>
                 </div>
                 <div>
                     <span class="stats--number size-2">18</span>
-                    <span class="stats--desc fine-print">color scheme variations</span>
+                    <span class="stats--desc">color scheme variations</span>
                 </div>
-                <h3>Technology stack + skills</h3>
-                <ul class="tags">
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Twig</li>
-                    <li>Drupal</li>
-                    <li>Figma</li>
-                    <li>PatternLab</li>
-                    <li>WCAG Accessibility</li>
-                </ul>
                 <!-- <div>
                     <h3>Project links</h3>
                     <ul class="link-list">
@@ -54,6 +44,16 @@
                     <h3>Company</h3>
                     <p>Smartsheet</p>
                 </div>
+                <h3>Technology stack + skills</h3>
+                <ul class="tags">
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Twig</li>
+                    <li>Drupal</li>
+                    <li>Figma Dev Mode</li>
+                    <li>PatternLab</li>
+                    <li>WCAG Accessibility</li>
+                </ul>
             </div>
         </div>
     </header>
@@ -110,29 +110,27 @@
         color: var(--cardTagText);
     }
 }</pre>
-                            <figcaption>The component's SCSS file is comprised of global CSS custom
-                                properties where possible.</figcaption>
+                            <figcaption>The component's SCSS file is largely comprised of global CSS custom properties.</figcaption>
                         </figure>
                     </div>
                 </div>
                 <p>By using CSS custom properties, we were able to build out dozens of organism-level components that support six color variations across three different schemes (light mode, dark mode, and special events color scheme). This means every component in the entire design system can easily be used in any of these <b>18 different color variations</b> without time-consuming color customizations needed at a per-component level:</p>
                 <figure>
                     <img src="img/design-system-schemes.png" class="width-content" loading="lazy" alt="Grid of 18 different color variations.">
-                    <figcaption>Figma overview of 6 color variations within the 3 schemes that are integrated into the front
-                        end system. Currently, some variations are 1:1 with to variations in other schemes. </figcaption>
+                    <figcaption>Figma overview of 6 color variations within the 3 schemes that are integrated into the front-end system. Currently, some variations are 1:1 with to variations in other schemes. </figcaption>
                 </figure>
-                <p>After prototyping in PatternLab using Sass, CSS, Twig, HTML, and JavaScript, we integrated components into Drupal as Paragraphs and templated Content Types. Components are exposed to web authors as modular elements, enabling them to use a drag-and-drop interface (Drupal Bricks) to construct custom pages. All author choices, from color variation to size/alignment, map back to and enforce the established global design system.</p>
+                <p>After prototyping in PatternLab using Sass, CSS, Twig, JavaScript, jQuery, and HTML, we integrated components into Drupal as Paragraphs and templated Content Types. Components are exposed to web authors as modular elements, enabling them to use a drag-and-drop interface (Drupal Bricks) to construct custom pages. All author choices, from color variation to size/alignment, map back to and enforce the established global design system.</p>
             </section>
             <section>
                 <h2>Impact</h2>
                 <p>The launch of the new site and design system delivered a modern UX and improved authoring experience. Financially, the project <b>exceeded its offset goal by +71%, with $1MM in ARR</b> directly attributed to the website rebuild and migration.</p>
                 <p>The system has demonstrated significant reuse and scalability, as we now have <b>over 10,500 organism-level component instances</b> across the primary website.
                 </p>
-                <p>Since its inception, we have been able to continually improve our component library to stay on brand and keep up with design standards in the industry, integrating more progressive enhancements and adding new features to components along the way. For example, our tile molecule, pictured below from oldest to newest, has significantly evolved over the years:</p>
+                <p>Since its inception, we have been able to upgrade to Drupal 10 and improve our component library to both stay on brand and keep up with design standards in the industry. We have continually integrated more progressive enhancements and added new features to components along the way, for example our tile molecule has significantly evolved over the years:</p>
                 <figure>
                     <img src="img/tile-timeline-vertical.png" class="mobile-only" loading="lazy" alt="Top to bottom display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags">
-                    <img src="img/tile-timeline-horizontal.png" class="no-mobile" loading="lazy" alt="Left to right display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags">
-                    <figcaption>The tile molecule has not only improved visually, but expanded to accommodate tags and metadata to better promote article content.</figcaption>
+                    <img src="img/tile-timeline-horizontal.png" class="no-mobile width-max" loading="lazy" alt="Left to right display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags">
+                    <figcaption>The tile molecule has not only improved visually, but has expanded to accommodate both tags and metadata to better promote article content.</figcaption>
                 </figure>
 
                 <p>As a senior engineer, I've taken on the engineering ownership and governance of this global design system, including onboarding new team members and leading improvements. One major initiative involved a thorough <a href="accessibility.html">accessibility remediation</a> of the component library to ensure WCAG compliance. We have since successfully rolled out this component library to other Smartsheet web properties, ensuring a cohesive digital experience for the brand.</p>
@@ -143,26 +141,22 @@
                 <p>In the long term, the goal is to continue to evolve components while minimizing design system sprawl. We regularly test component performance with approaches like heatmapping and user testing, making sure our interactive components get the engagement we’d expect and continue to find opportunities for improvement.</p>
             </section>
 
-            <section>
-                <div class="container">
-                    <nav class="project-nav" aria-label="Pagination">
-                        <ul>
-                            <li><a href="#">Previous project (Form API Integration)</a></li>
-                            <li><a href="#">Next project (Speed Optimization)</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
+            <nav class="project-nav" aria-label="Project pagination">
+                <ul>
+                    <li><a href="search-api.html"><span class="direction">Previous project</span> <span class="description">Search API Migration</span></a></li>
+                    <li><a href="form-api.html"><span class="direction">Next project</span> <span class="description">Form API Integration</span></a></li>
+                </ul>
+            </nav>
 
         </div>
 
-        <section>
+         <section class="projects-section">
             <div class="container">
                 <h2 class="text-align-center">Additional projects</h2>
                 <ul class="tile-grid odd">
                     <!--(bake /includes/tile-accessibility.html)-->
-                    <!--(bake /includes/tile-form-api.html)-->
                     <!--(bake /includes/tile-mega-menu-navigation.html)-->
+                    <!--(bake /includes/tile-media-optimization.html)-->
                 </ul>
             </div>
         </section>
