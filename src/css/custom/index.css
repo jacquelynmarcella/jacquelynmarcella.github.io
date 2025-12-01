@@ -123,6 +123,8 @@
     }
 
     @media screen and (max-width: 780px) {
+
+
         button.timeline--button span {
             display: block;
         }
@@ -136,8 +138,25 @@
         }
 
         .timeline--button {
-            margin-top: var(--lg);
+            position: relative;
+            z-index: 2;
+            background: var(--cardBackground);
+            color: var(--copyColor);
+            margin-top: var(--xxxl);
         }
+
+        .timeline--items.js-mobile-collapsed {
+            padding-bottom: calc(var(--xxxl) + 16px);
+
+        }
+
+        .timeline--items.js-mobile-collapsed+.timeline--button {
+            position: absolute;
+            bottom: 25px;
+            margin-top: 0;
+        }
+
+
 
         .js-mobile-collapsed+button.timeline--button .js-open,
         .js-mobile-open+button.timeline--button .js-closed {
@@ -150,7 +169,7 @@
             flex: var(--flex-33);
         }
 
-        .slider--timeline.flex--50 {
+        .flex--50 {
             flex: var(--flex--66);
         }
     }
@@ -174,6 +193,10 @@
         .experience .two-up {
             margin-top: var(--xl);
         }
+
+        .timeline--item {
+            padding-left: var(--xl);
+        }
     }
 
     @media screen and (min-width: 1000px) {
@@ -183,6 +206,9 @@
     }
 
 
+    .timeline--item {
+        padding-left: var(--lg);
+    }
 
     .timeline--items {
         display: flex;
@@ -193,10 +219,6 @@
         position: relative;
     }
 
-    .timeline--item {
-        padding-left: var(--xl);
-    }
-
     .timeline--item p {
         max-width: 50ch;
         text-wrap: balance;
@@ -205,23 +227,8 @@
 
     .timeline--item h3 {
         margin-bottom: 0;
+        text-wrap: balance;
     }
-
-    .timeline--text-container {
-        grid-column: 2;
-
-    }
-
-    .timeline--icon-container {
-        margin-left: 0;
-        margin-right: var(--sm);
-        margin-bottom: var(--xs);
-    }
-
-    .timeline--icon-container {
-        grid-column: 1;
-    }
-
 
     .timeline--item {
         position: relative;
@@ -230,80 +237,139 @@
     .timeline--item:after {
         content: "⬤";
         display: block;
-        top: calc((var(--xl) + -7px) * -1);
-        position: absolute;
         line-height: 0;
-        display: block;
-        top: 16px;
-        left: -8px;
         font-size: 12px;
         color: var(--copyColor);
+        position: absolute;
     }
 
-    .timeline--item.timeline--current-role:after {
-        content: "◉";
-        font-size: 32px;
-        left: -16px;
+    .timeline--progress:after {
+        top: 100%;
+        transform: unset;
+        animation: none;
+        left: -4px;
+        height: 100% !important;
+    }
+
+    .timeline--item:after {
+        top: calc((var(--xl) + -7px) * -1);
+        position: absolute;
+        top: 16px;
+        left: -8px;
+        /* opacity: 0;
+        animation: 1.5s timeline-marker-focus ease-in-out forwards;
+        animation-delay: .5s;
+        -webkit-animation-timeline: scroll();
+        animation-timeline: view();
+        animation-range: -45vh 100vh; */
     }
 
 
-    .timeline--items:before {
+    .timeline--container {
+        position: relative;
+    }
+
+    .timeline--progress {
         content: "";
-        width: 2px;
-        height: 90%;
+        width: 20px;
+        height: 89%;
         position: absolute;
         top: 27px;
-        left: -4px;
+        left: 12px;
         font-size: 12px;
-        background: var(--surfaceColor);
+        /* background: linear-gradient(to bottom, var(--surfaceColor), var(--cardBackground)); */
+
     }
 
 
-    /** test animation */
-    .timeline--item .timeline--icon-container,
-    .timeline--item h3,
-    .timeline--item p {
-        opacity: .5;
+    .timeline--progress-marker {
+        position: relative;
+        left: -4px;
+        top: -8px;
+        font-size: 12px;
+        line-height: 0;
+        height: 100%;
+        z-index: 1;
+        color: var(--linkColor);
+    }
+
+    .timeline--progress-marker:before {
+        background: var(--cardBackground);
+        border-radius: 100px 100px 0 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: -5px;
+    }
+
+    .timeline--progress-bar {
+        transform-origin: top;
+        height: 10%;
+        animation: timeline-progress linear forwards;
+        animation-timeline: view();
+        animation-range: 30vh 113vh;
+        background: var(--surfaceColor);
+        width: 2px;
+    }
+
+    @keyframes timeline-progress {
+        0% {
+            height: 10%;
+        }
+
+        100% {
+            height: 100%;
+        }
+    }
+
+    /** Animation */
+    .timeline--text-container {
+        position: relative;
+        z-index: 1;
+        opacity: .25;
+        transform: translateY(2em);
         animation: 1.5s timeline-focus ease-in-out forwards;
         animation-delay: .5s;
         -webkit-animation-timeline: scroll();
         animation-timeline: view();
-
     }
 
+    .timeline--current-role .timeline--text-container {
+        opacity: 1;
+        transform: translateY(0);
+        animation: unset;
+    }
+
+    .timeline--current-role:after {
+        content: "◉";
+        color: var(--linkColor);
+        font-size: 32px;
+        left: -16px;
+        animation: unset;
+        opacity: 1;
+    }
 
     @keyframes timeline-focus {
         0% {
-            opacity: .5;
+            opacity: .25;
+            transform: translateY(2em);
         }
 
         20% {
             opacity: 1;
+            transform: translateY(0);
         }
 
         100% {
             opacity: 1;
+            transform: translateY(0);
         }
     }
 
-    .timeline--text-container {
-        position: relative;
-        z-index: 1;
-    }
-
-    .timeline--icon-container {
-        width: 40px;
-        height: 40px;
-    }
-
-    .timeline--item lord-icon {
-        opacity: 1;
-        width: 100px;
-    }
-
-    .timeline--current-role lord-icon {
-        opacity: 1;
-    }
 
     .experience hr {
         width: 100%;
@@ -465,6 +531,11 @@
     }
 
     /* Recommendations */
+
+    #recommendations .text-align-right {
+        margin: var(--lg) 0 0 auto;
+    }
+
     blockquote p {
         font-style: italic;
         font-weight: 500;
@@ -500,7 +571,7 @@
         flex: 1;
         min-width: 100%;
         scroll-snap-align: start;
-        padding: var(--md) var(--md) var(--xxl) var(--md);
+        padding: var(--md);
     }
 
     .carousel--controls {
@@ -516,10 +587,15 @@
         padding: var(--xs);
         cursor: pointer;
         position: absolute;
-        left: var(--xl);
-        top: 50%;
         transform: translateY(-50%);
         transition: all 500ms ease-in;
+        top: calc(100% + var(--lg));
+    }
+
+    [data-slide-visible="1"]+.carousel--controls button:first-child,
+    [data-slide-visible="3"]+.carousel--controls button:last-child {
+        opacity: .15;
+        cursor: unset;
     }
 
     .carousel--controls button:focus,
@@ -529,7 +605,7 @@
     }
 
     .carousel--controls .carousel--next {
-        right: var(--xl);
+        right: 0;
         left: unset;
         transform: rotate(180deg) translateY(50%);
     }
@@ -542,6 +618,7 @@
     .carousel blockquote {
         opacity: .25;
         transition: opacity 500ms ease-out;
+        margin: auto;
     }
 
     .carousel>.js-active blockquote {
@@ -619,7 +696,7 @@
     .carousel figcaption {
         margin-top: auto;
         position: absolute;
-        bottom: var(--xxl);
+        bottom: var(--md);
         right: 0;
         padding: 0 var(--md);
         opacity: 0;
@@ -633,9 +710,25 @@
         padding-bottom: var(--xl);
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 850px) {
         .carousel>* {
             padding: var(--xl) var(--xl) var(--xxl) var(--xl);
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .carousel>* {
+            min-height: 33vh;
+        }
+
+        .carousel--controls button {
+            left: var(--xl);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel--controls .carousel--next {
+            right: var(--xl);
         }
 
         .carousel blockquote {
@@ -643,7 +736,7 @@
         }
 
         .carousel figcaption {
-            bottom: var(--xl);
+            bottom: var(--xxl);
         }
     }
 
