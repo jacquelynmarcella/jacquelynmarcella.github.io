@@ -148,53 +148,12 @@ section h2.text-align-center:after {
     display: none;
 }
 
-nav.breadcrumbs {
-    position: relative;
-    z-index: 2;
-    margin-bottom: var(--xxs);
-    /* opacity: .8; */
-}
-
-nav.breadcrumbs ul {
-    display: block;
-}
-
-nav.breadcrumbs li {
-    display: inline-block;
-}
-
-nav.breadcrumbs li:first-child {
-    display: none;
-}
-
-@media screen and (min-width: 600px) {
-    nav.breadcrumbs li:first-child {
-        display: inline-block;
-    }
-
-    nav.breadcrumbs li:first-child::after {
-        content: "/";
-        margin: 0 var(--xs) 0 var(--xxs);
-        color: var(--copyColor);
-    }
-}
-
-nav.breadcrumbs a {
-    color: var(--linkColor);
-    text-decoration: none;
-}
-
 
 .overview {
     background: var(--cardBackground);
     border-radius: var(--borderRadiusMd);
     padding: var(--md);
     margin-top: var(--xl);
-}
-
-img {
-    opacity: 1;
-    /* border: 1px solid var(--surfaceColor); */
 }
 
 figure {

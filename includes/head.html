@@ -1,3 +1,16 @@
+<script>
+	(function () {
+		let theme = localStorage.getItem('jm-color-mode') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		document.documentElement.setAttribute('data-theme', theme);
+	})();
+</script>
+<style>
+	[data-theme="dark"] body {
+		background-color: rgba(18, 18, 12, 1);
+		color: rgba(244, 243, 238, 1);
+	}
+</style>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="UI engineer with 8 years of technical experience in JavaScript, CSS, Drupal, and component-based design systems. Based in Portland, OR." />
