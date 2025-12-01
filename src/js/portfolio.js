@@ -1,4 +1,4 @@
-let colorToggle = document.querySelectorAll(".toggle--scheme");
+let colorToggle = document.querySelectorAll(".theme-toggle");
 let drawerToggle = document.querySelector(".drawer--toggle");
 let drawerContainer = document.querySelector(".drawer--container");
 //TODO - remove lorde-icon triggers for prefers reduced motion
@@ -7,15 +7,24 @@ let drawerContainer = document.querySelector(".drawer--container");
 let isDark = localStorage.getItem('jm-color-mode');
 if (isDark == "dark") {
     document.body.classList.add("dark");
+    colorToggle.forEach(function (toggle) {
+        toggle.classList.add("theme-toggle--toggled");
+    });
 }
 
 function setColorMode() {
     if (!document.body.classList.contains("dark")) {
         document.body.classList.add("dark");
         localStorage.setItem('jm-color-mode', "dark");
+        colorToggle.forEach(function (toggle) {
+            toggle.classList.add("theme-toggle--toggled");
+        });
     } else {
         document.body.classList.remove("dark");
         localStorage.setItem('jm-color-mode', "light");
+        colorToggle.forEach(function (toggle) {
+            toggle.classList.remove("theme-toggle--toggled");
+        });
     }
 }
 
@@ -24,39 +33,6 @@ colorToggle.forEach(function (toggle) {
         setColorMode();
     });
 });
-
-// const targetElement = document.querySelector('.polaroid--background'); // Replace with your element selector
-// const classNameToToggle = 'js-animating'; // The CSS class to add/remove
-
-// function checkVisibility() {
-//   const rect = targetElement.getBoundingClientRect();
-//   const isVisible = (rect.top >= 0 && rect.bottom + 300 <= window.innerHeight);
-//   console.log(rect.top, rect.bottom, window.innerHeight);
-//   // Need: only on scroll down
-//   // dont jump back to green so quickly, different range for rect
-//   if (isVisible) {
-//     targetElement.classList.add(classNameToToggle);
-// //   } else if (rect.top >= 0) {
-//   }
-//   else if ( targetElement.classList.contains(classNameToToggle)) {
-//     // if ( rect.top >= window.innerHeight || rect.bottom <= 0 ) {
-//     //     targetElement.classList.remove(classNameToToggle);
-//     // }
-//     if ( rect.top >= window.innerHeight ) {
-//         targetElement.classList.remove(classNameToToggle);
-//     }
-//   }
-
-
-// }
-
-// Initial check on page load
-// checkVisibility();
-
-// Add event listener for scroll
-// window.addEventListener('scroll', checkVisibility);
-
-// TODO - aria states here, unset for mobile vs desktop
 
 
 
@@ -69,6 +45,7 @@ function getHeaderHeight() {
     let headerHeight = stickyHeader.offsetHeight;
     headerContentHeight = headerHeight;
     let tripleHeight = headerHeight * 3;
+    headerContainer.classList.add('js-sticky');
     headerContainer.style.setProperty('--headerContainerHeight', tripleHeight + 'px');
     headerContainer.style.setProperty('--headerContentHeight', headerHeight + 'px');
 }
@@ -78,16 +55,17 @@ getHeaderHeight();
 
 window.addEventListener('scroll', () => {
     if (window.scrollY <= (headerContentHeight * .90)) {
-        console.log("Now at the top!", headerContentHeight, scrollY);
         headerContainer.classList.add("js-typing");
     } else {
-        console.log("not at top", headerContentHeight, scrollY)
         headerContainer.classList.remove("js-typing");
     }
+    if (window.scrollY <= 0) {
+        headerContainer.classList.remove("js-animate");
+    }
+    else {
+        headerContainer.classList.add("js-animate");
+    }
 });
-
-const viewportHeight = window.innerHeight;
-const topBottomMargin = (viewportHeight / 2.75) - .5; // Half of the viewport minus half of the 1px line
 
 let timelineItem = document.querySelectorAll('#timeline li'); // Replace with your element's ID
 let timelineToggle = document.querySelector("#timeline--toggle");
@@ -105,8 +83,8 @@ timelineToggle.addEventListener("click", function () {
 
 
 const timelineOptions = {
-    rootMargin: `${-topBottomMargin}px 0px ${-topBottomMargin}px 0px`, // Shrink the root to a 1px line in the middle
-    threshold: 0 // Trigger when any part of the element intersects the 1px line
+    rootMargin: '-20% 0px -20% 0px', // Trigger when element is in the middle 60% of the viewport
+    threshold: 0
 };
 const timelineObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -145,6 +123,22 @@ navbarToggle.addEventListener("click", function () {
     }
 });
 
+function moveThemeToggle() {
+    const themeToggleBtn = document.querySelector('.theme-toggle');
+    const mobileContainer = document.querySelector('.mobile-only.theme-toggle--container');
+    const desktopContainer = document.querySelector('.no-mobile.theme-toggle--container');
+
+    if (window.innerWidth <= 800) {
+        if (mobileContainer && !mobileContainer.contains(themeToggleBtn)) {
+            mobileContainer.appendChild(themeToggleBtn);
+        }
+    } else {
+        if (desktopContainer && !desktopContainer.contains(themeToggleBtn)) {
+            desktopContainer.appendChild(themeToggleBtn);
+        }
+    }
+}
+
 window.addEventListener("resize", function () {
     if (window.innerWidth > 800) {
         navbarDropdown.classList.remove("js-open");
@@ -152,4 +146,16 @@ window.addEventListener("resize", function () {
         navbarToggle.setAttribute("aria-expanded", "false");
         document.body.classList.remove("js-nav-open");
     }
+    moveThemeToggle();
 });
+
+// Initial check
+moveThemeToggle();
+
+// document.querySelectorAll('.animate-wavy').forEach(function (link) {
+//     if (!link.classList.contains('button')) {
+//         let content = link.textContent + link.textContent;
+//         link.setAttribute("data-animation", content);
+//         // link.classList.add('animate-wavy');
+//     }
+// });
