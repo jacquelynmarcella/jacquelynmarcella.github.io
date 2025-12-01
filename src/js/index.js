@@ -49,35 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const timelineOptions = {
-        rootMargin: '-20% 0px -20% 0px', // Trigger when element is in the middle 60% of the viewport
-        threshold: 0
-    };
-    const timelineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('js-active');
-                if (entry.target.playerInstance) {
-                    entry.target.playerInstance.play();
-                }
-            } else {
-                entry.target.classList.remove('js-active');
-                if (entry.target.playerInstance) {
-                    entry.target.playerInstance.pause();
-                }
-            }
-        });
-    }, timelineOptions);
-
-    Array.from(timelineItem).forEach(function (item, index) {
-        let icon = item.querySelector("lord-icon");
-        if (icon) {
-            icon.addEventListener("ready", () => {
-                timelineObserver.observe(icon);
-            });
-        }
-    });
-
     const carousel = document.querySelector('.carousel.quote');
     const slides = document.querySelectorAll('.carousel.quote [role="tabpanel"]');
     const paginationButtons = document.querySelectorAll('.carousel--pagination-button');

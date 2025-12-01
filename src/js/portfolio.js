@@ -53,11 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     navbarDropdown.classList.remove("js-open");
                     navbarDropdown.classList.add("js-closed");
                     navbarToggle.setAttribute("aria-expanded", "false");
+                    navbarToggle.classList.remove("is-active");
                     document.body.classList.remove("js-nav-open");
                 } else {
                     navbarDropdown.classList.remove("js-closed");
                     navbarDropdown.classList.add("js-open");
                     navbarToggle.setAttribute("aria-expanded", "true");
+                    navbarToggle.classList.add("is-active");
                     document.body.classList.add("js-nav-open");
                 }
             }
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (navbarDropdown) {
                 navbarDropdown.classList.remove("js-open");
                 navbarDropdown.classList.add("js-closed");
+                navbarToggle.classList.remove("is-active");
             }
             if (navbarToggle) {
                 navbarToggle.setAttribute("aria-expanded", "false");

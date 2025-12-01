@@ -786,6 +786,8 @@
 
 	.navbar--toggle {
 		display: block;
+		background: transparent;
+		border: unset;
 	}
 
 	.navbar--icon {
