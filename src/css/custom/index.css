@@ -380,10 +380,6 @@
 
     }
 
-
-
-
-
     /* New - image change trial */
     .desktop .polaroid--background {
         max-height: 300px;
@@ -452,6 +448,22 @@
         /* 90% { opacity: .33; } */
     }
 
+    /* Projects - most of this is in style.css */
+    /*Centered list */
+    .projects-section .github-list {
+        width: fit-content;
+    }
+
+    .github-list li {
+        margin: var(--xs) 0;
+    }
+
+    @media screen and (min-width: 600px) {
+        .projects-section .github-list {
+            margin: 0 auto;
+        }
+    }
+
     /* Recommendations */
     blockquote p {
         font-style: italic;
@@ -512,8 +524,8 @@
 
     .carousel--controls button:focus,
     .carousel--controls button:hover {
-        background: var(--backgroundColor);
-        border: 2px solid var(--copyColor);
+        /* background: var(--backgroundColor);
+        border: 2px solid var(--copyColor); */
     }
 
     .carousel--controls .carousel--next {
