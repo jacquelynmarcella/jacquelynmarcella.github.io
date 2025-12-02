@@ -177,4 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollToSlide(index);
         });
     });
+
+
 });

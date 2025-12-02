@@ -119,4 +119,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial check
     moveThemeToggle();
 
+    // A11y block links - ensure clicking on <a> tag clicks entire element
+    // https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
+    const cards = document.querySelectorAll(".projects-section .tile-grid li");
+    const cardLinks = document.querySelectorAll('.tile-content a');
+
+    function handleCardClick(event) {
+        const isTextSelected = window.getSelection().toString();
+        if (!isTextSelected) {
+            event.currentTarget.querySelector('a').click();
+        }
+    }
+    cards.forEach(card => {
+        card.addEventListener("click", handleCardClick);
+    });
+
+    cardLinks.forEach(link => {
+        link.addEventListener("click", (e) => e.stopPropagation());
+    });
+
+
+
 });

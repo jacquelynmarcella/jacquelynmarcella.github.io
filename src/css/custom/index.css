@@ -46,10 +46,15 @@
         top: calc(var(--xxxl) + var(--sm));
     }
 
+    .header--container>div {
+        padding: var(--xl) 0 var(--lg) 0;
+    }
+
     /* Header hero sticky fade effect - not optimal for shorter phone screens */
     @media screen and (min-height: 900px) {
+
         .js-sticky.header--hero {
-            max-height: calc(var(--headerContentHeight) + var(--xxxl) + var(--xxl));
+            max-height: calc(var(--headerContentHeight) + var(--xxxl) + var(--xxxl));
         }
 
         .js-sticky .header--container {
@@ -58,7 +63,10 @@
 
         .header--hero .header--container {
             opacity: 1;
+
         }
+
+
 
         .header--hero.js-animate .header--container {
             backface-visibility: hidden;
@@ -128,7 +136,7 @@
         position: relative;
         z-index: 0;
         background: transparent;
-        padding-top: var(--lg);
+        margin-bottom: var(--lg);
     }
 
     .timeline--progress {
@@ -187,6 +195,10 @@
         animation-timeline: view();
         background: var(--surfaceColor);
         width: 2px;
+    }
+
+    .timeline--item {
+        padding-left: var(--lg);
     }
 
     @keyframes timeline-progress {
@@ -283,11 +295,11 @@
         }
 
         .experience .two-up {
-            margin-top: var(--xl);
+            margin-top: var(--xxl);
         }
 
         .timeline--item {
-            padding-left: var(--xl);
+            padding-left: var(--lg);
         }
 
         .timeline--progress-bar {
@@ -297,14 +309,12 @@
 
     @media screen and (min-width: 1000px) {
         .experience .two-up {
-            transform: translate(calc(var(--xl) * -1), 0);
+            transform: translate(calc(var(--xxl) * -1), 0);
         }
     }
 
 
-    .timeline--item {
-        padding-left: var(--lg);
-    }
+
 
     .timeline--items {
         display: flex;
@@ -477,6 +487,10 @@
         display: none;
     }
 
+    .polaroid--border.mobile {
+        margin-bottom: calc(var(--md) * -1);
+    }
+
     @media screen and (min-width: 780px) {
         .polaroid--border {
             padding: 20px 20px 80px 20px;
@@ -525,7 +539,7 @@
         /* animation-delay: .5s; */
         -webkit-animation-timeline: scroll();
         animation-timeline: view();
-        animation-range: 90vh 140vh;
+        animation-range: 70vh 170vh;
         animation-duration: 1s;
 
     }
@@ -570,6 +584,10 @@
 
     /* Projects - most of this is in style.css */
     /*Centered list */
+    .projects-section {
+        margin-top: var(--lg);
+    }
+
     .projects-section .github-list {
         width: fit-content;
     }
@@ -585,6 +603,10 @@
     }
 
     /* Recommendations */
+
+    #recommendations {
+        padding-top: var(--xl);
+    }
 
     #recommendations .text-align-right {
         margin: var(--lg) 0 0 auto;
@@ -849,11 +871,4 @@
             width: 100%
         }
     }
-}
-
-
-
-
-p {
-    max-width: 930px;
 }
