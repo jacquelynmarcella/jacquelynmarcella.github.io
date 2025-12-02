@@ -41,7 +41,6 @@
 		<section class="skills " id="skills">
 			<div class="container">
 				<h2>Technical skills</h2>
-				<hr>
 				<div class="two-up">
 					<div class="flex--33">
 						<p class="no-mobile subhead">I'm always ready to learn new technologies, whether it's a new front-end framework or brushing upon the latest release that makes a once difficult concept a breeze to implement.</p>
@@ -143,12 +142,12 @@
 
 				</div>
 				<!-- <div class="flex--33"> -->
-				<div class="timeline--container flex--50" id="slider">
+				<div class="timeline--container flex--50 js-mobile-collapsed" id="timeline">
 					<div class="timeline--progress">
 						<div class="timeline--progress-bar"></div>
 						<div class="timeline--progress-marker">⬤</div>
 					</div>
-					<ul class="timeline--items js-mobile-collapsed" id="timeline">
+					<ul class="timeline--items" id="timeline-drawer">
 						<li class="timeline--item timeline--current-role">
 							<div class="timeline--text-container">
 								<h3>Senior Front End Engineer II</h3>
@@ -213,7 +212,7 @@
 							</div>
 						</li>
 					</ul>
-					<button class="button timeline--button" id="timeline--toggle" aria-expanded="true" aria-controls="timeline">
+					<button class="button timeline--button" id="timeline--toggle" aria-expanded="true" aria-controls="timeline-drawer">
 						<span class="js-closed">Show all experience</span>
 						<span class="js-open">Show less experience</span>
 					</button>
@@ -228,7 +227,6 @@
 	<section class="projects-section" id="featured-projects">
 		<div class="container">
 			<h2>Projects</h2>
-			<hr>
 			<h3 class="visually-hidden">Recent work</h3>
 			<ul class="tile-grid odd">
 				<!--(bake /includes/tile-design-system.html)-->
@@ -258,16 +256,11 @@
 		</div>
 	</section>
 
-	<!-- Recommednations -->
+
+	<!-- Recommendations -->
 	<section id="recommendations">
 		<div class="container">
 			<h2 class="">Recommendations</h2>
-			<hr>
-			<!-- <div class="two-up wrap-reverse"> -->
-			<!-- <div class="flex--33">
-					<p class="no-mobile">I do my best work in highly collaborative environments where I work closely with engineers, designers, and product owners. Read what my teammates have to say about working with me.</p>
-					
-				</div> -->
 			<div style="position: relative;">
 				<div class="carousel--wrapper">
 					<div class="carousel quote" data-slide-visible="1">

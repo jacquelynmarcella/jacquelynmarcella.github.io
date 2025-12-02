@@ -126,7 +126,7 @@
     }
 
     section>p {
-        margin-bottom: var(--md);
+        margin-bottom: var(--lg);
     }
 
     section>ul li,
@@ -207,6 +207,29 @@
         margin-bottom: var(--lg);
     }
 
+    section figure {
+        animation: fade-in ease-out forwards;
+        -webkit-animation-timeline: scroll();
+        animation-timeline: view();
+        animation-range: 15vh 80vh;
+        animation-duration: 1s;
+        opacity: .25;
+        transform: translate(0, 5rem) translateZ(0);
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: .25;
+            transform: translate(0, 5rem) translateZ(0);
+
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0) translateZ(0);
+        }
+    }
+
     /* 
     figure {
         max-width: 1500px;
@@ -215,7 +238,7 @@
 
     figure figcaption {
         font-style: italic;
-        margin: var(--sm) auto 0 auto;
+        margin: var(--md) auto 0 auto;
     }
 
     figure figcaption code {
@@ -355,13 +378,32 @@
     }
 
     /* Make footer have no wave */
-    footer .container {
-        border-top: 2px solid var(--surfaceColor);
-    }
 
     footer {
         mask: unset;
         background: var(--backgroundColor);
         padding-top: var(--md);
     }
+
+    footer .container {
+        padding-top: var(--lg);
+    }
+}
+
+
+
+
+h1 {
+    padding: var(--xxxl) var(--md) 0 var(--md);
+}
+
+@media screen and (min-width: 800px) {
+    h1 {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+header .tile-grid a {
+    font-size: var(--step-0);
 }

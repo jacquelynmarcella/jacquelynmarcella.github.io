@@ -12,17 +12,18 @@
     }
 
     .header--image {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
         background: var(--tagBg);
         padding-top: 10px;
         padding-left: 5px;
         border-radius: 100px;
         overflow: hidden;
+        margin-bottom: var(--xs);
     }
 
     .header--image img {
-        width: 100px;
+        width: 75px;
         height: auto;
         object-position: center bottom;
         object-fit: contain;
@@ -104,13 +105,21 @@
 
     }
 
-
-
     /* Skills */
     .skills--container {
         display: flex;
         flex-direction: column;
         gap: var(--lg);
+    }
+
+    .skills .two-up {
+        gap: 0;
+    }
+
+    @media screen and (min-width: 1010px) {
+        .skills .two-up {
+            gap: var(--md) var(--xl);
+        }
     }
 
     /* Experience */
@@ -122,6 +131,74 @@
         padding-top: var(--lg);
     }
 
+    .timeline--progress {
+        content: "";
+        width: 20px;
+        height: 94%;
+        position: absolute;
+        top: 27px;
+        left: 12px;
+        font-size: 12px;
+        /* background: linear-gradient(to bottom, var(--surfaceColor), var(--cardBackground)); */
+
+    }
+
+    .timeline--item:last-child:before {
+        content: "";
+        display: block;
+        background: var(--cardBackground);
+        height: 216%;
+        width: 33px;
+        position: absolute;
+        z-index: 9;
+        left: -20px;
+        top: 21px;
+    }
+
+
+    .timeline--progress-marker {
+        position: relative;
+        left: -4px;
+        top: -8px;
+        font-size: 12px;
+        line-height: 0;
+        height: 100%;
+        z-index: 1;
+        color: var(--linkColor);
+    }
+
+    .timeline--progress-marker:before {
+        background: var(--cardBackground);
+        border-radius: 100px 100px 0 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        z-index: -1;
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: -5px;
+    }
+
+    .timeline--progress-bar {
+        transform-origin: top;
+        height: 10%;
+        animation: timeline-progress linear forwards;
+        animation-timeline: view();
+        background: var(--surfaceColor);
+        width: 2px;
+    }
+
+    @keyframes timeline-progress {
+        0% {
+            height: 10%;
+        }
+
+        100% {
+            height: 100%;
+        }
+    }
+
     @media screen and (max-width: 780px) {
 
 
@@ -129,38 +206,49 @@
             display: block;
         }
 
-        .timeline--items.js-mobile-collapsed li:nth-child(n+5) {
+        .js-mobile-collapsed li:nth-child(n+5) {
             display: none;
         }
 
-        .timeline--items.js-mobile-collapsed:before {
+        .js-mobile-collapsed .timeline--items:before {
             height: 100%;
         }
 
         .timeline--button {
             position: relative;
-            z-index: 2;
             background: var(--cardBackground);
             color: var(--copyColor);
-            margin-top: var(--xxxl);
+            margin-top: var(--xxl);
+            z-index: 9;
         }
 
-        .timeline--items.js-mobile-collapsed {
-            padding-bottom: calc(var(--xxxl) + 16px);
+        .js-mobile-collapsed .timeline--items {
+            padding-bottom: var(--xl);
 
         }
 
-        .timeline--items.js-mobile-collapsed+.timeline--button {
-            position: absolute;
-            bottom: 25px;
+        .js-mobile-collapsed .timeline--button {
             margin-top: 0;
         }
 
 
 
-        .js-mobile-collapsed+button.timeline--button .js-open,
-        .js-mobile-open+button.timeline--button .js-closed {
+        .js-mobile-collapsed button.timeline--button .js-open,
+        .js-mobile-open button.timeline--button .js-closed {
             display: none;
+        }
+
+        /* .js-mobile-open .timeline--progress {
+            height: 82%;
+        } */
+
+
+        .js-mobile-collapsed .timeline--progress-bar {
+            animation-range: -75vh 113vh;
+        }
+
+        .js-mobile-open .timeline--progress-bar {
+            animation-range: 30vh 113vh;
         }
     }
 
@@ -175,6 +263,10 @@
     }
 
     @media screen and (min-width: 780px) {
+
+        .timeline--progress-bar {
+            animation-range: 30vh 113vh;
+        }
 
         button.timeline--button,
         button.timeline--button span {
@@ -196,6 +288,10 @@
 
         .timeline--item {
             padding-left: var(--xl);
+        }
+
+        .timeline--progress-bar {
+            animation-range: 30vh 113vh;
         }
     }
 
@@ -256,12 +352,6 @@
         position: absolute;
         top: 16px;
         left: -8px;
-        /* opacity: 0;
-        animation: 1.5s timeline-marker-focus ease-in-out forwards;
-        animation-delay: .5s;
-        -webkit-animation-timeline: scroll();
-        animation-timeline: view();
-        animation-range: -45vh 100vh; */
     }
 
 
@@ -269,69 +359,14 @@
         position: relative;
     }
 
-    .timeline--progress {
-        content: "";
-        width: 20px;
-        height: 89%;
-        position: absolute;
-        top: 27px;
-        left: 12px;
-        font-size: 12px;
-        /* background: linear-gradient(to bottom, var(--surfaceColor), var(--cardBackground)); */
 
-    }
-
-
-    .timeline--progress-marker {
-        position: relative;
-        left: -4px;
-        top: -8px;
-        font-size: 12px;
-        line-height: 0;
-        height: 100%;
-        z-index: 1;
-        color: var(--linkColor);
-    }
-
-    .timeline--progress-marker:before {
-        background: var(--cardBackground);
-        border-radius: 100px 100px 0 0;
-        height: 100%;
-        width: 100%;
-        display: block;
-        z-index: -1;
-        content: "";
-        position: absolute;
-        left: -5px;
-        top: -5px;
-    }
-
-    .timeline--progress-bar {
-        transform-origin: top;
-        height: 10%;
-        animation: timeline-progress linear forwards;
-        animation-timeline: view();
-        animation-range: 30vh 113vh;
-        background: var(--surfaceColor);
-        width: 2px;
-    }
-
-    @keyframes timeline-progress {
-        0% {
-            height: 10%;
-        }
-
-        100% {
-            height: 100%;
-        }
-    }
 
     /** Animation */
     .timeline--text-container {
         position: relative;
         z-index: 1;
         opacity: .25;
-        transform: translateY(2em);
+        transform: translate(-2em, 0) scale(.85);
         animation: 1.5s timeline-focus ease-in-out forwards;
         animation-delay: .5s;
         -webkit-animation-timeline: scroll();
@@ -351,22 +386,41 @@
         left: -16px;
         animation: unset;
         opacity: 1;
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            -webkit-transform: perspective(1px) scale(1.2);
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
     @keyframes timeline-focus {
         0% {
             opacity: .25;
-            transform: translateY(2em);
+            transform: translate(-2em, 0) scale(.85);
         }
 
         20% {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(0, 0) scale(1);
         }
 
         100% {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(0, 0) scale(1);
         }
     }
 
@@ -471,7 +525,7 @@
         /* animation-delay: .5s; */
         -webkit-animation-timeline: scroll();
         animation-timeline: view();
-        animation-range: 100vh 160vh;
+        animation-range: 90vh 140vh;
         animation-duration: 1s;
 
     }
@@ -550,6 +604,7 @@
     @media screen and (min-width: 400px) {
         blockquote+figcaption:before {
             content: "—";
+            font-size: 1.5em;
             display: inline-block;
             color: var(--linkColor);
             margin-right: var(--xxs);
@@ -584,12 +639,12 @@
         border: 2px solid transparent;
         color: var(--copyColor);
         border-radius: 100px;
-        padding: var(--xs);
+        padding: var(--xs) 0;
         cursor: pointer;
         position: absolute;
         transform: translateY(-50%);
         transition: all 500ms ease-in;
-        top: calc(100% + var(--lg));
+        top: calc(100% + var(--lg) + 2px);
     }
 
     [data-slide-visible="1"]+.carousel--controls button:first-child,
@@ -611,14 +666,13 @@
     }
 
     .carousel--controls svg {
-        height: 36px;
-        width: 36px;
+        height: 32px;
+        width: 32px;
     }
 
     .carousel blockquote {
         opacity: .25;
         transition: opacity 500ms ease-out;
-        margin: auto;
     }
 
     .carousel>.js-active blockquote {
@@ -668,17 +722,18 @@
     }
 
     .carousel--pagination button {
-        height: 1em;
-        width: 1em;
+        height: 16px;
+        width: 16px;
         border: 2px solid var(--copyColor);
         background: transparent;
         border-radius: 100px;
         cursor: pointer;
+        transition: all 250ms ease-in;
     }
 
     .carousel--pagination button:hover,
     .carousel--pagination button:focus {
-        background: var(--surfaceColor);
+        background: var(--linkColor);
     }
 
     .carousel--pagination button.js-active {
@@ -722,17 +777,19 @@
         }
 
         .carousel--controls button {
-            left: var(--xl);
+            left: var(--lg);
             top: 50%;
             transform: translateY(-50%);
+            padding: var(--xs);
         }
 
         .carousel--controls .carousel--next {
-            right: var(--xl);
+            right: var(--lg);
         }
 
         .carousel blockquote {
             padding-bottom: var(--lg);
+            margin: auto;
         }
 
         .carousel figcaption {
@@ -792,4 +849,11 @@
             width: 100%
         }
     }
+}
+
+
+
+
+p {
+    max-width: 930px;
 }

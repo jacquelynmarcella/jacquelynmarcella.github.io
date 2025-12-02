@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let navbarToggle = document.getElementById("navbar--toggle");
     let navbarDropdown = document.getElementById("navbar--dropdown");
+    let navBarLinks = document.querySelectorAll(".navbar a");
 
     if (navbarToggle) {
         navbarToggle.addEventListener("click", function () {
@@ -83,6 +84,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
+
+    navBarLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            if (navbarDropdown) {
+                navbarDropdown.classList.remove("js-open");
+                navbarDropdown.classList.add("js-closed");
+                navbarToggle.setAttribute("aria-expanded", "false");
+                navbarToggle.classList.remove("is-active");
+                document.body.classList.remove("js-nav-open");
+            }
+            if (navbarToggle) {
+                navbarToggle.setAttribute("aria-expanded", "false");
+            }
+            document.body.classList.remove("js-nav-open");
+        });
+    });
 
     window.addEventListener("resize", function () {
         if (window.innerWidth > 800) {
