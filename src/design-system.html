@@ -5,6 +5,7 @@
 <head>
     <!--(bake /includes/head.html)-->
     <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+    <link rel="stylesheet" type="text/css" href="src/css/custom/highlight.css">
 </head>
 
 <body class="projects">
@@ -63,7 +64,7 @@
             <section>
                 <h2>Plan</h2>
 
-                <p>Smartsheet required a comprehensive migration of its CMS from Drupal 7 to Drupal 8. The legacy site had a huge maintenance problem: content management was heavily reliant on engineers due to a lack of templates and an inadequate authoring experience.</p>
+                <p>Smartsheet was ready to migrate its CMS from Drupal 7 to Drupal 8. However, the the site had a huge problem: content updates were heavily reliant on engineers due to a lack of templates and an incomplete authoring experience.</p>
                 <p>The engineering team recommended that we not only upgrade Drupal versions, but restructure the site to use a design system that is component-based, easy to author, modular, and positioned for long term growth as the Smartsheet brand evolves.</p>
                 <p>For the front end, rather than using a library like Bootstrap, we determined the best path forward was to leverage the exciting new features that were widely supported in CSS without any special framework. Flexbox, grid, and CSS custom properties could unlock all we needed for a simple variable-based approach to colors, spacing, and overall layout consistency. As the back end team worked on broader Drupal updates, the front end team set out to build an <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank">atomic component library</a> following the principles of <a href="https://talks.jensimmons.com/15TjNW/designing-intrinsic-layouts" target="_blank">intrinsic design</a>.
             </section>
@@ -89,7 +90,7 @@
                     </div>
                     <div class="flex--50">
                         <figure>
-                            <pre>
+                            <pre><code class="language-css">
 /** _tile-molecule.scss **/
 .tile-molecule {
     background: var(--cardBackground)
@@ -107,7 +108,7 @@
         background: var(--cardTagBg);
         color: var(--cardTagText);
     }
-}</pre>
+}</code></pre>
                             <figcaption>The component's SCSS file is largely comprised of global CSS custom properties.</figcaption>
                         </figure>
                     </div>
@@ -164,6 +165,8 @@
     <!--(bake /includes/footer.html)-->
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <!--(bake /includes/scripts.html)-->
 
 </body>

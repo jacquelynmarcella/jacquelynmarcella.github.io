@@ -5,10 +5,10 @@
 <head>
     <!--(bake /includes/head.html)-->
     <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+    <link rel="stylesheet" type="text/css" href="src/css/custom/highlight.css">
 </head>
 
 <body class="projects">
-
     <!-- Global nav -->
     <!--(bake /includes/nav.html)-->
 
@@ -81,14 +81,14 @@
             <section>
                 <h2>Process</h2>
                 <h3>Cross-site remediation process</h3>
-                <p>I oversaw the front-end effort, providing recommendations for refactoring and implementing complex fixes. A key part of the process was establishing a feedback loop: I conducted code reviews on the team's component refactors, while also having the team code review and test my work. This collaborative approach ensured that accessibility standards became an ingrained part of the team’s development culture moving forward.</p>
+                <p>I oversaw the front-end effort, providing recommendations for refactoring and implementing complex fixes. As we worked through completing over <b>165 issues in JIRA</b>, a key part of the process was establishing a feedback loop: I conducted code reviews on the team's component refactors, while also having the team code review and test my work. This collaborative approach ensured that accessibility standards became an ingrained part of the team’s development culture moving forward.</p>
 
                 <h3>Features table process</h3>
                 <p>For this remediation item, because this table is in a rich text field maintained by non-engineers, the simplest way to ensure long-term accessibility and ease of maintenance was to apply the necessary attributes via JavaScript. I wrote JavaScript functions that parse the table ensuring the appropriate <code>aria</code>, <code>tabindex</code>, <code>role</code>, and <code>scope</code> values are accurate on both load and user interaction.</p>
-                <!-- <p>The final markup follows this structure:</p>
+                <p class="no-mobile">The final markup follows this structure:</p>
 
-                <figure>
-                    <pre>
+                <figure class="no-mobile">
+                    <pre><code class="language-html">
 &lt;table role=&quot;treegrid&quot;&gt;
     &lt;caption&gt;Feature comparison table for four Smartsheet plan types&lt;/caption&gt;
     &lt;thead&gt;
@@ -117,12 +117,12 @@
         &lt;!-- continued for the remaining parent and child rows --&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</pre>
+</code></pre>
                     <figcaption>The <code>aria</code> attributes help define the current level of the row
                         (<code>aria-level</code>), how many rows are in that same level (<code>aria-setsize</code>), and the
                         position of that row relative to the other rows in the same level (<code>aria-posinset</code>).
                     </figcaption>
-                </figure> -->
+                </figure>
 
                 <p>The updated experience allows for keyboard navigation throughout the table using the expected treegrid keyboard commands and is a much more useful experience for screen readers.</p>
 
@@ -178,6 +178,8 @@
     <!--(bake /includes/footer.html)-->
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <!--(bake /includes/scripts.html)-->
 
 </body>

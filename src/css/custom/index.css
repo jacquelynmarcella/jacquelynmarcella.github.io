@@ -47,7 +47,7 @@
     }
 
     .header--container>div {
-        padding: var(--xl) 0 var(--lg) 0;
+        padding: var(--md) 0 0 0;
     }
 
     /* Header hero sticky fade effect - not optimal for shorter phone screens */
@@ -109,6 +109,10 @@
         header .align-center>* {
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .header--container>div {
+            padding: var(--xl) 0 var(--lg) 0;
         }
 
     }
@@ -593,7 +597,7 @@
     }
 
     .github-list li {
-        margin: var(--xs) 0;
+        margin: 0 0 var(--xs) 0;
     }
 
     @media screen and (min-width: 600px) {

@@ -219,6 +219,13 @@
 		line-height: 1;
 	}
 
+	.subhead code,
+	p code {
+		font-size: .9em;
+		text-align: left;
+		line-height: 1;
+	}
+
 	.size-2,
 	h2 {
 		font-size: var(--step-4);
@@ -243,7 +250,7 @@
 	}
 
 	p {
-		max-width: 900px;
+		max-width: 995px;
 		/*a11y readability */
 		margin-bottom: var(--lg);
 	}
@@ -330,7 +337,7 @@
 		font-family: "Space Mono", monospace;
 		background: var(--tagBg);
 		color: var(--tagText);
-		padding: var(--xxxs) var(--xxs);
+		padding: .2em var(--xxs);
 		border-radius: var(--borderRadiusSm);
 	}
 
@@ -378,6 +385,17 @@
 
 @layer atoms {
 
+	/* Skip to content - a11y link */
+	.skip-to-main:focus {
+		left: 50%;
+		transform: translateX(-50%);
+		opacity: 1;
+	}
+
+	.skip-to-main:focus+.navbar {
+		margin-top: var(--xl);
+	}
+
 	/* Header underline */
 	h2 {
 		position: relative;
@@ -410,7 +428,7 @@
 		display: inline-block;
 		background: var(--tagBg);
 		color: var(--tagText);
-		padding: var(--xxxs) var(--xxs);
+		padding: .2em var(--xxs);
 		border-radius: var(--borderRadiusSm);
 	}
 
@@ -856,7 +874,7 @@
 
 	/* Nav css */
 	nav.navbar {
-		padding: var(--xs) var(--md);
+		padding: var(--xxxs) var(--md);
 		position: relative;
 		z-index: 99;
 		position: fixed;
@@ -883,7 +901,7 @@
 	}
 
 	.hamburger {
-		transform: scale(.85);
+		transform: scale(.75);
 	}
 
 	.navbar--icon {
@@ -957,8 +975,8 @@
 	}
 
 	.theme-toggle svg {
-		width: 28px;
-		height: 28px;
+		width: 24px;
+		height: 24px;
 	}
 
 	/* todo - cascade, vs max width */
@@ -994,10 +1012,10 @@
 		.navbar--level-2 {
 			position: fixed;
 			flex-direction: column;
-			top: calc(var(--xs) + var(--xs) + 44px);
+			top: calc(var(--xxxs) + var(--xxxs) + 44px);
 			left: 0;
 			width: 100%;
-			height: calc(100vh - var(--xxl));
+			height: calc(100vh - var(--xl));
 			max-width: 100vw;
 			background: var(--cardBackground);
 			z-index: 99;
@@ -1043,6 +1061,9 @@
 
 	/* Desktop only styles - can we exclude on mobile somehow? */
 	@media screen and (min-width: 800px) {
+		nav.navbar {
+			padding: var(--xxs) var(--md);
+		}
 
 		.navbar--links {
 			width: 100%;
@@ -1059,6 +1080,11 @@
 
 		.theme-toggle {
 			margin-right: var(--xs);
+		}
+
+		.theme-toggle svg {
+			width: 28px;
+			height: 28px;
 		}
 	}
 

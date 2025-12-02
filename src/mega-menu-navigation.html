@@ -83,9 +83,16 @@
 
             <section>
                 <h2>Process</h2>
-                <p>I led the technical overhaul, collaborating closely with UI/UX designers, product owners, and back-end engineers to build an improved mega-menu that effectively reflected the new site IA. My core architectural decision was to treat the navigation as a single, consistent HTML element that is responsive across all viewports through CSS and JavaScript. This was a departure from the previous pattern of maintaining separate desktop and mobile navigation markup.</p>
+                <p>I led the technical overhaul, collaborating closely with UI/UX designers, product owners, and back-end engineers to build an improved mega-menu that effectively reflected the new site IA.
                 <p>Using Drupal, HTML, JavaScript, Twig, PHP, and CSS, I ensured the structure was built with correct semantic markup and ARIA attributes to achieve WCAG compliance for keyboard controls and screen readers.</p>
-                <p>Visually, I worked closely with design in Figma and during development to improve transitions and animations, overlays with grid layout structure, and add comprehensive color options that map to our <a href="design-system.html">global color schemes</a>.</p>
+                <p>For visual design, I worked closely with the design team in Figma and during development to improve transitions and animations, overlays with grid layout structure, and add comprehensive color options that map to our <a href="design-system.html">global color schemes</a>.</p>
+
+                <figure>
+                    <img src="img/nav-figma.png" class="width-max" loading="lazy" alt="Global navigation on mobile device">
+                    <figcaption>Figma collaboration between design, engineering, and product owners, where the navigation is clearly mapped to our global design system variables.</figcaption>
+                </figure>
+
+                <p>My approach was to treat the navigation as a single, consistent HTML element that is responsive across all viewports using CSS and JavaScript. This was a departure from the previous pattern of maintaining separate desktop and mobile navigation markup.</p>
                 <figure>
                     <img src="img/nav-mockup-large.png" class="width-max no-mobile" loading="lazy" alt="Global navigation on desktop, tablet, and mobile">
                     <img src="img/nav-new-desktop.png" class="width-max mobile-only" loading="lazy" alt="Globpal navigation on desktop">
@@ -93,11 +100,12 @@
                     <figcaption>New navigation is responsive to different screen sizes without needing to re-render separate mobile markup.</figcaption>
                 </figure>
 
+
                 <p>After researching available Drupal modules, I determined that the existing mega-menu contrib modules were overkill. Instead, I relied on the lightweight Custom Menu Links core module and developed custom Twig templating and PHP functions to render a straightforward mega-menu structure. This solution provided flexibility while remaining simple to maintain for both authors and engineers. I ensured the sustainability of this approach by seeking back-end engineering review before implementation.</p>
-                <p>The solution uses the familiar Drupal Menu UI, allowing authors to easily build a hierarchical tree of links. The custom theming layers allow authors to add elements like images, link styles, and promotional sections as needed, all without writing code or waiting for a deployment:</p>
+                <p>The solution uses the familiar Drupal Menu UI, allowing authors to easily build a hierarchical tree of links. The custom theming layers allow authors to add elements like images, link styles, and promotional sections as needed, and <b>localize into 8 languages</b> all without writing code or waiting for a deployment:</p>
 
                 <figure>
-                    <img src="img/nav-authoring.png" class="width-full" loading="lazy" alt="Two admin screens showing editing a menu link and how users can drag and drop items into different menu levels">
+                    <img src="img/nav-authoring.png" class="width-max" loading="lazy" alt="Two admin screens showing editing a menu link and how users can drag and drop items into different menu levels">
                     <figcaption>Maintaining the standard Drupal Menu UI allows non-engineers to maintain and localize content.</figcaption>
                 </figure>
             </section>
