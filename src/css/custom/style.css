@@ -947,7 +947,7 @@
 			max-width: 100vw;
 			background: var(--cardBackground);
 			z-index: 99;
-			padding: var(--sm) var(--md) calc(var(--xxxl) + var(--lg)) var(--md);
+			padding: var(--sm) var(--md) calc(var(--xxxl) + var(--xxl)) var(--md);
 		}
 
 		.navbar--level-2 li {

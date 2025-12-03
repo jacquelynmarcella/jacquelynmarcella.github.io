@@ -193,10 +193,10 @@
         z-index: 10;
     }
 
-    /* Safari icon placement */
+    /* iOS placement */
     @supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
         .timeline--progress {
-            left: 0;
+            left: -1px;
         }
     }
 
@@ -886,19 +886,7 @@
         display: inline-flex;
     }
 
-    .type .animate {
-        word-break: break-all;
-        height: 1.1em;
-        width: 0%;
-        overflow: hidden;
-        /* animation-delay: 1.5s; */
-        /* animation: type 1.75s ease-in-out forwards; */
-        padding: 0 var(--xxxs);
-    }
 
-    .js-typing .type .animate {
-        animation: type 1.25s ease-in-out forwards;
-    }
 
     .type .animate:before {
         content: " ";
@@ -907,6 +895,22 @@
 
     .type .end {
         margin-left: auto;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .type .animate {
+            word-break: break-all;
+            height: 1.1em;
+            width: 0%;
+            overflow: hidden;
+            /* animation-delay: 1.5s; */
+            /* animation: type 1.75s ease-in-out forwards; */
+            padding: 0 var(--xxxs);
+        }
+
+        .js-typing .type .animate {
+            animation: type 1.25s ease-in-out forwards;
+        }
     }
 
     @keyframes type {
