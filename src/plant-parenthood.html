@@ -1,43 +1,94 @@
 <!DOCTYPE html>
-<html>
-	<!-- Page head -->
+<html lang="en">
+<!-- Page head -->
+
+<head>
 	<!--(bake /includes/head.html)-->
-	<body>
+	<link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+</head>
+
+<body class="projects">
 	<!-- Global nav -->
 	<!--(bake /includes/nav.html)-->
 
-	<!-- Main section -->
-	<a href="blackjack.html" class="project-arrow back"><i class="fas fa-caret-left"></i></a>
-	<a href="skincare.html" class="project-arrow forward"><i class="fas fa-caret-right"></i></a>
-	<div class="section portfolio">
-		<h1>Plant Parenthood</h1>
-		<div class="subtext">
-			<h5><b>Node.js, Express.js, jQuery, SCSS, PostgreSQL, Sequelize, Semantic UI, Mocha, Chai</b></h5>
-			<h5><b>Role:</b> Front and Back End Developer</h5>
-			<hr>
+	<!-- Hero -->
+	<header id="top">
+		<div class="container two-up">
+			<div class="flex--66">
+				<h1>Node.js/Express.js app to monitor your houseplants care needs</h1>
+				<h2 class="visually-hidden">Overview</h2>
+				<h3 class="visually-hidden">Technology stack & skills used</h3>
+				<ul class="tags">
+					<li>JavaScript</li>
+					<li>Node.js</li>
+					<li>Express.js</li>
+					<li>jQuery</li>
+					<li>CSS</li>
+					<li>Semantic UI</li>
+					<li>PostgreSQL</li>
+					<li>Sequelize</li>
+					<li>Semantic UI</li>
+					<li>Mocha</li>
+					<li>Chai</li>
+				</ul>
+			</div>
+			<div class="flex--66">
+				<div class="tile-grid odd">
+					<div>
+						<h3>Role</h3>
+						<p>Front and Back End Developer</p>
+					</div>
+					<div>
+						<h3>Project links</h3>
+						<ul class="link-list">
+							<li><a href="https://github.com/jacquelynmarcella/plantparenthood" target="_blank">Github <!--(bake /includes/arrow-link.html)--></a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
 		</div>
-		<div class="button">
-			<a href="https://plant-parenthood.herokuapp.com" target="_blank">Live Site</a>
-			<a href="https://github.com/jacquelynmarcella/plantparenthood" target="_blank">Github</a>			
-		</div>	
-		<p>If you weren't blessed with a green thumb, it might be time for a trip to Plant Parenthood. Plant Parenthood is a Node application that makes it easy to keep track of your plant's care needs.</p>
-		<p>Most resources for plant care are filled with lengthy articles aimed at the experienced gardener. To make plant care information more accessible for the average user, I used web scraping to source images and care data, then I translated the data into a simple icon system.</p>
-		<p>With this data, I built a SQL database of 200+ houseplants and implemented CRUD routes that allow users to add and remove plants, comments, and journal entries. Utilizing Semantic UI and jQuery, I added search with autosuggest functionality, which makes it easy for users to find plants.</p>
-		<p><b>To view a populated test account, use the following credentials:</b><br><i>jane_doe@email.com | plantparenthood321</i></p>
-	</div> 
-	<div class="portfolio-images transition">
-		<a href="https://plant-parenthood.herokuapp.com" target="_blank"><img src="img/plant-parenthood-1.jpg" alt="Plant Parenthood desktop landing page"></a>
-	</div>
-	<div class="portfolio-images transition">
-		<a href="https://plant-parenthood.herokuapp.com" target="_blank"><img src="img/plant-parenthood-mobile.jpg" alt="Plant Parenthood mobile screens"></a>
-	</div>
-	<!-- Project nav -->
-	<div class="section project-nav">
-		<p><a href="index.html#featured-projects">Back to all projects</a></p>
-		<p><a href="blackjack.html">Previous</a> | <a href="skincare.html">Next</a></p>
-	</div>	
+	</header>
+
+	<!-- Main-->
+	<main id="main">
+		<div class="article-body">
+			<section>
+				<h2>Summary</h2>
+				<p>If you weren't blessed with a green thumb, it might be time for a trip to <b>Plant Parenthood</b>. Plant Parenthood is a Node application that makes it easy to keep track of your plant's care needs.</p>
+				<figure>
+					<img src="img/plant-parenthood-1.jpg" loading="lazy" class="width-content" alt="Visual of Plant Parenthood desktop landing page">
+				</figure>
+
+				<p>Most resources for plant care are filled with lengthy articles aimed at the experienced gardener. To make plant care information more accessible for the average user, I used web scraping to source images and care data, then I translated the data into a simple icon system.</p>
+				<p>With this data, I built a SQL database of 200+ houseplants and implemented CRUD routes that allow users to add and remove plants, comments, and journal entries. Utilizing Semantic UI and jQuery, I added search with autosuggest functionality, which makes it easy for users to find plants.</p>
+
+				<figure>
+					<img src="img/plant-parenthood-mobile.jpg" loading="lazy" class="width-content" alt="Mobile view of plant care details">
+				</figure>
+
+
+			</section>
+		</div>
+
+		<section class="projects-section">
+			<div class="container">
+				<h2 class="text-align-center">Additional projects</h2>
+				<ul class="tile-grid odd">
+					<!--(bake /includes/tile-design-system.html)-->
+					<!--(bake /includes/tile-mega-menu-navigation.html)-->
+					<!--(bake /includes/tile-accessibility.html)-->
+				</ul>
+			</div>
+		</section>
+	</main>
 
 	<!-- Footer -->
 	<!--(bake /includes/footer.html)-->
+
+	<!-- Scripts -->
+	<!--(bake /includes/scripts.html)-->
+
 </body>
+
 </html>

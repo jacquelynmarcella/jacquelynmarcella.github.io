@@ -197,6 +197,7 @@
         height: 10%;
         animation: timeline-progress linear forwards;
         animation-timeline: view();
+        animation-duration: 1s;
         background: var(--surfaceColor);
         width: 2px;
     }
@@ -385,6 +386,7 @@
         animation-delay: .5s;
         -webkit-animation-timeline: scroll();
         animation-timeline: view();
+        animation-duration: 1s;
     }
 
     .timeline--current-role .timeline--text-container {

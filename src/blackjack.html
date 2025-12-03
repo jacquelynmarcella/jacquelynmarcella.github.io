@@ -1,41 +1,85 @@
 <!DOCTYPE html>
-<html>
-	<!-- Page head -->
+<html lang="en">
+<!-- Page head -->
+
+<head>
 	<!--(bake /includes/head.html)-->
-	<body>
+	<link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+</head>
+
+<body class="projects">
 	<!-- Global nav -->
 	<!--(bake /includes/nav.html)-->
 
-	<!-- Main section -->
-	<a href="dreamstate.html" class="project-arrow back"><i class="fas fa-caret-left"></i></a>
-	<a href="plant-parenthood.html" class="project-arrow forward"><i class="fas fa-caret-right"></i></a>
-	<div class="section portfolio">
-		<h1>Blackjack</h1>
-		<div class="subtext">
-			<h5><b>jQuery, jQuery UI, Materialize</b></h5>
-			<h5><b>Role:</b> Front End Developer</h5>
-			<hr>
+	<!-- Hero -->
+	<header id="top">
+		<div class="container two-up">
+			<div class="flex--66">
+				<h1>JavaScript-based Blackjack game</h1>
+				<h2 class="visually-hidden">Overview</h2>
+				<h3 class="visually-hidden">Technology stack & skills used</h3>
+				<ul class="tags">
+					<li>JavaScript</li>
+					<li>CSS</li>
+					<li>jQuery</li>
+					<li>Materialize</li>
+				</ul>
+			</div>
+			<div class="flex--66">
+				<div class="tile-grid odd">
+					<div>
+						<h3>Role</h3>
+						<p>Front end developer</p>
+					</div>
+					<div>
+						<h3>Project links</h3>
+						<ul class="link-list">
+							<li><a href="https://jacquelynmarcella.github.io/blackjack/" target="_blank">Live game <!--(bake /includes/arrow-link.html)--></a></li>
+							<li><a href="https://github.com/jacquelynmarcella/blackjack" target="_blank">Github <!--(bake /includes/arrow-link.html)--></a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
 		</div>
-		<div class="button">
-			<a href="https://jacquelynmarcella.github.io/blackjack/" target="_blank">Live Site</a>
-			<a href="https://github.com/jacquelynmarcella/blackjack" target="_blank">Github</a>			
+	</header>
+
+	<!-- Main-->
+	<main id="main">
+		<div class="article-body">
+			<section>
+				<h2>Summary</h2>
+				<p>Try to beat the dealer in this take on the classic <b>Blackjack</b> game powered by jQuery and JavaScript. A user can place bets, split their deck, and even adjust aces when they go over 21.</p>
+				<p>Working with the Materialize framework, I developed this game with a mobile-first approach to ensure that users can play on phones and desktop alike. To make the game more engaging for the user, I created custom animations that transition between screens and create a sense of movement for the cards.</p>
+				<figure>
+					<img src="img/blackjack-1.jpg" alt="Blackjack desktop gameplay screen" loading="lazy" class="width-content">
+				</figure>
+				<figure>
+					<img src="img/blackjack-mobile.jpg" alt="Blackjack mobile screens" loading="lazy" class="width-content">
+				</figure>
+
+
+			</section>
 		</div>
-		<p>Try to beat the dealer in this take on the classic card game powered by jQuery and JavaScript. A user can place bets, split their deck, and even adjust aces when they go over 21.</p>
-		<p>Working with the Materialize framework, I developed this game with a mobile-first approach to ensure that users can play on phones and desktop alike. To make the game more engaging for the user, I created custom animations that transition between screens and create a sense of movement for the cards.</p>
-	</div>
-	<div class="portfolio-images transition">
-		<a href="https://jacquelynmarcella.github.io/blackjack/" target="_blank"><img src="img/blackjack-1.jpg" alt="Blackjack desktop gameplay screen"></a>
-	</div>
-	<div class="portfolio-images transition">
-		<a href="https://jacquelynmarcella.github.io/blackjack/" target="_blank"><img src="img/blackjack-mobile.jpg" alt="Blackjack mobile screens"></a>
-	</div>
-	<!-- Project nav buttons -->
-	<div class="section project-nav">
-		<p><a href="index.html#featured-projects">Back to all projects</a></p>
-		<p><a href="dreamstate.html">Previous</a> | <a href="plant-parenthood.html">Next</a></p>
-	</div>
+
+		<section class="projects-section">
+			<div class="container">
+				<h2 class="text-align-center">Additional projects</h2>
+				<ul class="tile-grid odd">
+					<!--(bake /includes/tile-design-system.html)-->
+					<!--(bake /includes/tile-mega-menu-navigation.html)-->
+					<!--(bake /includes/tile-accessibility.html)-->
+				</ul>
+			</div>
+		</section>
+	</main>
 
 	<!-- Footer -->
 	<!--(bake /includes/footer.html)-->
+
+	<!-- Scripts -->
+	<!--(bake /includes/scripts.html)-->
+
 </body>
+
 </html>
