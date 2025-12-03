@@ -44,25 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // // Define a function to get and log the element's height
     const headerContainer = document.querySelector('.header--hero');
-    let headerContentHeight = 500; //default value
-
-    function getHeaderHeight() {
-        let stickyHeader = document.getElementById('sticky-header');
-        if (stickyHeader) {
-            let headerHeight = stickyHeader.offsetHeight;
-            headerContentHeight = headerHeight;
-            let tripleHeight = headerHeight * 3;
-            headerContainer.classList.add('js-sticky');
-            headerContainer.style.setProperty('--headerContainerHeight', tripleHeight + 'px');
-            headerContainer.style.setProperty('--headerContentHeight', headerHeight + 'px');
-        }
-    }
-    // Add an event listener to the window for the 'resize' event
-    window.addEventListener('resize', getHeaderHeight);
-    getHeaderHeight();
-
+    const stickyHeader = document.getElementById('sticky-header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY <= (headerContentHeight * .90)) {
+        if (!stickyHeader) return;
+        let headerHeight = stickyHeader.offsetHeight;
+        // Typing effect
+        if (window.scrollY <= (headerHeight / 3)) {
             headerContainer.classList.add("js-typing");
         } else {
             headerContainer.classList.remove("js-typing");
@@ -71,6 +58,22 @@ document.addEventListener('DOMContentLoaded', function () {
             headerContainer.classList.remove("js-animate");
         } else {
             headerContainer.classList.add("js-animate");
+        }
+        // Sticky header 
+        if (window.scrollY > 1) {
+            headerContainer.classList.add('js-sticky');
+            // 2.5x header height is how we compute 100% translate
+            let percentage = window.scrollY / (headerHeight * 2);
+            percentage = Math.min(1, Math.max(0, percentage));
+            headerContainer.style.setProperty('--stickyHeaderPosition', (percentage * 100) + '%');
+            // Update opacity from 1 to 0.75
+            let opacity = 1 - (percentage * 0.75);
+            headerContainer.style.setProperty('--stickyHeaderOpacity', opacity);
+
+        } else {
+            headerContainer.classList.remove('js-sticky');
+            headerContainer.style.removeProperty('--stickyHeaderPosition');
+            headerContainer.style.removeProperty('--stickyHeaderOpacity');
         }
     });
 
@@ -178,5 +181,82 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+
+    // Timeline progress bar animation
+    const timelineProgress = document.querySelector('.timeline--progress');
+    const progressBar = document.querySelector('.timeline--progress-bar');
+
+    function updateTimelineProgress() {
+        if (!timelineProgress || !progressBar) return;
+
+        const rect = timelineProgress.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Calculate the target position (75% down the viewport)
+        const targetY = windowHeight * 0.75;
+
+        // Calculate the height of the bar needed to reach the target position
+        // rect.top is the top of the progress track
+        const height = targetY - rect.top;
+
+        // Calculate percentage relative to the track height
+        let percentage = (height / rect.height) * 100;
+
+        // Clamp percentage between 0 and 100
+        percentage = Math.max(0, Math.min(100, percentage));
+
+
+
+        // Update polaroid opacity
+        const polaroid = document.querySelector('.polaroid--2');
+        if (polaroid) {
+            // Delay the opacity transition so it starts later
+            const delay = 25; // Percentage to wait before starting
+            let opacity = (percentage - delay) / (100 - delay);
+
+            // Clamp between 0 and 1
+            opacity = Math.max(0, Math.min(1, opacity));
+
+            polaroid.style.setProperty('--polaroidOpacity', opacity);
+        }
+
+        percentage = (percentage < 10) ? 10 : percentage;
+        progressBar.style.setProperty('--timelineProgressHeight', percentage + '%');
+
+    }
+
+    if (timelineProgress && progressBar) {
+        window.addEventListener('scroll', updateTimelineProgress);
+        window.addEventListener('resize', updateTimelineProgress);
+        // Initial call
+        updateTimelineProgress();
+    }
+
+    // Timeline items animation
+    const timelineItems = document.querySelectorAll('.timeline--item:not(.timeline--current-role) .timeline--text-container');
+
+    function updateTimelineItems() {
+        const windowHeight = window.innerHeight;
+        // Trigger when the element is in the bottom 25% of the viewport (75% down)
+        const triggerPoint = windowHeight * 0.75;
+
+        timelineItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            // If the top of the element is above the trigger point (visible or near visible)
+            if (rect.top < triggerPoint) {
+                item.classList.add('js-active');
+            } else {
+                // If the user scrolls up to the top again (element goes back down), remove class
+                item.classList.remove('js-active');
+            }
+        });
+    }
+
+    if (timelineItems.length > 0) {
+        window.addEventListener('scroll', updateTimelineItems);
+        window.addEventListener('resize', updateTimelineItems);
+        // Initial call
+        updateTimelineItems();
+    }
 
 });

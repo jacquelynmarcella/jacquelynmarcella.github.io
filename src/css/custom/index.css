@@ -51,9 +51,19 @@
     }
 
     /* Header hero sticky fade effect - not optimal for shorter phone screens */
-    @media screen and (min-height: 880px) {
+    @media screen and (min-height: 800px) {
 
-        .js-sticky.header--hero {
+        @media (prefers-reduced-motion: no-preference) {
+            .js-sticky.header--hero {
+                --stickyHeaderPosition: 0;
+                --stickyHeaderOpacity: 1;
+                transform: translateY(var(--stickyHeaderPosition));
+                opacity: var(--stickyHeaderOpacity);
+            }
+        }
+
+
+        /* .js-sticky.header--hero {
             max-height: calc(var(--headerContentHeight) + var(--xxxl) + var(--xxxl));
         }
 
@@ -76,10 +86,10 @@
             animation-timeline: view();
             animation-range: 100vh 150vh;
             animation-duration: 1s;
-        }
+        } */
     }
 
-    @media screen and (min-width: 600px) and (min-height: 900px) {
+    /* @media screen and (min-width: 600px) and (min-height: 900px) {
         .header--hero .header--container {
             animation-range: 100vh 140vh;
         }
@@ -95,7 +105,7 @@
             opacity: .5;
             transform: translate(0, 5vh) translateZ(0);
         }
-    }
+    } */
 
 
 
@@ -118,6 +128,16 @@
     }
 
     /* Skills */
+    .skills {
+        margin-top: var(--md);
+    }
+
+    /* @media screen and (min-width: 600px) {
+        .skills {
+            margin-top: 0;
+        }
+    } */
+
     .skills--container {
         display: flex;
         flex-direction: column;
@@ -146,11 +166,12 @@
 
     .timeline--progress {
         content: "";
-        width: 20px;
-        height: 94%;
+        width: 2px;
+        height: 91%;
         position: absolute;
-        top: 27px;
-        left: 12px;
+        top: 32px;
+        /* left: 12px; */
+        left: -4px;
         font-size: 12px;
         /* background: linear-gradient(to bottom, var(--surfaceColor), var(--cardBackground)); */
 
@@ -165,7 +186,18 @@
         position: absolute;
         z-index: 9;
         left: -20px;
-        top: 21px;
+        top: 20px;
+    }
+
+    .timeline--item:last-child:after {
+        z-index: 10;
+    }
+
+    /* Safari icon placement */
+    @supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
+        .timeline--progress {
+            left: 0;
+        }
     }
 
 
@@ -191,16 +223,24 @@
         position: absolute;
         left: -5px;
         top: -5px;
+        width: 20px;
     }
 
     .timeline--progress-bar {
+        --timelineProgressHeight: 10%;
         transform-origin: top;
-        height: 10%;
-        animation: timeline-progress linear forwards;
-        animation-timeline: view();
-        animation-duration: 1s;
+        /* Default for prefers reduced motion or unsupported */
+        height: 100%;
         background: var(--surfaceColor);
         width: 2px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+
+        .timeline--progress-bar {
+            height: var(--timelineProgressHeight);
+            margin-bottom: 4px;
+        }
     }
 
     .timeline--item {
@@ -236,9 +276,10 @@
             position: relative;
             background: var(--cardBackground);
             color: var(--copyColor);
-            margin-top: var(--xxl);
             z-index: 9;
             font-weight: 500;
+            margin-left: calc(var(--sm) * -1);
+            margin-top: var(--xl);
         }
 
         .js-mobile-collapsed .timeline--items {
@@ -262,9 +303,7 @@
         } */
 
 
-        .timeline--progress-bar {
-            animation-range: 25% 80%;
-        }
+
     }
 
     @media screen and (min-width: 780px) and (max-width: 1000px) {
@@ -279,9 +318,7 @@
 
     @media screen and (min-width: 780px) {
 
-        .timeline--progress-bar {
-            animation-range: 25% 88%;
-        }
+
 
         button.timeline--button,
         button.timeline--button span {
@@ -321,7 +358,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--lg);
-        margin-left: 16px;
+        /* margin-left: 16px; */
         /*push due to border widths */
         position: relative;
     }
@@ -368,27 +405,57 @@
 
     .timeline--container {
         position: relative;
+        margin-left: var(--sm);
     }
 
+    @media screen and (min-width: 780px) {
+        .timeline--container {
+            margin-left: 0;
+        }
+    }
 
 
     /** Animation */
     .timeline--text-container {
         position: relative;
         z-index: 1;
-        opacity: .25;
+        /* opacity: .25;
         transform: translate(-2em, 0) scale(.85);
         animation: 1.5s timeline-focus ease-in-out forwards;
         animation-delay: .5s;
         -webkit-animation-timeline: scroll();
         animation-timeline: view();
-        animation-duration: 1s;
+        animation-duration: 1s; */
     }
 
-    .timeline--current-role .timeline--text-container {
-        opacity: 1;
-        transform: translateY(0);
-        animation: unset;
+
+
+    @media (prefers-reduced-motion: no-preference) {
+        .timeline--text-container {
+            opacity: .25;
+            transition: all 150ms ease-out;
+            transform: translate(-2em, 0) scale(.85);
+        }
+
+        .timeline--current-role .timeline--text-container {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+            transition: unset;
+        }
+
+        .timeline--item:after {
+            opacity: 0;
+        }
+
+        .timeline--text-container.js-active {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+
+        .timeline--item:has(.js-active):after {
+            opacity: 1;
+        }
+
     }
 
     .timeline--current-role:after {
@@ -419,22 +486,6 @@
         }
     }
 
-    @keyframes timeline-focus {
-        0% {
-            opacity: .25;
-            transform: translate(-2em, 0) scale(.85);
-        }
-
-        20% {
-            opacity: 1;
-            transform: translate(0, 0) scale(1);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translate(0, 0) scale(1);
-        }
-    }
 
     /* Experience - developing polaroid */
     /* Do not use dark/light schemes as polaroid stays "light" on all schemes */
@@ -531,15 +582,16 @@
     }
 
     .polaroid--2 {
-        opacity: 0;
+        opacity: 1;
         z-index: 1;
-        animation: .5s polaroid-developing ease-in-out forwards;
-        /* animation-delay: .5s; */
-        -webkit-animation-timeline: scroll();
-        animation-timeline: view();
-        animation-range: 70vh 170vh;
-        animation-duration: 1s;
 
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .polaroid--2 {
+            --polaroidOpacity: 0;
+            opacity: var(--polaroidOpacity);
+        }
     }
 
     .polaroid--slide-in {

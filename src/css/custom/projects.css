@@ -442,7 +442,7 @@ header .container {
     max-width: 1500px;
     margin: 0 auto;
     align-items: center;
-    gap: var(--lg) var(--xxl);
+    gap: var(--xxl) var(--xxl);
 }
 
 header .tags {
@@ -466,7 +466,7 @@ header .stats--number {
 }
 
 header .tile-grid {
-    gap: var(--lg);
+    gap: var(--md);
 }
 
 header .container {
@@ -483,6 +483,10 @@ header .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    header .tile-grid {
+        gap: var(--lg);
     }
 
     header .tile-grid div:nth-child(5):last-child {
