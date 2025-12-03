@@ -639,14 +639,6 @@
         }
     }
 
-    @media screen and (min-width: 850px) {
-        blockquote p {
-            font-size: 1.215rem;
-            letter-spacing: 0;
-            font-weight: 500
-        }
-    }
-
     .carousel>* {
         opacity: 1;
         flex: 1;
