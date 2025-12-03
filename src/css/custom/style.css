@@ -818,6 +818,8 @@
 		width: 44px;
 		text-align: right;
 		padding-top: 4px;
+		margin-right: -4px;
+		margin-left: -4px;
 	}
 
 	.hamburger {
