@@ -202,17 +202,18 @@
 
 
     .timeline--progress-marker {
-        position: relative;
-        left: -4px;
+        display: none;
+        /* position: relative;
+        left: -5px;
         top: -8px;
         font-size: 12px;
         line-height: 0;
         height: 100%;
         z-index: 1;
-        color: var(--linkColor);
+        color: var(--linkColor); */
     }
 
-    .timeline--progress-marker:before {
+    /* .timeline--progress-marker:before {
         background: var(--cardBackground);
         border-radius: 100px 100px 0 0;
         height: 100%;
@@ -224,7 +225,7 @@
         left: -5px;
         top: -5px;
         width: 20px;
-    }
+    } */
 
     .timeline--progress-bar {
         --timelineProgressHeight: 10%;
@@ -240,6 +241,7 @@
         .timeline--progress-bar {
             height: var(--timelineProgressHeight);
             margin-bottom: 4px;
+            background: linear-gradient(to bottom, var(--surfaceColor) 95%, var(--cardBackground));
         }
     }
 
@@ -433,7 +435,7 @@
     @media (prefers-reduced-motion: no-preference) {
         .timeline--text-container {
             opacity: .25;
-            transition: all 150ms ease-out;
+            transition: all 250ms ease-out;
             transform: translate(-2em, 0) scale(.85);
         }
 
@@ -445,6 +447,7 @@
 
         .timeline--item:after {
             opacity: 0;
+            transition: all 250ms ease-out;
         }
 
         .timeline--text-container.js-active {

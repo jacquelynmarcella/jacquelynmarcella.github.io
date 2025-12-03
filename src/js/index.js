@@ -44,21 +44,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // // Define a function to get and log the element's height
     const headerContainer = document.querySelector('.header--hero');
+    const headerCode = document.querySelector('.header--hero code');
     const stickyHeader = document.getElementById('sticky-header');
+    const main = document.querySelector('main');
     window.addEventListener('scroll', () => {
         if (!stickyHeader) return;
         let headerHeight = stickyHeader.offsetHeight;
+        let codeHeight = headerCode.getBoundingClientRect();
+        let codeTop = codeHeight.top;
+        let mainPos = main.getBoundingClientRect();
+        let mainTop = mainPos.top;
         // Typing effect
-        if (window.scrollY <= (headerHeight / 3)) {
+        if (codeTop > 0 && codeTop <= mainTop) {
             headerContainer.classList.add("js-typing");
         } else {
             headerContainer.classList.remove("js-typing");
         }
-        if (window.scrollY <= 0) {
-            headerContainer.classList.remove("js-animate");
-        } else {
-            headerContainer.classList.add("js-animate");
-        }
+
         // Sticky header 
         if (window.scrollY > 1) {
             headerContainer.classList.add('js-sticky');
