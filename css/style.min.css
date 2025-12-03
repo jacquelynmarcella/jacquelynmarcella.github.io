@@ -1,0 +1,1 @@
+.timeline ul{display:flex;list-style:none;flex-direction:row;justify-content:space-between;flex-wrap:nowrap}.tile-grid{display:grid;list-style:none;grid-template-columns:1fr 1fr 1fr;gap:1em}.tile-grid li{height:200px;padding:1em;border:1px solid #000}.old-grid{list-style:none}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+
+<head>
+    <!--(bake /includes/head.html)-->
+    <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+</head>
+
+<body class="projects">
+    <!-- Global nav -->
+    <!--(bake /includes/nav.html)-->
+
+    <!-- Hero -->
+    <header id="top">
+        <div class="container two-up">
+            <div class="flex--66">
+                <h1>Improved site and SEO performance through media optimization</h1>
+                <h2 class="visually-hidden">Overview</h2>
+                <h3 class="visually-hidden">Technology stack & skills used</h3>
+                <ul class="tags">
+                    <li>Drupal</li>
+                    <li>PHP</li>
+                    <li>Twig</li>
+                    <li>SEO</li>
+                    <li>Lottie</li>
+                </ul>
+            </div>
+            <div class="flex--66">
+                <h3 class="visually-hidden">Project impact</h3>
+                <div class="tile-grid odd">
+                    <div>
+                        <span class="stats--number size-2">97%</span>
+                        <span class="stats--desc">image file size reduction</span>
+                    </div>
+                    <div>
+                        <span class="stats--number size-2">94%</span>
+                        <span class="stats--desc">animation file size reduction</span>
+                    </div>
+                    <div>
+                        <span class="stats--number size-2">28%</span>
+                        <span class="stats--desc">increase in Google image search impressions</span>
+                    </div>
+                    <div>
+                        <h3>Company</h3>
+                        <p>Smartsheet</p>
+                    </div>
+                    <div>
+                        <h3>Role</h3>
+                        <p>Lead front end engineer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main-->
+    <main id="main">
+        <div class="article-body">
+            <section>
+                <h2>Plan</h2>
+                <p>When examining our Lighthouse speed scores for the primary Smartsheet site and investigating in the Network tab, I noticed a puzzling trend: we had responsive image modules and image compression enabled, but image file sizes were still much larger than I’d expect, especially on mobile.</p>
+                <p>Due to my research and advocacy, I was able to persuade the business to prioritize multiple phases of this work over time. We sought to address the following goals in three phases:</p>
+                <ol>
+                    <li><b>Improve responsive image formats:</b> Ensure appropriate sized images are rendered, especially on mobile.</li>
+                    <li><b>Implement WebP module:</b> Reduce reliance on legacy PNG and JPG formats by allowing for server-side conversion to WebP format.</li>
+                    <li><b>Integrate Lottie:</b> Provide authors with a performant SVG alternative to heavy MP4 and GIF animations.</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Process</h2>
+                <h3>Phase 1: Improve responsive image formats</h3>
+                <p>After extensive research on our current responsive image sizes and settings, I realized that the default values we use for the <code>sizes</code> and <code>srcset</code> attributes didn’t encourage the browser to actually pick the smaller size for mobile, even though they are industry standard values. </p>
+                <p>Thinking big picture, I started testing out various combinations of <code>sizes</code> and <code>srcset</code> values for image tags in an <a href="https://codepen.io/jacquelynmarcella/pen/odRzrw" target="_blank">experimental codepen</a> to determine values that would encourage the browser to render the smaller size file on mobile. Then, I implemented these configurations into Drupal as new responsive image style options, integrating them directly into our <a href="design-system.html">global component library</a> for a sitewide application.</p>
+                <p>As part of this first phase, I also noticed that our background images were skipping our responsive image formatter entirely, due to how background images were were authored and themed in our components. I wrote new PHP functions in our theme to provide a range of compressed image sizes for authored backgrounds that get appended as a <code>&lt;style&gt;</code> tag, so that the background is style applied like a traditional CSS background, while actually loading a properly sized file on smaller devices.</p>
+                <div class="two-up width-max">
+                    <div class="flex--50">
+                        <figure>
+                            <img src="img/background-size-before.png" loading="lazy" alt="Screenshot of Network tap, showing 1.5MB file size">
+                            <figcaption>Before: Background images were 1.5MB and larger, even on mobile.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="flex--50">
+                        <figure>
+                            <img src="img/background-size-after.png" loading="lazy" alt="Screenshot of Network tab, showing 36.8kB file size">
+                            <figcaption>After: The same background image is now down to 36.8kB on mobile.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <h3>Phase 2: Implement WebP module</h3>
+                <p>After launching the first phase, we knew that even with their newly reduced sizes, PNGs and JPGs were still not optimal for performance. I collaborated with our back end engineers to get the WebP Drupal module installed, which converts regular PNG files into WebP images, allowing our web authors to not have to do any extra work to improve image performance.</p>
+                <p>I did a front end pass on the work, ensuring that the original PNG fallbacks (with the responsive image formats from Phase 1) still worked as expected and that there was no regression in our site’s design or performance.</p>
+
+                <h3>Phase 3: Integrate Lottie</h3>
+                <p>Due to the need to make compelling landing pages, large file size MP4s and GIFs were everywhere on the site. If engineering forced compression of these files, they became so low quality that it was a dealbreaking issue for stakeholders.</p>
+                <p>I advocated for and supported the engineering and design teams in the effort to integrate Lottie as a media type on the site. Now, authors have begun converting pages that once had large MP4s/GIFs into pages with extremely low file size and crisp Lottie SVG animations.</p>
+            </section>
+
+            <section>
+                <h2>Impact</h2>
+                <p>The first rounds of improving responsive image formats and shifting to WebP led to both file size improvements and SEO wins. This work <b>reduced image file sizes by up to 97%</b>, which resulted in a <b>28% increase in Google image search impressions</b> and a <b>14% uptick in clicks</b>.</p>
+                <p>While sitewide content conversion to Lottie is ongoing, we are seeing <b>improvements to animation file sizes by over 94%</b> and have launched compelling new pages that are entirely composed of performant Lottie SVG animations.</p>
+            </section>
+
+            <nav class="project-nav" aria-label="Project pagination">
+                <ul>
+                    <li><a href="accessibility.html"><span class="direction">Previous project</span> <span class="description">Accessibility Remediation</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                    <li><a href="search-api.html"><span class="direction">Next project</span> <span class="description">Search API Migration</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="projects-section">
+            <div class="container">
+                <h2 class="text-align-center">Additional projects</h2>
+                <ul class="tile-grid odd">
+                    <!--(bake /includes/tile-design-system.html)-->
+                    <!--(bake /includes/tile-form-api.html)-->
+                    <!--(bake /includes/tile-mega-menu-navigation.html)-->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!--(bake /includes/footer.html)-->
+
+    <!-- Scripts -->
+    <!--(bake /includes/scripts.html)-->
+
+</body>
+
+</html>

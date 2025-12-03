@@ -1,0 +1,30 @@
+<script>
+	(function () {
+		let theme = localStorage.getItem('jm-color-mode') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		document.documentElement.setAttribute('data-theme', theme);
+	})();
+</script>
+<style>
+	[data-theme="dark"] body {
+		background-color: rgba(18, 18, 12, 1);
+		color: rgba(244, 243, 238, 1);
+	}
+</style>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Front-end web engineer with over 8 years of technical experience designing and building UIs in JavaScript, CSS, and Drupal. Based in Portland, OR." />
+<title>Jacquelyn Marcella | Front End Software Engineer</title>
+
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" media="(prefers-color-scheme: light)">
+<link rel="icon" href="img/favicon-dark.ico" type="image/x-icon" media="(prefers-color-scheme: dark)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz@0,9..144;1,9..144&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="src/css/custom/reset.css">
+<link rel="stylesheet" type="text/css" href="src/css/custom/style.css">
+<link rel="stylesheet" type="text/css" href="src/css/custom/hamburgers.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/within.min.css">

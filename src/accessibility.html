@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Page head -->
+
+<head>
+    <!--(bake /includes/head.html)-->
+    <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
+    <link rel="stylesheet" type="text/css" href="src/css/custom/highlight.css">
+</head>
+
+<body class="projects">
+    <!-- Global nav -->
+    <!--(bake /includes/nav.html)-->
+
+    <!-- Hero -->
+    <header id="top">
+        <div class="container two-up">
+            <div class="flex--66">
+                <h1>Led accessibility remediation to achieve WCAG compliance</h1>
+                <h2 class="visually-hidden">Overview</h2>
+                <h3 class="visually-hidden">Technology stack</h3>
+                <ul class="tags">
+                    <li>WCAG Accessibility</li>
+                    <li>CSS</li>
+                    <li>Sass</li>
+                    <li>JavaScript</li>
+                    <li>jQuery</li>
+                    <li>Figma</li>
+                    <li>Drupal</li>
+                    <li>Twig</li>
+                </ul>
+            </div>
+            <div class="flex--66">
+                <h3 class="visually-hidden">Project impact</h3>
+                <div class="tile-grid odd">
+                    <div>
+                        <span class="stats--number size-2">92%+</span>
+                        <span class="stats--desc">WCAG 2.1 AA compliance</span>
+                    </div>
+                    <div>
+                        <span class="stats--number size-2">165</span>
+                        <span class="stats--desc">issues resolved in JIRA</span>
+                    </div>
+                    <div>
+                        <span class="stats--number size-2">2</span>
+                        <span class="stats--desc">multilingual enterprise sites remediated</span>
+                    </div>
+                    <div>
+                        <h3>Company</h3>
+                        <p>Smartsheet</p>
+                    </div>
+                    <div>
+                        <h3>Role</h3>
+                        <p>Lead front end engineer</p>
+                    </div>
+                    <div>
+                        <h3>Project links</h3>
+                        <ul class="link-list">
+                            <li><a href="https://www.smartsheet.com/pricing#p-id-759697" target="_blank">Treegrid table <!--(bake /includes/arrow-link.html)--></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Main-->
+    <main id="main">
+        <div class="article-body">
+            <section>
+                <h2>Plan</h2>
+                <p>A third-party accessibility audit of Smartsheet's web properties validated the engineering team's hypothesis: there were several opportunities for improvement to achieve WCAG 2.1 AA compliance, especially for interactive components.</p>
+                <p>Leading the front-end effort, I helped provide recommendations for a plan of action for the team to organize our work by component and by issue type. Many of the issues could be resolved centrally in our <a href="design-system.html">component-based system</a>.
+                </p>
+                <p>One of the more complex findings was on the Plans and Pricing page, which is one of the highest trafficked pages on the primary Smartsheet website. The large features comparison data table was inaccessible as it was not navigable by a keyboard or screenreader. As the engineer working on this issue, I determined the best solution was to re-engineer the table’s structure following the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treegrid/" target="_blank">treegrid pattern</a>.
+                </p>
+            </section>
+
+            <section>
+                <h2>Process</h2>
+                <h3>Cross-site remediation process</h3>
+                <p>I oversaw the front-end effort, providing recommendations for refactoring and implementing complex fixes. As we worked through completing over <b>165 issues in JIRA</b>, a key part of the process was establishing a feedback loop: I conducted code reviews on the team's component refactors, while also having the team code review and test my work. This collaborative approach ensured that accessibility standards became an ingrained part of the team’s development culture moving forward.</p>
+
+                <h3>Features table process</h3>
+                <p>For this remediation item, because this table is in a rich text field maintained by non-engineers, the simplest way to ensure long-term accessibility and ease of maintenance was to apply the necessary attributes via JavaScript. I wrote JavaScript functions that parse the table ensuring the appropriate <code>aria</code>, <code>tabindex</code>, <code>role</code>, and <code>scope</code> values are accurate on both load and user interaction.</p>
+                <p class="no-mobile">The final markup follows this structure:</p>
+
+                <figure class="no-mobile">
+                    <pre><code class="language-html">
+&lt;table role=&quot;treegrid&quot;&gt;
+    &lt;caption&gt;Feature comparison table for four Smartsheet plan types&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Feature&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Pro&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Business&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Enterprise&lt;/th&gt;
+            &lt;th scope=&quot;col&quot; role=&quot;columnheader&quot;&gt;Advanced Work Management&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;!-- Parent level row when expanded --&gt;
+        &lt;tr role=&quot;row&quot; tabindex=&quot;0&quot; aria-level=&quot;1&quot; aria-setsize=&quot;9&quot; aria-posinset=&quot;1&quot; 
+            aria-expanded=&quot;true&quot; aria-selected=&quot;true&quot;&gt;
+            &lt;td colspan=&quot;5&quot; role=&quot;gridcell&quot; scope=&quot;rowgroup&quot;&gt;Essential features&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!-- Child level row --&gt;
+        &lt;tr role=&quot;row&quot; tabindex=&quot;-1&quot; aria-level=&quot;2&quot; aria-posinset=&quot;1&quot; aria-setsize=&quot;10&quot;&gt;
+            &lt;td role=&quot;rowheader&quot; scope=&quot;row&quot;&gt;Sheets&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;Pro plan feature info&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;Business plan feature info&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;Enterprise plan feature info&lt;/td&gt;
+            &lt;td role=&quot;gridcell&quot;&gt;AWM plan feature info&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!-- continued for the remaining parent and child rows --&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+                    <figcaption>The <code>aria</code> attributes help define the current level of the row
+                        (<code>aria-level</code>), how many rows are in that same level (<code>aria-setsize</code>), and the
+                        position of that row relative to the other rows in the same level (<code>aria-posinset</code>).
+                    </figcaption>
+                </figure>
+
+                <p>The updated experience allows for keyboard navigation throughout the table using the expected treegrid keyboard commands and is a much more useful experience for screen readers.</p>
+
+                <figure>
+                    <video src="img/accessibility-nvda-treegrid.mp4" preload="none" poster="img/tile-accessibility.png" class="width-max" muted="false" controls loop="false" playsinline title="NVDA demo of the treegrid table experience" width="1600" height="900">
+                    </video>
+                    <figcaption>Video of keyboard only table navigation along with NVDA screen reader enabled. Play with
+                        audio enabled to hear screen reader announcements.</figcaption>
+                </figure>
+
+                <p>The authoring experience is still simple given the complexity of the table. Website authors are able to update data in in this treegrid without the need for engineering support:</p>
+
+                <figure>
+                    <img src="img/accessibility-table-authoring.png" class="width-content" loading="lazy" alt="Visual of rich text editor showing the treegrid table authoring experience." width="1272" height="991" style="border-radius: 0;">
+                    <figcaption>Simple table editor experience allows authors to maintain an accessible treegrid by using
+                        familiar rich text formatting options.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h2>Impact</h2>
+                <p>Due to our cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA compliance</b>.</p>
+
+                <p>Additionally, the project resulted in a significant uplift in the front-end team's technical proficiency and governance of accessibility. We now proactively integrate both automated and manual testing into our workflow:</p>
+                <ol>
+                    <li><b>Automated checks:</b> Leveraging tools like WebAIM and Lighthouse for fast, baseline auditing of components.</li>
+                    <li><b>Manual validation:</b> Using screen reader software, specifically NVDA, to manually test user flows and confirm that interactive elements function correctly within their intended context, as we understand that automated tools can only catch a fraction of issues.</li>
+                </ol>
+                <p>This project transitioned accessibility from a reactive fix to a proactive development standard for all future projects at Smartsheet.</p>
+            </section>
+
+            <nav class="project-nav" aria-label="Project pagination">
+                <ul>
+                    <li><a href="mega-menu-navigation.html"><span class="direction">Previous project</span> <span class="description">Mega-Menu Navigation</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                    <li><a href="media-optimization.html"><span class="direction">Next project</span> <span class="description">Media Optimization</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <section class="projects-section">
+            <div class="container">
+                <h2 class="text-align-center">Additional projects</h2>
+                <ul class="tile-grid odd">
+                    <!--(bake /includes/tile-design-system.html)-->
+                    <!--(bake /includes/tile-form-api.html)-->
+                    <!--(bake /includes/tile-search-api.html)-->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!--(bake /includes/footer.html)-->
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!--(bake /includes/scripts.html)-->
+
+</body>
+
+</html>

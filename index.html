@@ -1,181 +1,746 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<!-- Page head -->
+
 <head>
+	<script>
+		(function () {
+			let theme = localStorage.getItem('jm-color-mode') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			document.documentElement.setAttribute('data-theme', theme);
+		})();
+	</script>
+	<style>
+		[data-theme="dark"] body {
+			background-color: rgba(18, 18, 12, 1);
+			color: rgba(244, 243, 238, 1);
+		}
+	</style>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Front end leaning full stack developer. Based in Seattle. Experienced in Javascript, CSS/SCSS, jQuery, Drupal, and React.js." />
-	<title>Jacquelyn Marcella | Front End Developer</title>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700|PT+Sans+Narrow:700" rel="stylesheet">
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-	<link href="css/hamburgers.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="description" content="Front-end web engineer with over 8 years of technical experience designing and building UIs in JavaScript, CSS, and Drupal. Based in Portland, OR." />
+	<title>Jacquelyn Marcella | Front End Software Engineer</title>
+
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" media="(prefers-color-scheme: light)">
+	<link rel="icon" href="img/favicon-dark.ico" type="image/x-icon" media="(prefers-color-scheme: dark)">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz@0,9..144;1,9..144&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Space+Mono&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="src/css/custom/reset.css">
+	<link rel="stylesheet" type="text/css" href="src/css/custom/style.css">
+	<link rel="stylesheet" type="text/css" href="src/css/custom/hamburgers.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/within.min.css">
+	<link rel="stylesheet" type="text/css" href="src/css/custom/index.css">
 </head>
+
 <body>
-	<!-- Nav -->
-	<nav class="nav-home">
-  		<div class="nav-left">
-			<a href="#top" class="nav-logo" title="Home">JM</a>
-		</div>
-		<div class="nav-right">
-			<a href="#about" class="nav-desktop">About</a>
-			<a href="#featured-projects" class="nav-desktop">Projects</a>
-			<a href="#contact" class="nav-desktop">Contact</a>
-			<a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank" class="nav-resume nav-desktop">Resume</a>	
-			<button class="hamburger hamburger--squeeze" type="button">
-  				<span class="hamburger-box">
-    				<span class="hamburger-inner"></span>
-  				</span>
-			</button> 		
-		</div>
-		<div class="nav-responsive">
-			<a href="#about" class="nav-desktop">About</a>
-			<a href="#featured-projects" class="nav-desktop">Projects</a>
-			<a href="#contact" class="nav-desktop">Contact</a>	 
-			<a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank">Resume</a>
-			<a href="https://github.com/jacquelynmarcella" target="_blank" class="nav-contact"><i class="fab fa-github fa-lg"></i></a>	
-			<a href="https://www.linkedin.com/in/jmarcella/" target="_blank" class="nav-contact"><i class="fab fa-linkedin fa-lg"></i></a>
-		</div>
+	<!-- Global nav -->
+	<a href="#main" class="visually-hidden skip-to-main">Skip to main content</a>
+	<nav class="navbar">
+		<h2 class="visually-hidden">Main Menu</h2>
+		<ul class="navbar--contents navbar--level-1">
+			<li class="navbar--home">
+				<a href="index.html" class="animate-wavy" p data-animation="JacquelynMarcellaJacquelynMarcella">Jacquelyn Marcella</a>
+			</li>
+			<li class="text-align-right mobile-only theme-toggle--container">
+				<!-- Theme toggle here -->
+			</li>
+			<li class="nav-item navbar--links">
+				<button class="navbar--toggle text-align-right button alternate mobile-only" id="navbar--toggle" aria-expanded="false" aria-controls="navbar--dropdown">
+					<span class="visually-hidden">Menu</span>
+					<div class="hamburger hamburger--squeeze">
+						<div class="hamburger-box">
+							<div class="hamburger-inner"></div>
+						</div>
+					</div>
+				</button>
+				<ul class="navbar--contents navbar--level-2" id="navbar--dropdown">
+					<li class="text-align-right"><a href=" index.html#skills" data-animation="TechnicalskillsTechnicalskills" class="animate-wavy">Technical skills</a></li>
+					<li><a href="index.html#experience" class="animate-wavy" data-animation="ExperienceExperience">Experience</a></li>
+					<li><a href="index.html#featured-projects" class="animate-wavy" data-animation="ProjectsProjects">Projects</a></li>
+					<li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank" class="mobile-only">Resume</a></li>
+					<li class="contact mobile-only">
+						<ul>
+							<li><a href="https://github.com/jacquelynmarcella" target="_blank" class="icon-link github">
+									<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="var(--copyColor)" />
+									</svg>
+									<span class="visually-hidden">Follow on GitHub</span>
+								</a></li>
+							<li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank" class="icon-link linkedin">
+									<svg height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+										<g fill="none" fill-rule="evenodd">
+											<path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" fill="var(--copyColor)" />
+											<path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z" fill="var(--backgroundColor)" />
+										</g>
+									</svg>
+									<span class="visually-hidden">Connect on LinkedIn</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="mobile-only"><a href="mailto:jacquelynmarcella@gmail.com" class="button primary">Email me</a></li>
+					<li class="text-align-right no-mobile theme-toggle--container">
+						<button class="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="theme-toggle__within" height="1em" width="1em" viewBox="0 0 32 32" fill="currentColor">
+								<clipPath id="theme-toggle__within__clip">
+									<path d="M0 0h32v32h-32ZM6 16A1 1 0 0026 16 1 1 0 006 16" />
+								</clipPath>
+								<g clip-path="url(#theme-toggle__within__clip)">
+									<path d="M30.7 21.3 27.1 16l3.7-5.3c.4-.5.1-1.3-.6-1.4l-6.3-1.1-1.1-6.3c-.1-.6-.8-.9-1.4-.6L16 5l-5.4-3.7c-.5-.4-1.3-.1-1.4.6l-1 6.3-6.4 1.1c-.6.1-.9.9-.6 1.3L4.9 16l-3.7 5.3c-.4.5-.1 1.3.6 1.4l6.3 1.1 1.1 6.3c.1.6.8.9 1.4.6l5.3-3.7 5.3 3.7c.5.4 1.3.1 1.4-.6l1.1-6.3 6.3-1.1c.8-.1 1.1-.8.7-1.4zM16 25.1c-5.1 0-9.1-4.1-9.1-9.1 0-5.1 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1c0 5.1-4 9.1-9.1 9.1z" />
+								</g>
+								<path class="theme-toggle__within__circle" d="M16 7.7c-4.6 0-8.2 3.7-8.2 8.2s3.6 8.4 8.2 8.4 8.2-3.7 8.2-8.2-3.6-8.4-8.2-8.4zm0 14.4c-3.4 0-6.1-2.9-6.1-6.2s2.7-6.1 6.1-6.1c3.4 0 6.1 2.9 6.1 6.2s-2.7 6.1-6.1 6.1z" />
+								<path class="theme-toggle__within__inner" d="M16 9.5c-3.6 0-6.4 2.9-6.4 6.4s2.8 6.5 6.4 6.5 6.4-2.9 6.4-6.4-2.8-6.5-6.4-6.5z" />
+							</svg>
+						</button>
+					</li>
+					<li class="no-mobile"><a href="#contact" class="button primary">Contact</a></li>
+				</ul>
+			</li>
+		</ul>
 	</nav>
-	<!-- Header -->
-	<div class="header-background">
-	</div>
-	<header id="top">
-		<div class="header-content">
-			<h1 class="header-name">Jacquelyn<br>Marcella</h1><br>
-			<h4 class="header-subhead">Front end developer</h4>
-			<a href="#about" class="green-arrow"><img src="img/arrow.png"></a>
+	<!-- Hero -->
+	<header id="top" class="header--hero js-typing">
+		<div class="container two-up header--container">
+			<div class="align-center" id="sticky-header">
+				<div class="header--image">
+					<img src="img/jacquelyn-headshot.webp" alt="Photo of Jacquelyn Marcella" width="125" height="125">
+				</div>
+				<h1>Front-end engineer who transforms complex ideas into accessible, scalable web applications through
+					&nbsp;<span class="mobile-break"></span><em>design</em> + <code class="type">&lt;<span class="animate">code</span><span class="end">&gt;</span></code></h1>
+				<p class="subhead balance">I'm <b>Jacquelyn</b> and I have 8 years of technical experience working at the
+					intersection of engineering and
+					design. Using <code>JavaScript</code>, <code>CSS</code>, and <code>Drupal</code> I bring
+					solutions to life that improve user experiences and drive measurable results.
+				</p>
+				<p class="button-section"><a href="#contact" class="button primary">Work with me</a>
+					<a href="#featured-projects" class="button alternate">See projects</a>
+				</p>
+			</div>
+
+		</div>
+
 		</div>
 	</header>
-	<!-- About -->
-	<div class="section" id="about">
-		<div class="flex-grid nowrap">
-			<div class="about-item headshot transition">
-				<img src="img/jacquelyn-marcella.jpg">
-			</div>
-			<div class="about-item summary transition">
-				<h2>I’m a front end developer with a deep appreciation for the design process.</h2>
-				<hr>
-				<p>With over six years of agency experience in a variety of roles, I understand what it takes for cross-functional teams to be successful. Currently, I'm a web developer at <a href="http://www.smartsheet.com" target="_blank">Smartsheet</a> supporting the demand generation team.</p>
-				<p>When I’m not coding, you can find me practicing photography and tending to my growing collection of <a href="plant-parenthood.html">houseplants</a>.</p>
-			</div>
-		</div>
-	</div>
-		<div class="arrow-right">
-		</div>
-		<!-- Skills -->
-	<div class="section" id="skills">
-		<div class="skills grid">
-			<div class="about-item skills">
-				<h5>Front End</h5>
-				<ul>
-					<li>HTML</li>
-					<li>CSS / SCSS</li>
-					<li>JavaScript</li>
-					<li>jQuery</li>
-					<li>React.js</li>
-				</ul>	
-			</div>
-			<div class="about-item skills">
-				<h5>CMS & Templating</h5>
-				<ul>
-					<li>Drupal 7</li>
-					<li>Twig</li>
-					<li>PHP</li>
-					<li>EJS</li>
-					<li>PatternLab</li>
-				</ul>	
-			</div>
-			<div class="about-item skills">
-				<h5>Back End</h5>
-				<ul>
-					<li>Node.js</li>
-					<li>Express.js</li>
-					<li>PostgreSQL</li>
-					<li>MongoDB</li>
-					<li>Python</li>		
-				</ul>
-			</div>
-			<div class="about-item skills">
-				<h5>Version Control</h5>
-				<ul>
-					<li>Git</li>
-					<li>Github</li>
-				</ul>
-			</div>
-			<div class="about-item skills">
-				<h5>Test & Deployment</h5>
-				<ul>
-					<li>Chai / Mocha</li>
-					<li>Heroku</li>
-				</ul>
-			</div>
-			<div class="about-item skills">
-				<h5>Design Tools</h5>
-				<ul>
-					<li>Adobe Photoshop</li>
-					<li>Adobe Lightroom</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- Projects -->
-	<div class="section" id="featured-projects">
-		<h2>Featured Projects</h2>
-		<hr>
-		<div class="flex-grid">
-			<div class="portfolio-item plant transition"><a href="plant-parenthood.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Plant Parenthood</h3>
-					<h5>Node | jQuery | SCSS | SQL | Mocha</h5>
+	<main id="main">
+		<!-- <img src="img/mountain.jpg"> -->
+		<div class="wave accent">
+			<section class="skills " id="skills">
+				<div class="container">
+					<h2>Technical skills</h2>
+					<div class="two-up">
+						<div class="flex--33">
+							<p class="no-mobile subhead">I'm always ready to learn new technologies, whether it's a new front-end framework or brushing upon the latest release that makes a once difficult concept a breeze to implement.</p>
+						</div>
+						<ul class="skills--container flex--66">
+							<li>
+								<h3>Languages</h3>
+								<ul class="skills--list tags">
+									<li>HTML</li>
+									<li>CSS</li>
+									<li>Scss</li>
+									<li>JavaScript</li>
+									<li>PHP</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Technologies and frameworks</h3>
+								<ul class="skills--list tags">
+									<li>Drupal</li>
+									<li>React.js</li>
+									<li>jQuery</li>
+									<li>Twig</li>
+									<li>Tailwind CSS</li>
+									<li>Bootstrap</li>
+									<li>Mocha</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Front end</h3>
+								<ul class="skills--list tags">
+									<li>WCAG Accessibility</li>
+									<li>CSS Grid</li>
+									<li>Flexbox</li>
+									<li>Responsive design</li>
+									<li>Atomic design</li>
+									<li>PatternLab</li>
+									<li>Lottie</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Developer tools</h3>
+								<ul class="skills--list tags">
+									<li>Git</li>
+									<li>Gulp.js</li>
+									<li>Grunt</li>
+									<li>Docker</li>
+									<li>BrowserStack</li>
+									<li>VS Code</li>
+									<li>Optimizely</li>
+									<li>Confluence</li>
+									<li>JIRA</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Design tools</h3>
+								<ul class="skills--list tags">
+									<li>Figma Dev Mode</li>
+									<li>Adobe Photoshop</li>
+									<li>Adobe Lightroom</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Experience -->
+			<div class="polaroid--border mobile">
+				<div class="polaroid--background">
+					<div class="polaroid--bg-stable">
+						<img class="polaroid--image" src="img/young-computer-bw.webp" alt="Polaroid style photo of Jacquelyn at a computer, in the early years" loading="lazy" width="700" height="700">
+					</div>
 				</div>
 			</div>
-			<div class="portfolio-item skincare transition"><a href="skincare.html" alt="Skin/Care"></a>
-				<div class="portfolio-text">
-					<h3>Skin/Care</h3>
-					<h5>React | MongoDB | Node</h5>
+			<section id="experience" class="experience">
+				<div class="container">
+					<h2 class="text-align-center">Experience</h2>
+					<p class="text-align-center balance subhead">My interest in technology started at a young age. Take a trip
+						through the wayback machine to learn more about my journey or <a href="resume.pdf">download my resume</a>.
+					</p>
 				</div>
-			</div>
-			<div class="portfolio-item dream transition">
-				<a href="dreamstate.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Dreamstate</h3>
-					<h5>React | MongoDB | Node | Data Visualization</h5>
+				<div class="container two-up">
+					<div class="flex--50 sticky polaroid--sticky">
+						<div class="polaroid--border desktop">
+							<div class="polaroid--background">
+								<div class="polaroid--1 polaroid--slide-in">
+									<img class="polaroid--image" src="img/polaroid-drupalcon.webp" width="700" height="700" alt="" aria-hidden="true" loading="lazy">
+								</div>
+								<div class="polaroid--2 polaroid--slide-in">
+									<img class="polaroid--image" src="img/young-computer-bw.webp" width="500" height="500" alt="Transforming Polaroid style photo that shifts from a group photo at DrupalCon 2024 to a photo of young Jacquelyn at a computer" loading="lazy">
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+					<!-- <div class="flex--33"> -->
+					<div class="timeline--container flex--50 js-mobile-collapsed" id="timeline">
+						<div class="timeline--progress">
+							<div class="timeline--progress-bar"></div>
+							<div class="timeline--progress-marker">⬤</div>
+						</div>
+						<ul class="timeline--items" id="timeline-drawer">
+							<li class="timeline--item timeline--current-role">
+								<div class="timeline--text-container">
+									<h3>Senior Front End Engineer II</h3>
+									<!-- Inset some kind of "you are here" marker-->
+									<p>Currently overseeing a component-based design system across mulitple enterprise Drupal
+										websites</p>
+								</div>
+							</li>
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>Senior Front End Developer</h3>
+									<p>Promoted as I grew in responsibility to deliver larger-scale front-end Drupal projects
+									</p>
+								</div>
+							</li>
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>President's Club Award</h3>
+									<p>Awarded "Impact Maker" for my impact on SEO and Demand Generation</p>
+								</div>
+							</li>
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>Front End Developer</h3>
+									<p>Built Drupal features and ran A/B tests to improve SEO and site performance</p>
+								</div>
+							</li>
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>Full Stack Developer</h3>
+									<p>Pivoted to technical work through designing, building, and deploying MERN stack
+										applications
+									</p>
+								</div>
+							</li>
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>Agency work</h3>
+									<p>Supported project management team on design and website projects in both large and small
+										agencies</p>
+								</div>
+							</li>
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>Internships</h3>
+									<p>Interned at the local art museum and worked as a marketing assistant retouching photos
+										and creating print collateral</p>
+								</div>
+							</li>
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>B.A., Business and Communications</h3>
+									<p>Graduated <em>cum laude</em> with an Honors in Business</p>
+								</div>
+							</li>
+
+							<li class="timeline--item">
+								<div class="timeline--text-container">
+									<h3>Self-guided learning</h3>
+									<p>Taught myself the basics as a hobby, from learning CSS and Photoshop to setting up my own
+										FTP server</p>
+								</div>
+							</li>
+						</ul>
+						<button class="button timeline--button" id="timeline--toggle" aria-expanded="true" aria-controls="timeline-drawer">
+							<span class="js-closed">Show all experience</span>
+							<span class="js-open">Show less experience</span>
+						</button>
+					</div>
+					<!-- </div> -->
+
 				</div>
-			</div>
-			<div class="portfolio-item blackjack transition">
-				<a href="blackjack.html" alt="Plant Parenthood"></a>
-				<div class="portfolio-text">
-					<h3>Blackjack</h3>
-					<h5>jQuery | Materialize</h5>
-				</div>
-			</div>
+			</section>
 		</div>
-	</div>
+
+		<!-- Projects -->
+		<section class="projects-section" id="featured-projects">
+			<div class="container">
+				<h2>Projects</h2>
+				<h3 class="visually-hidden">Recent work</h3>
+				<ul class="tile-grid odd">
+					<li>
+					    <div class="tile--image left">
+					        <img src="img/design-system-med.webp" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+					    </div>
+					    <div class="tile-content">
+					        <a href="design-system.html">Oversee scalable design system that improves efficiency <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g clip-path="url(#clip0_1599_53380)">
+ <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+ </g>
+ <defs>
+ <clipPath id="clip0_1599_53380">
+ <rect width="21" height="21" fill="white"/>
+ </clipPath>
+ </defs>
+ </svg></a>
+					        <ul class="tags">
+					            <li>CSS</li>
+					            <li>JavaScript</li>
+					            <li>Atomic design</li>
+					            <li>Drupal</li>
+					            <li>PatternLab</li>
+					            <li>Figma</li>
+					        </ul>
+					    </div>
+					</li>
+					<li>
+					    <div class="tile--image center">
+					        <img src="img/signup-med.webp" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+					    </div>
+					    <div class="tile-content">
+					        <a href="form-api.html">Increased signups through form API integration <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g clip-path="url(#clip0_1599_53380)">
+ <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+ </g>
+ <defs>
+ <clipPath id="clip0_1599_53380">
+ <rect width="21" height="21" fill="white"/>
+ </clipPath>
+ </defs>
+ </svg></a>
+					        <ul class="tags">
+					            <li>JavaScript</li>
+					            <li>CSS</li>
+					            <li>A/B Testing</li>
+					        </ul>
+					    </div>
+					</li>
+					<li class="">
+					    <div class="tile--image left">
+					        <img src="img/tile-nav-mockup-med.webp" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+					    </div>
+					    <div class="tile-content">
+					        <a href="mega-menu-navigation.html">Architected global navigation that increased engagement <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g clip-path="url(#clip0_1599_53380)">
+ <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+ </g>
+ <defs>
+ <clipPath id="clip0_1599_53380">
+ <rect width="21" height="21" fill="white"/>
+ </clipPath>
+ </defs>
+ </svg></a>
+					        <ul class="tags">
+					            <li>CSS</li>
+					            <li>JavaScript</li>
+					            <li>Drupal</li>
+					            <li>Figma</li>
+					        </ul>
+					    </div>
+					</li>
+					<li>
+					    <div class="tile--image right">
+					        <img src="img/tile-accessibility-med.webp" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+					    </div>
+					    <div class="tile-content">
+					        <a href="accessibility.html">Led accessibility remediation to achieve WCAG compliance <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g clip-path="url(#clip0_1599_53380)">
+ <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+ </g>
+ <defs>
+ <clipPath id="clip0_1599_53380">
+ <rect width="21" height="21" fill="white"/>
+ </clipPath>
+ </defs>
+ </svg></a>
+					        <ul class="tags">
+					            <li>WCAG Accessibility</li>
+					            <li>JavaScript</li>
+					            <li>Drupal</li>
+					        </ul>
+					    </div>
+					</li>
+					<li class="">
+					    <div class="tile--image center">
+					        <img src="img/tile-media-optimization.webp" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+					    </div>
+					    <div class="tile-content">
+					        <a href="media-optimization.html">Improved site and SEO performance through media optimization <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g clip-path="url(#clip0_1599_53380)">
+ <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+ </g>
+ <defs>
+ <clipPath id="clip0_1599_53380">
+ <rect width="21" height="21" fill="white"/>
+ </clipPath>
+ </defs>
+ </svg></a>
+					        <ul class="tags">
+					            <li>Drupal</li>
+					            <li>PHP</li>
+					            <li>SEO</li>
+					            <li>Site performance</li>
+					        </ul>
+					    </div>
+					</li>
+					<li>
+					    <div class="tile--image left">
+					        <img src="img/search-med.webp" alt="" loading="lazy" aria-hidden="true" width="900" height="506">
+					    </div>
+					    <div class="tile-content">
+					        <a href="search-api.html">Generated cost savings through search API migration <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <g clip-path="url(#clip0_1599_53380)">
+ <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+ <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+ </g>
+ <defs>
+ <clipPath id="clip0_1599_53380">
+ <rect width="21" height="21" fill="white"/>
+ </clipPath>
+ </defs>
+ </svg></a>
+					        <ul class="tags">
+					            <li>CSS</li>
+					            <li>JavaScript</li>
+					            <li>Twig</li>
+					            <li>Drupal</li>
+					        </ul>
+					    </div>
+					</li>
+				</ul>
+				<h3 class="text-align-center">Learning + side projects</h3>
+				<p class="text-align-center balance">While my recent professional experience has focused on enteprise-level
+					<code>Drupal</code> work,
+					I have also developed a variety of smaller projects that use technologies such as <code>React.js</code>,
+					<code>Node.js</code>, and <code>Express.js</code>:
+				</p>
+				<ul class="github-list">
+					<li>
+						<a href="https://github.com/jacquelynmarcella/Project3" class="arrow-link" target="_blank">React.js app that analyzes and provides data visualizations for your dreams <span class="arrow-link--icon">
+     <span class="arrow-icon start">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" xlink:href="data:image/png;base64;"> 
+           <g clip-path="url(#clip0_1599_53375)">
+           <path d="M7.24689 10.406L12.4069 5.24599C12.5644 5.08832 12.7782 4.99968 13.001 4.99959C13.2239 4.9995 13.4377 5.08795 13.5954 5.24549C13.7531 5.40303 13.8417 5.61675 13.8418 5.83963C13.8419 6.06252 13.7534 6.27632 13.5959 6.43399L9.0289 11L13.5939 15.566C13.6719 15.644 13.7338 15.7366 13.776 15.8385C13.8182 15.9404 13.8399 16.0497 13.8399 16.16C13.8399 16.2703 13.8182 16.3795 13.776 16.4815C13.7338 16.5834 13.6719 16.676 13.5939 16.754C13.5159 16.832 13.4233 16.8939 13.3214 16.9361C13.2194 16.9783 13.1102 17 12.9999 17C12.8896 17 12.7803 16.9783 12.6784 16.9361C12.5765 16.8939 12.4839 16.832 12.4059 16.754L7.2459 11.594C7.16789 11.516 7.10601 11.4234 7.06379 11.3215C7.02157 11.2195 6.99984 11.1103 6.99984 11C6.99984 10.8897 7.02157 10.7804 7.06379 10.6785C7.10601 10.5766 7.16888 10.484 7.24689 10.406Z" fill="currentColor"/>
+           </g>
+           <defs>
+           <clipPath id="clip0_1599_53375">
+           <rect width="21" height="21" fill="white"/>
+           </clipPath>
+           </defs>
+         </svg>
+     </span>
+     <span class="arrow-icon active">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <g clip-path="url(#clip0_1599_53380)">
+         <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+         </g>
+         <defs>
+         <clipPath id="clip0_1599_53380">
+         <rect width="21" height="21" fill="white"/>
+         </clipPath>
+         </defs>
+         </svg>
+     </span>
+ </span></a>
+					</li>
+					<li>
+						<a href="https://github.com/jacquelynmarcella/plantparenthood" class="arrow-link" target="_blank">Node.js/Express.js app to inventory your houseplants and their care needs <span class="arrow-link--icon">
+     <span class="arrow-icon start">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" xlink:href="data:image/png;base64;"> 
+           <g clip-path="url(#clip0_1599_53375)">
+           <path d="M7.24689 10.406L12.4069 5.24599C12.5644 5.08832 12.7782 4.99968 13.001 4.99959C13.2239 4.9995 13.4377 5.08795 13.5954 5.24549C13.7531 5.40303 13.8417 5.61675 13.8418 5.83963C13.8419 6.06252 13.7534 6.27632 13.5959 6.43399L9.0289 11L13.5939 15.566C13.6719 15.644 13.7338 15.7366 13.776 15.8385C13.8182 15.9404 13.8399 16.0497 13.8399 16.16C13.8399 16.2703 13.8182 16.3795 13.776 16.4815C13.7338 16.5834 13.6719 16.676 13.5939 16.754C13.5159 16.832 13.4233 16.8939 13.3214 16.9361C13.2194 16.9783 13.1102 17 12.9999 17C12.8896 17 12.7803 16.9783 12.6784 16.9361C12.5765 16.8939 12.4839 16.832 12.4059 16.754L7.2459 11.594C7.16789 11.516 7.10601 11.4234 7.06379 11.3215C7.02157 11.2195 6.99984 11.1103 6.99984 11C6.99984 10.8897 7.02157 10.7804 7.06379 10.6785C7.10601 10.5766 7.16888 10.484 7.24689 10.406Z" fill="currentColor"/>
+           </g>
+           <defs>
+           <clipPath id="clip0_1599_53375">
+           <rect width="21" height="21" fill="white"/>
+           </clipPath>
+           </defs>
+         </svg>
+     </span>
+     <span class="arrow-icon active">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <g clip-path="url(#clip0_1599_53380)">
+         <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+         </g>
+         <defs>
+         <clipPath id="clip0_1599_53380">
+         <rect width="21" height="21" fill="white"/>
+         </clipPath>
+         </defs>
+         </svg>
+     </span>
+ </span></a>
+					</li>
+					<li>
+						<a href="https://github.com/jacquelynmarcella/blackjack" class="arrow-link" target="_blank">JavaScript-based Blackjack game <span class="arrow-link--icon">
+     <span class="arrow-icon start">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" xlink:href="data:image/png;base64;"> 
+           <g clip-path="url(#clip0_1599_53375)">
+           <path d="M7.24689 10.406L12.4069 5.24599C12.5644 5.08832 12.7782 4.99968 13.001 4.99959C13.2239 4.9995 13.4377 5.08795 13.5954 5.24549C13.7531 5.40303 13.8417 5.61675 13.8418 5.83963C13.8419 6.06252 13.7534 6.27632 13.5959 6.43399L9.0289 11L13.5939 15.566C13.6719 15.644 13.7338 15.7366 13.776 15.8385C13.8182 15.9404 13.8399 16.0497 13.8399 16.16C13.8399 16.2703 13.8182 16.3795 13.776 16.4815C13.7338 16.5834 13.6719 16.676 13.5939 16.754C13.5159 16.832 13.4233 16.8939 13.3214 16.9361C13.2194 16.9783 13.1102 17 12.9999 17C12.8896 17 12.7803 16.9783 12.6784 16.9361C12.5765 16.8939 12.4839 16.832 12.4059 16.754L7.2459 11.594C7.16789 11.516 7.10601 11.4234 7.06379 11.3215C7.02157 11.2195 6.99984 11.1103 6.99984 11C6.99984 10.8897 7.02157 10.7804 7.06379 10.6785C7.10601 10.5766 7.16888 10.484 7.24689 10.406Z" fill="currentColor"/>
+           </g>
+           <defs>
+           <clipPath id="clip0_1599_53375">
+           <rect width="21" height="21" fill="white"/>
+           </clipPath>
+           </defs>
+         </svg>
+     </span>
+     <span class="arrow-icon active">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <g clip-path="url(#clip0_1599_53380)">
+         <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+         </g>
+         <defs>
+         <clipPath id="clip0_1599_53380">
+         <rect width="21" height="21" fill="white"/>
+         </clipPath>
+         </defs>
+         </svg>
+     </span>
+ </span></a>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+
+		<!-- Recommendations -->
+		<section id="recommendations">
+			<div class="container">
+				<h2 class="">Recommendations</h2>
+				<div style="position: relative;">
+					<div class="carousel--wrapper">
+						<div class="carousel quote" data-slide-visible="1">
+							<div aria-labelledby="carousel-pagination-1" data-slide="1" class="js-active" role="tabpanel" id="carousel-slide-1">
+								<figure>
+									<blockquote>
+										<p>Jacquelyn is a rare front-end engineer, who is willing to work in ambiguity and complexity,
+											while bringing valuable expertise to help find the right solution. She is highly praised
+											by stakeholders for building web experiences that achieve user and business goals.
+										</p>
+									</blockquote>
+									<figcaption>Megan J., Principal UI/UX Designer</figcaption>
+								</figure>
+							</div>
+							<div data-slide="2" aria-hidden="true" aria-labelledby="carousel-pagination-2" role="tabpanel" id="carousel-slide-2" tabindex="-1">
+								<figure>
+									<blockquote>
+										<p> Jacquelyn is a strong advocate for maintaining the integrity of our code base,
+											while embracing other's ideas. She is patient, generous, and an excellent teacher, always ready to offer guidance and support to team members facing challenges.</p>
+									</blockquote>
+									<figcaption>Emmy L., Senior Front End Engineer</figcaption>
+								</figure>
+							</div>
+							<div data-slide="2" aria-hidden="true" aria-labelledby="carousel-pagination-3" role="tabpanel" id="carousel-slide-3" tabindex="-1">
+								<figure>
+									<blockquote>
+										<p>Jacquelyn is a huge asset when it comes to scalable and maintainable code, having mastered our tech stack extremely quickly. Her commitment to excellence is unmatched.
+										</p>
+									</blockquote>
+									<figcaption>Katie K., Senior QA Engineer</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div class="carousel--controls">
+							<button class="carousel--prev" id="carousel-prev" data-direction="left">
+								<span class="visually-hidden">Previous quote</span>
+								<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<g clip-path="url(#clip0_1599_53375)">
+										<path d="M7.24689 10.406L12.4069 5.24599C12.5644 5.08832 12.7782 4.99968 13.001 4.99959C13.2239 4.9995 13.4377 5.08795 13.5954 5.24549C13.7531 5.40303 13.8417 5.61675 13.8418 5.83963C13.8419 6.06252 13.7534 6.27632 13.5959 6.43399L9.0289 11L13.5939 15.566C13.6719 15.644 13.7338 15.7366 13.776 15.8385C13.8182 15.9404 13.8399 16.0497 13.8399 16.16C13.8399 16.2703 13.8182 16.3795 13.776 16.4815C13.7338 16.5834 13.6719 16.676 13.5939 16.754C13.5159 16.832 13.4233 16.8939 13.3214 16.9361C13.2194 16.9783 13.1102 17 12.9999 17C12.8896 17 12.7803 16.9783 12.6784 16.9361C12.5765 16.8939 12.4839 16.832 12.4059 16.754L7.2459 11.594C7.16789 11.516 7.10601 11.4234 7.06379 11.3215C7.02157 11.2195 6.99984 11.1103 6.99984 11C6.99984 10.8897 7.02157 10.7804 7.06379 10.6785C7.10601 10.5766 7.16888 10.484 7.24689 10.406Z" fill="currentColor" />
+									</g>
+									<defs>
+										<clipPath id="clip0_1599_53375">
+											<rect width="21" height="21" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+							<button class="carousel--next" id="carousel-next" data-direction="right">
+								<span class="visually-hidden">Next quote</span>
+								<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<g clip-path="url(#clip0_1599_53375)">
+										<path d="M7.24689 10.406L12.4069 5.24599C12.5644 5.08832 12.7782 4.99968 13.001 4.99959C13.2239 4.9995 13.4377 5.08795 13.5954 5.24549C13.7531 5.40303 13.8417 5.61675 13.8418 5.83963C13.8419 6.06252 13.7534 6.27632 13.5959 6.43399L9.0289 11L13.5939 15.566C13.6719 15.644 13.7338 15.7366 13.776 15.8385C13.8182 15.9404 13.8399 16.0497 13.8399 16.16C13.8399 16.2703 13.8182 16.3795 13.776 16.4815C13.7338 16.5834 13.6719 16.676 13.5939 16.754C13.5159 16.832 13.4233 16.8939 13.3214 16.9361C13.2194 16.9783 13.1102 17 12.9999 17C12.8896 17 12.7803 16.9783 12.6784 16.9361C12.5765 16.8939 12.4839 16.832 12.4059 16.754L7.2459 11.594C7.16789 11.516 7.10601 11.4234 7.06379 11.3215C7.02157 11.2195 6.99984 11.1103 6.99984 11C6.99984 10.8897 7.02157 10.7804 7.06379 10.6785C7.10601 10.5766 7.16888 10.484 7.24689 10.406Z" fill="currentColor" />
+									</g>
+									<defs>
+										<clipPath id="clip0_1599_53375">
+											<rect width="21" height="21" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					<ol id="carousel--pagination" class="carousel--pagination" role="tablist">
+						<li>
+							<button class="carousel--pagination-button js-active" id="carousel-pagination-1" aria-controls="carousel-slide-1" aria-selected="true"><span class="visually-hidden">Quote 1 of 3</span></button>
+						</li>
+						<li>
+							<button class="carousel--pagination-button" id="carousel-pagination-2" aria-controls="carousel-slide-2"><span class="visually-hidden">Quote 2 of 3</span></button>
+						</li>
+						<li>
+							<button class="carousel--pagination-button" id="carousel-pagination-3" aria-controls="carousel-slide-3"><span class="visually-hidden">Quote 3 of 3</span></button>
+						</li>
+					</ol>
+				</div>
+
+				<p class="text-align-right"><a href="https://www.linkedin.com/in/jmarcella/details/recommendations" class="arrow-link" target="_blank" class="arrow-link">Read more recommendations <span class="arrow-link--icon">
+     <span class="arrow-icon start">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" xlink:href="data:image/png;base64;"> 
+           <g clip-path="url(#clip0_1599_53375)">
+           <path d="M7.24689 10.406L12.4069 5.24599C12.5644 5.08832 12.7782 4.99968 13.001 4.99959C13.2239 4.9995 13.4377 5.08795 13.5954 5.24549C13.7531 5.40303 13.8417 5.61675 13.8418 5.83963C13.8419 6.06252 13.7534 6.27632 13.5959 6.43399L9.0289 11L13.5939 15.566C13.6719 15.644 13.7338 15.7366 13.776 15.8385C13.8182 15.9404 13.8399 16.0497 13.8399 16.16C13.8399 16.2703 13.8182 16.3795 13.776 16.4815C13.7338 16.5834 13.6719 16.676 13.5939 16.754C13.5159 16.832 13.4233 16.8939 13.3214 16.9361C13.2194 16.9783 13.1102 17 12.9999 17C12.8896 17 12.7803 16.9783 12.6784 16.9361C12.5765 16.8939 12.4839 16.832 12.4059 16.754L7.2459 11.594C7.16789 11.516 7.10601 11.4234 7.06379 11.3215C7.02157 11.2195 6.99984 11.1103 6.99984 11C6.99984 10.8897 7.02157 10.7804 7.06379 10.6785C7.10601 10.5766 7.16888 10.484 7.24689 10.406Z" fill="currentColor"/>
+           </g>
+           <defs>
+           <clipPath id="clip0_1599_53375">
+           <rect width="21" height="21" fill="white"/>
+           </clipPath>
+           </defs>
+         </svg>
+     </span>
+     <span class="arrow-icon active">
+         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <g clip-path="url(#clip0_1599_53380)">
+         <path d="M0.247139 10.406L5.40714 5.24599C5.56468 5.08832 5.7784 4.99968 6.00129 4.99959C6.22418 4.9995 6.43797 5.08795 6.59564 5.24549C6.75331 5.40303 6.84195 5.61675 6.84204 5.83963C6.84213 6.06252 6.75368 6.27632 6.59614 6.43399L2.02914 11L6.59414 15.566C6.67214 15.644 6.73402 15.7366 6.77624 15.8385C6.81845 15.9404 6.84019 16.0497 6.84019 16.16C6.84019 16.2703 6.81845 16.3795 6.77624 16.4815C6.73402 16.5834 6.67214 16.676 6.59414 16.754C6.51613 16.832 6.42353 16.8939 6.32161 16.9361C6.21969 16.9783 6.11046 17 6.00014 17C5.88983 17 5.78059 16.9783 5.67867 16.9361C5.57675 16.8939 5.48415 16.832 5.40614 16.754L0.24614 11.594C0.168129 11.516 0.106253 11.4234 0.0640335 11.3215C0.0218142 11.2195 8.39233e-05 11.1103 8.39233e-05 11C8.39233e-05 10.8897 0.0218142 10.7804 0.0640335 10.6785C0.106253 10.5766 0.169129 10.484 0.247139 10.406Z" fill="currentColor"/>
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25024 11C1.25024 10.5858 1.58603 10.25 2.00024 10.25H16.0002C16.4145 10.25 16.7502 10.5858 16.7502 11C16.7502 11.4142 16.4145 11.75 16.0002 11.75H2.00024C1.58603 11.75 1.25024 11.4142 1.25024 11Z" fill="currentColor"/>
+         </g>
+         <defs>
+         <clipPath id="clip0_1599_53380">
+         <rect width="21" height="21" fill="white"/>
+         </clipPath>
+         </defs>
+         </svg>
+     </span>
+ </span></a></p>
+			</div>
+
+
+		</section>
+	</main>
+
+
 	<!-- Footer -->
 	<footer id="contact">
-		<div class="footer-content">
-			<h4>Let's get in touch.</h4>
-			<p><a href="https://github.com/jacquelynmarcella" target="_blank"><i class="fab fa-github fa-lg"></i> <span class="icon-label">jacquelynmarcella</span></a></p>
-			<p><a href="https://www.linkedin.com/in/jmarcella/" target="_blank"><i class="fab fa-linkedin fa-lg"></i> <span class="icon-label">jmarcella</span></a></p>
-			<p><a href="mailto:jacquelyn.marcella@gmail.com"><i class="fas fa-envelope fa-lg"></i> <span class="icon-label">jacquelyn.marcella@gmail.com</span></a></p>
-			<p><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank"><i class="fas fa-file-alt fa-lg"></i> <span class="icon-label">Download Resume</span></a></p>
-		</div>	
+	    <div class="container">
+	        <div>
+	            <h2>Get in touch</h3>
+	                <ul>
+	                    <li class="email"><a href="mailto:jacquelyn.marcella@gmail.com" class="button primary icon">
+	                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="430" height="430" fill="none" viewBox="0 0 430 430"><g stroke="#121331" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="14.8" stroke-width="12"><path d="m150.8 131.3 105.5 106.1c11.4 11.5 30 11.5 41.5 0l105.7-106"/><path d="M150.8 131.3v167.3h252.7V131.4z"/><path d="m150.8 282 66.7-57.8c4.7-4.1 9.9-7.6 15.3-10.5m88.7-.1c5.6 3 10.8 6.6 15.7 10.8l66.3 56.9M107.4 131.4H26.6m80.8 41.8H26.6m81 41.2H26.8m80.8 41.8H26.8m80.6 41.2H26.6"/></g></svg> -->
+	                            <span class="label">Email me</span></a>
+	                    </li>
+	                    <li><a href="img/Jacquelyn_Marcella_Resume.pdf" target="_blank" class="icon-link resume">
+	                            <svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	                                <g id="Icons-56/download_square_outline_56" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+	                                    <g id="download_square_outline_56">
+	                                        <rect x="0" y="0" width="56" height="56"></rect>
+	                                        <path d="M35.0042242,11 L35.6235033,11.0013367 C38.845519,11.0246295 40.4501729,11.3555688 42.1147811,12.245811 C43.6798875,13.0828391 44.9171609,14.3201125 45.7642726,15.9044057 L45.7642726,15.9044057 L45.914534,16.1958101 C46.6453722,17.6675669 46.9502065,19.2118503 46.9943027,21.9993856 L46.9943027,21.9993856 L47,22.7555408 L47,37.2556817 L46.9945337,37.974023 C46.9478287,40.9627201 46.6179001,42.4997817 45.754189,44.1147811 C44.9171609,45.6798875 43.6798875,46.9171609 42.0955943,47.7642726 L42.0955943,47.7642726 L41.8041899,47.914534 C40.3324331,48.6453722 38.7881497,48.9502065 36.0006144,48.9943027 L36.0006144,48.9943027 L35.2444592,49 L20.7443183,49 L20.025977,48.9945337 C17.0372799,48.9478287 15.5002183,48.6179001 13.8852189,47.754189 C12.3201125,46.9171609 11.0828391,45.6798875 10.2357274,44.0955943 L10.2357274,44.0955943 L10.085466,43.8041899 C9.31914622,42.2609806 9.02405501,40.6463567 9.00132265,37.6054828 L9.00132265,37.6054828 L9.00132265,22.3764967 C9.0246295,19.154481 9.35556882,17.5498271 10.245811,15.8852189 C11.0828391,14.3201125 12.3201125,13.0828391 13.9044057,12.2357274 L13.9044057,12.2357274 L14.1958101,12.085466 C15.7390194,11.3191462 17.3536433,11.024055 20.3945172,11.0013226 L20.3945172,11.0013226 L20.9997987,11.0012687 C21.8282258,11.001195 22.4998585,11.672708 22.4999323,12.5011351 C22.500006,13.3295623 21.828493,14.0011949 21.0000659,14.0012687 L21.0000659,14.0012687 L20.0730763,14.0049602 C17.6902542,14.0402783 16.5611513,14.2604067 15.5511588,14.7617455 L15.5511588,14.7617455 L15.3000155,14.8912506 C14.2577145,15.4486793 13.4486793,16.2577145 12.8912506,17.3000155 C12.2817685,18.4396479 12.0380753,19.5464775 12.0041905,22.089013 L12.0041905,22.089013 L12,22.7554072 L12.0012806,37.5941158 C12.0208477,40.206854 12.2376186,41.3929399 12.7617455,42.4488412 L12.7617455,42.4488412 L12.8912506,42.6999845 C13.4486793,43.7422855 14.2577145,44.5513207 15.3000155,45.1087494 C16.450087,45.7238144 17.5277176,45.9551266 20.0606374,45.9947589 L20.0606374,45.9947589 L20.7555408,46 L35.2444592,46 C38.0964351,46 39.350611,45.7834009 40.4488412,45.2382545 L40.4488412,45.2382545 L40.6999845,45.1087494 C41.7422855,44.5513207 42.5513207,43.7422855 43.1087494,42.6999845 C43.7238144,41.549913 43.9551266,40.4722824 43.9947589,37.9393626 L43.9947589,37.9393626 L44,37.2444592 L44,22.7555408 C44,19.9035649 43.7834009,18.649389 43.2382545,17.5511588 L43.2382545,17.5511588 L43.1087494,17.3000155 C42.5513207,16.2577145 41.7422855,15.4486793 40.6999845,14.8912506 C39.4653828,14.2309784 38.2692786,14 35.2444592,14 L35.2444592,14 L35.0042242,14 C34.1757971,14 33.5042242,13.3284271 33.5042242,12.5 C33.5042242,11.6715729 34.1757971,11 35.0042242,11 L35.0042242,11 Z M28,5 C28.8284271,5 29.5,5.67157288 29.5,6.5 L29.5,6.5 L29.4993226,33.878 L34.4393398,28.9393398 C34.9885146,28.390165 35.857577,28.3558416 36.4467378,28.8363696 L36.5606602,28.9393398 C37.1464466,29.5251263 37.1464466,30.4748737 36.5606602,31.0606602 L36.5606602,31.0606602 L29.0606602,38.5606602 C28.4748737,39.1464466 27.5251263,39.1464466 26.9393398,38.5606602 L26.9393398,38.5606602 L19.4393398,31.0606602 C18.8535534,30.4748737 18.8535534,29.5251263 19.4393398,28.9393398 C20.0251263,28.3535534 20.9748737,28.3535534 21.5606602,28.9393398 L21.5606602,28.9393398 L26.4993226,33.878 L26.5,6.5 C26.5,5.72030388 27.0948881,5.07955132 27.85554,5.00686658 Z" id="↳-Icon-Color" fill="currentColor" fill-rule="nonzero"></path>
+	                                    </g>
+	                                </g>
+	                            </svg>
+	                            <span class="label">Download Resume</span>
+	                        </a></li>
+	                    <li><a href="https://github.com/jacquelynmarcella" target="_blank" class="icon-link github">
+	                            <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+	                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="var(--copyColor)" />
+	                            </svg>
+	                            <span class="label hide-mobile">Follow on GitHub</span>
+	                        </a></li>
+	                    <li><a href="https://www.linkedin.com/in/jmarcella/" target="_blank" class="icon-link linkedin">
+	                            <svg height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg" style="margin-right: 4px;">
+	                                <g fill="none" fill-rule="evenodd">
+	                                    <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" fill="var(--copyColor)" />
+	                                    <path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z" fill="var(--backgroundColor)" />
+	                                </g>
+	                            </svg>
+	                            <span class="label hide-mobile">Connect on LinkedIn</span>
+	                        </a></li>
+
+	                </ul>
+	                <p class="about">When I'm not at my keyboard, you can find me exploring the Pacific
+	                    Northwest 🌲 watching horror movies 🧟 practicing photography 📷 and building out my own native plant
+	                    habitat 🌻</p>
+	        </div>
+	        <div class="copyright">
+	            <p class="fine-print">Copyright &copy;
+	                <script>document.write(new Date().getFullYear())</script> Jacquelyn Marcella. All Rights Reserved.
+	            </p>
+	        </div>
+
+
+	    </div>
+
 	</footer>
+	<div class="progress-bar"></div>
 	<!-- Scripts -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="js/script.js" type="text/javascript"></script>
+	<script src="src/js/index.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+	<script src="src/js/portfolio.js" type="text/javascript"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116161963-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-116161963-1');
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag() {
+	        dataLayer.push(arguments);
+	    }
+	    gtag('js', new Date());
+	    gtag('config', 'UA-116161963-1');
 	</script>
 </body>
+
 </html>
