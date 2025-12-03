@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    let colorToggle = document.querySelector(".theme-toggle");
+    var colorToggle = document.querySelector(".theme-toggle");
 
     //On Load
     let colorTheme = document.documentElement.getAttribute('data-theme');
@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function moveThemeToggle() {
         const themeToggleBtn = document.querySelector('.theme-toggle');
-        const mobileContainer = document.querySelector('.mobile-only.theme-toggle--container');
-        const desktopContainer = document.querySelector('.no-mobile.theme-toggle--container');
+        const mobileContainer = document.querySelector('.mobile.theme-toggle--container');
+        const desktopContainer = document.querySelector('.desktop.theme-toggle--container');
 
         if (themeToggleBtn) {
             if (window.innerWidth <= 800) {

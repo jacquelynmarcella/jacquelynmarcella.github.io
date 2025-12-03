@@ -4,8 +4,8 @@
 
 <head>
     <!--(bake /includes/head.html)-->
-    <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
-    <link rel="stylesheet" type="text/css" href="src/css/custom/highlight.css">
+    <link rel="stylesheet" type="text/css" href="css/projects.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/custom/highlight.css"> -->
 </head>
 
 <body class="projects">
@@ -85,8 +85,17 @@
 
                 <h3>Features table process</h3>
                 <p>For this remediation item, because this table is in a rich text field maintained by non-engineers, the simplest way to ensure long-term accessibility and ease of maintenance was to apply the necessary attributes via JavaScript. I wrote JavaScript functions that parse the table ensuring the appropriate <code>aria</code>, <code>tabindex</code>, <code>role</code>, and <code>scope</code> values are accurate on both load and user interaction.</p>
-                <p class="no-mobile">The final markup follows this structure:</p>
 
+                <p>The updated experience allows for keyboard navigation throughout the table using the expected treegrid keyboard commands and is a much more useful experience for screen readers.</p>
+
+                <figure>
+                    <video src="img/accessibility-nvda-treegrid.mp4" preload="none" poster="img/tile-accessibility.png" class="width-max" muted="false" controls loop="false" playsinline title="NVDA demo of the treegrid table experience" width="1600" height="900">
+                    </video>
+                    <figcaption>Video of keyboard only table navigation along with NVDA screen reader enabled. Play with
+                        audio enabled to hear screen reader announcements.</figcaption>
+                </figure>
+
+                <!-- <p class="no-mobile">The final markup follows this structure:</p>
                 <figure class="no-mobile">
                     <pre><code class="language-html">
 &lt;table role=&quot;treegrid&quot;&gt;
@@ -115,23 +124,16 @@
             &lt;td role=&quot;gridcell&quot;&gt;AWM plan feature info&lt;/td&gt;
         &lt;/tr&gt;
         &lt;!-- continued for the remaining parent and child rows --&gt;
-&lt;/tbody&gt;
+    &lt;/tbody&gt;
 &lt;/table&gt;
-</code></pre>
-                    <figcaption>The <code>aria</code> attributes help define the current level of the row
-                        (<code>aria-level</code>), how many rows are in that same level (<code>aria-setsize</code>), and the
-                        position of that row relative to the other rows in the same level (<code>aria-posinset</code>).
-                    </figcaption>
-                </figure>
+</code></pre> 
+                <figcaption>The <code>aria</code> attributes help define the current level of the row
+                    (<code>aria-level</code>), how many rows are in that same level (<code>aria-setsize</code>), and the
+                    position of that row relative to the other rows in the same level (<code>aria-posinset</code>).
+                </figcaption>
+                </figure>-->
 
-                <p>The updated experience allows for keyboard navigation throughout the table using the expected treegrid keyboard commands and is a much more useful experience for screen readers.</p>
 
-                <figure>
-                    <video src="img/accessibility-nvda-treegrid.mp4" preload="none" poster="img/tile-accessibility.png" class="width-max" muted="false" controls loop="false" playsinline title="NVDA demo of the treegrid table experience" width="1600" height="900">
-                    </video>
-                    <figcaption>Video of keyboard only table navigation along with NVDA screen reader enabled. Play with
-                        audio enabled to hear screen reader announcements.</figcaption>
-                </figure>
 
                 <p>The authoring experience is still simple given the complexity of the table. Website authors are able to update data in in this treegrid without the need for engineering support:</p>
 
@@ -144,9 +146,9 @@
 
             <section>
                 <h2>Impact</h2>
-                <p>Due to our cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA compliance</b>.</p>
+                <p>Due to our cross-site remediation effort, we <b>surpassed our original goal of 90%+ WCAG 2.1 AA compliance</b>. Beyond the scope of the official remediation project, we have continued to improve components to ensure they conform to WCAG standards.</p>
 
-                <p>Additionally, the project resulted in a significant uplift in the front-end team's technical proficiency and governance of accessibility. We now proactively integrate both automated and manual testing into our workflow:</p>
+                <p>The project resulted in a significant uplift in the front-end team's technical proficiency and governance of accessibility. We now proactively integrate both automated and manual testing into our workflow:</p>
                 <ol>
                     <li><b>Automated checks:</b> Leveraging tools like WebAIM and Lighthouse for fast, baseline auditing of components.</li>
                     <li><b>Manual validation:</b> Using screen reader software, specifically NVDA, to manually test user flows and confirm that interactive elements function correctly within their intended context, as we understand that automated tools can only catch a fraction of issues.</li>
@@ -156,8 +158,8 @@
 
             <nav class="project-nav" aria-label="Project pagination">
                 <ul>
-                    <li><a href="mega-menu-navigation.html"><span class="direction">Previous project</span> <span class="description">Mega-Menu Navigation</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
-                    <li><a href="media-optimization.html"><span class="direction">Next project</span> <span class="description">Media Optimization</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                    <li><a href="mega-menu-navigation.html"><span class="direction">Previous project</span> <span class="description">Global navigation</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                    <li><a href="media-optimization.html"><span class="direction">Next project</span> <span class="description">Media optimization</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
                 </ul>
             </nav>
 
@@ -178,8 +180,8 @@
     <!--(bake /includes/footer.html)-->
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script> -->
     <!--(bake /includes/scripts.html)-->
 
 </body>

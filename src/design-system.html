@@ -4,8 +4,8 @@
 
 <head>
     <!--(bake /includes/head.html)-->
-    <link rel="stylesheet" type="text/css" href="src/css/custom/projects.css">
-    <link rel="stylesheet" type="text/css" href="src/css/custom/highlight.css">
+    <link rel="stylesheet" type="text/css" href="css/projects.min.css">
+    <link rel="stylesheet" type="text/css" href="css/highlight.min.css">
 </head>
 
 <body class="projects">
@@ -92,22 +92,22 @@
                         <figure>
                             <pre><code class="language-css">
 /** _tile-molecule.scss **/
-.tile-molecule {
-    background: var(--cardBackground)
-    border: 1px solid var(--border1);
-    box-shadow: var(--cardShadow);
-    border-radius: var(--cardRadius);
-    color: var(--cardHeadlineColor);
-    .content {
-        padding: 0 var(--md) var(--sm) var(--md);
-    }
-    svg.caret {
-        fill: var(--cardLinkColor);
-    }
-    .tag {
-        background: var(--cardTagBg);
-        color: var(--cardTagText);
-    }
+.tile {
+  background: var(--cardBackground);
+  border: 1px solid var(--border1);
+  box-shadow: var(--cardShadow);
+  border-radius: var(--cardRadius);
+  color: var(--cardHeadlineColor);
+  .content {
+    padding: 0 var(--md) var(--sm) var(--md);
+  }
+  .arrow {
+    fill: var(--cardLinkColor);
+  }
+  .tag {
+    background: var(--cardTagBg);
+    color: var(--cardTagText);
+  }
 }</code></pre>
                             <figcaption>The component's SCSS file is largely comprised of global CSS custom properties.</figcaption>
                         </figure>
@@ -125,7 +125,8 @@
                 <p>The launch of the new site and design system delivered a modern UX and improved authoring experience. Financially, the project <b>exceeded its offset goal by +71%, with $1MM in ARR</b> directly attributed to the website rebuild and migration.</p>
                 <p>The system has demonstrated significant reuse and scalability, as we now have <b>over 10,500 organism-level component instances</b> across the primary website.
                 </p>
-                <p>Since its inception, we have been able to upgrade to Drupal 10 and improve our component library to both stay on brand and keep up with design standards in the industry. We have continually integrated more progressive enhancements and added new features to components along the way, for example our tile molecule has significantly evolved over the years:</p>
+                <p>Since its inception, we have been able to upgrade to Drupal 10 and improve our component library to both stay on brand and keep up with design standards in the industry. We have continually integrated more progressive enhancements and added new features to components along the way.</p>
+                <p>For example, the tile molecule, shown below from oldest to newest, has significantly evolved over the years:</p>
                 <figure>
                     <img src="img/tile-timeline-vertical.webp" class="mobile-only" loading="lazy" alt="Top to bottom display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags" width="800" height="2319">
                     <img src="img/tile-timeline-horizontal.webp" class="no-mobile width-max" loading="lazy" alt="Left to right display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags" height="693" width="1920">
@@ -142,8 +143,8 @@
 
             <nav class="project-nav" aria-label="Project pagination">
                 <ul>
-                    <li><a href="search-api.html"><span class="direction">Previous project</span> <span class="description">Search API Migration</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
-                    <li><a href="form-api.html"><span class="direction">Next project</span> <span class="description">Form API Integration</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                    <li><a href="search-api.html"><span class="direction">Previous project</span> <span class="description">Search API migration</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
+                    <li><a href="form-api.html"><span class="direction">Next project</span> <span class="description">Form API integration</span> <!--(bake /includes/icon-arrow.svg)--></a></li>
                 </ul>
             </nav>
 

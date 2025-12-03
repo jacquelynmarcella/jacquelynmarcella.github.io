@@ -47,11 +47,11 @@
     }
 
     .header--container>div {
-        padding: var(--md) 0 0 0;
+        padding: var(--lg) 0 0 0;
     }
 
     /* Header hero sticky fade effect - not optimal for shorter phone screens */
-    @media screen and (min-height: 900px) {
+    @media screen and (min-height: 880px) {
 
         .js-sticky.header--hero {
             max-height: calc(var(--headerContentHeight) + var(--xxxl) + var(--xxxl));
@@ -141,6 +141,7 @@
         z-index: 0;
         background: transparent;
         margin-bottom: var(--lg);
+        padding-top: var(--xl);
     }
 
     .timeline--progress {
@@ -197,6 +198,7 @@
         height: 10%;
         animation: timeline-progress linear forwards;
         animation-timeline: view();
+        animation-duration: 1s;
         background: var(--surfaceColor);
         width: 2px;
     }
@@ -236,6 +238,7 @@
             color: var(--copyColor);
             margin-top: var(--xxl);
             z-index: 9;
+            font-weight: 500;
         }
 
         .js-mobile-collapsed .timeline--items {
@@ -259,12 +262,8 @@
         } */
 
 
-        .js-mobile-collapsed .timeline--progress-bar {
-            animation-range: -75vh 113vh;
-        }
-
-        .js-mobile-open .timeline--progress-bar {
-            animation-range: 30vh 113vh;
+        .timeline--progress-bar {
+            animation-range: 25% 80%;
         }
     }
 
@@ -281,7 +280,7 @@
     @media screen and (min-width: 780px) {
 
         .timeline--progress-bar {
-            animation-range: 30vh 113vh;
+            animation-range: 25% 88%;
         }
 
         button.timeline--button,
@@ -295,6 +294,7 @@
 
         .two-up {
             flex-wrap: nowrap;
+            flex-direction: row;
             width: fit-content;
         }
 
@@ -306,9 +306,6 @@
             padding-left: var(--lg);
         }
 
-        .timeline--progress-bar {
-            animation-range: 30vh 113vh;
-        }
     }
 
     @media screen and (min-width: 1000px) {
@@ -385,6 +382,7 @@
         animation-delay: .5s;
         -webkit-animation-timeline: scroll();
         animation-timeline: view();
+        animation-duration: 1s;
     }
 
     .timeline--current-role .timeline--text-container {
@@ -438,22 +436,17 @@
         }
     }
 
-
-    .experience hr {
-        width: 100%;
-    }
-
     /* Experience - developing polaroid */
     /* Do not use dark/light schemes as polaroid stays "light" on all schemes */
     .polaroid--border {
         background: rgb(var(--light));
-        padding: 20px 20px 40px 20px;
+        padding: var(--md);
         width: fit-content;
         margin: 0 0 var(--sm) auto;
         border: 1px solid rgba(var(--dark), .05);
         border-radius: 2px;
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
     }
 
     .polaroid--background {
@@ -492,7 +485,8 @@
     }
 
     .polaroid--border.mobile {
-        margin-bottom: calc(var(--md) * -1);
+        margin-top: var(--xl);
+        margin-bottom: 0;
     }
 
     @media screen and (min-width: 780px) {
@@ -661,7 +655,7 @@
         cursor: pointer;
         position: absolute;
         transform: translateY(-50%);
-        transition: all 500ms ease-in;
+        transition: opacity 500ms ease-in;
         top: calc(100% + var(--lg) + 2px);
     }
 
@@ -746,7 +740,7 @@
         background: transparent;
         border-radius: 100px;
         cursor: pointer;
-        transition: all 250ms ease-in;
+        transition: opacity 250ms ease-in;
     }
 
     .carousel--pagination button:hover,

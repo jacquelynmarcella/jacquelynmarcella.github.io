@@ -61,7 +61,7 @@
         }
 
         .projects header .tile-grid {
-            grid-template-columns: repeat(auto-fit, minmax(26%, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(28%, 1fr));
         }
     }
 
@@ -137,7 +137,7 @@
     section>ul li,
     section>ol li {
         margin-left: var(--sm);
-        margin-bottom: var(--xxs);
+        margin-bottom: var(--xxxs);
         padding-left: var(--xs);
     }
 
@@ -173,7 +173,7 @@
         display: block;
         background: var(--backgroundColor);
         text-align: left;
-        padding: var(--md) var(--lg);
+        padding: var(--md);
         max-width: 100vw;
         white-space: pre-wrap;
         font-size: var(--step--1);
@@ -238,6 +238,7 @@
         animation-duration: 1s;
         opacity: .25;
         transform: translate(0, 5rem) translateZ(0);
+        animation-duration: 1s;
     }
 
     @keyframes fade-in {
@@ -375,7 +376,6 @@
         nav.project-nav .description {
             display: inline-block;
             font-weight: 400;
-            font-style: italic;
         }
 
         nav.project-nav svg {
@@ -401,6 +401,10 @@
 
     .article-body section {
         background: transparent;
+    }
+
+    .article-body section:last-child {
+        margin-bottom: var(--xxxl);
     }
 
     .article-body section:first-child {
@@ -448,6 +452,7 @@ header .tags {
 header .container>div:nth-child(2) {
     margin-left: 0;
     margin-right: auto;
+    width: 100%;
 }
 
 header .tile-grid,
@@ -464,6 +469,10 @@ header .tile-grid {
     gap: var(--lg);
 }
 
+header .container {
+    padding-top: var(--lg);
+}
+
 @media screen and (min-width: 800px) {
     h1 {
         /* margin: 0 auto;
@@ -471,7 +480,6 @@ header .tile-grid {
     }
 
     header {
-        min-height: 800px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -483,6 +491,12 @@ header .tile-grid {
 
     header .container {
         padding-top: var(--xxl);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        min-height: 800px;
     }
 }
 

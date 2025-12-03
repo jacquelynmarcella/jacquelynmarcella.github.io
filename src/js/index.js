@@ -1,48 +1,48 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const items = gsap.utils.toArray(".tags li");
+    // const items = gsap.utils.toArray(".tags li");
 
-    // Loop through each item to create a ScrollTrigger instance
-    items.forEach((item, index) => {
-        gsap.from(item, {
-            y: 100, // Start position from 100px down
-            opacity: 0, // Start with 0 opacity
-            duration: 1.5,
-            ease: "bounce.out", // GSAP's built-in bounce ease
-            // Optional: Add a slight delay to each item for a sequenced effect
-            // This stagger is per item/trigger combination
-            delay: index * 0.1,
-            scrollTrigger: {
-                trigger: item, // The item itself is the trigger
-                start: "top 80%", // Start the animation when the top of the item enters 80% down the viewport
-                toggleActions: "play none none reverse", // Play animation on scroll down, reverse on scroll up
-                // markers: true, // Uncomment for debugging
-            }
-        });
-    });
+    // // Loop through each item to create a ScrollTrigger instance
+    // items.forEach((item, index) => {
+    //     gsap.from(item, {
+    //         y: 100, // Start position from 100px down
+    //         opacity: 0, // Start with 0 opacity
+    //         duration: 1.5,
+    //         ease: "bounce.out", // GSAP's built-in bounce ease
+    //         // Optional: Add a slight delay to each item for a sequenced effect
+    //         // This stagger is per item/trigger combination
+    //         delay: index * 0.1,
+    //         scrollTrigger: {
+    //             trigger: item, // The item itself is the trigger
+    //             start: "top 80%", // Start the animation when the top of the item enters 80% down the viewport
+    //             toggleActions: "play none none reverse", // Play animation on scroll down, reverse on scroll up
+    //             // markers: true, // Uncomment for debugging
+    //         }
+    //     });
+    // });
 
-    const tileItems = gsap.utils.toArray(".projects-section .tile-grid > li");
+    // const tileItems = gsap.utils.toArray(".projects-section .tile-grid > li");
 
-    // Loop through each item to create a ScrollTrigger instance
-    tileItems.forEach((item, index) => {
-        gsap.from(item, {
-            y: 100, // Start position from 100px down
-            opacity: 0, // Start with 0 opacity
-            duration: 1.5,
-            ease: "bounce.out", // GSAP's built-in bounce ease
-            // Optional: Add a slight delay to each item for a sequenced effect
-            // This stagger is per item/trigger combination
-            delay: index * 0.1,
-            scrollTrigger: {
-                trigger: item, // The item itself is the trigger
-                start: "top 80%", // Start the animation when the top of the item enters 80% down the viewport
-                toggleActions: "play none none reverse", // Play animation on scroll down, reverse on scroll up
-                // markers: true, // Uncomment for debugging
-            }
-        });
-    });
+    // // Loop through each item to create a ScrollTrigger instance
+    // tileItems.forEach((item, index) => {
+    //     gsap.from(item, {
+    //         y: 100, // Start position from 100px down
+    //         opacity: 0, // Start with 0 opacity
+    //         duration: 1.5,
+    //         ease: "bounce.out", // GSAP's built-in bounce ease
+    //         // Optional: Add a slight delay to each item for a sequenced effect
+    //         // This stagger is per item/trigger combination
+    //         delay: index * 0.1,
+    //         scrollTrigger: {
+    //             trigger: item, // The item itself is the trigger
+    //             start: "top 80%", // Start the animation when the top of the item enters 80% down the viewport
+    //             toggleActions: "play none none reverse", // Play animation on scroll down, reverse on scroll up
+    //             // markers: true, // Uncomment for debugging
+    //         }
+    //     });
+    // });
 
-    // Define a function to get and log the element's height
+    // // Define a function to get and log the element's height
     const headerContainer = document.querySelector('.header--hero');
     let headerContentHeight = 500; //default value
 
