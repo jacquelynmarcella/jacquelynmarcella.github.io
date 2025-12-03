@@ -196,17 +196,20 @@
 	}
 
 	ol a,
-	p a {
-		text-decoration: underline wavy var(--linkColor) 1px;
+	p a,
+	a:hover {
+		-webkit-text-decoration-line: underline;
+		-webkit-text-decoration-style: wavy;
+		text-decoration-line: underline;
+		text-decoration-style: wavy;
+		text-decoration-color: var(--linkColor);
+		text-decoration-thickness: 1px;
 		text-underline-offset: 4px;
 		text-decoration-skip-ink: none;
 	}
 
 	a:hover {
 		color: var(--linkColor);
-		text-decoration: underline wavy var(--linkColor) 1px;
-		text-underline-offset: 4px;
-		text-decoration-skip-ink: none;
 	}
 
 
@@ -944,7 +947,7 @@
 			max-width: 100vw;
 			background: var(--cardBackground);
 			z-index: 99;
-			padding: var(--sm) var(--md) var(--xxxl) var(--md);
+			padding: var(--sm) var(--md) calc(var(--xxxl) + var(--lg)) var(--md);
 		}
 
 		.navbar--level-2 li {
@@ -1224,10 +1227,14 @@
 			content: attr(data-animation)attr(data-animation);
 			color: transparent;
 			line-height: 1.8;
+			font-weight: 600;
+
+			-webkit-text-decoration-line: underline;
+			-webkit-text-decoration-style: wavy;
+			text-decoration-line: underline;
 			text-decoration-style: wavy;
 			text-decoration-color: var(--linkColor);
-			font-weight: 600;
-			text-decoration: underline wavy var(--linkColor) 1px;
+			text-decoration-thickness: 1px;
 			text-underline-offset: 4px;
 			text-decoration-skip-ink: none;
 		}
