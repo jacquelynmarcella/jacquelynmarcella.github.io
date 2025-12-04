@@ -908,93 +908,128 @@
 		height: 24px;
 	}
 
-	/* todo - cascade, vs max width */
-	@media screen and (max-width: 800px) {
+	/* Nav - mobile style baseline */
+
+	body.js-nav-open {
+		overflow: hidden;
+	}
+
+	.js-nav-open section,
+	.js-nav-open header,
+	.js-nav-open footer {
+		filter: blur(4px);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.navbar--level-2.navbar--contents {
+			transform: translate(33vw, 0);
+		}
+
+		.navbar--level-2.navbar--contents.js-open {
+			animation: slide-left 250ms ease-out forwards;
+		}
+	}
+
+	.navbar--level-2 {
+		position: fixed;
+		flex-direction: column;
+		top: calc(var(--xxxs) + var(--xxxs) + 44px);
+		left: 0;
+		width: 100%;
+		height: calc(100vh - var(--xl));
+		max-width: 100vw;
+		background: var(--cardBackground);
+		z-index: 99;
+		padding: var(--sm) var(--md) calc(var(--xxxl) + var(--xxl)) var(--md);
+	}
+
+	.navbar--level-2 li {
+		width: 100%;
+	}
+
+	.navbar--level-2 li a {
+		width: 100%;
+		padding: var(--md) 0;
+		margin: 0;
+	}
+
+	.navbar--level-2 li a.button {
+		text-align: center;
+		justify-content: center;
+		padding: var(--xs);
+	}
+
+	.navbar li.desktop,
+	.navbar .desktop {
+		display: none;
+	}
+
+	.navbar--level-2 li.contact {
+		margin-top: auto;
+	}
+
+	.navbar .contact ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		width: fit-content;
+		margin: 0 auto;
+		gap: var(--md);
+	}
+
+	/* Cancel out mobile styles on desktop */
+	@media screen and (min-width: 800px) {
 		body.js-nav-open {
-			overflow: hidden;
+			overflow: unset;
 		}
 
 		.js-nav-open section,
 		.js-nav-open header,
 		.js-nav-open footer {
-			filter: blur(4px);
+			filter: unset;
 		}
 
-
-		@keyframes slide-left {
-			from {
-				transform: translate(33vw, 0);
-			}
-
-			to {
-				transform: translate(0, 0);
-			}
+		.navbar--level-2.navbar--contents {
+			transform: none;
 		}
 
-		@media (prefers-reduced-motion: no-preference) {
-			.navbar--level-2.navbar--contents {
-				transform: translate(33vw, 0);
-			}
-
-			.navbar--level-2.navbar--contents.js-open {
-				animation: slide-left 250ms ease-out forwards;
-			}
+		.navbar--level-2.navbar--contents.js-open {
+			animation: none;
 		}
-
-
 
 		.navbar--level-2 {
-			position: fixed;
-			flex-direction: column;
-			top: calc(var(--xxxs) + var(--xxxs) + 44px);
-			left: 0;
-			width: 100%;
-			height: calc(100vh - var(--xl));
-			max-width: 100vw;
-			background: var(--cardBackground);
-			z-index: 99;
-			padding: var(--sm) var(--md) calc(var(--xxxl) + var(--xxl)) var(--md);
+			display: flex;
+			position: static;
+			flex-direction: row;
+			top: initial;
+			left: initial;
+			max-width: unset;
+			background: transparent;
+			padding: 0;
+			height: auto;
 		}
 
 		.navbar--level-2 li {
-			width: 100%;
+			width: auto;
 		}
 
 		.navbar--level-2 li a {
 			width: 100%;
-			padding: var(--md) 0;
-			margin: 0;
+			padding: 0;
+			margin: 0 var(--sm);
 		}
 
 		.navbar--level-2 li a.button {
 			text-align: center;
 			justify-content: center;
-			padding: var(--xs);
+			padding: var(--xxs) var(--xs);
 		}
 
 		.navbar li.desktop,
 		.navbar .desktop {
-			display: none;
+			display: block;
 		}
 
-		.navbar--level-2 li.contact {
-			margin-top: auto;
-		}
-
-		.navbar .contact ul {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			width: fit-content;
-			margin: 0 auto;
-			gap: var(--md);
-		}
-	}
-
-
-
-	/* Desktop only styles - can we exclude on mobile somehow? */
-	@media screen and (min-width: 800px) {
 		nav.navbar {
 			padding: var(--xxs) var(--md);
 		}
@@ -1008,10 +1043,6 @@
 			display: none;
 		}
 
-		.navbar--level-2 {
-			display: flex;
-		}
-
 		.theme-toggle {
 			margin-right: var(--xs);
 		}
@@ -1020,7 +1051,19 @@
 			width: 28px;
 			height: 28px;
 		}
+
 	}
+
+	@keyframes slide-left {
+		from {
+			transform: translate(33vw, 0);
+		}
+
+		to {
+			transform: translate(0, 0);
+		}
+	}
+
 
 	/* Footer */
 	footer .copyright a {
