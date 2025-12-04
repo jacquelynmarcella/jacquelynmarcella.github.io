@@ -141,6 +141,8 @@
         padding-left: var(--xs);
     }
 
+
+
     /* Embedded media and code */
     video {
         height: auto;
@@ -477,4 +479,31 @@ header .container {
 
 header .tile-grid a {
     font-size: var(--step-0);
+}
+
+@layer animations {
+
+    @media (prefers-reduced-motion: no-preference) {
+        section b.highlight {
+            background-image: linear-gradient(var(--tagBg), var(--tagBg));
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            background-position: left;
+        }
+
+        section b.highlight.js-active {
+            animation: highlight 1.5s ease-out forwards;
+        }
+
+        @keyframes highlight {
+            from {
+                background-size: 0% 100%;
+            }
+
+            to {
+                background-size: 100% 100%;
+            }
+        }
+    }
 }

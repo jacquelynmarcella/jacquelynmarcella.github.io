@@ -133,6 +133,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             })
         }
+        // const highlight = document.querySelectorAll('.article-body .highlight');
+        // if (highlight.length > 0) {
+        //     highlight.forEach(b => {
+        //         window.addEventListener('scroll', () => {
+        //             const rect = b.getBoundingClientRect();
+        //             const windowHeight = window.innerHeight;
+        //             const triggerPoint = windowHeight * 0.66;
+        //             if (rect.top < triggerPoint) {
+        //                 b.classList.add('js-active');
+        //             }
+        //         });
+
+        //     });
+        // }
 
         /* Move to projects */
         let stats = gsap.utils.toArray(".stats--number");
@@ -141,42 +155,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 onEnter: batch => {
                     gsap.from(batch, {
                         scale: .5,
-                        duration: .75,
+                        duration: .5,
+                        opacity: .75,
                         transformOrigin: "left",
                         stagger: 0.25, // This will stagger the animations even if they are triggered at the same time
                     });
                 },
             });
         }
-    }
 
-    // A11y block links - ensure clicking on <a> tag clicks entire element
-    // https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
-    const cards = document.querySelectorAll(".projects-section .tile-grid li");
-    const cardLinks = document.querySelectorAll('.tile-content a');
 
-    function handleCardClick(event) {
-        const isTextSelected = window.getSelection().toString();
-        if (!isTextSelected) {
-            event.currentTarget.querySelector('a').click();
+        // A11y block links - ensure clicking on <a> tag clicks entire element
+        // https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
+        const cards = document.querySelectorAll(".projects-section .tile-grid li");
+        const cardLinks = document.querySelectorAll('.tile-content a');
+
+        function handleCardClick(event) {
+            const isTextSelected = window.getSelection().toString();
+            if (!isTextSelected) {
+                event.currentTarget.querySelector('a').click();
+            }
         }
+        cards.forEach(card => {
+            card.addEventListener("click", handleCardClick);
+        });
+
+        cardLinks.forEach(link => {
+            link.addEventListener("click", (e) => e.stopPropagation());
+        });
+
+
+
+
+
+
+
+        // Fix GSAP issue
+        ScrollTrigger.refresh();
+
     }
-    cards.forEach(card => {
-        card.addEventListener("click", handleCardClick);
-    });
-
-    cardLinks.forEach(link => {
-        link.addEventListener("click", (e) => e.stopPropagation());
-    });
-
-
-
-
-
-
-
-    // Fix GSAP issue
-    ScrollTrigger.refresh();
-
-
 });
