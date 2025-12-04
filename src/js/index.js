@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (motionAllowed) {
 
-
         // Header - sticky and code animation timing
         const headerContainer = document.querySelector('.header--hero');
         const headerCode = document.querySelector('.header--hero code');
@@ -46,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tagSet.forEach(tagSet => {
             let tags = gsap.utils.toArray(tagSet.querySelectorAll("li"));
             ScrollTrigger.batch(tags, {
+                once: true,
                 onEnter: batch => {
                     gsap.from(batch, {
                         y: "8px",

@@ -52,7 +52,7 @@
 
     /* Full height top section on mobile - minimize excess text */
     .header--container .top-section {
-        min-height: 87vh;
+        min-height: 75vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -683,7 +683,7 @@
         position: absolute;
         transform: translateY(-50%);
         transition: opacity 500ms ease-in;
-        top: calc(100% + var(--lg) + 2px);
+        top: calc(100% + var(--lg) + 6px);
     }
 
     [data-slide-visible="1"]+.carousel--controls button:first-child,
