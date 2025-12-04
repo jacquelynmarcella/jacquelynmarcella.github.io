@@ -59,72 +59,12 @@
         padding-bottom: var(--xxxl);
     }
 
-    @media screen and (min-width: 850px) {
+    @media screen and (min-width: 700px) {
         .header--container .top-section {
             min-height: unset;
             display: block;
             padding-bottom: 0;
         }
-
-        /* Header hero sticky fade effect - not optimal for shorter phone screens */
-        @media (prefers-reduced-motion: no-preference) {
-            .js-sticky.header--hero {
-                --stickyHeaderPosition: 0;
-                --stickyHeaderOpacity: 1;
-                transition: all linear(0, 0.2, 0.4, 0.6, 0.8, 1);
-                transform: translateY(var(--stickyHeaderPosition));
-                opacity: var(--stickyHeaderOpacity);
-            }
-        }
-
-
-        /* .js-sticky.header--hero {
-            max-height: calc(var(--headerContentHeight) + var(--xxxl) + var(--xxxl));
-        }
-
-        .js-sticky .header--container {
-            height: var(--headerContainerHeight);
-        }
-
-        .header--hero .header--container {
-            opacity: 1;
-
-        }
-
-
-
-        .header--hero.js-animate .header--container {
-            backface-visibility: hidden;
-            -webkit-font-smoothing: subpixel-antialiased;
-            animation: fade-out ease-out forwards;
-            -webkit-animation-timeline: scroll();
-            animation-timeline: view();
-            animation-range: 100vh 150vh;
-            animation-duration: 1s;
-        } */
-    }
-
-    /* @media screen and (min-width: 600px) and (min-height: 900px) {
-        .header--hero .header--container {
-            animation-range: 100vh 140vh;
-        }
-    }
-
-    @keyframes fade-out {
-        0% {
-            opacity: 1;
-            transform: translate(0, 0) translateZ(0);
-        }
-
-        100% {
-            opacity: .5;
-            transform: translate(0, 5vh) translateZ(0);
-        }
-    } */
-
-
-
-    @media screen and (min-width: 850px) {
 
         header .align-center {
             text-align: center;
@@ -142,6 +82,20 @@
             padding: var(--xl) 0 var(--lg) 0;
         }
 
+    }
+
+    @media screen and (min-width: 800px) {
+
+        /* Header hero sticky fade effect - not optimal for shorter phone screens */
+        @media (prefers-reduced-motion: no-preference) {
+            .js-sticky.header--hero {
+                --stickyHeaderPosition: 0;
+                --stickyHeaderOpacity: 1;
+                transition: all linear(0, 0.2, 0.4, 0.6, 0.8, 1);
+                transform: translateY(var(--stickyHeaderPosition));
+                opacity: var(--stickyHeaderOpacity);
+            }
+        }
     }
 
     /* Skills */

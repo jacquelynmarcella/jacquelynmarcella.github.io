@@ -1179,19 +1179,19 @@
 	}
 
 	/* Mobile only styles */
-	@media screen and (max-width: 599.99px) {
+	@media screen and (max-width: 699.99px) {
 		.no-mobile {
 			display: none;
 		}
 	}
 
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 700px) {
 		.mobile-only {
 			display: none;
 		}
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 700px) {
 
 		/* On mobile, still read full text for clarity */
 		.sr-mobile {
