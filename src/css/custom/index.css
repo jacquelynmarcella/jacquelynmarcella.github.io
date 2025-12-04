@@ -883,31 +883,34 @@
 @layer animations {
 
     /* Typewriter text - main page header only */
-    .type {
-        display: inline-flex;
-    }
-
-
-
-    .type .animate:before {
-        content: " ";
-        display: inline-block;
-    }
-
-    .type .end {
-        margin-left: auto;
-    }
-
-    .type .animate {
-        word-break: break-all;
-        height: 1.1em;
-        width: 0%;
-        overflow: hidden;
-        padding: 0 var(--xxxs);
-        animation: type 0s ease-in-out forwards;
-    }
-
     @media (prefers-reduced-motion: no-preference) {
+        .type {
+            display: inline-flex;
+        }
+
+        .type .end {
+            margin-left: auto;
+        }
+
+        h1 code {
+            text-wrap: initial;
+            text-align: left;
+        }
+
+        .type .animate {
+            word-break: break-all;
+            height: 1.1em;
+            width: 0%;
+            overflow: hidden;
+            padding: 0 var(--xxxs);
+            animation: type 0s ease-in-out forwards;
+        }
+
+        .type .animate:before {
+            content: " ";
+            display: inline-block;
+        }
+
         .js-typing .type .animate {
             animation: type 1.25s ease-in-out forwards;
         }
