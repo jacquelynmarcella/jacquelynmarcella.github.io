@@ -208,6 +208,7 @@
 		text-decoration-skip-ink: none;
 	}
 
+	a:active,
 	a:hover {
 		color: var(--linkColor);
 	}
@@ -462,7 +463,8 @@
 	}
 
 	.button.primary:hover,
-	.button.primary:focus {
+	.button.primary:focus,
+	.button.primary:active {
 		/** TODO - assign */
 		background: var(--linkColor);
 		border: 2px solid var(--linkColor);
@@ -477,7 +479,8 @@
 	}
 
 	.button.alternate:hover,
-	.button.alternate:focus {
+	.button.alternate:focus,
+	.button.alternate:active {
 		background: var(--tagBg);
 		text-decoration: none;
 	}
@@ -1212,8 +1215,8 @@
 	@media (prefers-reduced-motion: no-preference) {
 		.js-animate {
 			opacity: .5;
-			transform: translateY(2em);
-			transition: opacity 0.3s ease-in, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+			transform: translateY(3em);
+			transition: opacity 0.3s ease-in, transform 0.75s cubic-bezier(0.23, 1, 0.32, 1);
 		}
 
 		.js-animate.js-fade-in {

@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.addEventListener('scroll', () => {
                     const rect = section.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
-                    const triggerPoint = windowHeight * 0.66;
+                    const triggerPoint = windowHeight * 0.85;
                     if (rect.top < triggerPoint) {
                         section.classList.add('js-fade-in');
                     }

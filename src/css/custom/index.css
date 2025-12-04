@@ -897,15 +897,17 @@
         margin-left: auto;
     }
 
+    .type .animate {
+        word-break: break-all;
+        height: 1.1em;
+        width: 100%;
+        overflow: hidden;
+        padding: 0 var(--xxxs);
+    }
+
     @media (prefers-reduced-motion: no-preference) {
         .type .animate {
-            word-break: break-all;
-            height: 1.1em;
             width: 0%;
-            overflow: hidden;
-            /* animation-delay: 1.5s; */
-            /* animation: type 1.75s ease-in-out forwards; */
-            padding: 0 var(--xxxs);
         }
 
         .js-typing .type .animate {
