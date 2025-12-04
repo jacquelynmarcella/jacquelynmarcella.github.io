@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (motionAllowed) {
-        const projectSection = document.querySelectorAll('.projects-section .tile-grid, .article-body figure, .mobile.polaroid--border');
+        const projectSection = document.querySelectorAll('.projects-section .tile-grid, .article-body figure');
         if (projectSection) {
             projectSection.forEach(section => {
                 section.classList.add('js-animate');
