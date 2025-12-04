@@ -50,13 +50,28 @@
         padding: var(--lg) 0 0 0;
     }
 
-    /* Header hero sticky fade effect - not optimal for shorter phone screens */
-    @media screen and (min-height: 800px) {
+    /* Full height top section on mobile - minimize excess text */
+    .header--container .top-section {
+        min-height: 87vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: var(--xxxl);
+    }
 
+    @media screen and (min-width: 850px) {
+        .header--container .top-section {
+            min-height: unset;
+            display: block;
+            padding-bottom: 0;
+        }
+
+        /* Header hero sticky fade effect - not optimal for shorter phone screens */
         @media (prefers-reduced-motion: no-preference) {
             .js-sticky.header--hero {
                 --stickyHeaderPosition: 0;
                 --stickyHeaderOpacity: 1;
+                transition: all linear(0, 0.2, 0.4, 0.6, 0.8, 1);
                 transform: translateY(var(--stickyHeaderPosition));
                 opacity: var(--stickyHeaderOpacity);
             }
@@ -116,7 +131,9 @@
         }
 
         header .align-center,
-        header .align-center>* {
+        header .top-section,
+        header .button-section,
+        header .header--image {
             margin-left: auto;
             margin-right: auto;
         }
@@ -436,7 +453,7 @@
         .timeline--text-container {
             opacity: .25;
             /* transition: all 250ms ease-out; */
-            transition: opacity 0.3s ease-in, transform .85s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: opacity 0.75s ease-in, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
             transform: translate(-2em, 0) scale(.85);
         }
 
@@ -882,11 +899,13 @@
 
 @layer animations {
 
+    .type {
+        display: inline-flex;
+    }
+
     /* Typewriter text - main page header only */
     @media (prefers-reduced-motion: no-preference) {
-        .type {
-            display: inline-flex;
-        }
+
 
         .type .end {
             margin-left: auto;
@@ -903,7 +922,6 @@
             width: 0%;
             overflow: hidden;
             padding: 0 var(--xxxs);
-            animation: type 0s ease-in-out forwards;
         }
 
         .type .animate:before {

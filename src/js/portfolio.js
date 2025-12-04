@@ -133,6 +133,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             })
         }
+
+        /* Move to projects */
+        let stats = gsap.utils.toArray(".stats--number");
+        if (stats.length > 0) {
+            ScrollTrigger.batch(stats, {
+                onEnter: batch => {
+                    gsap.from(batch, {
+                        scale: .5,
+                        duration: .75,
+                        transformOrigin: "left",
+                        stagger: 0.25, // This will stagger the animations even if they are triggered at the same time
+                    });
+                },
+            });
+        }
     }
 
     // A11y block links - ensure clicking on <a> tag clicks entire element
@@ -154,6 +169,14 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener("click", (e) => e.stopPropagation());
     });
 
+
+
+
+
+
+
+    // Fix GSAP issue
+    ScrollTrigger.refresh();
 
 
 });

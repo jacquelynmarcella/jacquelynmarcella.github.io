@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (motionAllowed) {
 
+
         // Header - sticky and code animation timing
         const headerContainer = document.querySelector('.header--hero');
         const headerCode = document.querySelector('.header--hero code');
         const stickyHeader = document.getElementById('sticky-header');
         const main = document.querySelector('main');
         window.addEventListener('scroll', () => {
-            if (!stickyHeader) return;
             let headerHeight = stickyHeader.offsetHeight;
             let codeHeight = headerCode.getBoundingClientRect();
             let codeTop = codeHeight.top;
@@ -40,24 +40,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+
         // Skills - bounce in tag set on scroll
-        const tagSet = gsap.utils.toArray("ul.tags");
+        const tagSet = gsap.utils.toArray(".skills--container .tags");
         tagSet.forEach(tagSet => {
             let tags = gsap.utils.toArray(tagSet.querySelectorAll("li"));
             ScrollTrigger.batch(tags, {
                 onEnter: batch => {
                     gsap.from(batch, {
-                        y: "1em",
-                        duration: .33,
-                        stagger: 0.15, // This will stagger the animations even if they are triggered at the same time
+                        y: "8px",
+                        duration: .4,
+                        stagger: 0.2, // This will stagger the animations even if they are triggered at the same time
                     });
                 },
             });
         });
 
 
+        // Fix GSAP issue
 
-
+        ScrollTrigger.refresh();
 
 
         // Timeline progress bar animation
