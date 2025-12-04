@@ -1216,7 +1216,7 @@
 		.js-animate {
 			opacity: .5;
 			transform: translateY(3em);
-			transition: opacity 0.3s ease-in, transform 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+			transition: opacity 0.3s ease-in, transform 1.25s cubic-bezier(0.23, 1, 0.32, 1);
 		}
 
 		.js-animate.js-fade-in {

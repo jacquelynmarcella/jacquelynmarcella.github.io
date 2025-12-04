@@ -435,7 +435,8 @@
     @media (prefers-reduced-motion: no-preference) {
         .timeline--text-container {
             opacity: .25;
-            transition: all 250ms ease-out;
+            /* transition: all 250ms ease-out; */
+            transition: opacity 0.3s ease-in, transform .85s cubic-bezier(0.23, 1, 0.32, 1);
             transform: translate(-2em, 0) scale(.85);
         }
 
@@ -447,7 +448,7 @@
 
         .timeline--item:after {
             opacity: 0;
-            transition: all 250ms ease-out;
+            transition: all 0.3s ease-in;
         }
 
         .timeline--text-container.js-active {
@@ -900,16 +901,13 @@
     .type .animate {
         word-break: break-all;
         height: 1.1em;
-        width: 100%;
+        width: 0%;
         overflow: hidden;
         padding: 0 var(--xxxs);
+        animation: type 0s ease-in-out forwards;
     }
 
     @media (prefers-reduced-motion: no-preference) {
-        .type .animate {
-            width: 0%;
-        }
-
         .js-typing .type .animate {
             animation: type 1.25s ease-in-out forwards;
         }
