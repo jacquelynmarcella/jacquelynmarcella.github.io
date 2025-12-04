@@ -196,7 +196,7 @@
     /* iOS placement */
     @supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
         .timeline--progress {
-            left: -1px;
+            left: -2px;
         }
     }
 

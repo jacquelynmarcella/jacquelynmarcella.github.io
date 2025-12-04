@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var colorToggle = document.querySelector(".theme-toggle");
-
+    let colorToggle = document.querySelector(".theme-toggle");
     //On Load
     let colorTheme = document.documentElement.getAttribute('data-theme');
     if (colorTheme == "dark") {
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
 
 
     let navbarToggle = document.getElementById("navbar--toggle");
@@ -118,6 +116,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial check
     moveThemeToggle();
+
+    const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (motionAllowed) {
+        const projectSection = document.querySelectorAll('.projects-section .tile-grid, .article-body figure, .mobile.polaroid--border');
+        if (projectSection) {
+            projectSection.forEach(section => {
+                section.classList.add('js-animate');
+                window.addEventListener('scroll', () => {
+                    const rect = section.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    const triggerPoint = windowHeight * 0.66;
+                    if (rect.top < triggerPoint) {
+                        section.classList.add('js-fade-in');
+                    }
+                });
+            })
+        }
+    }
 
     // A11y block links - ensure clicking on <a> tag clicks entire element
     // https://css-tricks.com/block-links-the-search-for-a-perfect-solution/

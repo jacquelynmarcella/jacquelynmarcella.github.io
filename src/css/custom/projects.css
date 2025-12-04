@@ -230,35 +230,6 @@
         margin-bottom: var(--xxl);
     }
 
-    section figure {
-        animation: fade-in ease-out forwards;
-        -webkit-animation-timeline: scroll();
-        animation-timeline: view();
-        animation-range: 0vh 40vh;
-        animation-duration: 1s;
-        opacity: .25;
-        transform: translate(0, 5rem) translateZ(0);
-        animation-duration: 1s;
-    }
-
-    @keyframes fade-in {
-        0% {
-            opacity: .25;
-            transform: translate(0, 5rem) translateZ(0);
-
-        }
-
-        100% {
-            opacity: 1;
-            transform: translate(0, 0) translateZ(0);
-        }
-    }
-
-    /* 
-    figure {
-        max-width: 1500px;
-        margin: 0 auto;
-    } */
 
     figure figcaption {
         font-size: var(--step--1);

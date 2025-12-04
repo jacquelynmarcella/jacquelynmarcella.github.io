@@ -919,13 +919,6 @@
 			filter: blur(4px);
 		}
 
-		.navbar--level-2.navbar--contents {
-			transform: translate(33vw, 0);
-		}
-
-		.navbar--level-2.navbar--contents.js-open {
-			animation: slide-left 250ms ease-out forwards;
-		}
 
 		@keyframes slide-left {
 			from {
@@ -936,6 +929,18 @@
 				transform: translate(0, 0);
 			}
 		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			.navbar--level-2.navbar--contents {
+				transform: translate(33vw, 0);
+			}
+
+			.navbar--level-2.navbar--contents.js-open {
+				animation: slide-left 250ms ease-out forwards;
+			}
+		}
+
+
 
 		.navbar--level-2 {
 			position: fixed;
@@ -1202,6 +1207,20 @@
 }
 
 @layer animations {
+
+	/* Fade in effect */
+	@media (prefers-reduced-motion: no-preference) {
+		.js-animate {
+			opacity: .5;
+			transform: translateY(2em);
+			transition: opacity 150ms linear, transform 250ms ease-in;
+		}
+
+		.js-animate.js-fade-in {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 
 	/* Wavy links on hover - nav only */
 
