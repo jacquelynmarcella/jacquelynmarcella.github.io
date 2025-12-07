@@ -47,7 +47,7 @@
     }
 
     .header--container>div {
-        padding: var(--lg) 0 0 0;
+        padding: var(--sm) 0 0 0;
     }
 
     /* Full height top section on mobile - minimize excess text */
@@ -683,7 +683,7 @@
         position: absolute;
         transform: translateY(-50%);
         transition: opacity 500ms ease-in;
-        top: calc(100% + var(--lg) + 6px);
+        top: calc(100% + var(--lg) + 8px);
     }
 
     [data-slide-visible="1"]+.carousel--controls button:first-child,

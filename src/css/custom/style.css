@@ -125,7 +125,7 @@
 
 	.subhead code,
 	p code {
-		font-size: .9em;
+		font-size: .95em;
 		text-align: left;
 		line-height: 1;
 	}
@@ -1255,14 +1255,14 @@
 	/* Fade in effect */
 	@media (prefers-reduced-motion: no-preference) {
 		.js-animate {
-			opacity: .5;
-			transform: translateY(3em);
-			transition: opacity 1s ease-in, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+			opacity: 0;
+			transition: opacity 1s cubic-bezier(.4, 0, .2, 1), translate 1s cubic-bezier(.4, 0, .2, 1);
+			translate: 0 10px;
 		}
 
 		.js-animate.js-fade-in {
 			opacity: 1;
-			transform: translateY(0);
+			translate: unset;
 		}
 	}
 

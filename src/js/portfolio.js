@@ -119,14 +119,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (motionAllowed) {
-        const projectSection = document.querySelectorAll('.projects-section .tile-grid, .article-body figure');
+        const projectSection = document.querySelectorAll('.projects-section .tile-grid > li, .article-body figure');
         if (projectSection) {
             projectSection.forEach(section => {
                 section.classList.add('js-animate');
                 window.addEventListener('scroll', () => {
                     const rect = section.getBoundingClientRect();
                     const windowHeight = window.innerHeight;
-                    const triggerPoint = windowHeight * 0.85;
+                    const triggerPoint = windowHeight * 0.90;
                     if (rect.top < triggerPoint) {
                         section.classList.add('js-fade-in');
                     }
@@ -154,11 +154,11 @@ document.addEventListener('DOMContentLoaded', function () {
             ScrollTrigger.batch(stats, {
                 onEnter: batch => {
                     gsap.from(batch, {
-                        scale: .5,
+                        scale: .75,
                         duration: .5,
-                        opacity: .75,
+                        // opacity: .75,
                         transformOrigin: "left",
-                        stagger: 0.25, // This will stagger the animations even if they are triggered at the same time
+                        stagger: 0.15, // This will stagger the animations even if they are triggered at the same time
                     });
                 },
             });
@@ -183,11 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
         cardLinks.forEach(link => {
             link.addEventListener("click", (e) => e.stopPropagation());
         });
-
-
-
-
-
 
 
         // Fix GSAP issue
