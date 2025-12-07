@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 once: true,
                 onEnter: batch => {
                     gsap.from(batch, {
-                        y: "8px",
+                        y: "10px",
                         duration: .4,
                         stagger: 0.2, // This will stagger the animations even if they are triggered at the same time
                     });

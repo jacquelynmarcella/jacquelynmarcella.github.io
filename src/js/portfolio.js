@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (motionAllowed) {
-        const projectSection = document.querySelectorAll('.projects-section .tile-grid > li, .article-body figure');
+        const projectSection = document.querySelectorAll('.projects-section .tile-grid > li, .article-body figure, #carousel-slide-1 blockquote');
         if (projectSection) {
             projectSection.forEach(section => {
                 section.classList.add('js-animate');
