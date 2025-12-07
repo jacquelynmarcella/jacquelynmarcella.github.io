@@ -47,12 +47,12 @@
     }
 
     .header--container>div {
-        padding: var(--sm) 0 0 0;
+        padding: var(--md) 0 0 0;
     }
 
     /* Full height top section on mobile - minimize excess text */
     .header--container .top-section {
-        min-height: 75vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;

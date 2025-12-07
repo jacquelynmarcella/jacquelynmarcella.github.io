@@ -132,7 +132,7 @@
                     </div>
                     <div>
                         <span class="stats--number size-2">10.5k+</span>
-                        <span class="stats--desc">component instances in Drupal</span>
+                        <span class="stats--desc">component instances published</span>
                     </div>
                     <div>
                         <span class="stats--number size-2">18</span>
@@ -159,13 +159,16 @@
                 <h2>Plan</h2>
 
                 <p>Smartsheet's CMS had a huge problem: content updates were heavily reliant on engineers due to a lack of templates and an incomplete authoring experience. Additionally, the multi-site web experience was lacking cohesion as there was no unifying design system.</p>
-                <p>The engineering team recommended that we restructure the site to use a design system that is component-based, easy to author, modular, and positioned for long term growth as the Smartsheet brand evolves.</p>
-                <p>For the front-end, rather than using a library like Bootstrap, we determined the best path forward was to leverage the exciting new features that were widely supported in CSS without any special framework. Flexbox, grid, and CSS custom properties could unlock all we needed for a simple variable-based approach to colors, spacing, and overall layout consistency. As the back end team worked on the broader migration, the front end team set out to build an <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank">atomic component library</a> following the principles of <a href="https://talks.jensimmons.com/15TjNW/designing-intrinsic-layouts" target="_blank">intrinsic design</a>.
+                <p>The engineering team recommended that we start by restructuring the primary site to use a custom design system that is component-based, easy to author, modular, and positioned for long term growth as the Smartsheet brand evolves.</p>
+
+                <!-- For the front-end, rather than using a library like Bootstrap, we determined the best path forward was to leverage the exciting new features that were widely supported in CSS without any special framework. Flexbox, grid, and CSS custom properties could unlock all we needed for a simple variable-based approach to colors, spacing, and overall layout consistency. -->
+
+                <p>As the back end team worked on the broader migration, the front end team set out to build an <a href="https://bradfrost.com/blog/post/atomic-web-design/" target="_blank">atomic component library</a> following the principles of <a href="https://talks.jensimmons.com/15TjNW/designing-intrinsic-layouts" target="_blank">intrinsic design</a>.
             </section>
 
             <section>
                 <h2>Process</h2>
-                <p>The front end team collaborated with UI/UX designers to build a component system in PatternLab where we could organize everything from button styles (atoms) to grids of tiles (organisms) and use these building blocks to create templates for different content types and pages.</p>
+                <p>The front-end team collaborated with UI/UX designers to build a component system in PatternLab where we could organize everything from button styles (atoms) to grids of tiles (organisms) and use these building blocks to create templates for different content types and pages.</p>
                 <p>We didn’t think only about mobile versus desktop and strict concepts like “grid with exactly three items,” but about flexible elements that could adapt based on real-life content needs and the component’s container size, not just the viewport size. </p>
                 <figure>
                     <img src="img/design-system-large.webp" loading="lazy" class="width-content" alt="Component example split half and half to show different elements and how the different color schemes apply to both" width="1920" height="1080">
@@ -217,17 +220,16 @@
             <section>
                 <h2>Impact</h2>
                 <p>The launch of the new site and design system delivered a modern UX and improved authoring experience. Financially, the project <b class="highlight">exceeded its offset goal by +71%, with $1MM in ARR</b> directly attributed to the website rebuild and migration.</p>
-                <p>The system has demonstrated significant reuse and scalability, as we now have <b class="highlight">over 10,500 organism-level component instances</b> across the primary website.
-                </p>
-                <p>Since its inception, we have been able to upgrade the CMS multiple times and improve our component library to both stay on brand and keep up with design standards in the industry. We have continually integrated more progressive enhancements and added new features to components along the way.</p>
-                <p>For example, the tile molecule, shown below from oldest to newest, has significantly evolved over the years:</p>
+                <p>The system has demonstrated significant reuse and scalability, as we now have <b class="highlight">over 10,500 organism-level component instances</b> across the primary website.</p>
+                <p>Since its inception, we have been able to upgrade the CMS multiple times. We successfully rolled out these design guidelines on several other Smartsheet web properties, ensuring a cohesive digital experience for the brand.</p>
+                <p>We have continually integrated progressive enhancements and added new features to components. For example, the tile molecule, shown below from oldest to newest, has significantly evolved over the years:</p>
                 <figure>
                     <img src="img/tile-timeline-vertical.webp" class="mobile-only" loading="lazy" alt="Top to bottom display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags" width="800" height="2319">
                     <img src="img/tile-timeline-horizontal.webp" class="no-mobile width-max" loading="lazy" alt="Left to right display of 3 tile molecules, showing a less modern design to a more modern design with metadata and tags" height="693" width="1920">
                     <figcaption>The tile molecule has not only improved visually, but has expanded to accommodate both tags and metadata to better promote article content.</figcaption>
                 </figure>
 
-                <p>As a senior engineer, I've taken on the engineering ownership and governance of this global design system, including onboarding new team members and leading improvements. One major initiative involved a thorough <a href="accessibility.html">accessibility remediation</a> of the component library to ensure WCAG compliance. We have since successfully rolled out this component library to other Smartsheet web properties, ensuring a cohesive digital experience for the brand.</p>
+                <p>As a senior engineer, I've grown to take on engineering ownership and governance of this global design system, including onboarding new team members and leading improvements. One major initiative involved a thorough <a href="accessibility.html">accessibility remediation</a> of the component library to ensure WCAG compliance.</p>
             </section>
 
             <section>
@@ -332,6 +334,7 @@
                                 <li>SEO</li>
                                 <li>PHP</li>
                                 <li>Lottie</li>
+                                <li>Drupal</li>
                             </ul>
                         </div>
                     </li>

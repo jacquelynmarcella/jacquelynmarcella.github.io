@@ -395,7 +395,7 @@
     footer {
         mask: unset;
         background: var(--backgroundColor);
-        padding-top: var(--md);
+        padding-top: 0;
     }
 
     footer .container {
