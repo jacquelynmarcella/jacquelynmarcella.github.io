@@ -153,6 +153,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     slides.forEach(slide => observer.observe(slide));
 
+    const currentSlideSpan = document.querySelector('.current-slide');
+
     function updateUI(index) {
         carousel.setAttribute('data-slide-visible', index + 1);
         slides.forEach((slide, i) => {
@@ -170,6 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (i === index) {
                 button.classList.add('js-active');
                 button.setAttribute('aria-selected', 'true');
+                if (currentSlideSpan) {
+                    button.appendChild(currentSlideSpan);
+                }
             } else {
                 button.classList.remove('js-active');
                 button.setAttribute('aria-selected', 'false');
