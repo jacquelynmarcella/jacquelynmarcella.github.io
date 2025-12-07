@@ -171,13 +171,11 @@ document.addEventListener('DOMContentLoaded', function () {
         paginationButtons.forEach((button, i) => {
             if (i === index) {
                 button.classList.add('js-active');
-                button.setAttribute('aria-selected', 'true');
                 if (currentSlideSpan) {
                     button.appendChild(currentSlideSpan);
                 }
             } else {
                 button.classList.remove('js-active');
-                button.setAttribute('aria-selected', 'false');
             }
         });
     }
