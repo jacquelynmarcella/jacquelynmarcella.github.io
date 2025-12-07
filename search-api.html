@@ -213,27 +213,27 @@
 
             <section>
                 <h2>Plan</h2>
-                <p>Smartsheet’s enterprise web properties leveraged Coveo’s Search API for site search functionality. A cost-benefit analysis determined that our minimal usage of Coveo’s advanced features was disproportionate to the contract cost, driving a search for a more efficient solution.</p>
-                <p>As engineers working in Drupal, an open source CMS, it felt only natural to seek out an open source solution for our search experience. Our back-end engineers conducted thorough research and recommended a migration to Open Search’s Search API, an open source option with existing Drupal modules, documentation, and a community to lean on for issue resolution.</p>
-                <p>The secondary front-end goal for the project was to resolve a long-standing issue of disorganized, redundant search styles that had accumulated over time and had made maintanence a challenge.</p>
+                <p>Smartsheet’s enterprise web properties leveraged Coveo’s Search API for site search functionality. A cost-benefit analysis determined that our minimal usage of Coveo’s advanced features was disproportionate to the contract cost, driving a search for a more efficient solution. The engineering team conducted research and recommended a migration to Open Search’s Search API.</p>
+                <p>Meanwhile, the design team conducted user research on the existing search experience, which concluded that the excessive amount of exposed filters and an unclear tab design created a confusing and overwhelming experience.</p>
+                <p>The front-end goal for the project was to improve the search UI/UX and resolve a long-standing issue of disorganized, redundant search styles that had accumulated over time and had made maintanence a challenge.</p>
             </section>
 
             <section>
                 <h2>Process</h2>
                 <p>My role on this project was to lead the front-end rebuild to support the updated search functionality. The engineering team implemented migrations concurrently on two multilingual Drupal websites:</p>
                 <h3>Smartsheet Help Center Site</h3>
-                <p>Working with back-end engineers and UI/UX designers, the front-end engineers implemented a total design overhaul of the Help Center search experience as part of the migration. First, the design team completed user testing, which confirmed that the excessive amount of exposed filters provided a confusing and overwhelming experience. After collaborating extensively in Figma with the design team, we built out improved facets, sorts, tabs, and results in Drupal using Twig, JavaScript, PHP, and CSS.</p>
+                <p>Working with back-end engineers and UI/UX designers, the front-end engineers implemented a total design overhaul of the Help Center search experience as part of the migration. Taking into account the insights from the user research, we collaborated with the design team to build out improved facets, sorts, tabs, and results in Drupal using Twig, JavaScript, PHP, and CSS.</p>
                 <div class="two-up width-max">
                     <div class="flex--50">
                         <figure>
                             <img src="img/help-search-old.webp" width="800" height="781" loading="lazy" alt="Visual of old Help Center Search with a 'basics' query entered and a long list of exposed filters on the left">
-                            <figcaption>Before: Help Center search used Coveo and had too many confusing filters exposed that provided little value to users.</figcaption>
+                            <figcaption>Before: Help Center search used Coveo and had too many filters exposed and was designed with confusing tab placement.</figcaption>
                         </figure>
                     </div>
                     <div class="flex--50">
                         <figure>
                             <img src="img/help-search-new.webp" width="800" height="781" loading="lazy" alt="Visual of new Help Center Search with collapsed filters, clearer tabs, and a 'formulas' query entered">
-                            <figcaption>After: Help Center uses OpenSearch and has an improved UI with collapsed filters on medium sized and below monitors.</figcaption>
+                            <figcaption>After: Help Center uses OpenSearch and has an improved UI with collapsed filters, clearer tabs, and a more organized layout.</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -242,8 +242,7 @@
                 <p>This centralization made it easy to rapidly spin up new search Views with standardized filters and visual components. By integrating the search components with our <a href="design-system.html">global component system</a> (e.g., using our existing tile/card molecule), I ensured visual consistency sitewide while drastically improving the efficiency of the front-end code base.</p>
                 <figure>
                     <img src="img/www-content-center.webp" width="1100" height="1033" class="width-content" loading="lazy" alt="Visual of Content Center with results filtered for the topic 'Artifical Intelligence'">
-                    <figcaption>Smartsheet's Content Center is one area of the site that could be simplified into a
-                        re-usable View template.</figcaption>
+                    <figcaption>Smartsheet's Content Center is one area of the site that could be simplified into a re-usable View template.</figcaption>
                 </figure>
             </section>
 
