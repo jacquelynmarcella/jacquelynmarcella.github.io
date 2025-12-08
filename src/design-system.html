@@ -95,8 +95,14 @@
                     </div>
                     <div class="flex--50">
                         <figure>
-                            <pre><code class="language-css">
-/** _tile-molecule.scss **/
+                            <pre><code class="language-css">/** _atom--tag.scss **/
+.tag {
+  background: var(--cardTagBg);
+  color: var(--cardTagText);
+  padding: var(--xxxs) var(--xxs);
+}
+
+/** _molecule--tile.scss **/
 .tile {
   background: var(--cardBackground);
   border: 1px solid var(--border1);
@@ -106,15 +112,8 @@
   .content {
     padding: 0 var(--md) var(--sm) var(--md);
   }
-  .arrow {
-    fill: var(--cardLinkColor);
-  }
-  .tag {
-    background: var(--cardTagBg);
-    color: var(--cardTagText);
-  }
 }</code></pre>
-                            <figcaption>The component's SCSS file is largely comprised of global CSS custom properties.</figcaption>
+                            <figcaption>Each component's SCSS file is largely comprised of global CSS custom properties.</figcaption>
                         </figure>
                     </div>
                 </div>

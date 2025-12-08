@@ -155,10 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 onEnter: batch => {
                     gsap.from(batch, {
                         scale: .75,
-                        duration: .5,
+                        duration: .75,
                         // opacity: .75,
                         transformOrigin: "left",
-                        stagger: 0.15, // This will stagger the animations even if they are triggered at the same time
+                        stagger: 0.25, // This will stagger the animations even if they are triggered at the same time
                     });
                 },
             });
