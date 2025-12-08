@@ -263,7 +263,34 @@
 		margin-left: auto;
 	}
 
+
+	/* Header underline */
+	h2 {
+		position: relative;
+		padding-bottom: var(--sm);
+		margin-bottom: var(--lg);
+	}
+
+	h2:after {
+		content: "";
+		display: block;
+		height: 2px;
+		background: var(--surfaceColor);
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
 	@media screen and (min-width: 800px) {
+
+		h2.text-align-center {
+			padding-bottom: 0;
+		}
+
+		h2.text-align-center:after {
+			display: none;
+		}
 
 		.text-align-center {
 			display: block;
@@ -314,32 +341,6 @@
 
 	.skip-to-main:focus+.navbar {
 		margin-top: var(--xl);
-	}
-
-	/* Header underline */
-	h2 {
-		position: relative;
-		padding-bottom: var(--sm);
-		margin-bottom: var(--lg);
-	}
-
-	h2:after {
-		content: "";
-		display: block;
-		height: 2px;
-		background: var(--surfaceColor);
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-	}
-
-	h2.text-align-center {
-		padding-bottom: 0;
-	}
-
-	h2.text-align-center:after {
-		display: none;
 	}
 
 	/* Tags */
@@ -795,7 +796,7 @@
 
 	/* Projects grid */
 	.projects-section .tile-grid {
-		margin-top: var(--xl);
+		/* margin-top: var(--xl); */
 		margin-bottom: var(--xl);
 	}
 
@@ -1278,7 +1279,7 @@
 			color: var(--copyColor);
 		}
 
-		a.animate-wavy:after {
+		a.animate-wavy:hover:after {
 			position: absolute;
 			opacity: 0;
 			transition: opacity 250ms ease-in;

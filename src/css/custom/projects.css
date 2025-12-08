@@ -83,7 +83,7 @@
     }
 
     header .container,
-    section h2,
+    .article-body h2,
     section h3,
     section p,
     section ol,
@@ -100,13 +100,13 @@
         padding: var(--xl) 0 var(--sm) 0;
     }
 
-    section h2 {
+    .article-body h2 {
         padding-bottom: var(--sm);
         margin-bottom: var(--lg);
         position: relative;
     }
 
-    section h2:after {
+    .article-body h2:after {
         content: "";
         display: block;
         height: 2px;
@@ -117,13 +117,17 @@
         left: var(--md);
     }
 
-    section h2.text-align-center {
-        padding-bottom: 0;
-        padding: 0;
-    }
 
-    section h2.text-align-center:after {
-        display: none;
+
+    @media screen and (min-width: 600px) {
+        /* section h2.text-align-center {
+            padding-bottom: 0;
+            padding: 0;
+        }
+
+        section h2.text-align-center:after {
+            display: none;
+        } */
     }
 
     section>h3 {
