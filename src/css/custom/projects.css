@@ -141,8 +141,8 @@
     section>ul li,
     section>ol li {
         margin-left: var(--sm);
-        margin-bottom: var(--xxxs);
-        padding-left: var(--xs);
+        margin-bottom: var(--xxs);
+        padding-left: var(--xxs);
     }
 
 

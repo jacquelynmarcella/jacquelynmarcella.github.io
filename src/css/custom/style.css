@@ -590,7 +590,7 @@
 	}
 
 	.tile-content {
-		padding: var(--sm) 0 var(--md) 0;
+		padding: var(--sm) 0 var(--xs) 0;
 	}
 
 	.tile-content a {
