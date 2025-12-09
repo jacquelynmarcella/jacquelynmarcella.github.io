@@ -41,7 +41,16 @@
         background: transparent;
     }
 
+    header .two-up img {
+        border-radius: var(--borderRadiusMd);
+        margin-bottom: var(--lg);
+    }
+
     @media screen and (min-width: 800px) {
+        header .two-up img {
+            margin-bottom: var(--xl);
+        }
+
         h1 {
             margin-bottom: var(--xxl);
         }
@@ -419,7 +428,7 @@ header .container {
     max-width: 1500px;
     margin: 0 auto;
     align-items: center;
-    gap: var(--xxl) var(--xxl);
+    gap: var(--lg) var(--xxl);
 }
 
 header .tags {
@@ -472,6 +481,7 @@ header .container {
 
     header .container {
         padding-top: var(--xxl);
+        gap: var(--xl) var(--xxl);
     }
 }
 
