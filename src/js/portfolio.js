@@ -133,38 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             })
         }
-        // const highlight = document.querySelectorAll('.article-body .highlight');
-        // if (highlight.length > 0) {
-        //     highlight.forEach(b => {
-        //         window.addEventListener('scroll', () => {
-        //             const rect = b.getBoundingClientRect();
-        //             const windowHeight = window.innerHeight;
-        //             const triggerPoint = windowHeight * 0.66;
-        //             if (rect.top < triggerPoint) {
-        //                 b.classList.add('js-active');
-        //             }
-        //         });
-
-        //     });
-        // }
-
-        /* Move to projects */
-        // let stats = gsap.utils.toArray(".stats--number");
-        // if (stats.length > 0) {
-        //     ScrollTrigger.batch(stats, {
-        //         onEnter: batch => {
-        //             gsap.from(batch, {
-        //                 scale: .75,
-        //                 delay: .25,
-        //                 duration: .5,
-        //                 // opacity: .75,
-        //                 transformOrigin: "left bottom",
-        //                 stagger: 0.5, // This will stagger the animations even if they are triggered at the same time
-        //             });
-        //         },
-        //     });
-        // }
-
 
         // A11y block links - ensure clicking on <a> tag clicks entire element
         // https://css-tricks.com/block-links-the-search-for-a-perfect-solution/
@@ -188,6 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Fix GSAP issue
         ScrollTrigger.refresh();
+
+        console.log("%c👋 Hello! Curious about how I built this site? Check out the readme on Github: https://github.com/jacquelynmarcella/jacquelynmarcella.github.io#readme", "font-weight: bold;")
 
     }
 });
