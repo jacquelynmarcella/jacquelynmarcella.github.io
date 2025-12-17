@@ -4,7 +4,7 @@
 <img src="img/og-image.png" alt="Portfolio site mockup of homepage header">
 
 ## Tech stack + process
-For my portfolio site, my goal was to keep things clear, readable, and performant. I didn't want to over-engineer the site with complex frameworks given it's size and intended purpose (in my opinion, a React app for this type of site would not be the right tool for the job). I was inspired by clean, editoral designs with hints of playful details. I used the following basic stack:
+For my portfolio site, my goal was to keep things clear, readable, and performant. I didn't want to over-engineer the site with complex frameworks given its size and intended purpose (in my opinion, a React app for this type of site would not be the right tool for the job). I was inspired by clean, editoral designs with hints of playful details. I used the following basic stack:
 - HTML5
 - CSS3
     - CSS custom properties for spacing, type, and a simple light/dark mode theme (defaults based on browser settings)
@@ -18,6 +18,7 @@ The following were super helpful in building consistent type scaling, highlighti
 - [Utopia fluid type scale and space calculator](https://utopia.fyi/type/calculator?c=800,14,1.2,1570,18,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12)
 - [Highlight.js](https://highlightjs.org/)
 - [Toggles.dev](https://toggles.dev/)
+- [Wave shape generator](https://css-generators.com/wavy-shapes/)
 - [Hamburgers](https://github.com/jonsuh/hamburgers)
 - [GSAP](https://greensock.com/gsap/)
 - [Google fonts](https://fonts.google.com/)
