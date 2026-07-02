@@ -40,26 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
 
-        // Skills - bounce in tag set on scroll
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        if (!isSafari) {
-            const tagSet = gsap.utils.toArray(".skills--container .tags");
-            tagSet.forEach(tagSet => {
-                let tags = gsap.utils.toArray(tagSet.querySelectorAll("li"));
-                ScrollTrigger.batch(tags, {
-                    once: true,
-                    onEnter: batch => {
-                        gsap.from(batch, {
-                            y: "10px",
-                            duration: .4,
-                            stagger: 0.2, // This will stagger the animations even if they are triggered at the same time
-                        });
-                    },
-                });
-            });
-        };
-
-
         // Fix GSAP issue
 
         ScrollTrigger.refresh();
